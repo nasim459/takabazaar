@@ -1,0 +1,40 @@
+/*Table all table include this file*/
+.table-h-t {
+    padding: 10px;
+    margin-bottom: 1px solid black!important;
+}
+/*----------------------------------------------------------------------------------start table-fixed table scroll bar----*/
+.table-fixed thead {
+  width: 100%;
+}
+.table-fixed tbody {
+  height: 271px;
+  overflow-y: auto;
+  width: 100%;
+}
+.table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
+  display: block;
+}
+.table-fixed tbody td, .table-fixed thead > tr> th {
+  float: left;
+  border-bottom-width: 0;
+}
+/*----------------------------------------------------------------------------------end table-fixed table scroll bar----*/
+
+/*----------------------------------------------------------------------------------start table-fixed-define table scroll bar----*/
+.table-fixed-define thead {
+  width: 100%;
+}
+.table-fixed-define tbody {
+  height: 140px;
+  overflow-y: auto;
+  width: 100%;
+}
+.table-fixed-define thead, .table-fixed-define tbody, .table-fixed-define tr, .table-fixed-define td, .table-fixed-define th {
+  display: block;
+}
+.table-fixed-define tbody td, .table-fixed-define thead > tr> th {
+  float: left;
+  border-bottom-width: 0;
+}
+/*----------------------------------------------------------------------------------end table-fixed-define table scroll bar----*/
