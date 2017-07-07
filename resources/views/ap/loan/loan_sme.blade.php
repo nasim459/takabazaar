@@ -13,7 +13,7 @@
                 <div class="col-md-3 m-t-10 text-success"><b>SME Lone</b></div>
                 <div class="col-md-2"></div>
                 <div class="col-md-4 text-right m-t-10">
-                    <a href="{{ url('form'.'/'.'loan') }}" class="btn btn-default btn-xs text-success width-100" title="Assign Loan"><i class="fa fa-plus"> Personal Loan</i></a>
+                    <a href="{{ url('form'.'/'.'loan') }}" class="btn btn-default btn-xs text-success width-100" title="Assign Loan"><i class="fa fa-plus"> Loan</i></a>
                 </div>
             </div>
 

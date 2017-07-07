@@ -13,7 +13,7 @@
                 <div class="col-md-3 m-t-10 text-success"><b>Saving Accounts</b></div>
                 <div class="col-md-2"></div>
                 <div class="col-md-4 text-right m-t-10">
-                    <a href="{{ URL::to('form-investment') }}" class="btn btn-default btn-xs text-success width-100" title="Assign Investment"><i class="fa fa-plus"> Investment</i></a>
+                    <a href="{{ url('form'.'/'.'investment') }}" class="btn btn-default btn-xs text-success width-100" title="Assign Investment"><i class="fa fa-plus"> Investment</i></a>
                 </div>
             </div>
 

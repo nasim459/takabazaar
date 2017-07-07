@@ -13,22 +13,22 @@
     <div class="col-sm-12 col-md-12">
         <div class="col-md-8 col-md-offset-2">
             <div class="btn-group m-b-20" role="group" aria-label="...">
-                <a href="{{ url('form-loan') }}" class="app btn btn-default">
+                <a href="{{ url('form'.'/'.'loan') }}" class="app btn btn-default">
                     <i class="fa fa-plus text-success text-success fa-2x fa-3y"></i><br/>
                     <small>Loan</small>
                 </a>
 
-                <a href="{{ url('form-investment') }}" class="app btn btn-default">
+                <a href="{{ url('form'.'/'.'investment') }}" class="app btn btn-default">
                     <i class="fa fa-plus text-success fa-2x fa-3y"></i><br/>
                     <small>Investment</small>
                 </a>
 
-                <a href="{{ url('form-insurance') }}" class="app btn btn-default">
+                <a href="{{ url('form'.'/'.'insurance') }}" class="app btn btn-default">
                     <i class="fa fa-plus text-success fa-2x fa-3y"></i><br/>
                     <small>Insurance</small>
                 </a>
 
-                <a href="{{ url('form-card') }}" class="app btn btn-default">
+                <a href="{{ url('form'.'/'.'card') }}" class="app btn btn-default">
                     <i class="fa fa-plus text-success fa-2x fa-3y"></i><br/>
                     <small>card</small>
                 </a>
@@ -48,12 +48,12 @@
                     <small>All Information</small>
                 </a>
 
-                <a href="{{ url('form-blog') }}" class="app btn btn-default">
+                <a href="{{ url('form'.'/'.'blog') }}" class="app btn btn-default">
                     <i class="fa fa-plus text-success fa-2x fa-3y"></i><br/>
                     <small>Blog</small>
                 </a>
 
-                <a href="{{URL::to('form-bank')}}" class="app btn btn-default" title="Add Your Bank">
+                <a href="{{ url('form'.'/'.'bank') }}" class="app btn btn-default" title="Add Your Bank">
                     <i class="fa fa-plus text-success fa-2x fa-3y"></i><br/>
                     <small>Bank</small>
                 </a>
@@ -78,7 +78,7 @@
                     <small>Profile</small>
                 </a>
 
-                <a href="{{URL::to('bank-list')}}" class="app btn btn-default">
+                <a href="{{ url('bank'.'/'.'list') }}" class="app btn btn-default">
                     <i class="fa fa-lock text-success fa-2x fa-3y"></i><br/>
                     <small>Bank</small>
                 </a>
@@ -102,19 +102,19 @@
                         <div class="col-md-8 col-md-offset-2">
                             <div class="btn-group m-b-20" role="group" aria-label="...">
 
-                                <a href="{{ url('loan-sme') }}" class="b-r-s width-130 m-t-5 btn btn-success" style="margin-left: 5px">
+                                <a href="{{ url('form'.'/'.'loan') }}" class="b-r-s width-130 m-t-5 btn btn-success" style="margin-left: 5px">
                                     <i class="fa fa-plus fa-2x fa-3y"><br/><small class="f-s-18">Loan</small></i>
                                 </a>
 
-                                <a href="{{ url('loan-sme') }}" class="b-r-s width-130 m-t-5 btn btn-success" style="margin-left: 5px">
+                                <a href="{{ url('form'.'/'.'investment') }}" class="b-r-s width-130 m-t-5 btn btn-success" style="margin-left: 5px">
                                     <i class="fa fa-plus fa-2x fa-3y"><br/><small class="f-s-18">Investment</small></i>
                                 </a>
 
-                                <a href="{{ url('loan-sme') }}" class="b-r-s width-130 m-t-5 btn btn-success" style="margin-left: 5px">
+                                <a href="{{ url('form'.'/'.'insurance') }}" class="b-r-s width-130 m-t-5 btn btn-success" style="margin-left: 5px">
                                     <i class="fa fa-plus fa-2x fa-3y"><br/><small class="f-s-18">Insurance</small></i>
                                 </a>
 
-                                <a href="{{ url('loan-sme') }}" class="b-r-s width-130 m-t-5 btn btn-success" style="margin-left: 5px">
+                                <a href="{{ url('form'.'/'.'card') }}" class="b-r-s width-130 m-t-5 btn btn-success" style="margin-left: 5px">
                                     <i class="fa fa-plus fa-2x fa-3y"><br/><small class="f-s-18">Card</small></i>
                                 </a>
 
