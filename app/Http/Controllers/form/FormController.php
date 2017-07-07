@@ -57,7 +57,7 @@ class FormController extends Controller
     //----Form Loan Information(form-loan loan_form_add)
     public function loan_form_save(Request $request) {
         $all = $request->all();
-        //dd($all);
+        dd($all);
 
         $rate_from = $request->f_rate_from;
         $rate_to = $request->f_rate_to;
@@ -66,6 +66,46 @@ class FormController extends Controller
         } elseif ($rate_to == Null) {
             $rate_to = 0;
         }
+
+        /*
+        |--------------------------------------------------------------------------
+        | Formula of Equated Monthly Installment
+        | --------------------------------------
+        | EMI = p*r*{(1+r)^n \ [(1+r)^n-1]}
+        |   p = principal_amount_or_loan_amount
+        |   d = duration_of_manths_or_years
+        |   r = periodic interest_rate
+        |--------------------------------------------------------------------------
+        */
+
+        //-------------------------------------------------------------------------
+        $p = 100000; //----p means principal_amount_or_loan_amount
+        $d = 1; //----d means duration_of_manths_or_years
+        $i_r = 8.5; //----i_r means interest_rate
+        //$year = 2;
+        $n = $d*12; //----n means no_of_duration_month
+        $i_r_n = $i_r/12; //----12 means 1_year_equal_is_12_month----calculate_by_month
+        $r = $i_r_n/100; //----100 means rate_of_percent
+
+        //$r = ''; //----interest_rate
+        //$r_one = (1+$r)^$n;
+        //----do_search_google_for_calculate_square_function----
+        //1+$r);
+        $f_p = $p * $r; //----$f_p means first_part_of_formula
+        $s_p = $p * $r; //----$s_p means secound_part_of_formula
+        //        $e_m_i = $f_p * $s_p;
+        //--------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
 
         $loan = array();
         $loan['loan_type'] = $request->l_type;
