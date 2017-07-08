@@ -79,7 +79,7 @@ class FormController extends Controller
         |   $f_f_p = formula_first_part  = p*r
         |   $f_s_p = formula_second_part = {(1+r)^n / [(1+r)^n - 1]}
         |   --------------------------
-        | value count 10 digit after dosomik(.)
+        | value count 10 digit after dosomik number(.)
         |--------------------------------------------------------------------------
         */
 
