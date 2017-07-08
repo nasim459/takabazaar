@@ -64,8 +64,32 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="btn-group m-b-20" role="group" aria-label="...">
                 <a href="{{ url('advertise') }}" class="app btn btn-default">
-                    <i class="fa fa-plus text-success fa-2x fa-3y"></i><br/>
+                    <i class="fa fa-book text-success fa-2x fa-3y"></i><br/>
                     <small>Advertise</small>
+                </a>
+
+                <a href="{{URL::to('purchase-add-supplier')}}" class="app btn btn-default">
+                    <i class="fa fa-plus text-success fa-2x fa-3y"></i><br/>
+                    <small>Marine</small>
+                </a>
+
+                <a href="{{URL::to('people-profile-all')}}" class="app btn btn-default">
+                    <i class="fa fa-users text-success fa-2x fa-3y"></i><br/>
+                    <small>Profile</small>
+                </a>
+
+                <a href="{{ url('bank'.'/'.'list') }}" class="app btn btn-default">
+                    <i class="fa fa-lock text-success fa-2x fa-3y"></i><br/>
+                    <small>Bank</small>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-8 col-md-offset-2">
+            <div class="btn-group m-b-20" role="group" aria-label="...">
+                <a href="{{ url('apply'.'/'.'info') }}" class="app btn btn-default">
+                    <i class="fa fa-book text-success fa-2x fa-3y"></i><br/>
+                    <small>Applying</small>
                 </a>
 
                 <a href="{{URL::to('purchase-add-supplier')}}" class="app btn btn-default">
