@@ -23,7 +23,7 @@
                     <th class="col-sm-2">Bank Name</th>
                     <th class="col-sm-2">Interest Rate</th>
                     <th class="col-sm-2">Monthly Interest</th>
-                    <th class="col-sm-2">Total Payable Interest</th>
+                    <th class="col-sm-2">Total Interest</th>
                     <th class="col-sm-2">Period <span class="pull-right">Amount</span></th>
                     <th class="col-sm-2">Type <span class="pull-right">Action</span></th>
                 </tr>
@@ -35,9 +35,8 @@
                     <tr>
                         <td class="col-xs-12 col-sm-2 text-success" title="{{$v->bank->bank_name}}">
                             <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}kkk">
-                                <img src="{{ asset($v->bank->bank_image_url) }}" height="20px" width="30px" alt="pic">
+                                <img src="{{ asset($v->bank->bank_image_url) }}" height="16px" width="30px" alt="pic">
                             </a>
-                            {{--{{$v->bank->bank_name}}--}}
                             {{str_limit($v->bank->bank_name, 14, ' ...')}}
                         </td>
                         <td class="col-xs-12 col-sm-2">{{$v->loan_interest_rate}}%</td>

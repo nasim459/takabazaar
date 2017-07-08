@@ -4,9 +4,9 @@ namespace App\Http\Controllers\bank;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Session;
 
-use DB;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 use App\Model\bank\Bank;
 
 class BankController extends Controller

@@ -41,6 +41,8 @@ Route::get('bank/{child}', 'bank\BankController@bank_file_view');
 //Route::get('bank-list', 'bank\BankController@bank_ap');
 //Route::get('bank-gride', 'bank\BankController@bank_gride_ap');
 
+//----Applying Controller---------------------------------------------
+Route::get('apply/{child}', 'applying\ApplyingController@applying_file_view');
 
 //----Form Controller---------------------------------------------
 Route::get('form/{child}', 'form\FormController@form_file_view');

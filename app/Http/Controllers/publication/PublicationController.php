@@ -41,6 +41,11 @@ class PublicationController extends Controller
                 $publication_status = 'insr_status';
                 $redirect = $previous_url;
                 break;
+            case "66":
+                $table_name = 'applyings';
+                $publication_status = 'aply_status';
+                $redirect = $previous_url;
+                break;
             default:
                 return Redirect::to($previous_url);
         }

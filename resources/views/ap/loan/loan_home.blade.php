@@ -23,7 +23,7 @@
                     <th class="col-sm-2">Bank Name</th>
                     <th class="col-sm-2">Interest Rate</th>
                     <th class="col-sm-2">Monthly Interest</th>
-                    <th class="col-sm-2">Total Payable Interest</th>
+                    <th class="col-sm-2">Total Interest</th>
                     <th class="col-sm-2">Period <span class="pull-right">Amount</span></th>
                     <th class="col-sm-2">Type <span class="pull-right">Action</span></th>
                 </tr>
