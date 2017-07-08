@@ -82,6 +82,7 @@ class FormController extends Controller
         | value count 10 digit after dosomik number(.)
         |--------------------------------------------------------------------------
         */
+        //--------------gdfgdfgdfgd
 
         //----Start_EMI_Calculation---------------------------------------------------------------------
         $p = $request->l_amount;            //----p means principal_amount_or_loan_amount
