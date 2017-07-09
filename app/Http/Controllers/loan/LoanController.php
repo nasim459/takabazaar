@@ -34,6 +34,7 @@ class LoanController extends Controller
         } elseif ($child == 'personal') {
             $file_open = 'ap.loan.loan_personal';
             $loan_view = Loan::all()->where('loan_type', '4');
+            //dd($loan_view);
 
         }  elseif ($child == 'others') {
             $file_open = 'ap.loan.loan_others';

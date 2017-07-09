@@ -11,8 +11,11 @@
                     </div>
                 </div>
                 <div class="col-md-3 m-t-10 text-success"><b>SME Lone</b></div>
-                <div class="col-md-2"></div>
-                <div class="col-md-4 text-right m-t-10">
+                <div class="col-md-4">
+                    <i class="fa text-success">{{ Session::get('msg_suc') }} {{ Session::put('msg_suc', '') }}</i>
+                    <i class="fa text-danger">{{ Session::get('msg_error') }} {{ Session::put('msg_error', '') }}</i>
+                </div>
+                <div class="col-md-2 text-right m-t-10">
                     <a href="{{ url('form'.'/'.'loan') }}" class="btn btn-default btn-xs text-success width-100" title="Assign Loan"><i class="fa fa-plus"> Loan</i></a>
                 </div>
             </div>
@@ -37,7 +40,7 @@
                             <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}kkk">
                                 <img src="{{ asset($v->bank->bank_image_url) }}" height="16px" width="30px" alt="pic">
                             </a>
-                            {{str_limit($v->bank->bank_name, 14, ' ...')}}
+                            {{str_limit($v->bank->bank_name, 11, ' ...')}}
                         </td>
                         <td class="col-xs-12 col-sm-2">{{$v->loan_interest_rate}}%</td>
                         <td class="col-xs-12 col-sm-2">{{$v->loan_monthly_interest}} BDT</td>
@@ -67,7 +70,7 @@
                         </td>
                     </tr>
 
-                    <!--start detailsInfo -->
+                    <!--start detailsInfo information_details-->
                     <div id="{{$v->id}}" class="modal fade" role="dialog">
                         <div class="modal-dialog">
 
@@ -82,7 +85,7 @@
                                 </div>
                                 <div class="modal-body" style="overflow: hidden">
                                     <div class="col-md-12">
-                                        <div class="col-md-8 col-md-offset-1 f-s-14 f-f-s">
+                                        <div class="col-md-10 col-md-offset-1 f-s-14 f-f-s">
                                             <dl class="dl-horizontal">
                                                 <dt>Interest Rate :</dt>
                                                 <dd>{{$v->loan_interest_rate}}%</dd>
@@ -97,8 +100,12 @@
                                             </dl>
                                             <hr>
                                             <dl class="dl-horizontal">
+                                                <dt>Loan Requirements :</dt>
+                                                <dd>{!! $v->loan_requirements !!}</dd>
                                                 <dt>Loan Features :</dt>
                                                 <dd>{!! $v->loan_features_bfenefits !!}</dd>
+                                                <dt>Loan Eligibility :</dt>
+                                                <dd>{!! $v->loan_eligibility !!}</dd>
                                             </dl>
 
                                         </div>
@@ -114,7 +121,7 @@
                     </div>
                     <!--end detailsInfo -->
 
-                    <!--start detailsInfo -->
+                    <!--start detailsInfo information_update-->
                     <div id="{{$v->id}}kk" class="modal fade" role="dialog">
                         <div class="modal-dialog">
 
@@ -278,7 +285,7 @@
                     </div>
                     <!--end detailsInfo -->
 
-                    <!--start detailsInfo -->
+                    <!--start detailsInfo picture_update -->
                     <div id="{{$v->id}}kkk" class="modal fade" role="dialog">
                         <div class="modal-dialog">
 
@@ -295,11 +302,11 @@
                                         <div class="col-md-12 f-s-14 f-f-s">
 
 
-                                            {!! Form::open(array('url'=>'image-update', 'role'=>'form', 'method'=>'POST', 'files'=>'true')) !!}
+                                            {!! Form::open(array('url'=>'image-update-child', 'role'=>'form', 'method'=>'POST', 'files'=>'true')) !!}
                                             <div class="form-horizontal">
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                 <input type="hidden" name="id" value="{{ $v->id }}">
-                                                <input type="hidden" name="t_id" value="22">
+                                                <input type="hidden" name="t_id" value="33">
 
                                                 <div class="form-group">
                                                     <label for="exampleInputName2" class="col-sm-4 control-label m-t-20">Image :</label>
@@ -310,11 +317,17 @@
                                                 <hr>
 
                                                 <div class="form-group">
-                                                    <label for="exampleInputName2" class="col-sm-4 control-label">Change Picture:</label>
-                                                    <div class="col-sm-6">
-                                                        <input type="file" name="image" required>
+                                                    <label for="exampleInputName2" class="col-sm-4 control-label">Change Bank:</label>
+                                                    <div class="col-sm-8">
+                                                        <select class="form-control" name="bank_id" required>
+                                                            <option value="">Select Bank</option>
+                                                            @foreach($bank_view as $v)
+                                                                <option value="{{$v->id}}">{{$v->bank_name}}</option>
+                                                            @endforeach
+                                                        </select>
                                                     </div>
                                                 </div>
+
                                             </div>
                                             <hr>
 
@@ -349,7 +362,7 @@
 
         <div class="table-h-t m-b-20">
             <div class="col-md-3 m-t-0">
-                <span class="text-success f-s-12">Showing {{ Session::get('count') }} entries</span>
+                <span class="text-success f-s-12">Showing {{ Session::get('count') }} Entries</span>
             </div>
             <div class="col-md-3"></div>
             <div class="col-md-3"></div>

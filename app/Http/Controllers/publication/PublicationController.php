@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 
 class PublicationController extends Controller
@@ -52,14 +53,43 @@ class PublicationController extends Controller
 
         //----Change Publication_Status_here Of Table
         if ($status == 0) {
-            DB::table($table_name)
-                ->where($where_field_id, $id)
-                ->update([$publication_status => '0']);
+            DB::table($table_name)->where($where_field_id, $id)->update([$publication_status => '0']);
             return Redirect::to($redirect);
         } else {
-            DB::table($table_name)
-                ->where($where_field_id, $id)
-                ->update([$publication_status => '1']);
+            DB::table($table_name)->where($where_field_id, $id)->update([$publication_status => '1']);
+            return Redirect::to($redirect);
+        }
+    }
+
+    //----Publication Information(publication/{id}/{status}  publication)
+    public function publication_alert($id, $status, $table) {
+        //----Define Value Of Table
+        $previous_url = url()->previous();
+        $where_field_id = 'id';
+        switch($table){
+            case "66":
+                $table_name = 'applyings';
+                $publication_status = 'aply_status';
+                $redirect = $previous_url;
+                break;
+            default:
+                return Redirect::to($previous_url);
+        }
+
+        //----Change Publication_Status_here Of Table
+        if ($status == 1) {
+            DB::table($table_name)->where($where_field_id, $id)->update([$publication_status => '2']);
+            Session::put('msg_apply', 'Successfully change your applying request!!!');
+            return Redirect::to($redirect);
+
+        } elseif ($status == 2) {
+            DB::table($table_name)->where($where_field_id, $id)->update([$publication_status => '0']);
+            Session::put('msg_apply', 'Successfully completed your applying process!!!');
+            return Redirect::to($redirect);
+
+        } else {
+            //DB::table($table_name)->where($where_field_id, $id)->update([$publication_status => '1']);
+            //Session::put('msg_apply', 'Again define your request completed!!!');
             return Redirect::to($redirect);
         }
     }

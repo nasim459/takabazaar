@@ -20,10 +20,7 @@
 
             <div class="panel-body secondscreen" style="overflow: hidden; overflow-y: scroll;">
                 {!! Form::open(array('url'=>'form-bank-save', 'role'=>'form', 'method'=>'POST', 'files'=>'true')) !!}
-
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
-                {{--<input type="hidden" name="_token" value="{!! csrf_token() !!}">--}}
 
                 <div class="col-sm-10 m-t-20 col-sm-offset-1" style="overflow: hidden;">
                     <div class="form-horizontal">

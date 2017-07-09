@@ -39,9 +39,9 @@
 
                     <!--<a class="dropdown-toggle" data-toggle="dropdown">ss<span class="caret"></span></a>-->
                         <ul class="dropdown-menu" role="menu" style="margin-top: 15px">
-                            <li><a href="#info-rental-picture" data-toggle="modal" title="Update Picture"><i class="fa fa-pencil"> Edit Picture</i></a></li>
+                            <li><a href="#" data-toggle="modal" title="Update Picture"><i class="fa fa-pencil"> Edit Picture</i></a></li>
                             <li><a href="#rental-bld-edit" data-toggle="modal" title="Edit Buinding-Floor-Unit"><i class="fa fa-pencil"> Edit Building</i></a></li>
-                            <li><a href="{{URL::to('info-rental-edit/')}}"><i class="fa fa-edit"> Edit All Profile</i></a></li>
+                            <li><a href="#"><i class="fa fa-edit"> Edit All Profile</i></a></li>
                             <li><a href="{{URL::to('dboard')}}"><i class="fa fa-home"> Go Dashboarde</i></a></li>
                             <li class="divider"></li>
                             <li><a href="{{URL::to('login')}}"><i class="fa fa-power-off text-success-light"> SignOut</i></a></li>

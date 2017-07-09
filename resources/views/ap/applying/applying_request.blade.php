@@ -11,13 +11,11 @@
                     </div>
                 </div>
                 <div class="col-md-3 m-t-10 text-success"><b>Applying Request</b></div>
-                <div class="col-md-4">
-                    <i class="fa text-success">{{ Session::get('msg_suc') }} {{ Session::put('msg_suc', '') }}</i>
-                    <i class="fa text-danger">{{ Session::get('msg_error') }} {{ Session::put('msg_error', '') }}</i>
-                    <i class="fa text-danger">{{ Session::get('msg_delete') }} {{ Session::put('msg_delete', '') }}</i>
+                <div class="col-md-4 m-t-10">
+                    <i class="fa text-success">{{ Session::get('msg_apply') }} {{ Session::put('msg_apply', '') }}</i>
                 </div>
                 <div class="col-md-2 text-right m-t-10">
-                    <a href="{{ url('form'.'/'.'bank') }}" class="btn btn-default btn-xs text-success width-100" title="Add Customer"><i class="fa fa-plus"> Add</i></a>
+                    {{--<a class="btn btn-default btn-xs text-success width-100" title="Add Customer"><i class="fa fa-eye"> Report</i></a>--}}
                 </div>
             </div>
 
@@ -34,7 +32,7 @@
                 </thead>
                 <tbody>
 
-                @php $number = 0; $off = 0; $on = 1; $table = 66; @endphp
+                @php $number = 0; $suc = 0; $reqs = 1; $pending = 2; $table = 66; @endphp
                 @foreach($bank_view as $v)
                 <tr>
                     <td class="col-xs-12 col-sm-1 text-success">
@@ -43,14 +41,16 @@
                             <img src="{{ asset($v->bank_image_url) }}" height="20px" width="30px" alt="pic">
                         </a>
                     </td>
-                    <td class="col-xs-12 col-sm-4">Yamin Alam Sarker</td>
-                    <td class="col-xs-12 col-sm-2">01777888757</td>
+                    <td class="col-xs-12 col-sm-4">{{ ($v->aply_name) }}</td>
+                    <td class="col-xs-12 col-sm-2">{{ ($v->aply_mobile) }}</td>
                     <td class="col-xs-12 col-sm-2">Loan</td>
                     <td class="col-xs-12 col-sm-1">
-                        <a href="{{URL::to('publication/'.$v->id.'/'.$off.'/'.$table)}}" class="btn btn-default btn-xs m-l-20" title="Applying Request"><i class="text-danger-light fa fa-arrow-down"></i></a>
+                        @if($v->aply_status==1)
+                            <a href="{{URL::to('publication-alert/'.$v->id.'/'.$reqs.'/'.$table)}}" class="btn btn-default btn-xs m-l-20" title="Applying Request"><i class="text-danger-light fa fa-arrow-down"></i></a>
+                        @endif
                     </td>
                     <td class="col-xs-12 col-sm-2">
-                        <a href="" class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}" title="Details Information"><i class="fa fa-list"> Details</i></a>
+                        <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}" title="Details Information"><i class="fa fa-list"> Details</i></a>
                     </td>
                 </tr>
 
@@ -112,7 +112,7 @@
 
         <div class="table-h-t m-b-20">
             <div class="col-md-3 m-t-0">
-                <span class="text-success f-s-12">Showing {{ Session::get('count') }} entries</span>
+                <span class="text-success f-s-12">Showing {{ Session::get('count') }} Entries</span>
             </div>
             <div class="col-md-3"></div>
             <div class="col-md-3"></div>

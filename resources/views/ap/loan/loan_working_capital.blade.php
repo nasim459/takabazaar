@@ -10,10 +10,13 @@
                         <input type="text" class="form-control" placeholder="Search here...">
                     </div>
                 </div>
-                <div class="col-md-3 m-t-10 text-success"><b>Working Capital Lone</b></div>
-                <div class="col-md-2"></div>
-                <div class="col-md-4 text-right m-t-10">
-                    <a href="{{ url('form'.'/'.'loan') }}" class="btn btn-default btn-xs text-success width-100" title="Assign Loan"><i class="fa fa-plus"> Personal Loan</i></a>
+                <div class="col-md-3 m-t-10 text-success"><b>SME Lone</b></div>
+                <div class="col-md-4">
+                    <i class="fa text-success">{{ Session::get('msg_suc') }} {{ Session::put('msg_suc', '') }}</i>
+                    <i class="fa text-danger">{{ Session::get('msg_error') }} {{ Session::put('msg_error', '') }}</i>
+                </div>
+                <div class="col-md-2 text-right m-t-10">
+                    <a href="{{ url('form'.'/'.'loan') }}" class="btn btn-default btn-xs text-success width-100" title="Assign Loan"><i class="fa fa-plus"> Loan</i></a>
                 </div>
             </div>
 
@@ -23,20 +26,21 @@
                     <th class="col-sm-2">Bank Name</th>
                     <th class="col-sm-2">Interest Rate</th>
                     <th class="col-sm-2">Monthly Interest</th>
-                    <th class="col-sm-2">Total Payable Interest</th>
+                    <th class="col-sm-2">Total Interest</th>
                     <th class="col-sm-2">Period <span class="pull-right">Amount</span></th>
                     <th class="col-sm-2">Type <span class="pull-right">Action</span></th>
                 </tr>
                 </thead>
                 <tbody>
 
-                @php $number = 0; @endphp
+                @php $number = 0; $off = 0; $on = 1; $table = 33; @endphp
                 @foreach($loan_view as $v)
                     <tr>
                         <td class="col-xs-12 col-sm-2 text-success" title="{{$v->bank->bank_name}}">
-                            <img src="{{ asset($v->bank->bank_image_url) }}" height="20px" width="30px" alt="pic">
-                            {{--{{$v->bank->bank_name}}--}}
-                            {{str_limit($v->bank->bank_name, 14, ' ...')}}
+                            <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}kkk">
+                                <img src="{{ asset($v->bank->bank_image_url) }}" height="16px" width="30px" alt="pic">
+                            </a>
+                            {{str_limit($v->bank->bank_name, 11, ' ...')}}
                         </td>
                         <td class="col-xs-12 col-sm-2">{{$v->loan_interest_rate}}%</td>
                         <td class="col-xs-12 col-sm-2">{{$v->loan_monthly_interest}} BDT</td>
@@ -54,13 +58,19 @@
                             @endif
 
                             <span class="pull-right">
-                            <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}" title="Details Information"><i class="fa fa-list"></i></a>
-                            <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}kk" title="Click To Edit"><i class="fa fa-edit"></i></a>
-                        </span>
+                                @if($v->loan_status==1)
+                                    <a href="{{URL::to('publication/'.$v->id.'/'.$off.'/'.$table)}}" class="btn btn-default btn-xs" title="Publish"><i class="text-success-light fa fa-check"></i></a>
+                                @else
+                                    <a href="{{URL::to('publication/'.$v->id.'/'.$on.'/'.$table)}}" class="btn btn-default btn-xs" title="unPublish">&nbsp;<i class="text-danger-light fa fa-lock"> </i></a>
+                                @endif
+
+                                <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}" title="Details Information"><i class="fa fa-list"></i></a>
+                                <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}kk" title="Click To Edit"><i class="fa fa-edit"></i></a>
+                            </span>
                         </td>
                     </tr>
 
-                    <!--start detailsInfo -->
+                    <!--start detailsInfo information_details-->
                     <div id="{{$v->id}}" class="modal fade" role="dialog">
                         <div class="modal-dialog">
 
@@ -75,7 +85,7 @@
                                 </div>
                                 <div class="modal-body" style="overflow: hidden">
                                     <div class="col-md-12">
-                                        <div class="col-md-8 col-md-offset-1 f-s-14 f-f-s">
+                                        <div class="col-md-10 col-md-offset-1 f-s-14 f-f-s">
                                             <dl class="dl-horizontal">
                                                 <dt>Interest Rate :</dt>
                                                 <dd>{{$v->loan_interest_rate}}%</dd>
@@ -90,8 +100,12 @@
                                             </dl>
                                             <hr>
                                             <dl class="dl-horizontal">
+                                                <dt>Loan Requirements :</dt>
+                                                <dd>{!! $v->loan_requirements !!}</dd>
                                                 <dt>Loan Features :</dt>
                                                 <dd>{!! $v->loan_features_bfenefits !!}</dd>
+                                                <dt>Loan Eligibility :</dt>
+                                                <dd>{!! $v->loan_eligibility !!}</dd>
                                             </dl>
 
                                         </div>
@@ -107,7 +121,7 @@
                     </div>
                     <!--end detailsInfo -->
 
-                    <!--start detailsInfo -->
+                    <!--start detailsInfo information_update-->
                     <div id="{{$v->id}}kk" class="modal fade" role="dialog">
                         <div class="modal-dialog">
 
@@ -123,7 +137,6 @@
                                 <div class="modal-body" style="overflow: hidden">
                                     <div class="col-md-12">
                                         <div class="col-md-12 f-s-14 f-f-s">
-
 
                                             {!! Form::open(array('url'=>'form-loan-update', 'role'=>'form', 'method'=>'POST')) !!}
                                             <div class="form-horizontal">
@@ -272,6 +285,74 @@
                     </div>
                     <!--end detailsInfo -->
 
+                    <!--start detailsInfo picture_update -->
+                    <div id="{{$v->id}}kkk" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!--start Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title text-success text-center">
+                                        Update Picture Information
+                                    </h4>
+                                </div>
+                                <div class="modal-body" style="overflow: hidden">
+                                    <div class="col-md-12">
+                                        <div class="col-md-12 f-s-14 f-f-s">
+
+
+                                            {!! Form::open(array('url'=>'image-update-child', 'role'=>'form', 'method'=>'POST', 'files'=>'true')) !!}
+                                            <div class="form-horizontal">
+                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                <input type="hidden" name="id" value="{{ $v->id }}">
+                                                <input type="hidden" name="t_id" value="33">
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputName2" class="col-sm-4 control-label m-t-20">Image :</label>
+                                                    <div class="col-sm-6">
+                                                        <img src="{{ asset($v->bank->bank_image_url) }}" height="60px" width="90px" alt="pic">
+                                                    </div>
+                                                </div>
+                                                <hr>
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputName2" class="col-sm-4 control-label">Change Bank:</label>
+                                                    <div class="col-sm-8">
+                                                        <select class="form-control" name="bank_id" required>
+                                                            <option value="">Select Bank</option>
+                                                            @foreach($bank_view as $v)
+                                                                <option value="{{$v->id}}">{{$v->bank_name}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <hr>
+
+                                            <div class="form-horizontal">
+                                                <div class="form-group">
+                                                    <div class="col-sm-offset-4 col-sm-10 m-t-15">
+                                                        <input type="submit" value="Update" class="btn btn-success col-sm-4">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {!! Form::close() !!}
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                            <!--end Modal content-->
+
+                        </div>
+                    </div>
+                    <!--end detailsInfo -->
+
                 @endforeach
 
                 </tbody>
@@ -281,7 +362,7 @@
 
         <div class="table-h-t m-b-20">
             <div class="col-md-3 m-t-0">
-                <span class="text-success f-s-12">Showing {{ Session::get('count') }} entries</span>
+                <span class="text-success f-s-12">Showing {{ Session::get('count') }} Entries</span>
             </div>
             <div class="col-md-3"></div>
             <div class="col-md-3"></div>

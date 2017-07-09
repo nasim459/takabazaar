@@ -3,13 +3,13 @@
 namespace App\Model\applying;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Model\bank\Bank;
 
 class Applying extends Model
 {
     //
-    public function bank()
+    public function banks()
     {
-        return $this->belongsTo('App\Model\bank\Bank');
-        //return $this->hasOne('App\Model\bank\Bank');
+        return $this->belongsToMany(Bank::class);
     }
 }

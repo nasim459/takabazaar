@@ -72,9 +72,11 @@ Route::post('form-investment-update', 'form\FormInvestmentController@investment_
 
 //----Publication Controller---------------------------------------------
 Route::get('publication/{id}/{status}/{table}', 'publication\PublicationController@publication');
+Route::get('publication-alert/{id}/{status}/{table}', 'publication\PublicationController@publication_alert');
 
 //----ImageUpdate Controller---------------------------------------------
 Route::post('image-update', 'image\ImageUpdateController@image_update');
+Route::post('image-update-child', 'image\ImageUpdateController@child_image_update');
 
 //----Delete Controller---------------------------------------------
 Route::post('delete', 'delete\DeleteController@delete');

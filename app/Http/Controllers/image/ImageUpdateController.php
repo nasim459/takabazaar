@@ -61,4 +61,44 @@ class ImageUpdateController extends Controller
         }
         //------end_picture
     }
+
+    //----Image Update Child(image-update-child  child_image_update)
+    public function child_image_update(Request $request) {
+
+        $id = $request->id;
+        $bank_id = $request->bank_id;
+        $table_no = $request->t_id;
+        $previous_url = url()->previous();
+        //dd($request);
+
+        //----Define Value Of Table
+        switch($table_no){
+            case "11":
+                //$table_name = 'advertises';
+                ///$where_field_id = 'id';
+                //$destination_path_define = 'ap/images/advertise/';
+                //$updated_tbl_field_img_url = 'add_image_url';  //--change_image_url_of_table_field
+                //$go_to_redirect = 'advertise';
+                break;
+            case "33":
+                $table_name = 'loans';
+                $where_field_id = 'id';
+                $updated_tbl_field = 'bank_id';
+                break;
+            default:
+                return Redirect::to($previous_url);
+        }
+
+        //------start_picture_update
+        if ($bank_id != NULL) {
+            DB::table($table_name)->where($where_field_id, $id)->update([$updated_tbl_field => $bank_id]);
+            Session::put('msg_suc', 'Data Updated Successfully!');
+            return Redirect::to($previous_url);
+
+        } else {
+            Session::put('msg_error', 'Nothing To Updated ?');
+            return Redirect::to($previous_url);
+        }
+        //------end_picture_update
+    }
 }

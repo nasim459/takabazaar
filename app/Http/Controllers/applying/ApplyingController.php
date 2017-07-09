@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\applying;
 
-use App\Model\applying\Applying;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
+use App\Model\applying\Applying;
 use App\Model\bank\Bank;
 
 class ApplyingController extends Controller
@@ -18,20 +18,23 @@ class ApplyingController extends Controller
         //$route = Route::getFacadeRoot()->current()->uri();
         if ($child == 'info'){
             $file_open = 'ap.applying.applying_info';
-            $bank_view = Bank::all();
+            $bank_view = Applying::all();
+            //$bank_view = Applying::all()->where('aply_status', '1');
 
         } elseif ($child == 'request') {
             $file_open = 'ap.applying.applying_request';
-            $bank_view = Applying::all()->where('aply_status', '1');
+            //$bank_view = Applying::all();
+            $bank_view = Applying::all();
+            //$bank_view = Bank::find(6)->applyings;
             //dd($bank_view);
 
         } elseif ($child == 'pending') {
             $file_open = 'ap.applying.applying_pending';
-            $bank_view = Bank::all();
+            $bank_view = Applying::all()->where('aply_status', '2');
 
         } elseif ($child == 'completed') {
             $file_open = 'ap.applying.applying_completed';
-            $bank_view = Bank::all();
+            $bank_view = Applying::all()->where('aply_status', '0');
         }
 
         $count = count($bank_view);
