@@ -20,7 +20,7 @@ class HelpController extends Controller
     //| 44  = investments
     //| 55  = insurances
     //| 66  = applyings
-    //| 77  =
+    //| 77  = cards
     //| 88  =
     //| 99  =
     //| 111 =

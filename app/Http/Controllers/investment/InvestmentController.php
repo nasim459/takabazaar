@@ -21,8 +21,8 @@ class InvestmentController extends Controller
         $route = Route::getFacadeRoot()->current()->uri();
         if ($route == 'investment-saving'){
             $file_open = 'ap.investment.investment_saving';
-            $invst_view = Investment::all()->where('invst_type', '1'); //invst_type=1 means Saving_account
-            //dd($invst_view);
+            $invst_view = Investment::get()->where('invst_type', '1'); //invst_type=1 means Saving_account
+            dd($invst_view);
 
         } elseif ($route == 'investment-fixed') {
             $file_open = 'ap.investment.investment_fixed';

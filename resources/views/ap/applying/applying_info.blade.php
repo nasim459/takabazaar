@@ -17,43 +17,62 @@
                     <i class="fa text-danger">{{ Session::get('msg_delete') }} {{ Session::put('msg_delete', '') }}</i>
                 </div>
                 <div class="col-md-2 text-right m-t-10">
-                    <a href="{{ url('form'.'/'.'bank') }}" class="btn btn-default btn-xs text-success width-100" title="Add Customer"><i class="fa fa-plus"> Add</i></a>
+                    <a class="btn btn-default btn-xs text-success width-150" title="Applying All Information"><i class="fa">Showing {{ Session::get('count') }} Entries</i></a>
                 </div>
             </div>
 
             <table class="table table-fixed">
                 <thead>
                 <tr class="success">
-                    <th class="col-sm-1">No</th>
-                    <th class="col-sm-4">Name</th>
+                    <th class="col-sm-3">No</th>
+                    <th class="col-sm-2">Client Name</th>
                     <th class="col-sm-2">Phone</th>
-                    <th class="col-sm-2">Type</th>
+                    <th class="col-sm-2">Offering Type</th>
                     <th class="col-sm-1">Status</th>
-                    <th class="col-sm-2">Action</th>
+                    <th class="col-sm-2">Details</th>
                 </tr>
                 </thead>
                 <tbody>
 
                 @php $number = 0; $off = 0; $on = 1; $table = 22; @endphp
-                @foreach($bank_view as $v)
+                @foreach($apply_view as $v)
                 <tr>
-                    <td class="col-xs-12 col-sm-1 text-success">
-                        <a class="btn btn-default btn-xs"><i class="fa">{{$number = $number+1}}</i></a>
+                    <td class="col-xs-12 col-sm-3 text-success" title="{{$v->bank['bank_name']}}">
+                        <a class="btn btn-default btn-xs"><i class="fa">{{$number = $number+1}}</i></a>&nbsp;
+                        <a class="btn btn-default btn-xs" data-toggle="modal">
+                            <img src="{{ asset($v->bank['bank_image_url']) }}" height="16px" width="30px" alt="pic">
+                        </a>
+                        {{str_limit($v->bank['bank_name'], 20, ' ...')}}
                     </td>
-                    <td class="col-xs-12 col-sm-4">Yamin Alam Sarker</td>
-                    <td class="col-xs-12 col-sm-2">01777888757</td>
-                    <td class="col-xs-12 col-sm-2">Loan</td>
-                    <td class="col-xs-12 col-sm-1">
-                        <a href="" class="btn btn-default btn-xs" title="Applying Request"><i class="text-danger-light fa fa-arrow-down"></i></a>
-                    </td>
+                    <td class="col-xs-12 col-sm-2">{{str_limit($v->aply_name, 20, ' ...')}}</td>
+                    <td class="col-xs-12 col-sm-2">{{$v->aply_mobile}}</td>
                     <td class="col-xs-12 col-sm-2">
-                        <a href="" class="btn btn-default btn-xs" title="Publish"><i class="text-success-light fa fa-check"></i></a>
+                        @if($v->aply_offering_type == 33)
+                            <a data-toggle="modal" data-target="#{{$v->id}}"><i class="fa text-success-light"><b>Loan</b></i></a>
+                        @elseif($v->aply_offering_type == 44)
+                            <a data-toggle="modal" data-target="#{{$v->id}}"><i class="fa text-success-light"><b>Investment</b></i></a>
+                        @elseif($v->aply_offering_type == 55)
+                            <a data-toggle="modal" data-target="#{{$v->id}}"><i class="fa text-success-light"><b>Insurance</b></i></a>
+                        @else
+                            <a data-toggle="modal" data-target="#{{$v->id}}"><i class="fa text-success-light"><b>Card Offer</b></i></a>
+                        @endif
+                    </td>
+                    <td class="col-xs-12 col-sm-1">
+                        @if($v->aply_status == 0 )
+                            <a class="btn btn-default btn-xs m-l-20" readonly="" title="Successfully Done Your Work!"><i class="text-success-light fa fa-check"></i></a>
+                        @elseif($v->aply_status == 1)
+                            <a class="btn btn-default btn-xs m-l-20" title="Applying Request"><i class="text-danger-light fa fa-arrow-down"></i></a>
+                        @else
+                            <a class="btn btn-default btn-xs m-l-20" title="Request Pending"><i class="text-danger-light fa fa-arrow-right"></i></a>
+                        @endif
+                    </td>
+                    <td class="col-xs-12 col-sm-2">&nbsp;
+                        <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}" title="Details Information"><i class="fa fa-list"> Details</i></a>
                     </td>
                 </tr>
 
-
-                <!--start detailsInfo -->
-                <div id="{{$v->id}}kk" class="modal fade" role="dialog">
+                <!--start detailsInfo information_details-->
+                <div id="{{$v->id}}" class="modal fade" role="dialog">
                     <div class="modal-dialog">
 
                         <!--start Modal content-->
@@ -61,96 +80,128 @@
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title text-success text-center">
-                                    <img src="{{ asset($v->bank_image_url) }}" height="20px" width="30px" alt="pic">
-                                    {{$v->bank_name}}
+                                    <img src="{{ asset($v->bank['bank_image_url']) }}" height="20px" width="30px" alt="pic">&nbsp;
+                                    {{$v->bank['bank_name']}}
                                 </h4>
                             </div>
                             <div class="modal-body" style="overflow: hidden">
                                 <div class="col-md-12">
-                                    <div class="col-md-12 f-s-14 f-f-s">
+                                    <div class="col-md-10 col-md-offset-1 f-s-14 f-f-s">
 
-                                        {!! Form::open(array('url'=>'form-bank-update', 'role'=>'form', 'method'=>'POST')) !!}
-                                        <div class="form-horizontal">
-                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                            <input type="hidden" name="b_id" value="{{ $v->id }}">
+                                        @if($v->aply_offering_type == 33)
+                                            <dl class="dl-horizontal">
+                                                <dt>Offering Type :</dt>
+                                                <dd>
+                                                    <i class="fa text-success-light"><b>Loan</b></i>
 
-                                            <div class="form-group m-t-15">
-                                                <label for="exampleInputName2" class="col-sm-4 control-label">Bank Name :</label>
-                                                <div class="col-sm-6">
-                                                    <input type="text" name="b_name" value="{{$v->bank_name}}" class="form-control" id="exampleInputName2" required>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <div class="col-sm-offset-4 col-sm-10 m-t-15">
-                                                    <input type="submit" value="Update" class="btn btn-success col-sm-4">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {!! Form::close() !!}
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                        <!--end Modal content-->
-
-                    </div>
-                </div>
-                <!--end detailsInfo -->
-
-                <!--start detailsInfo -->
-                <div id="{{$v->id}}kkk" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
-
-                        <!--start Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title text-success text-center">
-                                    Update Picture Information
-                                </h4>
-                            </div>
-                            <div class="modal-body" style="overflow: hidden">
-                                <div class="col-md-12">
-                                    <div class="col-md-12 f-s-14 f-f-s">
-
-                                        {!! Form::open(array('url'=>'image-update', 'role'=>'form', 'method'=>'POST', 'files'=>'true')) !!}
-                                        <div class="form-horizontal">
-                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                            <input type="hidden" name="id" value="{{ $v->id }}">
-                                            <input type="hidden" name="t_id" value="22">
-
-                                            <div class="form-group">
-                                                <label for="exampleInputName2" class="col-sm-4 control-label m-t-20">Image :</label>
-                                                <div class="col-sm-6">
-                                                    <img src="{{ asset($v->bank_image_url) }}" height="60px" width="90px" alt="pic">
-                                                </div>
-                                            </div>
+                                                    @if($v->loan['loan_person_type'] == 1)
+                                                        <i class="fa text-success-light">&nbsp;[Sararied Person]</i>
+                                                    @elseif($v->loan['loan_person_type'] == 2)
+                                                        <i class="fa text-success-light">&nbsp;[Business Person]</i>
+                                                    @else
+                                                        <i class="fa text-success-light">&nbsp;[Others Person]</i>
+                                                    @endif
+                                                </dd>
+                                            </dl>
                                             <hr>
+                                            <dl class="dl-horizontal">
+                                                <dt>Interest Rate :</dt>
+                                                <dd>{{$v->loan['loan_interest_rate']}}%</dd>
+                                                <dt>Monthly Interest :</dt>
+                                                <dd>{{$v->loan['loan_monthly_interest']}}BDT</dd>
+                                                <dt>Total Payable Interest :</dt>
+                                                <dd>{{$v->loan['loan_interest_payable']}} BDT</dd>
+                                                <dt>Loan Period :</dt>
+                                                <dd>{{$v->loan['loan_period']}} Years </dd>
+                                                <dt>Loan Amount :</dt>
+                                                <dd>{{$v->loan['loan_amount']}} BDT</dd>
+                                            </dl>
+                                            <hr>
+                                            <dl class="dl-horizontal">
+                                                <dt>Loan Requirements :</dt>
+                                                <dd>{!! $v->loan['loan_requirements'] !!}</dd>
+                                                <dt>Loan Features :</dt>
+                                                <dd>{!! $v->loan['loan_features_bfenefits'] !!}</dd>
+                                                <dt>Loan Eligibility :</dt>
+                                                <dd>{!! $v->loan['loan_eligibility'] !!}</dd>
+                                            </dl>
 
-                                            <div class="form-group">
-                                                <label for="exampleInputName2" class="col-sm-4 control-label">Change Picture:</label>
-                                                <div class="col-sm-6">
-                                                    <input type="file" name="image" required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <hr>
+                                        @elseif($v->aply_offering_type == 44)
+                                            <dl class="dl-horizontal">
+                                                <dt>Offering Type :</dt>
+                                                <dd>
+                                                    <i class="fa text-success-light"><b>Investment</b></i>
 
-                                        <div class="form-horizontal">
-                                            <div class="form-group">
-                                                <div class="col-sm-offset-4 col-sm-10 m-t-15">
-                                                    <input type="submit" value="Update" class="btn btn-success col-sm-4">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {!! Form::close() !!}
+                                                    @if($v->investment['invst_person_type'] == 1)
+                                                        <i class="fa text-success-light">&nbsp;[Sararied Person]</i>
+                                                    @elseif($v->investment['invst_person_type'] == 2)
+                                                        <i class="fa text-success-light">&nbsp;[Business Person]</i>
+                                                    @else
+                                                        <i class="fa text-success-light">&nbsp;[Others Person]</i>
+                                                    @endif
+                                                </dd>
+                                            </dl>
+                                            <hr>
+                                            <dl class="dl-horizontal">
+                                                <dt>Investment Rate :</dt>
+                                                <dd>{{$v->investment['invst_interest_rate_from']}}% &nbsp; - &nbsp; {{$v->invst_interest_rate_to}}%</dd>
+                                                <dt>Tenure Range :</dt>
+                                                <dd>{{$v->investment['invst_tenure_rate']}} Years</dd>
+                                                <dt>Amount UpTo :</dt>
+                                                <dd>{{$v->investment['invst_amount_upto']}} BDT</dd>
+                                            </dl>
+                                            <hr>
+                                            <dl class="dl-horizontal">
+                                                <dt>Requirements :</dt>
+                                                <dd>{!! $v->investment['invst_requirements'] !!}</dd>
+                                                <dt>Features :</dt>
+                                                <dd>{!! $v->investment['invst_features_benefits'] !!}</dd>
+                                                <dt>Eligibility :</dt>
+                                                <dd>{!! $v->investment['invst_eligibility'] !!}</dd>
+                                            </dl>
+                                        @elseif($v->aply_offering_type == 55)
+
+                                            <dl class="dl-horizontal">
+                                                <dt>Offering Type :</dt>
+                                                <dd>
+                                                    <i class="fa text-success-light"><b>Insurance</b></i>
+
+                                                    @if($v->insurance['insr_type'] == 1)
+                                                        <i class="fa text-success-light">&nbsp;[Sararied Person]</i>
+                                                    @elseif($v->insurance['insr_type'] == 2)
+                                                        <i class="fa text-success-light">&nbsp;[Business Person]</i>
+                                                    @else
+                                                        <i class="fa text-success-light">&nbsp;[Others Person]</i>
+                                                    @endif
+                                                </dd>
+                                            </dl>
+                                            <hr>
+                                            <dl class="dl-horizontal">
+                                                <dt>Sum Insured :</dt>
+                                                <dd>{{$v->insurance['insr_sum_insured']}}%</dd>
+                                                <dt>Claim Ratio :</dt>
+                                                <dd>{{$v->insurance['insr_claim_ratio']}}BDT</dd>
+                                                <dt>Tenure Period:</dt>
+                                                <dd>{{$v->insurance['insr_period']}} BDT</dd>
+                                                <dt>TypeOfCover :</dt>
+                                                <dd>{{$v->insurance['insr_cover_type']}} Years </dd>
+                                                <dt>Premium :</dt>
+                                                <dd>{{$v->insurance['insr_premium']}} BDT</dd>
+                                            </dl>
+                                            <hr>
+                                            <dl class="dl-horizontal">
+                                                <dt>Insurance Requirements :</dt>
+                                                <dd>{!! $v->insurance['insr_requirements'] !!}</dd>
+                                                <dt>Insurance Features :</dt>
+                                                <dd>{!! $v->insurance['insr_features_benefits'] !!}</dd>
+                                                <dt>Insurance Eligibility :</dt>
+                                                <dd>{!! $v->insurance['insr_eligibility'] !!}</dd>
+                                            </dl>
+                                        @else
+                                            <i class="fa text-success-light"><b>Card Offer</b></i>
+                                        @endif
+
                                     </div>
-
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -163,58 +214,6 @@
                 </div>
                 <!--end detailsInfo -->
 
-                <!--start detailsInfo Delete-->
-                <div id="{{$v->id}}kkd" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
-
-                        <!--start Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title text-success text-center">
-                                    Delete Information
-                                </h4>
-                            </div>
-                            <div class="modal-body" style="overflow: hidden">
-                                <div class="col-md-12">
-                                    <div class="col-md-12 f-s-14 f-f-s">
-
-                                        {!! Form::open(array('url'=>'delete', 'role'=>'form', 'method'=>'POST')) !!}
-                                        <div class="form-horizontal">
-                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                            <input type="hidden" name="id" value="{{ $v->id }}">
-                                            <input type="hidden" name="t_id" value="22">
-
-                                            <div class="form-group text-center">
-                                                <h1 style="color: #f73c3c; text-shadow: 2px 2px 4px #c3c3c3;">
-                                                    Are you sure to delete this data?
-                                                </h1>
-                                            </div>
-                                        </div>
-                                        <hr>
-
-                                        <div class="form-horizontal">
-                                            <div class="form-group">
-                                                <div class="col-sm-offset-4 col-sm-10 m-t-15">
-                                                    <input type="submit" value="Delete" class="btn btn-danger col-sm-4">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {!! Form::close() !!}
-
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                        <!--end Modal content-->
-
-                    </div>
-                </div>
-                <!--end detailsInfo -->
                 @endforeach
 
                 </tbody>
@@ -224,7 +223,7 @@
 
         <div class="table-h-t m-b-20">
             <div class="col-md-3 m-t-0">
-                <span class="text-success f-s-12">Showing 1 to 10 of 12 entries</span>
+                <span class="text-success f-s-12">Showing {{ Session::get('count') }} Entries</span>
             </div>
             <div class="col-md-3"></div>
             <div class="col-md-3"></div>

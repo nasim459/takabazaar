@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use App\Model\applying\Applying;
 use App\Model\bank\Bank;
+use App\Model\loan\Loan;
 
 class ApplyingController extends Controller
 {
@@ -18,29 +19,27 @@ class ApplyingController extends Controller
         //$route = Route::getFacadeRoot()->current()->uri();
         if ($child == 'info'){
             $file_open = 'ap.applying.applying_info';
-            $bank_view = Applying::all();
-            //$bank_view = Applying::all()->where('aply_status', '1');
+            $apply_view = Applying::all();
 
         } elseif ($child == 'request') {
             $file_open = 'ap.applying.applying_request';
-            //$bank_view = Applying::all();
-            $bank_view = Applying::all();
-            //$bank_view = Bank::find(6)->applyings;
-            //dd($bank_view);
+            $apply_view = Applying::all()->where('aply_status', 1);
 
         } elseif ($child == 'pending') {
             $file_open = 'ap.applying.applying_pending';
-            $bank_view = Applying::all()->where('aply_status', '2');
+            $apply_view = Applying::all()->where('aply_status', 2);
 
         } elseif ($child == 'completed') {
             $file_open = 'ap.applying.applying_completed';
-            $bank_view = Applying::all()->where('aply_status', '0');
+            $apply_view = Applying::all()->where('aply_status', 0);
         }
 
-        $count = count($bank_view);
+
+        $bank_view = Applying::all();
+        $count = count($apply_view);
         Session::put('count', $count);
 
-        $bank = view($file_open, compact('bank_view'));
+        $bank = view($file_open, compact('bank_view', 'apply_view'));
         return view('ap_master')->with('maincontent', $bank);
     }
 }

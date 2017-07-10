@@ -312,7 +312,7 @@
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     <h4 class="modal-title text-success text-center">
-                                        Update Picture Information---
+                                        Update Picture Information
                                     </h4>
                                 </div>
                                 <div class="modal-body" style="overflow: hidden">
@@ -340,9 +340,6 @@
                                                         <select class="form-control" name="bank_id" required>
                                                             <option value="">Select Bank</option>
 
-                                                            {{--@foreach($bank_view_all as $v)--}}
-                                                                {{--<option value="{{$v->bank_id}}">{{$v->bank_name}}</option>--}}
-                                                            {{--@endforeach--}}
                                                         </select>
                                                     </div>
                                                 </div>

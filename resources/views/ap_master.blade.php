@@ -33,7 +33,13 @@
 
                     <!--start button-group right-->
                     <div class="btn-group pull-right m-r-20">
-                        <a href="" class="m-r-20" title="Applying Notification"><i class="fa fa-bell"><sup class="text-danger-light f-s-14"><b>0</b></sup></i></a>
+                        <a href="" class="m-r-20" title="Applying Notification">
+                            <i class="fa fa-bell">
+                                <sup class="text-danger-light f-s-14">
+                                    <b>0{{Session::get('count_alert')}} {{Session::put('count_alert', '')}}</b>
+                                </sup>
+                            </i>
+                        </a>
                         <a href="{{URL::to('dboard')}}" class="dropdown-toggle logo-name" data-toggle="dropdown"><i class="fa">Md Nasim</i><i class="caret"></i><img class="img-h-w" src="{{URL::asset('ap/images/img_nasim.jpg')}}" alt="...">
                         </a>
 
