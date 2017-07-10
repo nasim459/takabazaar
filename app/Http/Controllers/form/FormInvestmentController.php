@@ -12,8 +12,7 @@ class FormInvestmentController extends Controller
 {
     //----Form investment Information(form-investment-save investment_form_save)
     public function investment_form_save(Request $request) {
-        $all = $request->all();
-        //dd($all);
+        //$all = $request->all(); dd($all);
 
         $rate_from = $request->invst_rate_from;
         $rate_to = $request->invst_rate_to;
@@ -24,7 +23,8 @@ class FormInvestmentController extends Controller
             $rate_to = 0;
         }
 
-        //invst means investment
+        $previous_url = url()->previous();
+        //----invst means investment
         $invst = array();
         $invst['invst_type'] = $request->invst_type;
         $invst['invst_person_type'] = $request->invst_person;
@@ -43,6 +43,6 @@ class FormInvestmentController extends Controller
         DB::table('investments')->insert($invst);
 
         Session::put('insert_suc', 'Data Inserted Successfully!');
-        return redirect('form-investment');
+        return redirect($previous_url);
     }
 }

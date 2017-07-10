@@ -89,6 +89,13 @@
                                 <input type="number" name="f_rate_to" class="form-control" id="exampleInputName2" placeholder="EX. 20%">
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputName2" class="col-sm-4 control-label">Down Payment % :</label>
+                            <div class="col-sm-2">
+                                <input type="number" step="0.01" name="d_p" class="form-control" id="exampleInputName2" placeholder="EX. 0%">
+                            </div>
+                        </div>
                     </div>
                     <hr>
                 </div>

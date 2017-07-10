@@ -21,7 +21,8 @@ class InvestmentController extends Controller
         $route = Route::getFacadeRoot()->current()->uri();
         if ($route == 'investment-saving'){
             $file_open = 'ap.investment.investment_saving';
-            $loan_view = Investment::all()->where('invst_type', '1'); //invst_type=1 means Saving_account
+            $invst_view = Investment::all()->where('invst_type', '1'); //invst_type=1 means Saving_account
+            //dd($invst_view);
 
         } elseif ($route == 'investment-fixed') {
             $file_open = 'ap.investment.investment_fixed';
@@ -32,10 +33,11 @@ class InvestmentController extends Controller
             $loan_view = Investment::all()->where('invst_type', '3'); //invst_type=3 means mutual_account
         }
 
-        $count = count($loan_view);
+        $count = count($invst_view);
         Session::put('count', $count);
         $bank_view = Bank::all();
-        $loan = view($file_open, compact('loan_view', 'bank_view'));
+        $bank_view_all = Bank::all();
+        $loan = view($file_open, compact('invst_view', 'bank_view', 'bank_view_all'));
         return view('ap_master')->with('maincontent', $loan);
     } 
 }

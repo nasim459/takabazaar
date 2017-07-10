@@ -16,7 +16,7 @@
             <div class="panel-body secondscreen" style="overflow: hidden; overflow-y: scroll;">
                 {!! Form::open(array('url'=>'form-investment-save', 'role'=>'form', 'method'=>'POST')) !!}
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+                {{--<input type="hidden" name="_token" value="{!! csrf_token() !!}">--}}
 
                 <div class="col-sm-10 m-t-20 col-sm-offset-1" style="overflow: hidden;">
                     <div class="form-horizontal">
@@ -81,10 +81,10 @@
                         <div class="form-group">
                             <label for="exampleInputName2" class="col-sm-4 control-label">Investment Interest Rate % :</label>
                             <div class="col-sm-2">
-                                <input type="number" name="invst_rate_from" class="form-control" id="exampleInputName2" placeholder="EX. 0%">
+                                <input type="number" step="0.01" name="invst_rate_from" class="form-control" id="exampleInputName2" placeholder="EX. 0%">
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" name="invst_rate_to" class="form-control" id="exampleInputName2" placeholder="EX. 20%">
+                                <input type="number" step="0.01" name="invst_rate_to" class="form-control" id="exampleInputName2" placeholder="EX. 20%">
                             </div>
                         </div>
                     </div>
@@ -95,15 +95,15 @@
                     <div class="form-horizontal">
                         <div class="form-group">
                             <div class="col-sm-4">
-                                <span class="text-success"><b>Loan Requirements</b></span>
+                                <span class="text-success"><b>Investment Requirements</b></span>
                                 <textarea name="data_req" class="ckeditor" cols="30" rows="10"></textarea>
                             </div>
                             <div class="col-sm-4">
-                                <span class="text-success"><b>Loan Features</b></span>
+                                <span class="text-success"><b>Investment Features</b></span>
                                 <textarea name="data_fsr" class="ckeditor" cols="30" rows="10"></textarea>
                             </div>
                             <div class="col-sm-4">
-                                <span class="text-success"><b>Loan Eligibility</b></span>
+                                <span class="text-success"><b>Investment Eligibility</b></span>
                                 <textarea name="data_elig" class="ckeditor" cols="30" rows="10"></textarea>
                             </div>
                         </div>
