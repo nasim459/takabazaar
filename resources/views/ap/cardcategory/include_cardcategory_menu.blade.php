@@ -11,8 +11,9 @@
 
         <!--start Single button-->
         <div class="col-md-12 text-center m-t-mi-6">
-            <a href="{{ url('card'.'/'.'credit') }}" class="app-menu btn btn-default text-success-light">Credit Card</a>
-            <a href="{{ url('card'.'/'.'debit') }}" class="app-menu btn btn-default text-success-light">Debit Card</a>
+            <a href="{{ url('cardcategory'.'/'.'list') }}" class="app-menu btn btn-default text-success-light">Category List</a>
+            {{--<a href="{{ url('bank'.'/'.'gride') }}" class="app-menu btn btn-default text-success-light">Bank Gride</a>--}}
+            <a href="{{ url('form'.'/'.'bank') }}" class="app-menu btn btn-default text-success-light">Category Add</a>
         </div>
         <!--end Single button-->
     </div>

@@ -2,8 +2,8 @@
 
 namespace App\Model\bank;
 
-use App\Model\applying\Applying;
 use Illuminate\Database\Eloquent\Model;
+use App\Model\applying\Applying;
 
 class Bank extends Model
 {

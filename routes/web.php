@@ -41,6 +41,9 @@ Route::get('bank/{child}', 'bank\BankController@bank_file_view');
 //Route::get('bank-list', 'bank\BankController@bank_ap');
 //Route::get('bank-gride', 'bank\BankController@bank_gride_ap');
 
+//----Bank Controller---------------------------------------------
+Route::get('cardcategory/{child}', 'cardcategory\CardCategoryController@cardcategory_file_view');
+
 //----Applying Controller---------------------------------------------
 Route::get('apply/{child}', 'applying\ApplyingController@applying_file_view');
 
@@ -67,6 +70,12 @@ Route::post('form-loan-update', 'form\FormLoanUpdateController@loan_form_update'
 
 Route::post('form-investment-save', 'form\FormInvestmentController@investment_form_save');
 Route::post('form-investment-update', 'form\FormInvestmentController@investment_form_update');
+
+Route::post('form-card-save', 'form\FormCardController@card_form_save');
+//Route::post('form-card-update', 'form\FormCardController@card_form_update');
+
+Route::post('form-cardcategory-save', 'form\FormCardCategoryController@cardcategory_form_save');
+Route::post('form-cardcategory-update', 'form\FormCardCategoryController@cardcategory_form_update');
 
 
 

@@ -18,6 +18,7 @@ class ImageUpdateController extends Controller
         $id = $request->id;
         //dd($request->all());
         $table_no = $request->t_id;
+        $previous_url = url()->previous();
 
         //----Define Value Of Table
         switch($table_no){
@@ -26,17 +27,21 @@ class ImageUpdateController extends Controller
                 $where_field_id = 'id';
                 $destination_path_define = 'ap/images/advertise/';
                 $updated_tbl_field_img_url = 'add_image_url';  //--change_image_url_of_table_field
-                $go_to_redirect = 'advertise';
                 break;
             case "22":
                 $table_name = 'banks';
                 $where_field_id = 'id';
                 $destination_path_define = 'ap/images/banks/';
                 $updated_tbl_field_img_url = 'bank_image_url';  //--change_image_url_of_table_field
-                $go_to_redirect = 'bank-list';
+                break;
+            case "88":
+                $table_name = 'cardcategories';
+                $where_field_id = 'id';
+                $destination_path_define = 'ap/images/card_category/';
+                $updated_tbl_field_img_url = 'cc_image_url';  //--change_image_url_of_table_field
                 break;
             default:
-                $previous_url = url()->previous();
+
                 return Redirect::to($previous_url);
         }
 
@@ -53,11 +58,11 @@ class ImageUpdateController extends Controller
                     ->where($where_field_id, $id)
                     ->update([$updated_tbl_field_img_url => $image_url]);
                 Session::put('msg_suc', 'Data Updated Successfully!');
-                return Redirect::to($go_to_redirect);
+                return Redirect::to($previous_url);
             }
         } else {
             Session::put('msg_error', 'Nothing To Updated ?');
-            return Redirect::to($go_to_redirect);
+            return Redirect::to($previous_url);
         }
         //------end_picture
     }
@@ -82,6 +87,11 @@ class ImageUpdateController extends Controller
                 break;
             case "33":
                 $table_name = 'loans';
+                $where_field_id = 'id';
+                $updated_tbl_field = 'bank_id';
+                break;
+            case "77":
+                $table_name = 'cards';
                 $where_field_id = 'id';
                 $updated_tbl_field = 'bank_id';
                 break;

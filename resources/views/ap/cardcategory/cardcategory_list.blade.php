@@ -1,5 +1,5 @@
 @section('maincontent')
-    @include('ap.bank.include_bank_menu')
+    @include('ap.cardcategory.include_cardcategory_menu')
     <!--start container-fluid-->
     <div class="container-fluid content-change-fixed" ng-controller="homeController">
 
@@ -10,14 +10,14 @@
                         <input type="text" class="form-control" placeholder="Search here...">
                     </div>
                 </div>
-                <div class="col-md-3 m-t-10 text-success"><b>Bank All List</b></div>
+                <div class="col-md-3 m-t-10 text-success"><b>Card Category List</b></div>
                 <div class="col-md-4">
                     <i class="fa text-success">{{ Session::get('msg_suc') }} {{ Session::put('msg_suc', '') }}</i>
                     <i class="fa text-danger">{{ Session::get('msg_error') }} {{ Session::put('msg_error', '') }}</i>
                     <i class="fa text-danger">{{ Session::get('msg_delete') }} {{ Session::put('msg_delete', '') }}</i>
                 </div>
                 <div class="col-md-2 text-right m-t-10">
-                    <a href="{{ url('form'.'/'.'bank') }}" class="btn btn-default btn-xs text-success width-100" title="Add Customer"><i class="fa fa-plus"> Bank Add</i></a>
+                    <a href="{{ url('form'.'/'.'bank') }}" class="btn btn-default btn-xs text-success width-100" title="Add Customer"><i class="fa fa-plus"> Card Category</i></a>
                 </div>
             </div>
 
@@ -26,28 +26,28 @@
                 <tr class="success">
                     <th class="col-sm-1">No</th>
                     <th class="col-sm-1">Picture</th>
-                    <th class="col-sm-6">Bank Name</th>
+                    <th class="col-sm-6">Card Category Name</th>
                     <th class="col-sm-2">Status</th>
                     <th class="col-sm-2">Action</th>
                 </tr>
                 </thead>
                 <tbody>
 
-                @php $number = 0; $off = 0; $on = 1; $table = 22; @endphp
-                @foreach($bank_view as $v)
+                @php $number = 0; $off = 0; $on = 1; $table = 88; @endphp
+                @foreach($cardcategory_view as $v)
                 <tr>
                     <td class="col-xs-12 col-sm-1 text-success">
                         <a class="btn btn-default btn-xs"><i class="fa">{{$number = $number+1}}</i></a>
                     </td>
                     <td class="col-xs-12 col-sm-1">
                         <a data-toggle="modal" data-target="#{{$v->id}}kkk" title="Click To Edit">
-                            <img src="{{ asset($v->bank_image_url) }}" height="20px" width="30px" alt="pic">
+                            <img src="{{ asset($v->cc_image_url) }}" height="20px" width="30px" alt="pic">
                         </a>
                     </td>
-                    <td class="col-xs-12 col-sm-6">{{$v->bank_name}}</td>
+                    <td class="col-xs-12 col-sm-6">{{$v->cc_name}}</td>
                     <td class="col-xs-12 col-sm-2">
                         &nbsp; &nbsp;  &nbsp;
-                        @if($v->bank_status==1)
+                        @if($v->cc_status == 1)
                             <a href="{{URL::to('publication/'.$v->id.'/'.$off.'/'.$table)}}" class="btn btn-default btn-xs" title="Publish"><i class="text-success-light fa fa-check"></i></a>
                         @else
                             <a href="{{URL::to('publication/'.$v->id.'/'.$on.'/'.$table)}}" class="btn btn-default btn-xs" title="unPublish">&nbsp;<i class="text-danger-light fa fa-lock"> </i></a>
@@ -69,23 +69,23 @@
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title text-success text-center">
-                                    <img src="{{ asset($v->bank_image_url) }}" height="20px" width="30px" alt="pic">
-                                    {{$v->bank_name}}
+                                    <img src="{{ asset($v->cc_image_url) }}" height="20px" width="30px" alt="pic">
+                                    {{$v->cc_name}}
                                 </h4>
                             </div>
                             <div class="modal-body" style="overflow: hidden">
                                 <div class="col-md-12">
                                     <div class="col-md-12 f-s-14 f-f-s">
 
-                                        {!! Form::open(array('url'=>'form-bank-update', 'role'=>'form', 'method'=>'POST')) !!}
+                                        {!! Form::open(array('url'=>'form-cardcategory-update', 'role'=>'form', 'method'=>'POST')) !!}
                                         <div class="form-horizontal">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                            <input type="hidden" name="b_id" value="{{ $v->id }}">
+                                            <input type="hidden" name="cc_id" value="{{ $v->id }}">
 
                                             <div class="form-group m-t-15">
                                                 <label for="exampleInputName2" class="col-sm-4 control-label">Bank Name :</label>
                                                 <div class="col-sm-6">
-                                                    <input type="text" name="b_name" value="{{$v->bank_name}}" class="form-control" id="exampleInputName2" required>
+                                                    <input type="text" name="cc_name" value="{{$v->cc_name}}" class="form-control" id="exampleInputName2" required>
                                                 </div>
                                             </div>
 
@@ -110,7 +110,7 @@
                 </div>
                 <!--end detailsInfo -->
 
-                <!--start detailsInfo -->
+                <!--start detailsInfo image update-->
                 <div id="{{$v->id}}kkk" class="modal fade" role="dialog">
                     <div class="modal-dialog">
 
@@ -130,12 +130,12 @@
                                         <div class="form-horizontal">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                             <input type="hidden" name="id" value="{{ $v->id }}">
-                                            <input type="hidden" name="t_id" value="22">
+                                            <input type="hidden" name="t_id" value="88">
 
                                             <div class="form-group">
                                                 <label for="exampleInputName2" class="col-sm-4 control-label m-t-20">Image :</label>
                                                 <div class="col-sm-6">
-                                                    <img src="{{ asset($v->bank_image_url) }}" height="60px" width="90px" alt="pic">
+                                                    <img src="{{ asset($v->cc_image_url) }}" height="60px" width="90px" alt="pic">
                                                 </div>
                                             </div>
                                             <hr>
@@ -180,7 +180,7 @@
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title text-success text-center">
-                                    Delete Information
+                                    Delete Confirmation
                                 </h4>
                             </div>
                             <div class="modal-body" style="overflow: hidden">
@@ -191,7 +191,7 @@
                                         <div class="form-horizontal">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                             <input type="hidden" name="id" value="{{ $v->id }}">
-                                            <input type="hidden" name="t_id" value="22">
+                                            <input type="hidden" name="t_id" value="88">
 
                                             <div class="form-group text-center">
                                                 <h1 style="color: #f73c3c; text-shadow: 2px 2px 4px #c3c3c3;">

@@ -37,6 +37,9 @@ class DeleteController extends Controller
             case "55":
                 $table_name = 'insurances';
                 break;
+            case "88":
+                $table_name = 'cardcategories';
+                break;
             default:
                 return Redirect::to($previous_url);
         }

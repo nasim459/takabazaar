@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Redirect;
 use App\Model\loan\Loan;
 use App\Model\bank\Bank;
+use App\Model\card\Card;
+use App\Model\cardcategorie\Cardcategorie;
 
 class CardController extends Controller
 {
@@ -19,21 +21,23 @@ class CardController extends Controller
     public function card_file_view($child) {
 
         //$route = Route::getFacadeRoot()->current()->uri();
-        if ($child == 'debit'){
-            $file_open = 'ap.card.card_debit';
-            $loan_view = Loan::all()->where('loan_type', '1');
-
-        } elseif ($child == 'credit') {
+        if ($child == 'credit'){
             $file_open = 'ap.card.card_credit';
-            $loan_view = Loan::all()->where('loan_type', '2');
+            $card_view = Card::all();
+
+        } elseif ($child == 'debit') {
+            $file_open = 'ap.card.card_debit';
+            $card_view = Card::all();
 
         }
 
-        $count = count($loan_view);
+        $count = count($card_view);
         Session::put('count', $count);
         $bank_view = Bank::all();
+        $cardcategorie_view = Cardcategorie::all();
+        //dd($cardcategorie_view);
 
-        $loan = view($file_open, compact('loan_view', 'bank_view'));
+        $loan = view($file_open, compact('card_view', 'bank_view', 'cardcategorie_view'));
         return view('ap_master')->with('maincontent', $loan);
     }
 }

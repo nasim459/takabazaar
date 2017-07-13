@@ -10,10 +10,10 @@
                         <input type="text" class="form-control" placeholder="Search here...">
                     </div>
                 </div>
-                <div class="col-md-3 m-t-10 text-success"><b>Debit Card</b></div>
+                <div class="col-md-3 m-t-10 text-success"><b>Credit Card</b></div>
                 <div class="col-md-2"></div>
                 <div class="col-md-4 text-right m-t-10">
-                    <a href="{{ url('form'.'/'.'card') }}" class="btn btn-default btn-xs text-success width-100" title="Assign Card"><i class="fa fa-plus"> Card Add</i></a>
+                    <a href="{{ url('form'.'/'.'bank') }}" class="btn btn-default btn-xs text-success width-100" title="Assign Card"><i class="fa fa-plus"> Card Add</i></a>
                 </div>
             </div>
 

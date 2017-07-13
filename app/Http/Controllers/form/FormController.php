@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Route;
 use App\model\advertise\Advertise;
 use App\Model\bank\Bank;
+use App\Model\cardcategorie\Cardcategorie;
 
 class FormController extends Controller
 {
@@ -38,7 +39,8 @@ class FormController extends Controller
         }
 
         $bank_view = Bank::all();
-        $loan = view($file_open, compact('bank_view'));
+        $cardcategorie_view = Cardcategorie::all();
+        $loan = view($file_open, compact('bank_view', 'cardcategorie_view'));
         return view('ap_master')->with('maincontent', $loan);
     }
 

@@ -13,9 +13,9 @@
     <div class="col-sm-12 col-md-12">
         <div class="col-md-8 col-md-offset-2">
             <div class="btn-group m-b-20" role="group" aria-label="...">
-                <a href="{{ url('form'.'/'.'loan') }}" class="app btn btn-default">
-                    <i class="fa fa-plus text-success text-success fa-2x fa-3y"></i><br/>
-                    <small>Loan</small>
+                <a href="{{ url('bank'.'/'.'list') }}" class="app btn btn-default">
+                    <i class="fa fa-bank text-success fa-2x fa-3y"></i><br/>
+                    <small>Bank</small>
                 </a>
 
                 <a href="{{ url('form'.'/'.'investment') }}" class="app btn btn-default">
@@ -28,9 +28,9 @@
                     <small>Insurance</small>
                 </a>
 
-                <a href="{{ url('form'.'/'.'card') }}" class="app btn btn-default">
+                <a href="{{ url('form'.'/'.'bank') }}" class="app btn btn-default" title="Add Your Bank">
                     <i class="fa fa-plus text-success fa-2x fa-3y"></i><br/>
-                    <small>card</small>
+                    <small>Bank</small>
                 </a>
             </div>
         </div>
@@ -38,9 +38,9 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="btn-group m-b-20" role="group" aria-label="...">
 
-                <a href="{{ url('bank'.'/'.'list') }}" class="app btn btn-default">
-                    <i class="fa fa-bank text-success fa-2x fa-3y"></i><br/>
-                    <small>Bank</small>
+                <a href="{{ url('card'.'/'.'debit') }}" class="app btn btn-default">
+                    <i class="fa fa-credit-card text-success fa-2x fa-3y"></i><br/>
+                    <small>Card</small>
                 </a>
 
                 <a class="app btn btn-default" data-toggle="modal" data-target="#addInfo">
@@ -53,9 +53,9 @@
                     <small>Blog</small>
                 </a>
 
-                <a href="{{ url('form'.'/'.'bank') }}" class="app btn btn-default" title="Add Your Bank">
+                <a href="{{ url('form'.'/'.'card') }}" class="app btn btn-default">
                     <i class="fa fa-plus text-success fa-2x fa-3y"></i><br/>
-                    <small>Bank</small>
+                    <small>Card</small>
                 </a>
 
             </div>
@@ -78,9 +78,9 @@
                     <small>Profile</small>
                 </a>
 
-                <a href="{{ url('bank'.'/'.'list') }}" class="app btn btn-default">
-                    <i class="fa fa-lock text-success fa-2x fa-3y"></i><br/>
-                    <small>Bank</small>
+                <a href="{{ url('form'.'/'.'advertise') }}" class="app btn btn-default">
+                    <i class="fa fa-plus text-success fa-2x fa-3y"></i><br/>
+                    <small>Advertise</small>
                 </a>
             </div>
         </div>
@@ -92,14 +92,14 @@
                     <small>Applying</small>
                 </a>
 
-                <a href="{{URL::to('purchase-add-supplier')}}" class="app btn btn-default">
-                    <i class="fa fa-plus text-success fa-2x fa-3y"></i><br/>
-                    <small>Marine</small>
+                <a href="{{ url('cardcategory'.'/'.'list') }}" class="app btn btn-default">
+                    <i class="fa fa-creative-commons text-success fa-2x fa-3y"></i><br/>
+                    <small>Card Category</small>
                 </a>
 
-                <a href="{{URL::to('people-profile-all')}}" class="app btn btn-default">
-                    <i class="fa fa-users text-success fa-2x fa-3y"></i><br/>
-                    <small>Profile</small>
+                <a href="{{ url('form'.'/'.'bank') }}" class="app btn btn-default">
+                    <i class="fa fa-plus text-success fa-2x fa-3y"></i><br/>
+                    <small>Card Category</small>
                 </a>
 
                 <a href="{{ url('bank'.'/'.'list') }}" class="app btn btn-default">

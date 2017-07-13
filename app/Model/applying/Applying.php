@@ -2,7 +2,7 @@
 
 namespace App\Model\applying;
 
-use Illuminate\Database\Eloquent\Model;
+use  Illuminate\Database\Eloquent\Model;
 use App\Model\bank\Bank;
 use App\Model\loan\Loan;
 use App\Model\investment\Investment;
