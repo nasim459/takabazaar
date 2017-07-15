@@ -11,9 +11,9 @@
 
         <!--start Single button-->
         <div class="col-md-12 text-center m-t-mi-6">
-            <a href="{{ url('investment-saving') }}" class="app-menu btn btn-default text-success-light">Saving Accounts</a>
-            <a href="{{ url('investment-fixed') }}" class="app-menu btn btn-default text-success-light">Fixed Accounts</a>
-            <a href="{{ url('investment-mutual') }}" class="app-menu btn btn-default text-success-light">Mutual Accounts</a>
+            <a href="{{ url('investment'.'/'.'saving') }}" class="app-menu btn btn-default text-success-light">Saving Accounts</a>
+            <a href="{{ url('investment'.'/'.'fixed') }}" class="app-menu btn btn-default text-success-light">Fixed Accounts</a>
+            <a href="{{ url('investment'.'/'.'mutual') }}" class="app-menu btn btn-default text-success-light">Mutual Accounts</a>
         </div>
         <!--end Single button-->
     </div>

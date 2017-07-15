@@ -14,7 +14,7 @@ class HelpController extends Controller
     //|--------------------------------------------------------------------------
     //|
     //| Table Info
-    //| 11  = advertise
+    //| 11  = advertises
     //| 22  = banks
     //| 33  = loans
     //| 44  = investments
@@ -29,4 +29,11 @@ class HelpController extends Controller
     //|
     //|
     //|
+    //|-----------------------------------
+    //| kkk = picture_update as individual
+    //| kk  = information_update as all information_own_table
+    //| k   = information_details as all information_own_table
+    //|
+    //|
+
 }

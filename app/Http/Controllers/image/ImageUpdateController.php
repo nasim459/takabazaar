@@ -78,15 +78,13 @@ class ImageUpdateController extends Controller
 
         //----Define Value Of Table
         switch($table_no){
-            case "11":
-                //$table_name = 'advertises';
-                ///$where_field_id = 'id';
-                //$destination_path_define = 'ap/images/advertise/';
-                //$updated_tbl_field_img_url = 'add_image_url';  //--change_image_url_of_table_field
-                //$go_to_redirect = 'advertise';
-                break;
             case "33":
                 $table_name = 'loans';
+                $where_field_id = 'id';
+                $updated_tbl_field = 'bank_id';
+                break;
+            case "44":
+                $table_name = 'investments';
                 $where_field_id = 'id';
                 $updated_tbl_field = 'bank_id';
                 break;

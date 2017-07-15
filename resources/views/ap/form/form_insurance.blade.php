@@ -31,7 +31,7 @@
                             </div>
 
                             <div class="col-sm-4">
-                                <select class="form-control" name="invst_type" required>
+                                <select class="form-control" name="insr_type" required>
                                     <option value="">Select Insurance Type</option>
                                     <option value="1">Life</option>
                                     <option value="2">Marine</option>
@@ -43,7 +43,7 @@
                             </div>
 
                             <div class="col-sm-4">
-                                <select class="form-control" name="invst_person" required>
+                                <select class="form-control" name="insr_person" required>
                                     <option value="">Select Insurance Person</option>
                                     <option value="1">Salaried Person</option>
                                     <option value="2">Business Person</option>
@@ -53,12 +53,12 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputName2" class="col-sm-4 control-label">Insurance Amount UpTo:</label>
+                            <label for="exampleInputName2" class="col-sm-4 control-label">Sum Insured :</label>
                             <div class="col-sm-4">
-                                <input type="number" name="invst_amount" class="form-control" id="exampleInputName2" placeholder="Ex. 200000 TK" required>
+                                <input type="number" name="insr_amount" class="form-control" id="exampleInputName2" placeholder="Ex. 200000 TK" required>
                             </div>
                             <div class="col-sm-4">
-                                <select class="form-control" name="invst_period" required>
+                                <select class="form-control" name="insr_period" required>
                                     <option value="">Select Insurance Period</option>
                                     <option value="1">1 Year</option>
                                     <option value="2">2 Year</option>
@@ -74,12 +74,17 @@
                             </div>
                         </div>
 
-                        {{--<div class="form-group">--}}
-                        {{--<label for="exampleInputName2" class="col-sm-4 control-label">Investment Interest Rate % :</label>--}}
-                        {{--<div class="col-sm-4">--}}
-                        {{--<input type="text" name="invst_interest_rate" class="form-control" id="exampleInputName2" placeholder="EX. 11%" required>--}}
-                        {{--</div>--}}
-                        {{--</div>--}}
+                        <div class="form-group">
+                            <label for="exampleInputName2" class="col-sm-4 control-label">Types of Cover :</label>
+                            <div class="col-sm-4">
+                                <select class="form-control" name="insr_period" required>
+                                    <option value="">Select Insurance Cover</option>
+                                    <option value="1">First Cover</option>
+                                    <option value="2">Second Cover</option>
+                                    <option value="3">Third Cover</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <div class="form-group">
                             <label for="exampleInputName2" class="col-sm-4 control-label">Insurance Interest Rate % :</label>

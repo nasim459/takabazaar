@@ -6,24 +6,15 @@
 |--------------------------------------------------------------------------
 */
 
-//----Loan Controller---------------------------------------------
+//----Loan Controller-------------------------------------------------------------------
 Route::get('loan/{child}', 'loan\LoanController@loan_file_view');
-//Route::get('loan-personal-view', 'loan\LoanController@personal_loan_view');
-
-
-//----Investment Controller---------------------------------------------
-Route::get('investment-saving', 'investment\InvestmentController@investment_file_view');
-Route::get('investment-fixed', 'investment\InvestmentController@investment_file_view');
-Route::get('investment-mutual', 'investment\InvestmentController@investment_file_view');
-
-
-//----Insurance Controller---------------------------------------------
+//----Investment Controller-------------------------------------------------------------
+Route::get('investment/{child}', 'investment\InvestmentController@investment_file_view');
+//----Insurance Controller--------------------------------------------------------------
 Route::get('insurance/{child}', 'insurance\InsuranceController@insurance_file_view');
-
-//----Card Controller---------------------------------------------
+//----Card Controller-------------------------------------------------------------------
 Route::get('card/{child}', 'card\CardController@card_file_view');
-
-//----Advertise Controller---------------------------------------------
+//----Advertise Controller--------------------------------------------------------------
 Route::get('advertise', 'advertise\AdvertiseController@advertise_file_view');
 
 
@@ -68,8 +59,11 @@ Route::post('form-bank-update', 'form\FormBankController@bank_form_update');
 Route::post('form-loan-save', 'form\FormController@loan_form_save');
 Route::post('form-loan-update', 'form\FormLoanUpdateController@loan_form_update');
 
-Route::post('form-investment-save', 'form\FormInvestmentController@investment_form_save');
-Route::post('form-investment-update', 'form\FormInvestmentController@investment_form_update');
+//-----------form-investment include data_save & data_update
+Route::post('form-investment', 'form\FormInvestmentController@investment_form');
+
+//-----------form-insurance include data_save & data_update
+Route::post('form-insurance', 'form\FormInsuranceController@insurance_form');
 
 Route::post('form-card-save', 'form\FormCardController@card_form_save');
 //Route::post('form-card-update', 'form\FormCardController@card_form_update');

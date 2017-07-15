@@ -16,28 +16,28 @@ use App\Model\bank\Bank;
 class InvestmentController extends Controller
 {
     //----Loan Information(loan-all_file loan_file_view)
-    public function investment_file_view() {
+    public function investment_file_view($child) {
 
-        $route = Route::getFacadeRoot()->current()->uri();
-        if ($route == 'investment-saving'){
+        //$route = Route::getFacadeRoot()->current()->uri();
+        if ($child == 'saving'){
             $file_open = 'ap.investment.investment_saving';
             $invst_view = Investment::get()->where('invst_type', '1'); //invst_type=1 means Saving_account
-            dd($invst_view);
+            //dd($invst_view);
 
-        } elseif ($route == 'investment-fixed') {
+        } elseif ($child == 'fixed') {
             $file_open = 'ap.investment.investment_fixed';
-            $loan_view = Investment::all()->where('invst_type', '2'); //invst_type=2 means fixed_ccount
+            $invst_view = Investment::get()->where('invst_type', '2'); //invst_type=2 means Fixed_account
+            //dd($invst_view);
 
-        } elseif ($route == 'investment-mutual') {
+        } elseif ($child == 'mutual') {
             $file_open = 'ap.investment.investment_mutual';
-            $loan_view = Investment::all()->where('invst_type', '3'); //invst_type=3 means mutual_account
+            $invst_view = Investment::get()->where('invst_type', '3'); //invst_type=2 means Mutual_account
         }
 
         $count = count($invst_view);
         Session::put('count', $count);
         $bank_view = Bank::all();
-        $bank_view_all = Bank::all();
-        $loan = view($file_open, compact('invst_view', 'bank_view', 'bank_view_all'));
+        $loan = view($file_open, compact('invst_view', 'bank_view'));
         return view('ap_master')->with('maincontent', $loan);
     } 
 }

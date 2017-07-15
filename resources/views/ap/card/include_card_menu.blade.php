@@ -13,6 +13,7 @@
         <div class="col-md-12 text-center m-t-mi-6">
             <a href="{{ url('card'.'/'.'credit') }}" class="app-menu btn btn-default text-success-light">Credit Card</a>
             <a href="{{ url('card'.'/'.'debit') }}" class="app-menu btn btn-default text-success-light">Debit Card</a>
+            <a href="{{ url('form'.'/'.'card') }}" class="app-menu btn btn-default text-success-light">Add Card</a>
         </div>
         <!--end Single button-->
     </div>

@@ -32,8 +32,6 @@
                 </thead>
                 <tbody>
 
-                @if((Session::get('count')) != 0)
-
                 @php $number = 0; $suc = 0; $reqs = 1; $pending = 2; $table = 66; @endphp
                 @foreach($apply_view as $v)
                     <tr>
@@ -210,12 +208,11 @@
 
                 @endforeach
 
-                @else
+                @if ((Session::get('count')) == 0 )
                     <span style="color: #a09393; font-size: 20px; position: absolute; z-index: 10; bottom: 250px; right: 400px;">
                         <i class="fa text-success">Not Finding Any Pending Request</i>
                     </span>
                 @endif
-
                 </tbody>
             </table>
 

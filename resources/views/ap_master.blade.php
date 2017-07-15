@@ -86,7 +86,7 @@
                                         <i class="fa fa-book fa-2x fa-3y"><br/><small class="f-s-18">Loan</small></i>
                                     </a>
 
-                                    <a href="{{ url('investment-saving') }}" class="b-r-s width-130 m-t-5 btn btn-success basic">
+                                    <a href="{{ url('investment'.'/'.'saving') }}" class="b-r-s width-130 m-t-5 btn btn-success basic">
                                         <i class="fa fa-leaf fa-2x fa-3y"><br/><small class="f-s-18">Investment</small></i>
                                     </a>
 

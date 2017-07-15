@@ -65,39 +65,6 @@
                             </span>
                         </td>
                     </tr>
-                @endforeach
-
-
-
-                @php $number = 0; @endphp
-                @foreach($loan_view as $v)
-                    {{--<tr>--}}
-                        {{--<td class="col-xs-12 col-sm-2 text-success" title="{{$v->bank->bank_name}}">--}}
-                            {{--<img src="{{ asset($v->bank->bank_image_url) }}" height="20px" width="30px" alt="pic">--}}
-                            {{--{{$v->bank->bank_name}}--}}
-                            {{--{{str_limit($v->bank->bank_name, 14, ' ...')}}--}}
-                        {{--</td>--}}
-                        {{--<td class="col-xs-12 col-sm-2">{{$v->loan_interest_rate}}%</td>--}}
-                        {{--<td class="col-xs-12 col-sm-2">{{$v->loan_monthly_interest}} BDT</td>--}}
-                        {{--<td class="col-xs-12 col-sm-2">{{$v->loan_interest_payable}} BDT</td>--}}
-                        {{--<td class="col-xs-12 col-sm-2">--}}
-                            {{--{{$v->loan_period}} Years <span class="pull-right">{{$v->loan_amount}} BDT</span>--}}
-                        {{--</td>--}}
-                        {{--<td class="col-xs-12 col-sm-2">--}}
-                            {{--@if($v->loan_person_type==1)--}}
-                                {{--<span class="text-success">Salaried</span>--}}
-                            {{--@elseif($v->loan_person_type==2)--}}
-                                {{--<span class="text-success">Business</span>--}}
-                            {{--@else--}}
-                                {{--<span class="text-success">Others</span>--}}
-                            {{--@endif--}}
-
-                            {{--<span class="pull-right">--}}
-                            {{--<a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}" title="Details Information"><i class="fa fa-list"></i></a>--}}
-                            {{--<a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}kk" title="Click To Edit"><i class="fa fa-edit"></i></a>--}}
-                        {{--</span>--}}
-                        {{--</td>--}}
-                    {{--</tr>--}}
 
                     <!--start detailsInfo -->
                     <div id="{{$v->id}}" class="modal fade" role="dialog">

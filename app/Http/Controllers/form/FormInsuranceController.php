@@ -8,10 +8,18 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
-class FormInvestmentController extends Controller
+class FormInsuranceController extends Controller
 {
     //----Form investment Information(form-investment-save investment_form_save)
-    public function investment_form(Request $request) {
+    public function insurance_form(Request $request) {
+
+
+
+        //-----------nothing to define of investment insert & update date----------- must be define by you
+
+
+
+
         //dd($request->all());
         $data_insert = $request->insert;
         $previous_url = url()->previous();
