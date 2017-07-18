@@ -9,7 +9,7 @@
                 <div class="col-md-4"><i class="fa"> Assing Investment Information</i></div>
                 <div class="col-md-6"><i class="fa text-success"> {{ Session::get('insert_suc') }} {{ Session::put('insert_suc', '') }}</i></div>
                 <div class="col-md-2 text-right">
-                    <a href="{{ URL::to('investment-saving') }}" class="btn btn-default btn-xs text-success" title="View Investment"><i class="fa fa-eye"> View Investment</i></a>
+                    <a href="{{ url('investment'.'/'.'saving') }}" class="btn btn-default btn-xs text-success" title="View Investment"><i class="fa fa-eye"> View Investment</i></a>
                 </div>
             </div>
 

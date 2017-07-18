@@ -14,12 +14,22 @@ class FormBankController extends Controller
     //----Form Information(form-bank-save bank_form_save)
     public function bank_form_save(Request $request) {
 
-        //return 'hello';
-        //$url_current = Session::get('url_current');
-        //echo $url_current;
-//        $all = $request->all();
-//        dd($all);
+        $previous_url = url()->previous();
 
+        //------start_information_update
+        $data_ud = $request->data_ud;
+        if($data_ud == 'data_ud') {
+            $id = $request->b_id;
+            $bank_name = $request->b_name;
+
+            DB::table('banks')->where('id', $id)->update(['bank_name' => $bank_name]);
+            Session::put('msg_suc', 'Data Updated Successfully!');
+            return Redirect::to($previous_url);
+        }
+        //------end_information_update
+
+
+        //------start_information_insert
         //------start_picture
         $image = $request->file('image');
         $bank_name = $request->b_name;
@@ -40,27 +50,14 @@ class FormBankController extends Controller
 
                 Session::put('msg_suc', 'Data Inserted Successfully!');
                 //$url_current = Session::get('url_current');
-                return Redirect::to(url()->previous());
+                return Redirect::to($previous_url);
             }
         } else {
             Session::put('msg_error', 'Data Not Inserted?');
             //$url_current = Session::get('url_current');
-            return Redirect::to(url()->previous());
+            return Redirect::to($previous_url);
         }
         //------end_picture
-    }
-
-    //----Form Information(form-bank-update  bank_form_update)
-    public function bank_form_update(Request $request) {
-
-        $id = $request->b_id;
-        $bank_name = $request->b_name;
-        $previous_url = url()->previous();
-
-        DB::table('banks')
-            ->where('id', $id)
-            ->update(['bank_name' => $bank_name]);
-        Session::put('msg_suc', 'Data Updated Successfully!');
-        return Redirect::to($previous_url);
+        //------end_information_insert
     }
 }

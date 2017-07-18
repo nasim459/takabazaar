@@ -27,7 +27,7 @@
                     <th class="col-sm-1">No</th>
                     <th class="col-sm-1">Picture</th>
                     <th class="col-sm-6">Card Category Name</th>
-                    <th class="col-sm-2">Status</th>
+                    <th class="col-sm-2"> &nbsp;&nbsp; Status</th>
                     <th class="col-sm-2">Action</th>
                 </tr>
                 </thead>
@@ -40,8 +40,8 @@
                         <a class="btn btn-default btn-xs"><i class="fa">{{$number = $number+1}}</i></a>
                     </td>
                     <td class="col-xs-12 col-sm-1">
-                        <a data-toggle="modal" data-target="#{{$v->id}}kkk" title="Click To Edit">
-                            <img src="{{ asset($v->cc_image_url) }}" height="20px" width="30px" alt="pic">
+                        <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}kkk" title="Click To Edit">
+                            <img src="{{ asset($v->cc_image_url) }}" height="16px" width="30px" alt="pic">
                         </a>
                     </td>
                     <td class="col-xs-12 col-sm-6">{{$v->cc_name}}</td>
@@ -60,7 +60,7 @@
                 </tr>
 
 
-                <!--start detailsInfo -->
+                <!--start detailsInfo information_save-->
                 <div id="{{$v->id}}kk" class="modal fade" role="dialog">
                     <div class="modal-dialog">
 
@@ -77,10 +77,11 @@
                                 <div class="col-md-12">
                                     <div class="col-md-12 f-s-14 f-f-s">
 
-                                        {!! Form::open(array('url'=>'form-cardcategory-update', 'role'=>'form', 'method'=>'POST')) !!}
+                                        {!! Form::open(array('url'=>'form-cardcategory-save', 'role'=>'form', 'method'=>'POST')) !!}
                                         <div class="form-horizontal">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                             <input type="hidden" name="cc_id" value="{{ $v->id }}">
+                                            <input type="hidden" name="data_ud" value="data_ud">
 
                                             <div class="form-group m-t-15">
                                                 <label for="exampleInputName2" class="col-sm-4 control-label">Bank Name :</label>
@@ -110,7 +111,7 @@
                 </div>
                 <!--end detailsInfo -->
 
-                <!--start detailsInfo image update-->
+                <!--start detailsInfo image_update-->
                 <div id="{{$v->id}}kkk" class="modal fade" role="dialog">
                     <div class="modal-dialog">
 

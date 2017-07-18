@@ -77,10 +77,11 @@
                                 <div class="col-md-12">
                                     <div class="col-md-12 f-s-14 f-f-s">
 
-                                        {!! Form::open(array('url'=>'form-bank-update', 'role'=>'form', 'method'=>'POST')) !!}
+                                        {!! Form::open(array('url'=>'form-bank-save', 'role'=>'form', 'method'=>'POST')) !!}
                                         <div class="form-horizontal">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                             <input type="hidden" name="b_id" value="{{ $v->id }}">
+                                            <input type="hidden" name="data_ud" value="data_ud">
 
                                             <div class="form-group m-t-15">
                                                 <label for="exampleInputName2" class="col-sm-4 control-label">Bank Name :</label>
@@ -110,7 +111,7 @@
                 </div>
                 <!--end detailsInfo -->
 
-                <!--start detailsInfo -->
+                <!--start detailsInfo image_update-->
                 <div id="{{$v->id}}kkk" class="modal fade" role="dialog">
                     <div class="modal-dialog">
 

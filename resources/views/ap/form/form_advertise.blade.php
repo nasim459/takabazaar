@@ -42,7 +42,7 @@
                     <div class="form-group">
                         <label for="exampleInputName2" class="col-sm-4 control-label">Type:</label>
                         <div class="col-sm-6">
-                            <select class="form-control" name="a_type">
+                            <select class="form-control" name="a_type" required>
                                 <option value="">Select Type</option>
                                 <option value="1">Salaried</option>
                                 <option value="2">Personal</option>

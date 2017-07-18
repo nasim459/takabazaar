@@ -41,7 +41,6 @@ class ImageUpdateController extends Controller
                 $updated_tbl_field_img_url = 'cc_image_url';  //--change_image_url_of_table_field
                 break;
             default:
-
                 return Redirect::to($previous_url);
         }
 

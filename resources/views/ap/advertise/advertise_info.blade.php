@@ -41,7 +41,7 @@
                     </td>
                     <td class="col-xs-12 col-sm-1 text-success" title="Click To Edit">
                         <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}kkk">
-                            <img src="{{ asset($v->add_image_url) }}" height="10px" width="15px" alt="pic">
+                            <img src="{{ asset($v->add_image_url) }}" height="16px" width="30px" alt="pic">
                         </a>
                     </td>
                     <td class="col-xs-12 col-sm-2">{{$v->add_name}}</td>
@@ -72,7 +72,7 @@
                     </td>
                 </tr>
 
-                <!--start detailsInfo -->
+                <!--start detailsInfo image_update-->
                 <div id="{{$v->id}}" class="modal fade" role="dialog">
                     <div class="modal-dialog">
 
@@ -132,7 +132,7 @@
                 </div>
                 <!--end detailsInfo -->
 
-                <!--start detailsInfo -->
+                <!--start detailsInfo information_update-->
                 <div id="{{$v->id}}kk" class="modal fade" role="dialog">
                     <div class="modal-dialog">
 
@@ -148,10 +148,11 @@
                                 <div class="col-md-12">
                                     <div class="col-md-12 f-s-14 f-f-s">
 
-                                        {!! Form::open(array('url'=>'form-advertise-update', 'role'=>'form', 'method'=>'POST')) !!}
+                                        {!! Form::open(array('url'=>'form-advertise-save', 'role'=>'form', 'method'=>'POST')) !!}
                                         <div class="form-horizontal">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                             <input type="hidden" name="l_id" value="{{ $v->id }}">
+                                            <input type="hidden" name="data_ud" value="data_ud">
 
                                             <div class="form-group">
                                                 <label for="exampleInputName2" class="col-sm-4 control-label m-t-20">Image :</label>
@@ -235,7 +236,7 @@
                 </div>
                 <!--end detailsInfo -->
 
-                <!--start detailsInfo -->
+                <!--start detailsInfo image_update-->
                 <div id="{{$v->id}}kkk" class="modal fade" role="dialog">
                     <div class="modal-dialog">
 
