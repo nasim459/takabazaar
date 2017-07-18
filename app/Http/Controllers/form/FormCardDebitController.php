@@ -7,10 +7,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
-class FormCardController extends Controller
+class FormCardDebitController extends Controller
 {
     //----Loan Information(loan-all_file loan_file_view)
-    public function card_form_save(Request $request) {
+    public function card_debit_form_save(Request $request) {
         //dd($request->all());
 
         $previous_url = url()->previous();
@@ -23,13 +23,15 @@ class FormCardController extends Controller
         } else {
             $cc_id = $cc_id_old;
         }
+
         //----Start_Data_Insert---------------------------------------------------------------------
         $card = array();
-        $card['c_interest_per_day'] = $request->i_p_d;
-        $card['c_interest_free_period'] = $request->i_f_p;
-        $card['c_over_limit_free'] = $request->o_l_f;
-        $card['c_cheque_process_free'] = $request->c_c_p_f;
-        $card['c_late_payment_free'] = $request->l_p_f;
+        $card['c_yearly_limit'] = $request->y_limit;
+        $card['c_activation_deposit'] = $request->a_deposit;
+        $card['c_min_balance'] = $request->m_balance;
+        $card['c_daily_limit_atm'] = $request->d_limit_atm;
+        $card['c_daily_limit_purchase'] = $request->d_limit_purchase;
+        $card['c_reward_installment'] = $request->r_installment;
 
         $card['c_features_benefits'] = $request->data_fsr;
         $card['c_eligibility'] = $request->data_elig;
@@ -40,13 +42,13 @@ class FormCardController extends Controller
 
         if ($data_update != 'data_ud') {
             //----insert_data
-            DB::table('cards')->insert($card);
+            DB::table('carddebits')->insert($card);
             Session::put('insert_suc', 'Data Inserted Successfully!');
             return redirect($previous_url);
 
         } else {
             //----update_data
-            DB::table('cards')->where('id', $request->c_id)->update($card);
+            DB::table('carddebits')->where('id', $request->c_id)->update($card);
             Session::put('msg_suc', 'Data Updated Successfully!');
             return redirect($previous_url);
         }

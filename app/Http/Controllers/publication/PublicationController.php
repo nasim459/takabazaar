@@ -57,6 +57,11 @@ class PublicationController extends Controller
                 $publication_status = 'cc_status';
                 $redirect = $previous_url;
                 break;
+            case "99":
+                $table_name = 'carddebits';
+                $publication_status = 'c_status';
+                $redirect = $previous_url;
+                break;
             default:
                 return Redirect::to($previous_url);
         }
@@ -64,9 +69,11 @@ class PublicationController extends Controller
         //----Change Publication_Status_here Of Table
         if ($status == 0) {
             DB::table($table_name)->where($where_field_id, $id)->update([$publication_status => '0']);
+            Session::put('msg_suc', 'unPublish Successfully!');
             return Redirect::to($redirect);
         } else {
             DB::table($table_name)->where($where_field_id, $id)->update([$publication_status => '1']);
+            Session::put('msg_suc', 'Publish Successfully!');
             return Redirect::to($redirect);
         }
     }

@@ -45,8 +45,8 @@
                             {{str_limit($v->bank['bank_name'], 8, ' ...')}}
                         </td>
                         <td class="col-xs-12 col-sm-2 text-success" title="{{$v->cardcategorie['cc_name']}}">
-                            <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}kkk">
-                                <img src="{{ asset($v->cardcategorie['cc_image_url']) }}" height="16px" width="30px" alt="pic">
+                            <a class="" data-toggle="modal" data-target="#{{$v->id}}kkk">
+                                <img src="{{ asset($v->cardcategorie['cc_image_url']) }}" height="20px" width="30px" alt="pic">
                             </a>
                             {{str_limit($v->cardcategorie['cc_name'], 15, ' ...')}}
                         </td>
@@ -143,7 +143,7 @@
 
                                                 <input type="hidden" name="c_id" value="{{ $v->id }}">
                                                 <input type="hidden" name="b_id" value="{{$v->bank['id']}}">
-                                                <input type="hidden" name="cc_id" value="{{$v->cardcategorie['id']}}">
+                                                <input type="hidden" name="cc_id_old" value="{{$v->cardcategorie['id']}}">
                                                 <input type="hidden" name="data_ud" value="data_ud">
 
                                                 <dl class="dl-horizontal">
@@ -214,9 +214,24 @@
                                                     </div>
                                                 </div>
 
+                                                <hr>
                                                 <div class="form-group">
-                                                    <div class="col-sm-offset-4 col-sm-10 m-t-15">
-                                                        <input type="submit" value="Update" class="btn btn-success col-sm-4">
+                                                    <label for="exampleInputName2" class="col-sm-4 control-label">Change Card Type :</label>
+                                                    <div class="col-sm-7">
+                                                        <select class="form-control" name="cc_id_new">
+                                                            <option value="">Select Card Type</option>
+
+                                                            @foreach($cardcategorie_view as $v)
+                                                                <option value="{{$v->id}}">{{$v->cc_name}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputName2" class="col-sm-4 control-label"></label>
+                                                    <div class="col-sm-7">
+                                                        <input type="submit" value="Update" class="btn btn-success col-sm-12">
                                                     </div>
                                                 </div>
                                             </div>

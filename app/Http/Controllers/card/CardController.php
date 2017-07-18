@@ -8,12 +8,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use Session;
 use DB;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Redirect;
-use App\Model\loan\Loan;
 use App\Model\bank\Bank;
 use App\Model\card\Card;
 use App\Model\cardcategorie\Cardcategorie;
+use App\Model\carddebit\Carddebit;
 
 class CardController extends Controller
 {
@@ -27,15 +25,13 @@ class CardController extends Controller
 
         } elseif ($child == 'debit') {
             $file_open = 'ap.card.card_debit';
-            $card_view = Card::all();
-
+            $card_view = Carddebit::all();
         }
 
         $count = count($card_view);
         Session::put('count', $count);
         $bank_view = Bank::all();
         $cardcategorie_view = Cardcategorie::all();
-        //dd($cardcategorie_view);
 
         $loan = view($file_open, compact('card_view', 'bank_view', 'cardcategorie_view'));
         return view('ap_master')->with('maincontent', $loan);

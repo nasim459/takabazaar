@@ -93,6 +93,11 @@ class ImageUpdateController extends Controller
                 $where_field_id = 'id';
                 $updated_tbl_field = 'bank_id';
                 break;
+            case "99":
+                $table_name = 'carddebits';
+                $where_field_id = 'id';
+                $updated_tbl_field = 'bank_id';
+                break;
             default:
                 return Redirect::to($previous_url);
         }

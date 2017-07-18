@@ -94,7 +94,7 @@
                                         <i class="fa fa-briefcase fa-2x fa-3y"><br/><small class="f-s-18">Insurance</small></i>
                                     </a>
 
-                                    <a href="{{ url('card'.'/'.'debit') }}" class="b-r-s width-130 m-t-5 btn btn-success">
+                                    <a href="{{ url('card'.'/'.'credit') }}" class="b-r-s width-130 m-t-5 btn btn-success">
                                         <i class="fa fa-gift fa-2x fa-3y"><br/><small class="f-s-18">Card</small></i>
                                     </a>
 

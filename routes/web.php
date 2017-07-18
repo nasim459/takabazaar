@@ -66,7 +66,7 @@ Route::post('form-investment', 'form\FormInvestmentController@investment_form');
 Route::post('form-insurance', 'form\FormInsuranceController@insurance_form');
 
 Route::post('form-card-save', 'form\FormCardController@card_form_save');
-//Route::post('form-card-update', 'form\FormCardController@card_form_update');
+Route::post('form-card-debit-save', 'form\FormCardDebitController@card_debit_form_save');
 
 Route::post('form-cardcategory-save', 'form\FormCardCategoryController@cardcategory_form_save');
 Route::post('form-cardcategory-update', 'form\FormCardCategoryController@cardcategory_form_update');

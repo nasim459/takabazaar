@@ -29,7 +29,9 @@ class FormController extends Controller
 
         } elseif ($child == 'card') {
             $file_open = 'ap.form.form_card';
-            //$loan_view = Investment::all()->where('invst_type', '3'); //invst_type=3 means mutual_account
+
+        } elseif ($child == 'card-debit') {
+            $file_open = 'ap.form.form_card_debit';
 
         } elseif ($child == 'bank') {
             $file_open = 'ap.form.form_bank';
