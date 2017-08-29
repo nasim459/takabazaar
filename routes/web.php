@@ -88,3 +88,23 @@ Route::get('dboard', 'DashBoardController@home_dboard');
 Route::get('dboard-regi', 'DashBoardController@regi_dboard');
 
 
+
+
+
+
+//=====================================Start Front End Template Design================
+Route::get('', 'fe\app\ViewFileController@view_file');
+Route::get('loan-home-api', 'fe\app\ViewFileController@view_file');
+Route::get('loan-home', 'fe\app\ViewFileController@view_file');
+
+Route::get('investment-saving', 'fe\app\ViewFileController@view_file');
+
+Route::get('insurance-life', 'fe\app\ViewFileController@view_file');
+
+Route::get('card-credit', 'fe\app\ViewFileController@view_file');
+
+Route::get('blog', 'fe\app\ViewFileController@view_file_blog');
+
+Route::get('contact-us', 'fe\app\ViewFileController@view_file_blog');
+Route::get('about-us', 'fe\app\ViewFileController@view_file_blog');
+//=====================================End Front End Template Design==================
