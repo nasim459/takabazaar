@@ -25,6 +25,9 @@ Route::get('advertise', 'advertise\AdvertiseController@advertise_file_view');
 Route::get('blog-posting', 'blog\BlogController@blog_file_view');
 Route::get('blog-subscribers', 'blog\BlogController@blog_file_view');
 Route::get('blog-settings', 'blog\BlogController@blog_file_view');
+Route::get('blog-category', 'blog\BlogController@blog_file_view');
+Route::post('blog-category-insert', 'blog\BlogCategory@blog_category_insert');
+Route::get('blog-user', 'blog\BlogController@blog_file_view');
 
 
 //----Bank Controller---------------------------------------------

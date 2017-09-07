@@ -62,6 +62,16 @@ class PublicationController extends Controller
                 $publication_status = 'c_status';
                 $redirect = $previous_url;
                 break;
+            case "555":
+                $table_name = 'categories';
+                $publication_status = 'category_status';
+                $redirect = $previous_url;
+                break;
+            case "888":
+                $table_name = 'blogusers';
+                $publication_status = 'status';
+                $redirect = $previous_url;
+                break;
             default:
                 return Redirect::to($previous_url);
         }

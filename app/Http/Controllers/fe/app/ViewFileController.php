@@ -164,7 +164,7 @@ class ViewFileController extends Controller
         //echo  $child;  exit();
         $previous_url = url()->previous();
 
-        //----start crm_module-----------------------------------------------------------
+        //----start fe_blog_module-----------------------------------------------------------
         switch($child){
             case "blog":
                 $file_open = 'fe.blog.blog';
@@ -188,7 +188,7 @@ class ViewFileController extends Controller
                 Session::put('msg_error', 'Using Wrong Information???');
                 return redirect($previous_url);
         }
-        //----end crm_module--------------------------------------------------------------
+        //----end fe_blog_module---------------------------------------------------------------
 
         //$count = count($data_view);
         //Session::put('count', $count);

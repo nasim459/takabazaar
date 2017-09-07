@@ -30,7 +30,7 @@
                 <tbody>
 
                 @php $number = 0; $off = 0; $on = 1; $table = 11; @endphp
-                @foreach($bank_view as $v)
+                @foreach($data_view as $v)
                     <tr>
                         <td class="col-xs-12 col-sm-1 text-success">
                             <a class="btn btn-default btn-xs"><i class="fa">{{$number = $number+1}}</i></a>

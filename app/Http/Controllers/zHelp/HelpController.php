@@ -26,10 +26,15 @@ class HelpController extends Controller
     //| 111 =
     //| 222 =
     //| 333 =
+    //| 444 = blog
+    //| 555 = categories
+    //| 666 = comments
+    //| 777 = commentreplaies
+    //| 888 = blogusers
     //|
     //|
     //|
-    //|-----------------------------------
+    //|------------------------------------------------------------------------
     //| kkk = picture_update as individual
     //| kk  = information_update as all information_own_table
     //| k   = information_details as all information_own_table
