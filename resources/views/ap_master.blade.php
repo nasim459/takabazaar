@@ -141,7 +141,7 @@
         <script src="{{URL::asset('ap/bootstrap/js/bootstrap.file-input.js')}}"></script>
 
         <script src="{{URL::asset('ap/ckeditor/ckeditor.js')}}"></script>
-        <script src="{{URL::asset('ap/angular/js/angular.js')}}"></script>
+        <script src="{{URL::asset('n_angular.jsjs')}}"></script>
         <script src="{{URL::asset('ap/angular/js/homeController.js')}}"></script>
         <script src="{{URL::asset('ap/angular/js/RegiController.js')}}"></script>
         <script src="{{URL::asset('ap/angular/js/roughController.js')}}"></script>

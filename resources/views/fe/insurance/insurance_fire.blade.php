@@ -1,11 +1,12 @@
+
 @section('fe_maincontent')
     <div class="j-menu-container"></div>
 
     <div class="b-inner-page-header f-inner-page-header b-bg-header-inner-page">
         <div class="b-inner-page-header__content">
             <div class="container">
-                <h1 class="f-primary-l c-default"><i class="fa fa-briefcase"> Life Insurance</i></h1>
-                <div class="f-primary-l f-inner-page-header_title-add c-senary"><i class="fa">Create a life insurance from here</i></div>
+                <h1 class="f-primary-l c-default"><i class="fa fa-briefcase"> Fire Insurance</i></h1>
+                <div class="f-primary-l f-inner-page-header_title-add c-senary"><i class="fa">Create a fire insurance from here</i></div>
             </div>
         </div>
     </div>
@@ -14,7 +15,7 @@
             <div class="container">
                 <ul>
                     <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-                    <li><i class="fa fa-angle-right"></i><span>Life Insurance</span></li>
+                    <li><i class="fa fa-angle-right"></i><span>Fire Insurance</span></li>
 
                 </ul>
             </div>

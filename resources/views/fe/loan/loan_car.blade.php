@@ -4,17 +4,17 @@
     <div class="b-inner-page-header f-inner-page-header b-bg-header-inner-page">
         <div class="b-inner-page-header__content">
             <div class="container">
-                <h1 class="f-primary-l c-default"><i class="fa fa-briefcase"> Life Insurance</i></h1>
-                <div class="f-primary-l f-inner-page-header_title-add c-senary"><i class="fa">Create a life insurance from here</i></div>
+                <h1 class="f-primary-l c-default"><i class="fa fa-car"> Car Lone</i></h1>
+                <div class="f-primary-l f-inner-page-header_title-add c-senary"><i class="fa">Choose your loan from here</i></div>
             </div>
         </div>
     </div>
-    <div class="l-main-container">
+    <div class="l-main-container" ng-controller="fe_loanController">
         <div class="b-breadcrumbs f-breadcrumbs">
             <div class="container">
                 <ul>
                     <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-                    <li><i class="fa fa-angle-right"></i><span>Life Insurance</span></li>
+                    <li><i class="fa fa-angle-right"></i><span>Car Loan</span></li>
 
                 </ul>
             </div>
@@ -33,7 +33,7 @@
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="fa">I want to borrow</i></div>
-                                                <input type="text" value="200000" class="form-control" id="exampleInputAmount" placeholder="Amount">
+                                                <input type="text" ng-model="search_rental" class="form-control" id="exampleInputAmount" placeholder="Amount">
                                                 <div class="input-group-addon">৳</div>
                                             </div>
                                         </div>
@@ -84,7 +84,7 @@
                                     <i class="fa app-head">Total Payable Interest</i>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <i class="fa app-head">Year / Period</i>
+                                    <i class="fa app-head">Years / Period</i>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2">
                                     <i class="fa app-head">Details</i>
@@ -93,7 +93,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-12 col-md-12 b-item-apartment-block">
+                    <div class="col-sm-12 col-md-12 b-item-apartment-block" ng-repeat="v in display_data">
                         <div class="b-some-examples__item f-some-examples__item">
                             <div class="b-some-examples__item_action app-box">
                                 <div class="col-xs-12 col-sm-2 col-md-2">
@@ -109,93 +109,21 @@
                                     </p>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
+                                    <i class="fa">@{{v.loan_interest_rate}} %</i>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
+                                    <i class="fa">@{{v.loan_monthly_interest}} ৳</i>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
+                                    <i class="fa">@{{v.loan_interest_payable}} ৳</i>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
+                                    <i class="fa">@{{v.loan_period}} years</i>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2">
                                     <a data-target="#apply" data-toggle="modal" class="btn btn-success btn-xs col-md-12"> Apply</a>
                                     <a data-target="#document" data-toggle="modal" class="btn btn-primary btn-xs col-md-12" style="margin-top: 4px;margin-bottom: 4px;"> Required Documents</a>
                                     <a data-target="#details" data-toggle="modal" class="btn btn-danger btn-xs col-md-12"> View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12 col-md-12 b-item-apartment-block">
-                        <div class="b-some-examples__item f-some-examples__item">
-                            <div class="b-some-examples__item_action app-box">
-                                <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <img src="{{ asset('fe/img/bank/1.jpg') }}" class="img-app" alt="pic">
-                                    <p class="b-stars-group" style="font-size: 12px; margin-top: 4px">
-                                        <span><b>Dhaka Bank</b></span><br>
-                                        <span>5020 views</span><br>
-                                        <i class="fa fa-star is-active-stars"></i>
-                                        <i class="fa fa-star is-active-stars"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </p>
-                                </div>
-                                <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
-                                </div>
-                                <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
-                                </div>
-                                <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
-                                </div>
-                                <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
-                                </div>
-                                <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <a href="" class="btn btn-success btn-xs col-md-12"> Apply</a>
-                                    <a href="" class="btn btn-primary btn-xs col-md-12" style="margin-top: 4px;margin-bottom: 4px;"> Required Documents</a>
-                                    <a href="" class="btn btn-danger btn-xs col-md-12"> View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12 col-md-12 b-item-apartment-block">
-                        <div class="b-some-examples__item f-some-examples__item">
-                            <div class="b-some-examples__item_action app-box">
-                                <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <img src="{{ asset('fe/img/bank/1.jpg') }}" class="img-app" alt="pic">
-                                    <p class="b-stars-group" style="font-size: 12px; margin-top: 4px">
-                                        <span><b>Dhaka Bank</b></span><br>
-                                        <span>5020 views</span><br>
-                                        <i class="fa fa-star is-active-stars"></i>
-                                        <i class="fa fa-star is-active-stars"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </p>
-                                </div>
-                                <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
-                                </div>
-                                <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
-                                </div>
-                                <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
-                                </div>
-                                <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
-                                </div>
-                                <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <a href="" class="btn btn-success btn-xs col-md-12"> Apply</a>
-                                    <a href="" class="btn btn-primary btn-xs col-md-12" style="margin-top: 4px;margin-bottom: 4px;"> Required Documents</a>
-                                    <a href="" class="btn btn-danger btn-xs col-md-12"> View Details</a>
                                 </div>
                             </div>
                         </div>

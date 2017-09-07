@@ -41,8 +41,55 @@ class ViewFileController extends Controller
                 //$rough_view = Packageitemdefault::all();
 
                 break;
+            case "loan-car":
+                $file_open = 'fe.loan.loan_car';
+                //dd($loan_view);
+                //$data_view = Client::all();
+                //$rough_view = Packageitemdefault::all();
+
+                break;
+            case "loan-personal":
+                $file_open = 'fe.loan.loan_personal';
+                //dd($loan_view);
+                //$data_view = Client::all();
+                //$rough_view = Packageitemdefault::all();
+
+                break;
+            case "loan-sme":
+                $file_open = 'fe.loan.loan_sme';
+                //dd($loan_view);
+                //$data_view = Client::all();
+                //$rough_view = Packageitemdefault::all();
+
+                break;
+            case "loan-working-capital":
+                $file_open = 'fe.loan.loan_working_capital';
+                //dd($loan_view);
+                //$data_view = Client::all();
+                //$rough_view = Packageitemdefault::all();
+
+                break;
+            case "loan-others":
+                $file_open = 'fe.loan.loan_others';
+                //dd($loan_view);
+                //$data_view = Client::all();
+                //$rough_view = Packageitemdefault::all();
+
+                break;
             case "investment-saving":
-                $file_open = 'fe.investment.investment_saving_account';
+                $file_open = 'fe.investment.investment_saving';
+                //$data_view = Client::all();
+                //$rough_view = Packageitemdefault::all();
+
+                break;
+            case "investment-fixed":
+                $file_open = 'fe.investment.investment_fixed';
+                //$data_view = Client::all();
+                //$rough_view = Packageitemdefault::all();
+
+                break;
+            case "investment-mutual":
+                $file_open = 'fe.investment.investment_mutual';
                 //$data_view = Client::all();
                 //$rough_view = Packageitemdefault::all();
 
@@ -53,8 +100,44 @@ class ViewFileController extends Controller
                 //$rough_view = Packageitemdefault::all();
 
                 break;
+            case "insurance-motor-bike":
+                $file_open = 'fe.insurance.insurance_motor_bike';
+                //$data_view = Client::all();
+                //$rough_view = Packageitemdefault::all();
+
+                break;
+            case "insurance-motor-car":
+                $file_open = 'fe.insurance.insurance_motor_car';
+                //$data_view = Client::all();
+                //$rough_view = Packageitemdefault::all();
+
+                break;
+            case "insurance-marine":
+                $file_open = 'fe.insurance.insurance_marine';
+                //$data_view = Client::all();
+                //$rough_view = Packageitemdefault::all();
+
+                break;
+            case "insurance-fire":
+                $file_open = 'fe.insurance.insurance_fire';
+                //$data_view = Client::all();
+                //$rough_view = Packageitemdefault::all();
+
+                break;
+            case "insurance-accident":
+                $file_open = 'fe.insurance.insurance_accident';
+                //$data_view = Client::all();
+                //$rough_view = Packageitemdefault::all();
+
+                break;
             case "card-credit":
                 $file_open = 'fe.card.card_credit';
+                //$data_view = Client::all();
+                //$rough_view = Packageitemdefault::all();
+
+                break;
+            case "card-debit":
+                $file_open = 'fe.card.card_debit';
                 //$data_view = Client::all();
                 //$rough_view = Packageitemdefault::all();
 

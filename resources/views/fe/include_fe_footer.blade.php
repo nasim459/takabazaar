@@ -13,13 +13,13 @@
                     <nav class="b-bottom-nav f-bottom-nav b-right hidden-xs">
                         <ul>
                             <li><a href="{{ url('') }}">Home</a></li>
-                            <li class="is-active-bottom-nav"><a href="{{ url('') }}">Loan</a></li>
-                            <li><a href="{{ url('') }}">Investment</a></li>
-                            <li><a href="{{ url('') }}">Insurance</a></li>
-                            <li><a href="{{ url('') }}">Card</a></li>
-                            <li><a href="{{ url('') }}">Blog</a></li>
-                            <li><a href="{{ url('') }}">About Us</a></li>
-                            <li><a href="{{ url('') }}">Contact Us</a></li>
+                            <li class="is-active-bottom-nav"><a href="{{ url('loan-home') }}">Loan</a></li>
+                            <li><a href="{{ url('investment-saving') }}">Investment</a></li>
+                            <li><a href="{{ url('insurance-life') }}">Insurance</a></li>
+                            <li><a href="{{ url('card-credit') }}">Card</a></li>
+                            <li><a href="{{ url('blog') }}">Blog</a></li>
+                            <li><a href="{{ url('about-us') }}">About Us</a></li>
+                            <li><a href="{{ url('contact-us') }}">Contact Us</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -53,7 +53,7 @@
                 <div class="b-blog-short-post row">
                     <div class="b-blog-short-post__item col-md-12 col-sm-4 col-xs-12 f-primary-b">
                         <div class="b-blog-short-post__item_text f-blog-short-post__item_text">
-                            <a href="blog_detail_left_slidebar.html">Amazing post with all the goodies</a>
+                            <a href="{{ url('/') }}">Amazing post with all the goodies</a>
                         </div>
                         <div class="b-blog-short-post__item_date f-blog-short-post__item_date">
                             March 23, 2013
@@ -61,7 +61,7 @@
                     </div>
                     <div class="b-blog-short-post__item col-md-12 col-sm-4 col-xs-12 f-primary-b">
                         <div class="b-blog-short-post__item_text f-blog-short-post__item_text">
-                            <a href="blog_detail_left_slidebar.html">Amazing post with all the goodies</a>
+                            <a href="{{ url('/') }}">Amazing post with all the goodies</a>
                         </div>
                         <div class="b-blog-short-post__item_date f-blog-short-post__item_date">
                             March 23, 2013
@@ -69,7 +69,7 @@
                     </div>
                     <div class="b-blog-short-post__item col-md-12 col-sm-4 col-xs-12 f-primary-b">
                         <div class="b-blog-short-post__item_text f-blog-short-post__item_text">
-                            <a href="blog_detail_left_slidebar.html">Amazing post with all the goodies</a>
+                            <a href="{{ url('/') }}">Amazing post with all the goodies</a>
                         </div>
                         <div class="b-blog-short-post__item_date f-blog-short-post__item_date">
                             March 23, 2013
@@ -85,9 +85,9 @@
                             <i class="fa fa-map-marker"></i>
                         </div>
                         <div class="b-remaining f-contacts-short-item__text">
-                            Frexy Studio<br/>
-                            1234 Street Name, City Name,<br/>
-                            United States.<br/>
+                            Metro Shopping Mall<br/>
+                            Mirpur Road, Dhaka-1209<br/>
+                            Dhaka, Bangladesh.<br/>
                         </div>
                     </div>
                     <div class="b-contacts-short-item col-md-12 col-sm-4 col-xs-12">
@@ -95,7 +95,7 @@
                             <i class="fa fa-skype"></i>
                         </div>
                         <div class="b-remaining f-contacts-short-item__text f-contacts-short-item__text_phone">
-                            Skype: ask.company
+                            Skype: ralitsoft
                         </div>
                     </div>
                     <div class="b-contacts-short-item col-md-12 col-sm-4 col-xs-12">
@@ -103,7 +103,7 @@
                             <i class="fa fa-envelope"></i>
                         </div>
                         <div class="b-remaining f-contacts-short-item__text f-contacts-short-item__text_email">
-                            <a href="mailto:frexystudio@gmail.com">mail@example.com</a>
+                            <a href="mailto:frexystudio@gmail.com"> E-Mail: info@ralitsoft.com</a>
                         </div>
                     </div>
                 </div>

@@ -96,12 +96,25 @@ Route::get('dboard-regi', 'DashBoardController@regi_dboard');
 Route::get('', 'fe\app\ViewFileController@view_file');
 Route::get('loan-home-api', 'fe\app\ViewFileController@view_file');
 Route::get('loan-home', 'fe\app\ViewFileController@view_file');
+Route::get('loan-car', 'fe\app\ViewFileController@view_file');
+Route::get('loan-personal', 'fe\app\ViewFileController@view_file');
+Route::get('loan-sme', 'fe\app\ViewFileController@view_file');
+Route::get('loan-working-capital', 'fe\app\ViewFileController@view_file');
+Route::get('loan-others', 'fe\app\ViewFileController@view_file');
 
 Route::get('investment-saving', 'fe\app\ViewFileController@view_file');
+Route::get('investment-fixed', 'fe\app\ViewFileController@view_file');
+Route::get('investment-mutual', 'fe\app\ViewFileController@view_file');
 
 Route::get('insurance-life', 'fe\app\ViewFileController@view_file');
+Route::get('insurance-motor-bike', 'fe\app\ViewFileController@view_file');
+Route::get('insurance-motor-car', 'fe\app\ViewFileController@view_file');
+Route::get('insurance-marine', 'fe\app\ViewFileController@view_file');
+Route::get('insurance-fire', 'fe\app\ViewFileController@view_file');
+Route::get('insurance-accident', 'fe\app\ViewFileController@view_file');
 
 Route::get('card-credit', 'fe\app\ViewFileController@view_file');
+Route::get('card-debit', 'fe\app\ViewFileController@view_file');
 
 Route::get('blog', 'fe\app\ViewFileController@view_file_blog');
 

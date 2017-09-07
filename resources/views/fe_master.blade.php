@@ -52,59 +52,23 @@
     <div class="b-top-options-panel">
         <div class="container">
             <div class="b-option-contacts f-option-contacts">
-                <a href="mailto:frexystudio@gmail.com"><i class="fa fa-envelope-o"></i> mail@example.com</a>
-                <a href="#"><i class="fa fa-phone"></i> +12 345 6789 </a>
-                <a href="#"><i class="fa fa-skype"></i> ask.company</a>
+                <a href="mailto:frexystudio@gmail.com"><i class="fa fa-envelope-o"></i> info@ralitSoft.com</a>
+                <a href="#"><i class="fa fa-phone"></i> 01 777 888 757 </a>
+                <a href="#"><i class="fa fa-skype"></i> ralitsoft</a>
             </div>
             <div class="b-option-total-cart">
                 <div class="b-option-total-cart__goods">
-                    <a href="#" class="f-option-total-cart__numbers b-option-total-cart__numbers"><i class="fa fa-shopping-cart"></i> Cart [ 0 ] item</a>
+                    <a href="#" class="f-option-total-cart__numbers b-option-total-cart__numbers"><i class="fa fa-arrow-down"></i>Subscribe &nbsp;</a>
                     <div class="b-option-cart__items">
-                        <div class="b-option-cart__items__title f-option-cart__items__title f-default-l">Recently added item(s)</div>
-                        <ul>
-                            <li>
-                                <div class="b-option-cart__items__img">
-                                    <div class="view view-sixth">
-                                        <img data-retina="" src="img/shop/cart_mini_pic.jpg" alt="">
-                                        <div class="b-item-hover-action f-center mask">
-                                            <div class="b-item-hover-action__inner">
-                                                <div class="b-item-hover-action__inner-btn_group">
-                                                    <a href="#" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="b-option-cart__items__descr">
-                                    <strong class="b-option-cart__descr__title f-option-cart__descr__title"><a href="#">Product Example</a></strong>
-                                    <span class="b-option-cart__descr__cost f-option-cart__descr__cost">1 x $239</span>
-                                </div>
-                                <i class="fa fa-times b-icon--fa"></i>
-                            </li>
-                            <li>
-                                <div class="b-option-cart__items__img">
-                                    <div class="view view-sixth">
-                                        <img data-retina="" src="img/shop/cart_mini_pic.jpg" alt="">
-                                        <div class="b-item-hover-action f-center mask">
-                                            <div class="b-item-hover-action__inner">
-                                                <div class="b-item-hover-action__inner-btn_group">
-                                                    <a href="#" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="b-option-cart__items__descr">
-                                    <strong class="b-option-cart__descr__title f-default-b f-option-cart__descr__title"><a href="#">Product Example</a></strong>
-                                    <span class="b-option-cart__descr__cost f-option-cart__descr__cost">1 x $239</span>
-                                </div>
-                                <i class="fa fa-times b-icon--fa"></i>
-                            </li>
-                        </ul>
-                        <div class="b-option-cart__btn">
-                            <button class="button-xs button-gray-light">Cancel</button>
-                            <button class="button-xs">Check out  </button>
+                        {!! Form::open(array('url'=>'define-route', 'role'=>'form', 'method'=>'POST')) !!}
+                        <div class="m-t-10">
+                            <div class="form-group">
+                                <label for="email">Give Your Email address:</label>
+                                <input type="email" class="form-control" id="email" placeholder="example@ralitsoft.com">
+                            </div>
+                            <button type="submit" class="btn btn-success btn-sm">Subscribe Me</button>
                         </div>
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
@@ -116,9 +80,9 @@
             <div class="b-top-nav-show-slide f-top-nav-show-slide b-right j-top-nav-show-slide"><i class="fa fa-align-justify"></i></div>
             <nav class="b-top-nav f-top-nav b-right j-top-nav">
                 <ul class="b-top-nav__1level_wrap">
-                    <li class="b-top-nav__1level f-top-nav__1level is-active-top-nav__1level f-primary-b b-top-nav-big"><a href="{{ url('/') }}"><i class="fa fa-home b-menu-1level-ico"></i>Home <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a></li>
+                    <li class="b-top-nav__1level f-top-nav__1level is-active-top-nav__1level f-primary-b b-top-nav-big"><a href="{{ url('/') }}" class="fa"><i class="fa fa-home b-menu-1level-ico"></i><b>Home</b> <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a></li>
                     <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
-                        <a href="{{ url('loan-home') }}"><i class="fa fa-folder-open b-menu-1level-ico"></i>Loan<span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+                        <a href="{{ url('loan-home') }}" class="fa"><i class="fa fa-folder-open b-menu-1level-ico"></i><b>Loan</b><span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
                         <div class="b-top-nav__dropdomn">
                             <ul class="b-top-nav__2level_wrap">
                                 <li class="b-top-nav__2level_title f-top-nav__2level_title">Loan</li>
@@ -132,46 +96,46 @@
                         </div>
                     </li>
                     <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
-                        <a href="{{ url('investment-saving') }}"><i class="fa fa-picture-o b-menu-1level-ico"></i>Investment <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+                        <a href="{{ url('investment-saving') }}" class="fa"><i class="fa fa-picture-o b-menu-1level-ico"></i><b>Investment</b> <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
                         <div class="b-top-nav__dropdomn">
                             <ul class="b-top-nav__2level_wrap">
                                 <li class="b-top-nav__2level_title f-top-nav__2level_title">Investment</li>
                                 <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('investment-saving') }}"><i class="fa fa-angle-right"></i>Saving Accounts</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('/') }}"><i class="fa fa-angle-right"></i>Fixed Accounts</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('/') }}"><i class="fa fa-angle-right"></i>Mutual Accounts</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('investment-fixed') }}"><i class="fa fa-angle-right"></i>Fixed Accounts</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('investment-mutual') }}"><i class="fa fa-angle-right"></i>Mutual Accounts</a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
-                        <a href="{{ url('insurance-life') }}"><i class="fa fa-code b-menu-1level-ico"></i>Insurance <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+                        <a href="{{ url('insurance-life') }}" class="fa"><i class="fa fa-code b-menu-1level-ico"></i><b>Insurance</b> <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
                         <div class="b-top-nav__dropdomn">
                             <ul class="b-top-nav__2level_wrap">
                                 <li class="b-top-nav__2level_title f-top-nav__2level_title">Insurance</li>
                                 <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('insurance-life') }}"><i class="fa fa-angle-right"></i>Life Insurance</a></li>
                                 <li class="b-top-nav__2level f-top-nav__2level f-primary b-top-nav__with-multi-lvl"><a onclick="return false" href=""><i class="fa fa-angle-right"></i>Motor Insurance</a>
                                     <ul class="b-top-nav__multi-lvl-box">
-                                        <li class="b-top-nav__multi-lvl"><a href="{{ url('/') }}"><i class="fa fa-angle-right"></i>Bike Insurance</a></li>
-                                        <li class="b-top-nav__multi-lvl"><a href="{{ url('/') }}"><i class="fa fa-angle-right"></i>Car Insurance</a></li>
+                                        <li class="b-top-nav__multi-lvl"><a href="{{ url('insurance-motor-bike') }}"><i class="fa fa-angle-right"></i>Bike Insurance</a></li>
+                                        <li class="b-top-nav__multi-lvl"><a href="{{ url('insurance-motor-car') }}"><i class="fa fa-angle-right"></i>Car Insurance</a></li>
                                     </ul>
                                 </li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('/') }}"><i class="fa fa-angle-right"></i>Marine Insurance</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('/') }}"><i class="fa fa-angle-right"></i>Fire Insurance</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('/') }}"><i class="fa fa-angle-right"></i>Accident Insurance</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('insurance-marine') }}"><i class="fa fa-angle-right"></i>Marine Insurance</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('insurance-fire') }}"><i class="fa fa-angle-right"></i>Fire Insurance</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('insurance-accident') }}"><i class="fa fa-angle-right"></i>Accident Insurance</a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
-                        <a href="{{ url('card-credit') }}"><i class="fa fa-picture-o b-menu-1level-ico"></i>Card <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+                        <a href="{{ url('card-credit') }}" class="fa"><i class="fa fa-picture-o b-menu-1level-ico"></i><b>Card</b> <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
                         <div class="b-top-nav__dropdomn">
                             <ul class="b-top-nav__2level_wrap">
                                 <li class="b-top-nav__2level_title f-top-nav__2level_title">Card</li>
                                 <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('card-credit') }}"><i class="fa fa-angle-right"></i>Credit Card</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('/') }}"><i class="fa fa-angle-right"></i>Debit Card</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('card-debit') }}"><i class="fa fa-angle-right"></i>Debit Card</a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
-                        <a href="{{ url('blog') }}"><i class="fa fa-picture-o b-menu-1level-ico"></i>Blog <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+                        <a href="{{ url('blog') }}" class="fa"><i class="fa fa-picture-o b-menu-1level-ico"></i><b>Blog</b> <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
                         <div class="b-top-nav__dropdomn">
                             <ul class="b-top-nav__2level_wrap">
                                 <li class="b-top-nav__2level_title f-top-nav__2level_title">Blog</li>
@@ -181,7 +145,7 @@
                         </div>
                     </li>
                     <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
-                        <a href="{{ url('about-us') }}"><i class="fa fa-list b-menu-1level-ico"></i>About Us <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+                        <a href="{{ url('about-us') }}" class="fa"><i class="fa fa-list b-menu-1level-ico"></i><b>About Us</b> <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
                         {{--<div class="b-top-nav__dropdomn">--}}
                             {{--<ul class="b-top-nav__2level_wrap">--}}
                                 {{--<li class="b-top-nav__2level_title f-top-nav__2level_title">Shopping</li>--}}
@@ -196,7 +160,7 @@
                         {{--</div>--}}
                     </li>
                     <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
-                        <a href="{{ url('contact-us') }}"><i class="fa fa-folder-open b-menu-1level-ico"></i>Contact Us<span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+                        <a href="{{ url('contact-us') }}" class="fa"><i class="fa fa-folder-open b-menu-1level-ico"></i><b>Contact Us</b><span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
                         {{--<div class="b-top-nav__dropdomn">--}}
                             {{--<ul class="b-top-nav__2level_wrap">--}}
                                 {{--<li class="b-top-nav__2level_title f-top-nav__2level_title">Contact us</li>--}}
