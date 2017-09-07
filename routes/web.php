@@ -26,7 +26,7 @@ Route::get('blog-posting', 'blog\BlogController@blog_file_view');
 Route::get('blog-subscribers', 'blog\BlogController@blog_file_view');
 Route::get('blog-settings', 'blog\BlogController@blog_file_view');
 Route::get('blog-category', 'blog\BlogController@blog_file_view');
-Route::post('blog-category-insert', 'blog\BlogCategory@blog_category_insert');
+Route::post('blog-category-insert', 'blog\BlogCategoryController@blog_category_insert');
 Route::get('blog-user', 'blog\BlogController@blog_file_view');
 
 
@@ -120,6 +120,11 @@ Route::get('card-credit', 'fe\app\ViewFileController@view_file');
 Route::get('card-debit', 'fe\app\ViewFileController@view_file');
 
 Route::get('blog', 'fe\app\ViewFileController@view_file_blog');
+Route::post('blog-user-insert', 'fe\app\blog\BlogUserController@blog_user_insert');
+Route::get('blog-user-profile', 'fe\app\ViewFileController@view_file_blog');
+Route::post('blog-user-post-insert', 'fe\app\blog\BlogUserPostController@blog_user_post_insert');
+
+
 
 Route::get('contact-us', 'fe\app\ViewFileController@view_file_blog');
 Route::get('about-us', 'fe\app\ViewFileController@view_file_blog');

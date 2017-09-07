@@ -212,7 +212,7 @@
 
         <div class="table-h-t m-b-20">
             <div class="col-md-3 m-t-0">
-                <span class="text-success f-s-12">Showing 1 to 10 of 12 entries</span>
+                <span class="text-success f-s-12">Showing {{Session::get('count')}} entries</span>
             </div>
             <div class="col-md-3"></div>
             <div class="col-md-3"></div>

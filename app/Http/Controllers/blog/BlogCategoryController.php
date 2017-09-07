@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
-class BlogCategory extends Controller
+class BlogCategoryController extends Controller
 {
     //Blog Category Save
     public function blog_category_insert(Request $request)

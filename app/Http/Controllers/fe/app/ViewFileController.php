@@ -172,6 +172,12 @@ class ViewFileController extends Controller
                 //$rough_view = Packageitemdefault::all();
 
                 break;
+            case "blog-user-profile":
+                $file_open = 'fe.blog.blog_user_profile';
+                //$data_view = Client::all();
+                //$rough_view = Packageitemdefault::all();
+
+                break;
             case "contact-us":
                 $file_open = 'fe.info.contact_us';
                 //$data_view = Client::all();

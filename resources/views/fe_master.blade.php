@@ -58,9 +58,32 @@
             </div>
             <div class="b-option-total-cart">
                 <div class="b-option-total-cart__goods">
+                    <a href="#" class="f-option-total-cart__numbers b-option-total-cart__numbers"><i class="fa fa-lock"></i>Login &nbsp;</a>
+                    <div class="b-option-cart__items">
+                        {!! Form::open(array('url'=>'define', 'role'=>'form', 'method'=>'POST')) !!}
+                        <div class="m-t-10">
+                            <div class="form-group">
+                                <label for="email">Email Address:</label>
+                                <input type="email" class="form-control" id="email" placeholder="example@ralitsoft.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Password:</label>
+                                <input type="password" class="form-control" id="username" placeholder="Write password">
+                            </div>
+
+                            <button type="submit" class="btn btn-success btn-sm">Login</button>
+                            <a data-toggle="modal" data-target="#signUp" class="btn btn-default btn-sm pull-right">Sign Up</a>
+                        </div>
+                        {!! Form::close() !!}
+                    </div>
+                </div>
+            </div>
+
+            <div class="b-option-total-cart">
+                <div class="b-option-total-cart__goods">
                     <a href="#" class="f-option-total-cart__numbers b-option-total-cart__numbers"><i class="fa fa-arrow-down"></i>Subscribe &nbsp;</a>
                     <div class="b-option-cart__items">
-                        {!! Form::open(array('url'=>'define-route', 'role'=>'form', 'method'=>'POST')) !!}
+                        {!! Form::open(array('url'=>'define', 'role'=>'form', 'method'=>'POST')) !!}
                         <div class="m-t-10">
                             <div class="form-group">
                                 <label for="email">Give Your Email address:</label>
@@ -72,6 +95,71 @@
                     </div>
                 </div>
             </div>
+
+            <!--start category -->
+            <div id="signUp" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!--start Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title text-success text-center">
+                                Registration Here
+                            </h4>
+                        </div>
+                        <div class="modal-body" style="overflow: hidden">
+                            <div class="col-md-12">
+                                <div class="col-md-12 f-s-14 f-f-s">
+
+                                    {!! Form::open(array('url'=>'blog-user-insert', 'role'=>'form', 'method'=>'POST')) !!}
+                                    <div class="form-horizontal m-t-10">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <input type="hidden" name="insert_save" value="insert_save">
+
+                                        <div class="form-group">
+                                            <label class="col-sm-4 m-t-8 text-right" for="username">Full Name :</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" name="name" class="form-control" id="username" placeholder="Enter name...">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 m-t-8 text-right" for="email">Email Address :</label>
+                                            <div class="col-sm-6">
+                                                <input type="email" name="email" class="form-control" id="email" placeholder="example@ralitsoft.com">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 m-t-8 text-right" for="password">Password :</label>
+                                            <div class="col-sm-6">
+                                                <input type="password" name="pass" class="form-control" id="username" placeholder="Write password">
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="form-group">
+                                            <label class="col-sm-4" for="email"></label>
+                                            <div class="col-sm-6 m-t-15">
+                                                <button type="submit" class="btn btn-success col-sm-12">Sign Up</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    {!! Form::close() !!}
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <!--end Modal content-->
+
+                </div>
+            </div>
+            <!--end detailsInfo -->
         </div>
     </div>
     <div class="container b-header__box b-relative">
@@ -182,6 +270,7 @@
 
 @include('fe.include_fe_footer')
 
+<script src="{{URL::asset('ap/ckeditor/ckeditor.js')}}"></script>
 <script src="{{URL::asset('fe/angular/js/angular.js')}}"></script>
 <script src="{{URL::asset('fe/angular/js/fe_loanController.js')}}"></script>
 <script src="{{URL::asset('fe/angular/js/homeController.js')}}"></script>
