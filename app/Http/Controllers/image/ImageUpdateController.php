@@ -40,6 +40,12 @@ class ImageUpdateController extends Controller
                 $destination_path_define = 'ap/images/card_category/';
                 $updated_tbl_field_img_url = 'cc_image_url';  //--change_image_url_of_table_field
                 break;
+            case "444":
+                $table_name = 'blogs';
+                $where_field_id = 'id';
+                $destination_path_define = 'fe/img/blog_pic/';
+                $updated_tbl_field_img_url = 'blog_image';  //--change_image_url_of_table_field
+                break;
             default:
                 return Redirect::to($previous_url);
         }

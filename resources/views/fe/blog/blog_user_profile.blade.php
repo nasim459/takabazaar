@@ -31,9 +31,6 @@
                                 <li><a class="f-primary-l" href="#tabs-12"><i class="fa fa-pencil-square-o"></i> Write Blog</a></li>
                                 <li><a class="f-primary-l" href="#tabs-13"><i class="fa fa-eye"></i> View Blog</a></li>
                                 <li><a class="f-primary-l" href="#tabs-14"><i class="fa fa-list"></i> Total Blog</a></li>
-                                <li><a class="f-primary-l" href="#tabs-15"><i class="fa fa-home"></i> Heading office</a></li>
-                                <li><a class="f-primary-l" href="#tabs-16"><i class="fa fa-comments"></i> Our team</a></li>
-                                <li><a class="f-primary-l" href="#tabs-16">&nbsp;</a></li>
                             </ul>
                         </div>
                         <div class="col-md-9 col-sm-8 b-tabs-vertical__content">
@@ -48,14 +45,125 @@
                                             <dd>ralitsoft@gmail.com</dd>
                                         </dl>
                                         <br>
-                                        <a href="" class="btn btn-default btn-sm m-t-5 pull-right"><i class="fa fa-edit"> Edit</i></a>
+                                        <a data-toggle="modal" data-target="#infoUpdate" class="btn btn-default btn-sm m-t-5 pull-right"><i class="fa fa-edit"> Edit</i></a>
                                     </div>
                                     <div class="col-md-3">
                                         {{--<img src="{{ url('fe/img/blog_users/nasim.jpg') }}" class="img-thumbnail" alt="Cinque Terre" height="150">--}}
                                         <img src="{{ url('fe/img/blog_users/img_blank.jpg') }}" class="img-thumbnail" alt="Cinque Terre" height="150">
                                         <br>
-                                        <a href="" class="btn btn-default btn-sm m-t-5"><i class="fa fa-edit"> Picture Edit</i></a>
+                                        <a data-toggle="modal" data-target="#personPic" class="btn btn-default btn-sm m-t-5"><i class="fa fa-edit"> Picture Edit</i></a>
                                     </div>
+
+                                    <!--start information_update -->
+                                    <div id="infoUpdate" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+
+                                            <!--start Modal content-->
+                                            <div class="modal-content m-t-80">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title text-success text-center">
+                                                        Update Information
+                                                    </h4>
+                                                </div>
+                                                <div class="modal-body" style="overflow: hidden">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-12 f-s-14 f-f-s" style="overflow: hidden;">
+
+                                                            {!! Form::open(array('url'=>'blog-user-insert', 'role'=>'form', 'method'=>'POST')) !!}
+                                                            <div class="form-horizontal m-t-10">
+                                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                                <input type="hidden" name="insert_save" value="insert_save">
+
+                                                                <div class="form-group">
+                                                                    <label class="col-sm-4 m-t-8 text-right" for="username">Full Name :</label>
+                                                                    <div class="col-sm-6">
+                                                                        <input type="text" name="name" class="form-control" id="username">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="col-sm-4 m-t-8 text-right" for="email">Email Address :</label>
+                                                                    <div class="col-sm-6">
+                                                                        <input type="email" name="email" class="form-control" id="email">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="col-sm-4" for="email"></label>
+                                                                    <div class="col-sm-6 m-t-15">
+                                                                        <button type="submit" class="btn btn-success col-sm-12">Update</button>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            {!! Form::close() !!}
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                            <!--end Modal content-->
+
+                                        </div>
+                                    </div>
+                                    <!--end information_update -->
+
+                                    <!--start person_picture_update-->
+                                    <div id="personPic" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+
+                                            <!--start Modal content-->
+                                            <div class="modal-content m-t-80">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title text-success text-center">
+                                                        Update Picture
+                                                    </h4>
+                                                </div>
+                                                <div class="modal-body" style="overflow: hidden">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-12 f-s-14 f-f-s">
+
+                                                            {!! Form::open(array('url'=>'image-update', 'role'=>'form', 'method'=>'POST', 'files'=>'true')) !!}
+                                                            <div class="form-horizontal">
+                                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                                <input type="hidden" name="id" value="2">
+                                                                <input type="hidden" name="user_id" value="2">
+                                                                <input type="hidden" name="t_id" value="444">
+
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputName2" class="col-sm-4 control-label">Change Picture:</label>
+                                                                    <div class="col-sm-6 m-t-5">
+                                                                        <input type="file" name="image" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <hr>
+
+                                                            <div class="form-horizontal">
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-offset-4 col-sm-10 m-t-15">
+                                                                        <input type="submit" value="Update" class="btn btn-success col-sm-4">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            {!! Form::close() !!}
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                            <!--end Modal content-->
+
+                                        </div>
+                                    </div>
+                                    <!--end person_picture_update -->
                                 </div>
                             </div>
 
@@ -74,12 +182,11 @@
                                                 <label for="exampleInputName2" class="col-sm-4 control-label">Category Select:</label>
                                                 <div class="col-sm-4">
                                                     <select class="form-control" name="category_id" required>
-                                                        <option value="1">SME</option>
-                                                        <option value="2">Car</option>
-                                                        <option value="3">Home</option>
-                                                        <option value="4">Personal</option>
-                                                        <option value="5">Others</option>
-                                                        <option value="6">Working Capital</option>
+                                                        <option value="">Choose Categoy</option>
+
+                                                        @foreach($blog_category as $v)
+                                                            <option value="{{$v->id}}">{{$v->category_name}}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>
@@ -127,25 +234,257 @@
                             <div id="tabs-13">
                                 <div class="b-tabs-vertical__content-text">
                                     <h3 class="f-tabs-vertical__title f-primary-b"><i class="fa">View Blog At A Glance</i></h3>
-                                    <p>Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat nunc at augue tincidunt vehicula.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod purus eu sapien faucibus, quis porta ipsum accumsan. Pellentesque gravida mauris ac aliquam consequat. Vivamus accumsan mi a metus euismod vulputate. Ut imperdiet, nunc suscipit volutpat feugiat, quam odio luctus dolor, condimentum faucibus velit tellus nec risus. Nam auctor tellus ut lorem ultricies, vitae commodo eros pretium. Curabitur facilisis bibendum enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum eget nisi viverra, adipiscing purus a, placerat erat. Praesent hendrerit, tellus id dapibus porta, ante velit fringilla mi, eget pellentesque nulla mauris interdum mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec elementum nisl convallis tincidunt ornare. In a interdum orci. Fusce id nibh cursus, pulvinar mi ac, auctor ipsum. In hac habitasse platea dictumst. Curabitur porttitor suscipit mi, ac cursus mauris egestas at. Nulla leo mi, placerat non rutrum nec, consequat eget metus. </p>
+                                    <div class="row">
+
+                                        <div class="col-md-12">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                <tr>
+                                                    <th>Title</th>
+                                                    <th>Description</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @php $number = 0; $off = 0; $on = 1; $table = 444; @endphp
+                                                @foreach($data_view as $v)
+                                                <tr>
+                                                    <th scope="row">
+                                                        <a class="btn btn-default btn-xs"><i class="fa">{{$number = $number+1}}</i></a>
+                                                        <i class="fa">{{ str_limit($v->blog_title, 40, '...') }}</i>
+                                                    </th>
+                                                    <td>
+                                                        <i class="fa">{!! str_limit($v->blog_short_desc, 45, '...') !!}</i>
+                                                        <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}kkk" title="Click To Edit">
+                                                            <img src="{{ asset($v->blog_image) }}" height="16px" width="30px" alt="pic">
+                                                        </a>
+                                                        <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}k" title="Click To Details"><i class="fa"> details</i></a>
+                                                    </td>
+                                                    <td>
+                                                        @if($v->blog_control == 1)
+                                                            @if($v->blog_status == 1)
+                                                                <a href="{{URL::to('publication/'.$v->id.'/'.$off.'/'.$table)}}" class="btn btn-success btn-xs" title="Publish"><i class="fa fa-check"></i></a>
+                                                            @else
+                                                                <a href="{{URL::to('publication/'.$v->id.'/'.$on.'/'.$table)}}" class="btn btn-danger btn-xs" title="unPublish"><i class="fa fa-lock"> &nbsp;</i></a>
+                                                            @endif
+
+                                                            <a class="btn btn-default btn-xs text-success" data-toggle="modal" data-target="#{{$v->id}}kk" title="Click To Edit"><i class="fa fa-edit"> Edit&nbsp;</i></a>
+
+                                                        @else
+                                                            <a class="btn btn-warning btn-xs" title="Wait For Admin Permission"><i class="fa fa-lock"> Pending</i></a>
+                                                        @endif
+                                                    </td>
+                                                </tr>
+
+
+                                                <!--start blog_description -->
+                                                <div id="{{$v->id}}k" class="modal fade" role="dialog">
+                                                    <div class="modal-dialog">
+
+                                                        <!--start Modal content-->
+                                                        <div class="modal-content m-t-80">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                <h4 class="modal-title text-success text-center">
+                                                                    Blog Description
+                                                                </h4>
+                                                            </div>
+                                                            <div class="modal-body" style="overflow: hidden">
+                                                                <div class="col-md-12">
+                                                                    <div class="col-md-12 f-s-14 f-f-s" style="overflow: hidden;">
+
+                                                                        <div class="form-horizontal">
+                                                                            <div class="form-group">
+                                                                                <div class="col-sm-12 m-t-10 m-b-10">
+                                                                                    <b class="text-center">{!! $v->blog_title !!}</b>
+                                                                                </div>
+
+                                                                                <div class="col-sm-12">
+                                                                                    <img src="{{ asset($v->blog_image) }}" class="img-thumbnail" alt="Cinque Terre" height="150">
+                                                                                </div>
+
+                                                                                <div class="col-sm-12 m-t-10">
+                                                                                    <i class="fa text-success">Short Description :</i><br>
+                                                                                    {!! $v->blog_short_desc !!}
+                                                                                </div>
+
+                                                                                <div class="col-sm-12 m-t-10">
+                                                                                    <i class="fa text-success">Long Description :</i><br>
+                                                                                    {!! $v->blog_long_desc !!}
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                        <!--end Modal content-->
+
+                                                    </div>
+                                                </div>
+                                                <!--end blog_description -->
+
+                                                <!--start insert_update -->
+                                                <div id="{{$v->id}}kk" class="modal fade" role="dialog">
+                                                    <div class="modal-dialog">
+
+                                                        <!--start Modal content-->
+                                                        <div class="modal-content m-t-80">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                <h4 class="modal-title text-success text-center">
+                                                                    Update Your Blog
+                                                                </h4>
+                                                            </div>
+                                                            <div class="modal-body" style="overflow: hidden">
+                                                                <div class="col-md-12">
+                                                                    <div class="col-md-12 f-s-14 f-f-s" style="overflow: hidden;">
+
+                                                                        {!! Form::open(array('url'=>'blog-user-post-insert', 'role'=>'form', 'method'=>'POST', 'files'=>'true')) !!}
+                                                                        <div class="form-horizontal">
+                                                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                                                                            <input type="hidden" name="blog_id" value="{{$v->id}}">
+                                                                            <input type="hidden" name="insert_update" value="insert_update">
+
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputName2" class="col-sm-4 control-label">Blog Title:</label>
+                                                                                <div class="col-sm-4">
+                                                                                    <input type="text" name="b_title" value="{{$v->blog_title}}" class="form-control" id="exampleInputName2" required>
+                                                                                </div>
+
+                                                                                <div class="col-sm-4">
+                                                                                    <input type="file" class="m-t-5" name="image">
+                                                                                </div>
+                                                                            </div>
+                                                                            <hr>
+
+                                                                            <div class="form-group">
+                                                                                <div class="col-sm-10 col-sm-offset-1">
+                                                                                    <span class="text-success"><b>Short Description</b></span>
+                                                                                    <textarea name="s_desc" class="ckeditor" cols="30" rows="10">{{$v->blog_short_desc}}</textarea>
+                                                                                </div>
+                                                                                <div class="col-sm-10 col-sm-offset-1 m-t-15">
+                                                                                    <span class="text-success"><b>Loan Description</b></span>
+                                                                                    <textarea name="l_desc" class="ckeditor" cols="30" rows="10">{{$v->blog_long_desc}}</textarea>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            {{--<div class="form-group">--}}
+                                                                            {{--<label for="exampleInputName2" class="col-sm-4 control-label">Category :</label>--}}
+                                                                            {{--<div class="col-sm-6">--}}
+                                                                            {{--<select class="form-control" name="category_id" required>--}}
+                                                                            {{--<option value="">Change Categoy</option>--}}
+
+                                                                            {{--@foreach($blog_category as $v)--}}
+                                                                            {{--<option value="{{$v->id}}">{{$v->category_name}}</option>--}}
+                                                                            {{--@endforeach--}}
+                                                                            {{--</select>--}}
+                                                                            {{--</div>--}}
+                                                                            {{--</div>--}}
+                                                                            {{--<hr>--}}
+
+
+                                                                            <div class="form-group">
+                                                                                <div class="col-sm-offset-4 col-sm-10 m-t-15">
+                                                                                    <input type="submit" value="Update" class="btn btn-success col-sm-4">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        {!! Form::close() !!}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                        <!--end Modal content-->
+
+                                                    </div>
+                                                </div>
+                                                <!--end insert_update -->
+
+                                                <!--start image_update-->
+                                                <div id="{{$v->id}}kkk" class="modal fade" role="dialog">
+                                                    <div class="modal-dialog">
+
+                                                        <!--start Modal content-->
+                                                        <div class="modal-content m-t-80">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                <h4 class="modal-title text-success text-center">
+                                                                    Update Picture
+                                                                </h4>
+                                                            </div>
+                                                            <div class="modal-body" style="overflow: hidden">
+                                                                <div class="col-md-12">
+                                                                    <div class="col-md-12 f-s-14 f-f-s">
+
+                                                                        {!! Form::open(array('url'=>'image-update', 'role'=>'form', 'method'=>'POST', 'files'=>'true')) !!}
+                                                                        <div class="form-horizontal">
+                                                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                                            <input type="hidden" name="id" value="{{ $v->id }}">
+                                                                            <input type="hidden" name="t_id" value="444">
+
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputName2" class="col-sm-4 control-label m-t-20">Image :</label>
+                                                                                <div class="col-sm-6">
+                                                                                    <img src="{{ asset($v->blog_image) }}" height="60px" width="90px" alt="pic">
+                                                                                </div>
+                                                                            </div>
+                                                                            <hr>
+
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputName2" class="col-sm-4 control-label">Change Picture:</label>
+                                                                                <div class="col-sm-6">
+                                                                                    <input type="file" name="image" required>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <hr>
+
+                                                                        <div class="form-horizontal">
+                                                                            <div class="form-group">
+                                                                                <div class="col-sm-offset-4 col-sm-10 m-t-15">
+                                                                                    <input type="submit" value="Update" class="btn btn-success col-sm-4">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        {!! Form::close() !!}
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                        <!--end Modal content-->
+
+                                                    </div>
+                                                </div>
+                                                <!--end image_update -->
+
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+
                                 </div>
                             </div>
                             <div id="tabs-14">
                                 <div class="b-tabs-vertical__content-text">
                                     <h3 class="f-tabs-vertical__title f-primary-b"><i class="fa">Total Blog</i></h3>
-                                    <p>Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat nunc at augue tincidunt vehicula.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod purus eu sapien faucibus, quis porta ipsum accumsan. Pellentesque gravida mauris ac aliquam consequat. Vivamus accumsan mi a metus euismod vulputate. Ut imperdiet, nunc suscipit volutpat feugiat, quam odio luctus dolor, condimentum faucibus velit tellus nec risus. Nam auctor tellus ut lorem ultricies, vitae commodo eros pretium. Curabitur facilisis bibendum enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum eget nisi viverra, adipiscing purus a, placerat erat. Praesent hendrerit, tellus id dapibus porta, ante velit fringilla mi, eget pellentesque nulla mauris interdum mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec elementum nisl convallis tincidunt ornare. In a interdum orci. Fusce id nibh cursus, pulvinar mi ac, auctor ipsum. In hac habitasse platea dictumst. Curabitur porttitor suscipit mi, ac cursus mauris egestas at. Nulla leo mi, placerat non rutrum nec, consequat eget metus. </p>
-                                </div>
-                            </div>
-                            <div id="tabs-15">
-                                <div class="b-tabs-vertical__content-text">
-                                    <h3 class="f-tabs-vertical__title f-primary-b">Content heading 5</h3>
-                                    <p>Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat nunc at augue tincidunt vehicula.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod purus eu sapien faucibus, quis porta ipsum accumsan. Pellentesque gravida mauris ac aliquam consequat. Vivamus accumsan mi a metus euismod vulputate. Ut imperdiet, nunc suscipit volutpat feugiat, quam odio luctus dolor, condimentum faucibus velit tellus nec risus. Nam auctor tellus ut lorem ultricies, vitae commodo eros pretium. Curabitur facilisis bibendum enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum eget nisi viverra, adipiscing purus a, placerat erat. Praesent hendrerit, tellus id dapibus porta, ante velit fringilla mi, eget pellentesque nulla mauris interdum mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec elementum nisl convallis tincidunt ornare. In a interdum orci. Fusce id nibh cursus, pulvinar mi ac, auctor ipsum. In hac habitasse platea dictumst. Curabitur porttitor suscipit mi, ac cursus mauris egestas at. Nulla leo mi, placerat non rutrum nec, consequat eget metus. </p>
-                                </div>
-                            </div>
-                            <div id="tabs-16">
-                                <div class="b-tabs-vertical__content-text">
-                                    <h3 class="f-tabs-vertical__title f-primary-b">Content heading 6</h3>
-                                    <p>Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat nunc at augue tincidunt vehicula.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod purus eu sapien faucibus, quis porta ipsum accumsan. Pellentesque gravida mauris ac aliquam consequat. Vivamus accumsan mi a metus euismod vulputate. Ut imperdiet, nunc suscipit volutpat feugiat, quam odio luctus dolor, condimentum faucibus velit tellus nec risus. Nam auctor tellus ut lorem ultricies, vitae commodo eros pretium. Curabitur facilisis bibendum enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum eget nisi viverra, adipiscing purus a, placerat erat. Praesent hendrerit, tellus id dapibus porta, ante velit fringilla mi, eget pellentesque nulla mauris interdum mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec elementum nisl convallis tincidunt ornare. In a interdum orci. Fusce id nibh cursus, pulvinar mi ac, auctor ipsum. In hac habitasse platea dictumst. Curabitur porttitor suscipit mi, ac cursus mauris egestas at. Nulla leo mi, placerat non rutrum nec, consequat eget metus. </p>
+                                    <div class="col-md-8 well">
+                                        <a href="" class="btn btn-default btn-sm m-t-5"><i class="fa fa-hand-o-right"> Total blog {{ Session::get('count') }}</i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

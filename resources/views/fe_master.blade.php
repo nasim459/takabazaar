@@ -83,11 +83,11 @@
                 <div class="b-option-total-cart__goods">
                     <a href="#" class="f-option-total-cart__numbers b-option-total-cart__numbers"><i class="fa fa-arrow-down"></i>Subscribe &nbsp;</a>
                     <div class="b-option-cart__items">
-                        {!! Form::open(array('url'=>'define', 'role'=>'form', 'method'=>'POST')) !!}
+                        {!! Form::open(array('url'=>'subscriber-insert', 'role'=>'form', 'method'=>'POST')) !!}
                         <div class="m-t-10">
                             <div class="form-group">
                                 <label for="email">Give Your Email address:</label>
-                                <input type="email" class="form-control" id="email" placeholder="example@ralitsoft.com">
+                                <input type="email" name="sub_email" class="form-control" id="email" placeholder="example@ralitsoft.com" required>
                             </div>
                             <button type="submit" class="btn btn-success btn-sm">Subscribe Me</button>
                         </div>
@@ -147,6 +147,7 @@
 
                                     </div>
                                     {!! Form::close() !!}
+
                                 </div>
 
                             </div>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\fe\app;
 
+use App\Model\blog\Blog;
+use App\Model\blog\Categories;
 use App\Model\loan\Loan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -174,8 +176,9 @@ class ViewFileController extends Controller
                 break;
             case "blog-user-profile":
                 $file_open = 'fe.blog.blog_user_profile';
-                //$data_view = Client::all();
-                //$rough_view = Packageitemdefault::all();
+                $data_view = Blog::all();
+                $blog_category = Categories::all();
+                //dd($data_view);
 
                 break;
             case "contact-us":
@@ -196,11 +199,11 @@ class ViewFileController extends Controller
         }
         //----end fe_blog_module---------------------------------------------------------------
 
-        //$count = count($data_view);
-        //Session::put('count', $count);
+        $count = count($data_view);
+        Session::put('count', $count);
 
         $open_file = view($file_open);
-        //$open_file = view($file_open, compact('data_view'));
+        $open_file = view($file_open, compact('data_view', 'blog_category'));
         return view('fe_master')->with('fe_maincontent', $open_file);
     }
 }

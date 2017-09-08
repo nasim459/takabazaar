@@ -16,6 +16,7 @@ class BlogUserPostController extends Controller
     {
         //dd($request->all());
         $previous_url = url()->previous();
+        $insert_update = $request->insert_update;
 
         //------start_information_insert
         //------start_picture
@@ -43,8 +44,20 @@ class BlogUserPostController extends Controller
                 $save['blog_author_name'] = $blog_author_name;
                 $save['blog_image'] = $image_url;
                 $save['user_id'] = $user_id;
-                $save['category_id'] = $category_id;
-                DB::table('blogs')->insert($save);
+                //$save['category_id'] = $category_id;
+
+                if($insert_update == 'insert_update'){
+                    //----start insert_update area
+                    DB::table('blogs')
+                        ->where('id', $request->blog_id)
+                        ->update($save);
+                    //----end insert_update area
+                } else {
+                    //----start insert_save area
+                    $save['category_id'] = $category_id;
+                    DB::table('blogs')->insert($save);
+                    //----end insert_save area
+                }
 
                 Session::put('msg_suc', 'Data Inserted Successfully!');
                 return Redirect::to($previous_url);
@@ -56,8 +69,20 @@ class BlogUserPostController extends Controller
             $save['blog_long_desc'] = $blog_long_desc;
             $save['blog_author_name'] = $blog_author_name;
             $save['user_id'] = $user_id;
-            $save['category_id'] = $category_id;
-            DB::table('blogs')->insert($save);
+            //$save['category_id'] = $category_id;
+
+            if($insert_update == 'insert_update'){
+                //----start insert_update area
+                DB::table('blogs')
+                    ->where('id', $request->blog_id)
+                    ->update($save);
+                //----end insert_update area
+            } else {
+                //----start insert_save area
+                $save['category_id'] = $category_id;
+                DB::table('blogs')->insert($save);
+                //----end insert_save area
+            }
 
             Session::put('msg_suc', 'Data Inserted Successfully!');
             return Redirect::to($previous_url);

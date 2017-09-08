@@ -26,8 +26,9 @@
                 <thead>
                 <tr class="success">
                     <th class="col-sm-2">No</th>
+                    <th class="col-sm-2">Picture</th>
                     <th class="col-sm-2">User Name</th>
-                    <th class="col-sm-4">Email Address</th>
+                    <th class="col-sm-2">Email Address</th>
                     <th class="col-sm-2">Created</th>
                     <th class="col-sm-2">Status</th>
                 </tr>
@@ -40,10 +41,15 @@
                         <td class="col-xs-12 col-sm-2 text-success">
                             <a class="btn btn-default btn-xs"><i class="fa">{{$number = $number+1}}</i></a>
                         </td>
+                        <td class="col-xs-12 col-sm-2">
+                            <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}kkk">
+                                <img src="{{ asset($v->user_image) }}" height="16px" width="30px">
+                            </a>
+                        </td>
                         <td class="col-xs-12 col-sm-2" title="{{$v->user_name}}">
                             {{$v->user_name}}
                         </td>
-                        <td class="col-xs-12 col-sm-4">
+                        <td class="col-xs-12 col-sm-2">
                             {{$v->user_email}}
                         </td>
                         <td class="col-xs-12 col-sm-2">
@@ -57,6 +63,46 @@
                             @endif
                         </td>
                     </tr>
+
+
+                    <!--start user_image_show-->
+                    <div id="{{$v->id}}kkk" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!--start Modal content-->
+                            <div class="modal-content">
+                                {{--<div class="modal-header">--}}
+                                    {{--<button type="button" class="close" data-dismiss="modal">&times;</button>--}}
+                                    {{--<h4 class="modal-title text-success text-center">--}}
+                                        {{--User Picture--}}
+                                    {{--</h4>--}}
+                                {{--</div>--}}
+                                <div class="modal-body" style="overflow: hidden">
+                                    <div class="col-md-12 f-s-14 f-f-s">
+                                            <div class="form-horizontal">
+                                                <div class="form-group">
+                                                    <div class="col-sm-4 text-center m-t-30">
+                                                        <i class="fa">
+                                                            {{ $v->user_name }}<br>
+                                                            {{ $v->user_email }}
+                                                        </i>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <img src="{{ asset($v->user_image) }}" class="img-thumbnail" alt="ব্যবহারকারীর ছবি তাড়াতাড়ি আসতেছে" width="304" height="236">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                                {{--<div class="modal-footer">--}}
+                                    {{--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--}}
+                                {{--</div>--}}
+                            </div>
+                            <!--end Modal content-->
+
+                        </div>
+                    </div>
+                    <!--end user_image_show -->
                 @endforeach
 
                 </tbody>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\blog;
 
+use App\Model\blog\Blog;
+use App\Model\blog\Blogsubscriber;
 use App\Model\blog\Bloguser;
 use App\Model\blog\Categories;
 use Illuminate\Http\Request;
@@ -24,15 +26,16 @@ class BlogController extends Controller
 
         //----start ap_blog_module-----------------------------------------------------------
         switch($child){
-            case "blog-posting":
-                $file_open = 'ap.blog.blog_post';
-                $data_view = Investment::all()->where('invst_type', '1'); //invst_type=1 means Saving_account
+            case "blog-view":
+                $file_open = 'ap.blog.blog_view';
+                $data_view = Blog::orderBy('id', 'desc')->get();
+                //dd($data_view);
 
                 break;
-            case "blog-subscribers":
+            case "blog-subscriber":
                 $file_open = 'fe.info.contact_us';
-                $file_open = 'ap.blog.blog_subscribers';
-                $data_view = Investment::all()->where('invst_type', '2'); //invst_type=2 means fixed_ccount
+                $file_open = 'ap.blog.blog_subscriber';
+                $data_view = Blogsubscriber::all();
 
                 break;
             case "blog-settings":

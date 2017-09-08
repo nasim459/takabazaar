@@ -11,8 +11,8 @@
 
         <!--start Single button-->
         <div class="col-md-12 text-center m-t-mi-6">
-            <a href="{{ url('blog-posting') }}" class="app-menu btn btn-default text-success-light">Posting</a>
-            <a href="{{ url('blog-subscribers') }}" class="app-menu btn btn-default text-success-light">Subscribers</a>
+            <a href="{{ url('blog-view') }}" class="app-menu btn btn-default text-success-light">Posting</a>
+            <a href="{{ url('blog-subscriber') }}" class="app-menu btn btn-default text-success-light">Subscribers</a>
             <a href="{{ url('blog-settings') }}" class="app-menu btn btn-default text-success-light">Settings</a>
             <a href="{{ url('blog-category') }}" class="app-menu btn btn-default text-success-light">Blog Category</a>
             <a href="{{ url('blog-user') }}" class="app-menu btn btn-default text-success-light">Blog User</a>
