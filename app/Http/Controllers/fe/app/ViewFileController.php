@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 
 class ViewFileController extends Controller
 {
@@ -169,9 +170,12 @@ class ViewFileController extends Controller
         //----start fe_blog_module-----------------------------------------------------------
         switch($child){
             case "blog":
-                $file_open = 'fe.blog.blog';
-                //$data_view = Client::all();
-                //$rough_view = Packageitemdefault::all();
+                $file_open = 'fe.blog.blog_public';
+                $data_view = Blog::orderBy('blog_hit_count', 'desc')->limit(9)->get();
+                $data_view_one = Blog::orderBy('id', 'DESC')->limit(1)->get();
+                $blog_category = Categories::orderBy('id', 'DESC')->limit(10)->get();
+                $blog_category_all = Categories::all();
+                //dd($data_view_one);
 
                 break;
             case "blog-user-profile":
@@ -203,7 +207,58 @@ class ViewFileController extends Controller
         Session::put('count', $count);
 
         $open_file = view($file_open);
-        $open_file = view($file_open, compact('data_view', 'blog_category'));
+        $open_file = view($file_open, compact('data_view', 'data_view_one', 'blog_category', 'blog_category_all'));
+        return view('fe_master')->with('fe_maincontent', $open_file);
+    }
+
+    //----Blog (blog view_file_blog)
+    public function view_file_details($id, $blog_title) {
+
+        $child= Route::getFacadeRoot()->current()->uri();
+        //echo  $child;  exit();
+        $previous_url = url()->previous();
+
+        $file_open = 'fe.blog.blog_public_details';
+        $data_view = Blog::orderBy('blog_hit_count', 'desc')->limit(9)->get();
+        $data_view_one = Blog::where('id', $id)->get();
+        //dd($data_view_one);
+        $blog_category = Categories::orderBy('id', 'DESC')->limit(10)->get();
+        $blog_category_all = Categories::all();
+
+        //----Start Update Blog Hit_Count
+        //echo $data_view[0]->blog_hit_count;exit();
+        DB::table('blogs')
+            ->where('id', $id)
+            ->update(['blog_hit_count' => $data_view_one[0]->blog_hit_count +1]);
+        //----End Update Blog Hit_Count
+
+        $count = count($data_view);
+        Session::put('count', $count);
+
+        $open_file = view($file_open);
+        $open_file = view($file_open, compact('data_view', 'data_view_one', 'blog_category', 'blog_category_all'));
+        return view('fe_master')->with('fe_maincontent', $open_file);
+    }
+
+    //----Blog (blog view_file_blog)
+    public function view_file_category($id) {
+
+        $child= Route::getFacadeRoot()->current()->uri();
+        //echo  $child;  exit();
+        $previous_url = url()->previous();
+
+        $file_open = 'fe.blog.blog_category';
+        //$data_view = Blog::orderBy('blog_hit_count', 'desc')->limit(9)->get();
+        $data_view = Blog::where('category_id', $id)->get();
+        $data_view_one = Blog::orderBy('id', 'DESC')->limit(1)->get();
+        $blog_category = Categories::orderBy('id', 'DESC')->limit(10)->get();
+        $blog_category_all = Categories::all();
+
+        $count = count($data_view);
+        Session::put('count', $count);
+
+        $open_file = view($file_open);
+        $open_file = view($file_open, compact('data_view', 'data_view_one', 'blog_category', 'blog_category_all'));
         return view('fe_master')->with('fe_maincontent', $open_file);
     }
 }

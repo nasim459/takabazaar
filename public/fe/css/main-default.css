@@ -12813,8 +12813,12 @@ textarea.b-product-card-textarea {
   color: #6ac582;
   font-size: 16px;
 }
-.t-a-c{
-  text-align: center;
+.t-a-c{text-align: center!important;}
+.t-a-j{text-align: justify!important;}
+
+.blog-des{
+  font-size: 18px!important;
+  text-align: justify!important;
 }
 
 .m-t-5{margin-top: 5px!important;}

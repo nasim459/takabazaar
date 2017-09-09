@@ -123,6 +123,8 @@ Route::get('card-credit', 'fe\app\ViewFileController@view_file');
 Route::get('card-debit', 'fe\app\ViewFileController@view_file');
 
 Route::get('blog', 'fe\app\ViewFileController@view_file_blog');
+Route::get('blog-details/{id}/{blog_title}', 'fe\app\ViewFileController@view_file_details');
+Route::get('blog-category-view/{id}/{category_name}', 'fe\app\ViewFileController@view_file_category');
 Route::post('blog-user-insert', 'fe\app\blog\BlogUserController@blog_user_insert');
 Route::get('blog-user-profile', 'fe\app\ViewFileController@view_file_blog');
 Route::post('blog-user-post-insert', 'fe\app\blog\BlogUserPostController@blog_user_post_insert');

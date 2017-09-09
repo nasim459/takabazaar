@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-md-2"></div>
                 <div class="col-md-4 text-right m-t-10">
-                    <a href="{{ url('blog-write') }}" class="btn btn-default btn-xs text-success width-100" title="Create A Blog For Publishing"><i class="fa fa-plus"> Write Blog</i></a>
+                    <a class="btn btn-default btn-xs text-success width-100" title=" {{ Session::get('count') }} Subscribers"><i class="fa"> {{ Session::get('count') }} Subscribers</i></a>
                 </div>
             </div>
 
@@ -40,7 +40,7 @@
                         <td class="col-xs-12 col-sm-2">{{$v->updated_at}}</td>
                         <td class="col-xs-12 col-sm-4">
                             @if($v->status == 1)
-                                <a class="btn btn-success btn-xs" title="Publish"><i class="fa fa-check"></i></a>
+                                <a class="btn btn-default text-success btn-xs" title="Publish"><i class="fa fa-check"></i></a>
                             @else
                                 <a class="btn btn-danger btn-xs" title="This Article is unPublish by User"><i class="fa fa-lock"> &nbsp;</i></a>
                             @endif
