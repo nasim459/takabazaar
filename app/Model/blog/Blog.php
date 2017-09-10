@@ -7,7 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Blog extends Model
 {
     //
-    public function categories(){
-        return $this->belongsToMany(Categories::class);
+    public function category(){
+        return $this->belongsTo(Categories::class);
+    }
+
+    //
+    public function bloguser(){
+        return $this->belongsTo(Bloguser::class);
     }
 }

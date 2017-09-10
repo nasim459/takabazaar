@@ -98,7 +98,7 @@
                                         <i class="fa fa-gift fa-2x fa-3y"><br/><small class="f-s-18">Card</small></i>
                                     </a>
 
-                                    <a href="{{ url('blog-posting') }}" class="b-r-s width-130 m-t-5 btn btn-success">
+                                    <a href="{{ url('blog-view') }}" class="b-r-s width-130 m-t-5 btn btn-success">
                                         <i class="fa fa-gear fa-2x fa-3y"><br/><small class="f-s-18">Blog</small></i>
                                     </a>
                                     

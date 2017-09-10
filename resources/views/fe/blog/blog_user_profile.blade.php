@@ -251,24 +251,25 @@
                                                 <tr>
                                                     <th scope="row">
                                                         <a class="btn btn-default btn-xs"><i class="fa">{{$number = $number+1}}</i></a>
-                                                        <i class="fa">{{ str_limit($v->blog_title, 40, '...') }}</i>
+                                                        <i class="fa c-pointer" data-toggle="modal" data-target="#{{$v->id}}k" title="{{ $v->category['category_name'] }} Category"><b>{{ $v->category['category_name'] }}</b></i><br>
+                                                        <i class="fa m-l-20">{{ str_limit($v->blog_title, 40, '...') }} </i>
                                                     </th>
                                                     <td>
                                                         <i class="fa">{!! str_limit($v->blog_short_desc, 45, '...') !!}</i>
                                                         <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}kkk" title="Click To Edit">
                                                             <img src="{{ asset($v->blog_image) }}" height="16px" width="30px" alt="pic">
                                                         </a>
-                                                        <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}k" title="Click To Details"><i class="fa"> details</i></a>
+                                                        <a class="c-pointer" data-toggle="modal" data-target="#{{$v->id}}k" title="Click To Details"><i class="fa"> details</i></a>
                                                     </td>
                                                     <td>
                                                         @if($v->blog_control == 1)
                                                             @if($v->blog_status == 1)
-                                                                <a href="{{URL::to('publication/'.$v->id.'/'.$off.'/'.$table)}}" class="btn btn-success btn-xs" title="Publish"><i class="fa fa-check"></i></a>
+                                                                <a href="{{URL::to('publication/'.$v->id.'/'.$off.'/'.$table)}}" class="btn btn-default text-success btn-xs" title="Publish"><i class="fa fa-check"></i></a>
                                                             @else
-                                                                <a href="{{URL::to('publication/'.$v->id.'/'.$on.'/'.$table)}}" class="btn btn-danger btn-xs" title="unPublish"><i class="fa fa-lock"> &nbsp;</i></a>
+                                                                <a href="{{URL::to('publication/'.$v->id.'/'.$on.'/'.$table)}}" class="btn btn-danger text-success btn-xs" title="unPublish"><i class="fa fa-lock"> &nbsp;</i></a>
                                                             @endif
 
-                                                            <a class="btn btn-default btn-xs text-success" data-toggle="modal" data-target="#{{$v->id}}kk" title="Click To Edit"><i class="fa fa-edit"> Edit&nbsp;</i></a>
+                                                            <a class="btn btn-default btn-xs text-success" data-toggle="modal" data-target="#{{$v->id}}kk" title="Click To Edit"><i class="fa fa-edit">&nbsp;</i></a>
 
                                                         @else
                                                             <a class="btn btn-warning btn-xs" title="Wait For Admin Permission"><i class="fa fa-lock"> Pending</i></a>

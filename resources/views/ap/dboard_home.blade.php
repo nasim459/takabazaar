@@ -28,9 +28,9 @@
                     <small>Insurance</small>
                 </a>
 
-                <a href="{{ url('form'.'/'.'bank') }}" class="app btn btn-default" title="Add Your Bank">
-                    <i class="fa fa-plus text-success fa-2x fa-3y"></i><br/>
-                    <small>Bank</small>
+                <a href="{{ url('/') }}" target="_blank" class="app btn btn-default" title="Go To Your Website">
+                    <i class="fa fa-sitemap text-success fa-2x fa-3y"></i><br/>
+                    <small>View Website</small>
                 </a>
             </div>
         </div>

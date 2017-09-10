@@ -35,11 +35,11 @@
                 @php $number = 0; $off = 0; $on = 1; $table = '444_4'; @endphp
                 @foreach($data_view as $v)
                     <tr>
-                        <td class="col-xs-12 col-sm-1 text-success">
+                        <td class="col-xs-12 col-sm-1 text-success" title="{{ $v->category['category_name'] }} Category">
                             <a class="btn btn-default btn-xs"><i class="fa">{{$number = $number+1}}</i></a>
                         </td>
 
-                        <td class="col-xs-12 col-sm-3" title="{{ $v->blog_title }}">
+                        <td class="col-xs-12 col-sm-3" title="[ {{ $v->category['category_name'] }} ] {{ $v->blog_title }}">
                             {{str_limit($v->blog_title, 30, ' ...')}}
                         </td>
 
@@ -59,7 +59,7 @@
 
                         <td class="col-xs-12 col-sm-2">
                             @if($v->blog_status == 1)
-                                <a class="btn btn-success btn-xs" title="Publish"><i class="fa fa-check"></i></a>
+                                <a class="btn btn-default text-success btn-xs" title="Publish"><i class="fa fa-check"></i></a>
                             @else
                                 <a class="btn btn-danger btn-xs" title="This Article is unPublish by User"><i class="fa fa-lock"> &nbsp;</i></a>
                             @endif

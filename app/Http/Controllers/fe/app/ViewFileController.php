@@ -180,7 +180,7 @@ class ViewFileController extends Controller
                 break;
             case "blog-user-profile":
                 $file_open = 'fe.blog.blog_user_profile';
-                $data_view = Blog::all();
+                $data_view = Blog::orderBy('id', 'DESC')->get();
                 $blog_category = Categories::all();
                 //dd($data_view);
 

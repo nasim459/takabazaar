@@ -12821,6 +12821,8 @@ textarea.b-product-card-textarea {
   text-align: justify!important;
 }
 
+.m-l-20{margin-left: 20px!important;}
+
 .m-t-5{margin-top: 5px!important;}
 .m-t-8{margin-top: 8px!important;}
 .m-t-10{margin-top: 10px!important;}
@@ -12829,4 +12831,5 @@ textarea.b-product-card-textarea {
 
 .m-b-5{margin-bottom: 5px!important;}
 .m-b-10{margin-bottom: 10px!important;}
+.c-pointer{cursor: pointer!important;}
 /*----End Define by me*/

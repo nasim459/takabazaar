@@ -57,9 +57,9 @@
                         </td>
                         <td class="col-xs-12 col-sm-2">
                             @if($v->status == 1)
-                                <a href="{{URL::to('publication/'.$v->id.'/'.$off.'/'.$table)}}" class="btn btn-default btn-xs text-success" title="Publish"><i class="fa fa-check">&nbsp;Publish&nbsp; &nbsp;</i></a>
+                                <a href="{{URL::to('publication/'.$v->id.'/'.$off.'/'.$table)}}" class="btn btn-default btn-xs text-success" title="Publish"><i class="fa fa-check">&nbsp;Publish</i></a>
                             @else
-                                <a href="{{URL::to('publication/'.$v->id.'/'.$on.'/'.$table)}}" class="btn btn-default btn-xs text-danger" title="unPublish"><i class="fa fa-lock"> unPublish</i></a>
+                                <a href="{{URL::to('publication/'.$v->id.'/'.$on.'/'.$table)}}" class="btn btn-default btn-xs text-danger" title="Block"><i class="fa fa-lock"> Block &nbsp; &nbsp;</i></a>
                             @endif
                         </td>
                     </tr>
