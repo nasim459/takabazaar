@@ -4,6 +4,7 @@ namespace App\Http\Controllers\fe\app;
 
 use App\Model\blog\Blog;
 use App\Model\blog\Categories;
+use App\Model\fe\app\About;
 use App\Model\loan\Loan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -187,14 +188,14 @@ class ViewFileController extends Controller
                 break;
             case "contact-us":
                 $file_open = 'fe.info.contact_us';
-                //$data_view = Client::all();
-                //$rough_view = Packageitemdefault::all();
+                $data_view = Blog::orderBy('id', 'DESC')->get();
+                //dd($data_view);
 
                 break;
             case "about-us":
                 $file_open = 'fe.info.about_us';
-                //$data_view = Client::all();
-                //$rough_view = Packageitemdefault::all();
+                $data_view = About::all();
+                //dd($data_view);
 
                 break;
             default:

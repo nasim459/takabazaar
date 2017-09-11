@@ -23,8 +23,8 @@ class HelpController extends Controller
     //| 77  = cards
     //| 88  = cardcategories
     //| 99  = carddebits
-    //| 111 =
-    //| 222 =
+    //| 111 = abouts
+    //| 222 = contacts
     //| 333 =
     //| 444 = blog
     //| 555 = categories

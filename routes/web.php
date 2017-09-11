@@ -42,6 +42,9 @@ Route::get('cardcategory/{child}', 'cardcategory\CardCategoryController@cardcate
 //----Applying Controller---------------------------------------------
 Route::get('apply/{child}', 'applying\ApplyingController@applying_file_view');
 
+//----Info Controller---------------------------------------------
+Route::get('info/{child}', 'info\InfoController@info_file_view');
+
 //----Form Controller---------------------------------------------
 Route::get('form/{child}', 'form\FormController@form_file_view');
 
@@ -65,6 +68,10 @@ Route::post('form-card-debit-save', 'form\FormCardDebitController@card_debit_for
 
 //-----------form-cardcategory include data_save & data_update
 Route::post('form-cardcategory-save', 'form\FormCardCategoryController@cardcategory_form_save');
+
+//-----------form-info include data_save & data_update
+Route::post('form-info', 'form\FormInfoController@info_form');
+Route::post('form-info-contact', 'form\FormInfoController@contact_info_form');
 
 
 

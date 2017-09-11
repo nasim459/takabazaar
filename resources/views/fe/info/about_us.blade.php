@@ -28,190 +28,32 @@
                 </p>
                 <div class="b-shortcode-example">
                     <div class="b-employee-container row">
-                        <div class="col-md-3 col-sm-4 col-xs-12">
-                            <div class="b-employee-item b-employee-item--color f-employee-item">
-                                <div class=" view view-sixth">
-                                    <a href="#"><img class="j-data-element" data-animate="fadeInDown" data-retina src="{{ url('fe/img/users/user1.jpg') }}" alt=""/></a>
-                                    <div class="b-item-hover-action f-center mask">
-                                        <div class="b-item-hover-action__inner">
-                                            <div class="b-item-hover-action__inner-btn_group">
-                                                <a href="about_us_meet_our_team_detail.html" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h4 class="f-primary-b">John Doe</h4>
-                                <div class="b-employee-item__position f-employee-item__position">ceo and founder</div>
-                                <p>Consetetur sadipscing elitrd diam nonumy eirmod tempor invidunt ut labore.</p>
-                                <div class="b-employee-item__social">
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-thumbs-up"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-12">
-                            <div class="b-employee-item b-employee-item--color f-employee-item">
-                                <div class=" view view-sixth">
-                                    <a href="#"><img class="j-data-element" data-animate="fadeInDown" data-retina src="{{ url('fe/img/users/user2.jpg') }}" alt=""/></a>
-                                    <div class="b-item-hover-action f-center mask">
-                                        <div class="b-item-hover-action__inner">
-                                            <div class="b-item-hover-action__inner-btn_group">
-                                                <a href="about_us_meet_our_team_detail.html" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h4 class="f-primary-b">Andrew Clark</h4>
-                                <div class="b-employee-item__position f-employee-item__position">front-end developer</div>
-                                <p>Consetetur sadipscing elitrd diam nonumy eirmod tempor invidunt ut labore.</p>
-                                <div class="b-employee-item__social">
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-thumbs-up"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-12">
-                            <div class="b-employee-item b-employee-item--color f-employee-item">
-                                <div class=" view view-sixth">
-                                    <a href="#"><img class="j-data-element" data-animate="fadeInDown" data-retina src="{{ url('fe/img/users/user3.jpg') }}" alt=""/></a>
-                                    <div class="b-item-hover-action f-center mask">
-                                        <div class="b-item-hover-action__inner">
-                                            <div class="b-item-hover-action__inner-btn_group">
-                                                <a href="about_us_meet_our_team_detail.html" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h4 class="f-primary-b">Patrick evra</h4>
-                                <div class="b-employee-item__position f-employee-item__position">back-end developer</div>
-                                <p>Consetetur sadipscing elitrd diam nonumy eirmod tempor invidunt ut labore.</p>
-                                <div class="b-employee-item__social">
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-thumbs-up"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-12 hidden-xs hidden-sm">
-                            <div class="b-employee-item b-employee-item--color f-employee-item">
-                                <div class=" view view-sixth">
-                                    <a href="#"><img class="j-data-element" data-animate="fadeInDown" data-retina src="{{ url('fe/img/users/user4.jpg') }}" alt=""/></a>
-                                    <div class="b-item-hover-action f-center mask">
-                                        <div class="b-item-hover-action__inner">
-                                            <div class="b-item-hover-action__inner-btn_group">
-                                                <a href="about_us_meet_our_team_detail.html" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h4 class="f-primary-b">Scott paker</h4>
-                                <div class="b-employee-item__position f-employee-item__position">project manager</div>
-                                <p>Consetetur sadipscing elitrd diam nonumy eirmod tempor invidunt ut labore.</p>
-                                <div class="b-employee-item__social">
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-thumbs-up"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                </div>
-                <div class="b-shortcode-example">
-                    <div class="b-employee-container row">
-                        <div class="col-md-3 col-sm-4 col-xs-12">
-                            <div class="b-employee-item b-employee-item--color f-employee-item">
-                                <div class=" view view-sixth">
-                                    <a href="#"><img class="j-data-element" data-animate="fadeInDown" data-retina src="{{ url('fe/img/users/user5.jpg') }}" alt=""/></a>
-                                    <div class="b-item-hover-action f-center mask">
-                                        <div class="b-item-hover-action__inner">
-                                            <div class="b-item-hover-action__inner-btn_group">
-                                                <a href="about_us_meet_our_team_detail.html" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h4 class="f-primary-b">John Doe</h4>
-                                <div class="b-employee-item__position f-employee-item__position">ceo and founder</div>
-                                <p>Consetetur sadipscing elitrd diam nonumy eirmod tempor invidunt ut labore.</p>
-                                <div class="b-employee-item__social">
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-thumbs-up"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-12">
-                            <div class="b-employee-item b-employee-item--color f-employee-item">
-                                <div class=" view view-sixth">
-                                    <a href="#"><img class="j-data-element" data-animate="fadeInDown" data-retina src="{{ url('fe/img/users/user6.jpg') }}" alt=""/></a>
-                                    <div class="b-item-hover-action f-center mask">
-                                        <div class="b-item-hover-action__inner">
-                                            <div class="b-item-hover-action__inner-btn_group">
-                                                <a href="about_us_meet_our_team_detail.html" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h4 class="f-primary-b">Andrew Clark</h4>
-                                <div class="b-employee-item__position f-employee-item__position">front-end developer</div>
-                                <p>Consetetur sadipscing elitrd diam nonumy eirmod tempor invidunt ut labore.</p>
-                                <div class="b-employee-item__social">
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-thumbs-up"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-12">
-                            <div class="b-employee-item b-employee-item--color f-employee-item">
-                                <div class=" view view-sixth">
-                                    <a href="#"><img class="j-data-element" data-animate="fadeInDown" data-retina src="{{ url('fe/img/users/user7.jpg') }}" alt=""/></a>
-                                    <div class="b-item-hover-action f-center mask">
-                                        <div class="b-item-hover-action__inner">
-                                            <div class="b-item-hover-action__inner-btn_group">
-                                                <a href="about_us_meet_our_team_detail.html" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h4 class="f-primary-b">Patrick evra</h4>
-                                <div class="b-employee-item__position f-employee-item__position">back-end developer</div>
-                                <p>Consetetur sadipscing elitrd diam nonumy eirmod tempor invidunt ut labore.</p>
-                                <div class="b-employee-item__social">
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-thumbs-up"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-12 hidden-xs hidden-sm">
-                            <div class="b-employee-item b-employee-item--color f-employee-item">
-                                <div class=" view view-sixth">
-                                    <a href="#"><img class="j-data-element" data-animate="fadeInDown" data-retina src="{{ url('fe/img/users/user8.jpg') }}" alt=""/></a>
-                                    <div class="b-item-hover-action f-center mask">
-                                        <div class="b-item-hover-action__inner">
-                                            <div class="b-item-hover-action__inner-btn_group">
-                                                <a href="about_us_meet_our_team_detail.html" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h4 class="f-primary-b">Scott paker</h4>
-                                <div class="b-employee-item__position f-employee-item__position">project manager</div>
-                                <p>Consetetur sadipscing elitrd diam nonumy eirmod tempor invidunt ut labore.</p>
-                                <div class="b-employee-item__social">
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="b-employee-item__social_btn"><i class="fa fa-thumbs-up"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        @php $number = 0; @endphp
+                        @foreach($data_view as $v)
 
+                        <div class="col-md-3 col-sm-4 col-xs-12 m-t-30">
+                            <div class="b-employee-item b-employee-item--color f-employee-item">
+                                <div class=" view view-sixth">
+                                    <a href="#" title="{{$v->about_name}}"><img class="j-data-element" data-animate="fadeInDown" data-retina src="{{ asset($v->about_image) }}" height="230" style="padding: 5px;" alt=""/></a>
+                                </div>
+                                <p class="text-success m-t-10" style="color: green;">
+                                    <i class="fa" style="font-size: 18px;">{{$v->about_name}}</i><br>
+                                    <i class="fa" style="font-size: 16px;">{{$v->about_designation}}</i>
+                                </p>
+
+                                <div class="b-employee-item__social m-t-30">
+                                    <a href="{{$v->about_twitter}}" class="b-employee-item__social_btn"><i class="fa fa-twitter"></i></a>
+                                    <a href="{{$v->about_google}}" class="b-employee-item__social_btn"><i class="fa fa-google-plus"></i></a>
+                                    <a href="{{$v->about_fb}}" class="b-employee-item__social_btn"><i class="fa fa-thumbs-up"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+
+                    </div>
                 </div>
+
                 <div class="b-default-top-indent">
                     <div class="f-center b-remaining">
                         <div class="b-hr-with-btn">
