@@ -161,7 +161,8 @@ input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
-  /* 2 */ }
+  /* 2 */
+  zoom: 1.7;}
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -12762,6 +12763,7 @@ textarea.b-product-card-textarea {
 .img-app{
   border: 1px solid #b1f7b1;
   height:50px;
+  width: 120px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -12771,6 +12773,17 @@ textarea.b-product-card-textarea {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
+}
+
+.b-hover:hover{
+  /*border-bottom-color: #69e869;*/
+  /*border-right-color: #69e869;*/
+  /*border-left-color: #69e869;*/
+
+  /*border-bottom-color: #b16f6f;*/
+  /*border-right-color: #b16f6f;*/
+  /*border-left-color: #b16f6f;*/
+  box-shadow: 0px 1px 2px 2px #e8e8d6;
 }
 
 .app-box{
@@ -12823,6 +12836,7 @@ textarea.b-product-card-textarea {
 .tar{text-align: right;}
 
 .m-l-20{margin-left: 20px!important;}
+.m-l-10{margin-left: 10px!important;}
 
 .m-t-5{margin-top: 5px!important;}
 .m-t-8{margin-top: 8px!important;}
@@ -12835,3 +12849,16 @@ textarea.b-product-card-textarea {
 .m-b-10{margin-bottom: 10px!important;}
 .c-pointer{cursor: pointer!important;}
 /*----End Define by me*/
+
+@media screen and (max-width: 600px) {
+  .r-mobile{
+    margin-bottom: 15px;
+  }
+}
+
+/*----Start User Rating Star----*/
+
+/*----Start User Rating Star----*/
+
+
+

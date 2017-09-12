@@ -38,7 +38,7 @@
                     <tr>
                         <td class="col-xs-12 col-sm-2 text-success" title="{{$v->bank->bank_name}}">
                             <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}kkk">
-                                <img src="{{ asset($v->bank->bank_image_url) }}" height="16px" width="30px" alt="pic">
+                                <img src="{{ asset('ap/images/banks/'.$v->bank->bank_image_url) }}" height="16px" width="30px" alt="pic">
                             </a>
                             {{str_limit($v->bank->bank_name, 11, ' ...')}}
                         </td>
@@ -311,7 +311,7 @@
                                                 <div class="form-group">
                                                     <label for="exampleInputName2" class="col-sm-4 control-label m-t-20">Image :</label>
                                                     <div class="col-sm-6">
-                                                        <img src="{{ asset($v->bank->bank_image_url) }}" height="60px" width="90px" alt="pic">
+                                                        <img src="{{ asset('ap/images/banks/'.$v->bank->bank_image_url) }}" height="60px" width="90px" alt="pic">
                                                     </div>
                                                 </div>
                                                 <hr>

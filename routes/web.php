@@ -138,6 +138,14 @@ Route::post('blog-user-post-insert', 'fe\app\blog\BlogUserPostController@blog_us
 
 
 
+Route::post('user-rating', 'fe\app\reviewRaingController@user_rating');
+
 Route::get('contact-us', 'fe\app\ViewFileController@view_file_blog');
 Route::get('about-us', 'fe\app\ViewFileController@view_file_blog');
 //=====================================End Front End Template Design==================
+
+Route::get('get-ip-details', function () {
+    $ip = '66.102.0.0';
+    $data = \Location::get($ip);
+    dd($data);
+});

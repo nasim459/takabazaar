@@ -15,14 +15,30 @@
 
                 <div class="col-md-10 col-md-offset-1">
                     {{--<div class="b-infoblock-with-icon">--}}
-                    <a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
-                        <i class="fa fa-spinner z_1_5"><br><span class="f-s-16">Investment</span></i>
+                    <a href="{{ url('loan-home') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
+                        <i class="fa fa-home z_1_5"><br><span class="f-s-16">Home Loan</span></i>
                     </a>
-                    <a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
-                        <i class="fa fa-spinner z_1_5"><br><span class="f-s-16">Investment</span></i>
+                    <a href="{{ url('loan-car') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
+                        <i class="fa fa-car z_1_5"><br><span class="f-s-16">Car Loan</span></i>
                     </a>
-                    <a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
-                        <i class="fa fa-spinner z_1_5"><br><span class="f-s-16">Investment</span></i>
+                    <a href="{{ url('loan-personal') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
+                        <i class="fa fa-user z_1_5"><br><span class="f-s-16">Personal</span></i>
+                    </a>
+                    <a href="{{ url('loan-sme') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
+                        <i class="fa fa-leaf z_1_5"><br><span class="f-s-16">SME Loan</span></i>
+                    </a>
+                    <a href="{{ url('loan-working-capital') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
+                        <i class="fa fa-book z_1_5"><br><span class="f-s-16">Work loan</span></i>
+                    </a>
+
+                    <a href="{{ url('investment-saving') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
+                        <i class="fa fa-arrow-down z_1_5"><br><span class="f-s-16">Saving</span></i>
+                    </a>
+                    <a href="{{ url('investment-fixed') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
+                        <i class="fa fa-leaf z_1_5"><br><span class="f-s-16">Fixed</span></i>
+                    </a>
+                    <a href="{{ url('investment-mutual') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
+                        <i class="fa fa-leaf z_1_5"><br><span class="f-s-16">Mutual</span></i>
                     </a>
                     <a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
                         <i class="fa fa-spinner z_1_5"><br><span class="f-s-16">Investment</span></i>
@@ -31,36 +47,20 @@
                         <i class="fa fa-spinner z_1_5"><br><span class="f-s-16">Investment</span></i>
                     </a>
 
-                    <a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
-                        <i class="fa fa-spinner z_1_5"><br><span class="f-s-16">Investment</span></i>
+                    <a href="{{ url('insurance-life') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
+                        <i class="fa fa-user z_1_5"><br><span class="f-s-16">Life</span></i>
+                    </a>
+                    <a href="{{ url('insurance-marine') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
+                        <i class="fa fa-car z_1_5"><br><span class="f-s-16">Marine</span></i>
+                    </a>
+                    <a href="{{ url('insurance-motor-bike') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
+                        <i class="fa fa-home z_1_5"><br><span class="f-s-16">Bike</span></i>
+                    </a>
+                    <a href="{{ url('insurance-motor-car') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
+                        <i class="fa fa-car z_1_5"><br><span class="f-s-16">Car</span></i>
                     </a>
                     <a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
-                        <i class="fa fa-spinner z_1_5"><br><span class="f-s-16">Investment</span></i>
-                    </a>
-                    <a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
-                        <i class="fa fa-spinner z_1_5"><br><span class="f-s-16">Investment</span></i>
-                    </a>
-                    <a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
-                        <i class="fa fa-spinner z_1_5"><br><span class="f-s-16">Investment</span></i>
-                    </a>
-                    <a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
-                        <i class="fa fa-spinner z_1_5"><br><span class="f-s-16">Investment</span></i>
-                    </a>
-
-                    <a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
-                        <i class="fa fa-spinner z_1_5"><br><span class="f-s-16">Investment</span></i>
-                    </a>
-                    <a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
-                        <i class="fa fa-spinner z_1_5"><br><span class="f-s-16">Investment</span></i>
-                    </a>
-                    <a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
-                        <i class="fa fa-spinner z_1_5"><br><span class="f-s-16">Investment</span></i>
-                    </a>
-                    <a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
-                        <i class="fa fa-spinner z_1_5"><br><span class="f-s-16">Investment</span></i>
-                    </a>
-                    <a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
-                        <i class="fa fa-spinner z_1_5"><br><span class="f-s-16">Investment</span></i>
+                        <i class="fa fa-home z_1_5"><br><span class="f-s-16">Home</span></i>
                     </a>
                     {{--</div>--}}
                 </div>

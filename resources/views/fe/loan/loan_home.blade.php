@@ -33,7 +33,7 @@
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="fa">I want to borrow</i></div>
-                                                <input type="text" ng-model="search_rental" class="form-control" id="exampleInputAmount" placeholder="Amount">
+                                                <input type="text" ng-model="nas" class="form-control" id="exampleInputAmount" placeholder="Amount">
                                                 <div class="input-group-addon">৳</div>
                                             </div>
                                         </div>
@@ -93,19 +93,19 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-12 col-md-12 b-item-apartment-block" ng-repeat="v in display_data">
-                        <div class="b-some-examples__item f-some-examples__item">
+                    <div class="col-sm-12 col-md-12 b-item-apartment-block" ng-repeat="v in display_data | filter : nas">
+                        <div class="b-some-examples__item f-some-examples__item b-hover">
                             <div class="b-some-examples__item_action app-box">
                                 <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <img src="{{ asset('fe/img/bank/1.jpg') }}" class="img-app" alt="pic">
+                                    <img src="@{{ 'ap/images/banks/'+v.bank.bank_image_url }}" class="img-app" alt="pic" title="@{{v.bank.bank_name}}">
                                     <p class="b-stars-group" style="font-size: 12px; margin-top: 4px">
-                                        <span><b>Dhaka Bank</b></span><br>
+                                        <span><b>@{{v.bank.bank_name | limitTo: 18 }}</b></span><br>
                                         <span>5020 views</span><br>
-                                        <i class="fa fa-star is-active-stars"></i>
-                                        <i class="fa fa-star is-active-stars"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
+                                        <i data-target="#@{{v.id}}p" data-toggle="modal" class="fa fa-star is-active-stars"></i>
+                                        <i data-target="#@{{v.id}}p" data-toggle="modal" class="fa fa-star is-active-stars"></i>
+                                        <i data-target="#@{{v.id}}p" data-toggle="modal" class="fa fa-star"></i>
+                                        <i data-target="#@{{v.id}}p" data-toggle="modal" class="fa fa-star"></i>
+                                        <i data-target="#@{{v.id}}p" data-toggle="modal" class="fa fa-star"></i>
                                     </p>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2 nas">
@@ -117,16 +117,149 @@
                                 <div class="col-xs-12 col-sm-2 col-md-2 nas">
                                     <i class="fa">@{{v.loan_interest_payable}} ৳</i>
                                 </div>
-                                <div class="col-xs-12 col-sm-2 col-md-2 nas">
+                                <div class="col-xs-12 col-sm-2 col-md-2 nas m-b-5">
                                     <i class="fa">@{{v.loan_period}} years</i>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <a data-target="#apply" data-toggle="modal" class="btn btn-success btn-xs col-md-12"> Apply</a>
-                                    <a data-target="#document" data-toggle="modal" class="btn btn-primary btn-xs col-md-12" style="margin-top: 4px;margin-bottom: 4px;"> Required Documents</a>
-                                    <a data-target="#details" data-toggle="modal" class="btn btn-danger btn-xs col-md-12"> View Details</a>
+                                    <a data-target="#apply" data-toggle="modal" class="btn btn-success btn-xs col-xs-12 col-md-12"> Apply</a>
+                                    <a data-target="#document" data-toggle="modal" class="btn btn-primary btn-xs  col-xs-12 col-md-12" style="margin-top: 4px;margin-bottom: 4px;"> Required Documents</a>
+                                    <a data-target="#details" data-toggle="modal" class="btn btn-danger btn-xs m-b-5 col-xs-12 col-md-12"> View Details</a>
                                 </div>
                             </div>
                         </div>
+
+                        <!--start user_rating -->
+                        <div id="@{{v.id}}p" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!--start Modal content-->
+                                <div class="modal-content modal-top">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <a href=""><i class="fa app-tab-in">Choose Your Option To Give Your Rating</i></a>
+                                    </div>
+                                    <div class="modal-body" style="overflow: hidden">
+                                        <div class="col-md-12">
+                                            <div class="col-md-12 f-s-14 f-f-s">
+
+
+                                                {!! Form::open(array('url'=>'user-rating', 'role'=>'form', 'method'=>'POST')) !!}
+                                                <div class="form-horizontal">
+                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                    <input type="hidden" name="id" value="@{{ v.id }}">
+                                                    <input type="hidden" name="t_id" value="33">
+                                                    <input type="text" name="t_id" value="">
+
+
+                                                    {{--@if(!empty($_SERVER["HTTP_CLIENT_IP"]))--}}
+                                                        {{--$IP = $_SERVER["HTTP_CLIENT_IP"];--}}
+                                                    {{--@elseif(!empty($_SERVER["HTTP_X_FORWARDED_FOR"]))--}}
+                                                        {{--$IP = $_SERVER["HTTP_X_FORWARDED_FOR"];--}}
+                                                    {{--@else--}}
+                                                        {{--$IP = $_SERVER["REMOTE_ADDR"]--}}
+                                                        {{--@endif--}}
+                                                    {{--{{ $IP }}--}}
+
+
+                                                    <div class="form-group" style="margin-bottom: -15px;">
+                                                        <label for="exampleInputName2" class="col-xs-12 col-sm-6 control-label m-t-20">
+                                                            <p class="b-stars-group" style="font-size: 18px;">
+                                                                <i class="fa fa-star is-active-stars"></i>
+                                                                <i class="fa fa-star is-active-stars"></i>
+                                                                <i class="fa fa-star is-active-stars"></i>
+                                                                <i class="fa fa-star is-active-stars"></i>
+                                                                <i class="fa fa-star is-active-stars"></i>
+                                                            </p>
+                                                        </label>
+                                                        <div class="col-xs-12 col-sm-4">
+                                                            <input type="radio" name="rating" value="5" checked><span class="m-l-10">5 Start</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group" style="margin-bottom: -15px;">
+                                                        <label for="exampleInputName2" class="col-xs-12 col-sm-6 control-label">
+                                                            <p class="b-stars-group" style="font-size: 18px;">
+                                                                <i class="fa fa-star is-active-stars"></i>
+                                                                <i class="fa fa-star is-active-stars"></i>
+                                                                <i class="fa fa-star is-active-stars"></i>
+                                                                <i class="fa fa-star is-active-stars"></i>
+                                                                <i class="fa fa-star"></i>
+                                                            </p>
+                                                        </label>
+                                                        <div class="col-xs-12 col-sm-4">
+                                                            <input type="radio" name="rating" value="4"><span class="m-l-10">4 Start</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group" style="margin-bottom: -15px;">
+                                                        <label for="exampleInputName2" class="col-xs-12 col-sm-6 control-label">
+                                                            <p class="b-stars-group" style="font-size: 18px;">
+                                                                <i class="fa fa-star is-active-stars"></i>
+                                                                <i class="fa fa-star is-active-stars"></i>
+                                                                <i class="fa fa-star is-active-stars"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                            </p>
+                                                        </label>
+                                                        <div class="col-xs-12 col-sm-4">
+                                                            <input type="radio" name="rating" value="3"><span class="m-l-10">3 Start</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group" style="margin-bottom: -15px;">
+                                                        <label for="exampleInputName2" class="col-xs-12 col-sm-6 control-label">
+                                                            <p class="b-stars-group" style="font-size: 18px;">
+                                                                <i class="fa fa-star is-active-stars"></i>
+                                                                <i class="fa fa-star is-active-stars"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                            </p>
+                                                        </label>
+                                                        <div class="col-xs-12 col-sm-4">
+                                                            <input type="radio" name="rating" value="2"><span class="m-l-10">2 Start</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="exampleInputName2" class="col-xs-12 col-sm-6 control-label">
+                                                            <p class="b-stars-group" style="font-size: 18px;">
+                                                                <i class="fa fa-star is-active-stars"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                            </p>
+                                                        </label>
+                                                        <div class="col-xs-12 col-sm-4">
+                                                            <input type="radio" name="rating" value="1"><span class="m-l-10">1 Start</span>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+
+                                                </div>
+
+                                                <div class="form-horizontal">
+                                                    <div class="form-group">
+                                                        <div class="col-sm-offset-4 col-sm-10 m-t-15">
+                                                            <input type="submit" value="Submit Rating" class="btn btn-success col-xs-12 col-sm-4">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {!! Form::close() !!}
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                                <!--end Modal content-->
+
+                            </div>
+                        </div>
+                        <!--end user_rating -->
                     </div>
                 </div>
 
@@ -578,6 +711,57 @@
                     </div>
                 </div>
                 {{--End Modal apply--}}
+
+                {{--Start Modal apply--}}
+                <div id="pp" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        {{--Start Modal--}}
+                        <div class="modal-content modal-top">
+                            <div class="modal-header t-a-c">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <i class="fa app-tab-in">Give Your Rating</i>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-md-12 f-s-14 f-f-s">
+
+
+                                    {!! Form::open(array('url'=>'ryryry', 'role'=>'form', 'method'=>'POST', 'files'=>'true')) !!}
+                                    <div class="form-horizontal">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <input type="hidden" name="id" value="">
+                                        <input type="hidden" name="t_id" value="33">
+
+                                        <div class="form-group">
+                                            <label for="exampleInputName2" class="col-sm-4 control-label">Change Bank:</label>
+                                            <div class="col-sm-8">
+                                                <select class="form-control" name="bank_id" required>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <hr>
+
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-4 col-sm-10 m-t-15">
+                                                <input type="submit" value="Submit" class="btn btn-success col-sm-4">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {!! Form::close() !!}
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        {{--End Modal--}}
+                    </div>
+                </div>
+                {{--End Modal apply--}}
+
+
 
             </div>
         </div>

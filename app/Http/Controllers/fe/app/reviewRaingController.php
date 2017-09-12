@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\form;
+namespace App\Http\Controllers\fe\app;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -9,11 +9,12 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
-class FormBankController extends Controller
+class reviewRaingController extends Controller
 {
-    //----Form Information(form-bank-save bank_form_save)
-    public function bank_form_save(Request $request) {
+    //----Review_&_Rating(user-rating user_rating)
+    public function user_rating(Request $request) {
 
+        dd($request->all());
         $previous_url = url()->previous();
 
         //------start_information_update

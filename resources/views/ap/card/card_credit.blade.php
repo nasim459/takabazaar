@@ -40,7 +40,7 @@
                         <td class="col-xs-12 col-sm-2 text-success" title="{{$v->bank['bank_name']}}">
                             <a class="btn btn-default btn-xs"><i class="fa">{{$number = $number+1}}</i></a>
                             <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}kkk">
-                                <img src="{{ asset($v->bank['bank_image_url']) }}" height="16px" width="30px" alt="pic">
+                                <img src="{{ asset('ap/images/banks/'.$v->bank['bank_image_url']) }}" height="16px" width="30px" alt="pic">
                             </a>
                             {{str_limit($v->bank['bank_name'], 8, ' ...')}}
                         </td>
@@ -129,7 +129,7 @@
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     <h4 class="modal-title text-success text-center">
-                                        <img src="{{ asset($v->bank['bank_image_url']) }}" height="20px" width="30px" alt="pic">&nbsp;
+                                        <img src="{{ asset('ap/images/banks/'.$v->bank['bank_image_url']) }}" height="20px" width="30px" alt="pic">&nbsp;
                                         {{$v->bank['bank_name']}}
                                     </h4>
                                 </div>
@@ -276,7 +276,7 @@
                                                 <div class="form-group">
                                                     <label for="exampleInputName2" class="col-sm-4 control-label m-t-20">Image :</label>
                                                     <div class="col-sm-6">
-                                                        <img src="{{ asset($v->bank['bank_image_url']) }}" height="60px" width="90px" alt="pic"><br>
+                                                        <img src="{{ asset('ap/images/banks/'.$v->bank['bank_image_url']) }}" height="60px" width="90px" alt="pic"><br>
                                                         <b class="m-t-10">{{ ($v->bank['bank_name']) }}</b>
                                                     </div>
                                                 </div>

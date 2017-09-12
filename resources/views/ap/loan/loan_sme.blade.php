@@ -38,7 +38,7 @@
                     <tr>
                         <td class="col-xs-12 col-sm-2 text-success" title="{{$v->bank->bank_name}}">
                             <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}kkk">
-                                <img src="{{ asset($v->bank->bank_image_url) }}" height="16px" width="30px" alt="pic">
+                                <img src="{{ asset('ap/images/banks/'.$v->bank->bank_image_url) }}" height="16px" width="30px">
                             </a>
                             {{str_limit($v->bank->bank_name, 11, ' ...')}}
                         </td>
@@ -264,74 +264,6 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group">
-                                                    <div class="col-sm-offset-4 col-sm-10 m-t-15">
-                                                        <input type="submit" value="Update" class="btn btn-success col-sm-4">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {!! Form::close() !!}
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                            <!--end Modal content-->
-
-                        </div>
-                    </div>
-                    <!--end detailsInfo -->
-
-                    <!--start detailsInfo picture_update -->
-                    <div id="{{$v->id}}kkk" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-
-                            <!--start Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title text-success text-center">
-                                        Update Picture Information
-                                    </h4>
-                                </div>
-                                <div class="modal-body" style="overflow: hidden">
-                                    <div class="col-md-12">
-                                        <div class="col-md-12 f-s-14 f-f-s">
-
-
-                                            {!! Form::open(array('url'=>'image-update-child', 'role'=>'form', 'method'=>'POST', 'files'=>'true')) !!}
-                                            <div class="form-horizontal">
-                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                <input type="hidden" name="id" value="{{ $v->id }}">
-                                                <input type="hidden" name="t_id" value="33">
-
-                                                <div class="form-group">
-                                                    <label for="exampleInputName2" class="col-sm-4 control-label m-t-20">Image :</label>
-                                                    <div class="col-sm-6">
-                                                        <img src="{{ asset($v->bank->bank_image_url) }}" height="60px" width="90px" alt="pic">
-                                                    </div>
-                                                </div>
-                                                <hr>
-
-                                                <div class="form-group">
-                                                    <label for="exampleInputName2" class="col-sm-4 control-label">Change Bank:</label>
-                                                    <div class="col-sm-8">
-                                                        <select class="form-control" name="bank_id" required>
-                                                            <option value="">Select Bank</option>
-                                                            @foreach($bank_view as $v)
-                                                                <option value="{{$v->id}}">{{$v->bank_name}}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <hr>
-
-                                            <div class="form-horizontal">
                                                 <div class="form-group">
                                                     <div class="col-sm-offset-4 col-sm-10 m-t-15">
                                                         <input type="submit" value="Update" class="btn btn-success col-sm-4">

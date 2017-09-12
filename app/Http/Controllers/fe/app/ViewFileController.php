@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\fe\app;
 
+use App\Model\bank\Bank;
 use App\Model\blog\Blog;
 use App\Model\blog\Categories;
 use App\Model\fe\app\About;
@@ -31,7 +32,9 @@ class ViewFileController extends Controller
                 break;
             case "loan-home-api":
                 $file_open = 'fe.loan.loan_home';
-                $loan_view = Loan::all()->where('loan_type', '3');
+                $loan_view = Loan::with(['bank'])->get();
+//                $loan_view = Loan::with(['bank'])->where('loan_type', '3')->get();
+//                $loan_view = Bank::all()->get();
                 return $loan_view;
                 //dd($loan_view);
                 //$data_view = Client::all();
@@ -172,7 +175,7 @@ class ViewFileController extends Controller
         switch($child){
             case "blog":
                 $file_open = 'fe.blog.blog_public';
-                $data_view = Blog::orderBy('blog_hit_count', 'desc')->limit(9)->get();
+                $data_view = Blog::orderBy('blog_hit_count', 'desc')->where('blog_control', 1)->limit(9)->get();
                 $data_view_one = Blog::orderBy('id', 'DESC')->limit(1)->get();
                 $blog_category = Categories::orderBy('id', 'DESC')->limit(10)->get();
                 $blog_category_all = Categories::all();
@@ -194,7 +197,7 @@ class ViewFileController extends Controller
                 break;
             case "about-us":
                 $file_open = 'fe.info.about_us';
-                $data_view = About::all();
+                $data_view = About::where('status', 1)->get();
                 //dd($data_view);
 
                 break;
@@ -220,7 +223,7 @@ class ViewFileController extends Controller
         $previous_url = url()->previous();
 
         $file_open = 'fe.blog.blog_public_details';
-        $data_view = Blog::orderBy('blog_hit_count', 'desc')->limit(9)->get();
+        $data_view = Blog::orderBy('blog_hit_count', 'desc')->where('blog_control', 1)->limit(9)->get();
         $data_view_one = Blog::where('id', $id)->get();
         //dd($data_view_one);
         $blog_category = Categories::orderBy('id', 'DESC')->limit(10)->get();

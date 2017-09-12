@@ -164,6 +164,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
+        Stevebauman\Location\LocationServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -233,6 +234,7 @@ return [
         'Sentinel'   => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Location' => 'Stevebauman\Location\Facades\Location',
 
     ],
 
