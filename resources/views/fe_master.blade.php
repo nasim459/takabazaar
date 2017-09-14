@@ -164,7 +164,7 @@
         </div>
     </div>
     <div class="container b-header__box b-relative">
-        <a href="{{ url('/') }}" class="b-left b-logo" title="FinFObd"><img class="color-theme" data-retina src="{{asset('fe/img/logo_header.png')}}" alt="Logo" width="110"/></a>
+        <a href="{{ url('/') }}" class="b-left b-logo" title="FinFObd"><img class="color-theme" data-retina src="{{asset('fe/img/logo_header.png')}}" alt="Logo" width="150px"/></a>
         <div class="b-header-r b-right">
             <div class="b-top-nav-show-slide f-top-nav-show-slide b-right j-top-nav-show-slide"><i class="fa fa-align-justify"></i></div>
             <nav class="b-top-nav f-top-nav b-right j-top-nav">
@@ -273,6 +273,7 @@
 
 <script src="{{URL::asset('ap/ckeditor/ckeditor.js')}}"></script>
 <script src="{{URL::asset('fe/angular/js/angular.js')}}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
 <script src="{{URL::asset('fe/angular/js/fe_loanController.js')}}"></script>
 <script src="{{URL::asset('fe/angular/js/homeController.js')}}"></script>
 <script src="{{URL::asset('fe/angular/js/RegiController.js')}}"></script>

@@ -108,6 +108,7 @@ Route::get('dboard-regi', 'DashBoardController@regi_dboard');
 //=====================================Start Front End Template Design================
 Route::get('', 'fe\app\ViewFileController@view_file');
 Route::get('loan-home-api', 'fe\app\ViewFileController@view_file');
+Route::get('loan', 'fe\app\ViewFileController@view_file');
 Route::get('loan-home', 'fe\app\ViewFileController@view_file');
 Route::get('loan-car', 'fe\app\ViewFileController@view_file');
 Route::get('loan-personal', 'fe\app\ViewFileController@view_file');
@@ -138,7 +139,9 @@ Route::post('blog-user-post-insert', 'fe\app\blog\BlogUserPostController@blog_us
 
 
 
+Route::post('user-apply', 'fe\app\ApplyInfoController@user_apply');
 Route::post('user-rating', 'fe\app\reviewRaingController@user_rating');
+Route::post('user-review', 'fe\app\reviewRaingController@user_review');
 
 Route::get('contact-us', 'fe\app\ViewFileController@view_file_blog');
 Route::get('about-us', 'fe\app\ViewFileController@view_file_blog');

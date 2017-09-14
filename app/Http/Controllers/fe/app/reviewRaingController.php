@@ -61,4 +61,58 @@ class reviewRaingController extends Controller
         //------end_picture
         //------end_information_insert
     }
+
+    //----User_Review(user-review  user_review)
+    public function user_review(Request $request){
+
+        //dd($request->all());
+        $previous_url = url()->previous();
+
+        $name = $request->name;
+        $email = $request->email;
+        $r_message = $request->message;
+
+        $id = $request->id;
+        $table = $request->table;
+
+        if($name==NULL || $email==NULL || $r_message==NULL || $id==NULL || $table==NULL){
+            Session::put('fe_error_msg', 'Give valid information?');
+            return redirect($previous_url);
+        }
+
+        $save = array();
+        $save['r_name'] = $name;
+        $save['r_email'] = $email;
+        $save['r_message'] = $r_message;
+
+        switch($table){
+            case "33":
+                //----33 means loans table
+                $save['loan_id'] = $id;
+                DB::table('reviews')->insert($save);
+                return redirect($previous_url);
+                break;
+            case "44":
+                //----44 means investments table
+                $save['investment_id'] = $id;
+                DB::table('reviews')->insert($save);
+                return redirect($previous_url);
+                break;
+            case "55":
+                //----55 means insurances table
+                $save['insurance_id'] = $id;
+                DB::table('reviews')->insert($save);
+                return redirect($previous_url);
+                break;
+            case "77":
+                //----77 means cards table
+                $save['card_id'] = $id;
+                DB::table('reviews')->insert($save);
+                return redirect($previous_url);
+                break;
+            default:
+                return Redirect::to($previous_url);
+        }
+
+    }
 }

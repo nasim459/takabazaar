@@ -1,5 +1,5 @@
 
-var app= angular.module('nasFeApp', []);
+var app= angular.module('nasFeApp', ['ngSanitize']);
 
 app.controller('fe_loanController', function($scope, $http) {
 

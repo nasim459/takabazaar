@@ -40,7 +40,7 @@
                         <td class="col-xs-12 col-sm-3 text-success" title="{{$v->bank['bank_name']}}">
                             <a class="btn btn-default btn-xs"><i class="fa">{{$number = $number+1}}</i></a>&nbsp;
                             <a class="btn btn-default btn-xs" data-toggle="modal">
-                                <img src="{{ asset('ap/images/banks/'.$v->bank['bank_image_url']) }}" height="16px" width="30px" alt="pic">
+                                <img src="{{ asset('ap/images/banks/'.$v->bank['bank_image_url']) }}" height="16px" width="30px">
                             </a>
                             {{str_limit($v->bank['bank_name'], 20, ' ...')}}
                         </td>

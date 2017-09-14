@@ -26,9 +26,9 @@ class ViewFileController extends Controller
         switch($child){
             case "/":
                 $file_open = 'fe.app.home';
-                //$data_view = Client::all();
-                //$rough_view = Packageitemdefault::all();
-
+                break;
+            case "loan":
+                $file_open = 'fe.app.loan';
                 break;
             case "loan-home-api":
                 $file_open = 'fe.loan.loan_home';

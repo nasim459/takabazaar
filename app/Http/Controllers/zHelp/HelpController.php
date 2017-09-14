@@ -31,6 +31,10 @@ class HelpController extends Controller
     //| 666 = comments
     //| 777 = commentreplaies
     //| 888 = blogusers
+    //| 999 =
+    //| 1111 = ratings
+    //| 2222 = reviews
+    //| 3333 =
     //|
     //|
     //|

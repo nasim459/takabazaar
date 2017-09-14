@@ -33,17 +33,17 @@
                 <div class="b-footer-logo-text f-footer-logo-text">
                     <p><b>finFObd</b><br>Reliable Adequate Leading Information Technology</p>
                     <div class="b-btn-group-hor f-btn-group-hor">
-                        <a href="#" class="b-btn-group-hor__item f-btn-group-hor__item">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                        <a href="#" class="b-btn-group-hor__item f-btn-group-hor__item">
+                        <a href="#" class="b-btn-group-hor__item f-btn-group-hor__item" title="Facebook">
                             <i class="fa fa-facebook"></i>
                         </a>
-                        <a href="#" class="b-btn-group-hor__item f-btn-group-hor__item">
-                            <i class="fa fa-dribbble"></i>
+                        <a href="#" class="b-btn-group-hor__item f-btn-group-hor__item" title="Youtube">
+                            <i class="fa fa-youtube"></i>
                         </a>
-                        <a href="#" class="b-btn-group-hor__item f-btn-group-hor__item">
-                            <i class="fa fa-behance"></i>
+                        <a href="#" class="b-btn-group-hor__item f-btn-group-hor__item" title="Whatsapp">
+                            <i class="fa fa-phone-square"></i>
+                        </a>
+                        <a href="#" class="b-btn-group-hor__item f-btn-group-hor__item" title="Instagram">
+                            <i class="fa fa-instagram"></i>
                         </a>
                     </div>
                 </div>

@@ -2965,7 +2965,7 @@ header.animated .b-ico-dropdown {
   top: 47px; }
 
 .f-top-nav a {
-  font-size: 1.07692em;
+  font-size: 1.4em;
   line-height: 1;
   text-decoration: none; }
 .f-top-nav .is-active-top-nav__1level > a, .f-top-nav .is-active-top-nav__1level > span {
@@ -12826,17 +12826,29 @@ textarea.b-product-card-textarea {
   color: #6ac582;
   font-size: 16px;
 }
+
+.c-red{color: red!important;}
+
 .t-a-c{text-align: center!important;}
+.t-a-r{text-align: right!important;}
 .t-a-j{text-align: justify!important;}
+.tar{text-align: right;}
 
 .blog-des{
   font-size: 18px!important;
   text-align: justify!important;
 }
-.tar{text-align: right;}
 
-.m-l-20{margin-left: 20px!important;}
+.f-s-12{font-size: 12px!important;}
+.f-s-13{font-size: 13px!important;}
+.f-s-14{font-size: 14px!important;}
+.f-s-16{font-size: 16px!important;}
+.f-s-25{font-size: 25px!important;}
+
+.m-l-5{margin-left: 5px!important;}
 .m-l-10{margin-left: 10px!important;}
+.m-l-15{margin-left: 15px!important;}
+.m-l-20{margin-left: 20px!important;}
 
 .m-t-5{margin-top: 5px!important;}
 .m-t-8{margin-top: 8px!important;}
@@ -12855,6 +12867,42 @@ textarea.b-product-card-textarea {
     margin-bottom: 15px;
   }
 }
+
+.ralit{
+  display: none;
+}
+@media (max-width: 768px) {
+  .ralit{
+    display: inline;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ralit-r{
+    font-size: 16px;
+  }
+}
+
+
+.ralit-main{
+  display: none;
+}
+@media (max-width: 768px) {
+  .ralit-main{
+    display: inline;
+  }
+}
+
+.ralit-hide{
+  display: inline;
+}
+@media (max-width: 768px) {
+  .ralit-hide{
+    display: none;
+  }
+}
+
 
 /*----Start User Rating Star----*/
 
