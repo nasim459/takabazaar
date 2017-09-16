@@ -5,7 +5,11 @@ namespace App\Http\Controllers\fe\app;
 use App\Model\bank\Bank;
 use App\Model\blog\Blog;
 use App\Model\blog\Categories;
+use App\Model\card\Card;
+use App\Model\carddebit\Carddebit;
 use App\Model\fe\app\About;
+use App\Model\insurance\Insurance;
+use App\Model\investment\Investment;
 use App\Model\loan\Loan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -27,22 +31,39 @@ class ViewFileController extends Controller
             case "/":
                 $file_open = 'fe.app.home';
                 break;
+
             case "loan":
                 $file_open = 'fe.app.loan';
+
                 break;
             case "loan-home-api":
-                $file_open = 'fe.loan.loan_home';
                 $loan_view = Loan::with(['bank'])->get();
-//                $loan_view = Loan::with(['bank'])->where('loan_type', '3')->get();
-//                $loan_view = Bank::all()->get();
                 return $loan_view;
-                //dd($loan_view);
-                //$data_view = Client::all();
-                //$rough_view = Packageitemdefault::all();
+
+                break;
+            case "investment-api":
+                $loan_view = Investment::with(['bank'])->get();
+                return $loan_view;
+
+                break;
+            case "insurance-api":
+                $loan_view = Insurance::with(['bank'])->get();
+                return $loan_view;
+
+                break;
+            case "card-credit-api":
+                $loan_view = Card::with(['bank', 'cardcategorie', 'review'])->get();
+                return $loan_view;
+
+                break;
+            case "card-debit-api":
+                $loan_view = Carddebit::with(['bank', 'cardcategorie'])->get();
+                return $loan_view;
 
                 break;
             case "loan-home":
                 $file_open = 'fe.loan.loan_home';
+                Session::put('person', 'S_p');    //----s_p meand Salaried_Person
                 //dd($loan_view);
                 //$data_view = Client::all();
                 //$rough_view = Packageitemdefault::all();
@@ -150,7 +171,7 @@ class ViewFileController extends Controller
 
                 break;
             default:
-                Session::put('msg_error', 'Using Wrong Information???');
+                Session::put('fe_error_msg', 'Using Wrong Information???');
                 return redirect($previous_url);
         }
         //----end crm_module--------------------------------------------------------------

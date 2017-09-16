@@ -33,6 +33,7 @@
             </div>
         </div>
     </div>
+
     <div class="l-main-container" ng-controller="fe_loanController">
         <div class="b-breadcrumbs f-breadcrumbs">
             <div class="container">
@@ -49,13 +50,15 @@
                     <div class="col-sm-12 col-md-12 b-item-apartment-block">
                         <div class="b-some-examples__item f-some-examples__item">
                             <div class="b-some-examples__item_action- -app-box"style="margin-top: 13px;">
-                                <div class="col-xs-12 col-sm-2 col-md-2"></div>
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <i class="fa fa-search f-s-20 m-b-10 t-a-c"> Search here ...</i>
+                                </div>
 
-                                <div class="col-xs-12 col-sm-12 col-md-8">
+                                <div class="col-xs-12 col-sm-12 col-md-12">
                                     <form class="form-inline app-head">
                                         <div class="form-group">
                                             <div class="input-group">
-                                                <div class="input-group-addon"><i class="fa">I want to borrow</i></div>
+                                                <div class="input-group-addon"><i class="fa">Your amount</i></div>
                                                 <input type="text" ng-model="nas" class="form-control" id="exampleInputAmount" placeholder="Amount">
                                                 <input type="hidden" ng-model="year">
                                                 <div class="input-group-addon">৳</div>
@@ -98,17 +101,18 @@
                                             </div>
                                         </div>
 
-                                        {{--<div class="form-group">--}}
-                                            {{--<div class="input-group">--}}
-                                                {{--<div class="input-group-addon"><i class="fa">For</i></div>--}}
-                                                {{--<select class="form-control">--}}
-                                                    {{--<option value="1">Salaried Person</option>--}}
-                                                    {{--<option value="1">Salaried Person</option>--}}
-                                                    {{--<option value="2">Business Person</option>--}}
-                                                    {{--<option value="3">Others Person</option>--}}
-                                                {{--</select>--}}
-                                            {{--</div>--}}
-                                        {{--</div>--}}
+                                        <div class="form-group pull-right">
+                                            <div class="input-group">
+                                                <div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>
+                                                <div class="input-group-addon" title="Are you a salaried or business or others person?"><i class="fa"> I am a</i></div>
+                                                <select class="form-control">
+                                                    <option value="1">Salaried Person</option>
+                                                    <option value="1">Salaried Person</option>
+                                                    <option value="2">Business Person</option>
+                                                    <option value="3">Others Person</option>
+                                                </select>
+                                            </div>
+                                        </div>
 
                                     </form>
                                 </div>
@@ -134,7 +138,7 @@
                                     <i class="fa app-head">Total Payable Interest</i>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <i class="fa app-head">Years / Period</i>
+                                    <i class="fa app-head">Person</i>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2">
                                     <i class="fa app-head">Details</i>
@@ -170,7 +174,7 @@
 
                                 <div class="col-xs-12 col-sm-2 col-md-2 nas">
                                     <div class="col-xs-7 t-a-r ralit-main">
-                                        <i class="fa"><span class="ralit">MonthlyInstallment: </span></i>
+                                        <i class="fa"><span class="ralit">Monthly: </span></i>
                                     </div>
                                     <div class="col-xs-5 col-sm-12 col-md-12">
                                         <i class="fa"><span class="ralit-r">@{{v.loan_monthly_interest}} ৳</span></i>
@@ -179,7 +183,7 @@
 
                                 <div class="col-xs-12 col-sm-2 col-md-2 nas">
                                     <div class="col-xs-7 t-a-r ralit-main">
-                                        <i class="fa"><span class="ralit">Payable Interest : </span></i>
+                                        <i class="fa"><span class="ralit">Interest : </span></i>
                                     </div>
                                     <div class="col-xs-5 col-sm-12 col-md-12">
                                         <i class="fa"><span class="ralit-r">@{{v.loan_interest_payable}} ৳</span></i>
@@ -188,10 +192,12 @@
 
                                 <div class="col-xs-12 col-sm-2 col-md-2 nas m-b-5">
                                     <div class="col-xs-7 t-a-r ralit-main">
-                                        <i class="fa"><span class="ralit">Years / Period : </span></i>
+                                        <i class="fa"><span class="ralit">Person : </span></i>
                                     </div>
                                     <div class="col-xs-5 col-sm-12 col-md-12">
-                                        <i class="fa"><span class="ralit-r">@{{v.loan_period}} years</span></i>
+                                        <i class="fa"><span class="ralit-r" ng-if="v.loan_person_type == 1">Salaried</span></i>
+                                        <i class="fa"><span class="ralit-r" ng-if="v.loan_person_type == 2">Person</span></i>
+                                        <i class="fa"><span class="ralit-r" ng-if="v.loan_person_type == 3">Susiness</span></i>
                                     </div>
                                 </div>
 

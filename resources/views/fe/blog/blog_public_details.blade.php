@@ -30,11 +30,11 @@
                     <div class="b-blog-listing__block">
                         <div class="b-blog-listing__block-top">
                             <div class=" view view-sixth">
-                                <img data-retina="" src="{{ asset($v->blog_image) }}" alt="Picture Coming Soon">
+                                <img data-retina="" src="{{ asset('fe/img/blog_pic/'.$v->blog_image) }}" alt="Picture Coming Soon">
                                 <div class="b-item-hover-action f-center mask">
                                     <div class="b-item-hover-action__inner">
                                         <div class="b-item-hover-action__inner-btn_group">
-                                            <a href="{{ asset($v->blog_image) }}" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
+                                            <a href="{{ asset('fe/img/blog_pic/'.$v->blog_image) }}" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -219,11 +219,11 @@
                         <div class="j-masonry-item col-xs-12 col-sm-12 col-md-4">
                             <div class="b-blog-preview">
                                 <div class="b-blog-preview__img view view-sixth">
-                                    <img data-retina="" src="{{ asset($v->blog_image) }}" height="160" alt="Picture Coming Soon">
+                                    <img data-retina="" src="{{ asset('fe/img/blog_pic/'.$v->blog_image) }}" height="160" alt="Picture Coming Soon">
                                     <div class="b-item-hover-action f-center mask">
                                         <div class="b-item-hover-action__inner">
                                             <div class="b-item-hover-action__inner-btn_group">
-                                                <a href="{{ asset($v->blog_image) }}" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
+                                                <a href="{{ asset('fe/img/blog_pic/'.$v->blog_image) }}" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
                                             </div>
                                         </div>
                                     </div>

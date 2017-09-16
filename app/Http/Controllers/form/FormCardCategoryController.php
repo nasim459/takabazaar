@@ -45,7 +45,7 @@ class FormCardCategoryController extends Controller
             if ($success) {
                 $save = array();
                 $save['cc_name'] = $bank_name;
-                $save['cc_image_url'] = $image_url;
+                $save['cc_image_url'] = $image_full_name;
                 DB::table('cardcategories')->insert($save);
 
                 Session::put('msg_suc', 'Data Inserted Successfully!');

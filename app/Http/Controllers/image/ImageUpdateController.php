@@ -61,7 +61,7 @@ class ImageUpdateController extends Controller
             if ($success) {
                 DB::table($table_name)
                     ->where($where_field_id, $id)
-                    ->update([$updated_tbl_field_img_url => $image_url]);
+                    ->update([$updated_tbl_field_img_url => $image_full_name]);
                 Session::put('msg_suc', 'Data Updated Successfully!');
                 return Redirect::to($previous_url);
             }

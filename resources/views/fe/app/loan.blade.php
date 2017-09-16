@@ -13,9 +13,16 @@
             </div>
             <div class="row">
 
+                @if(Session::get('fe_error_msg') != NULL)
+                    <div class="col-xs-12 col-md-6 alert alert-danger" style="font-size: 20px;">
+                        <a href="#" class="pull-right" data-dismiss="alert">&times;</a>
+                        {{Session::get('fe_error_msg')}} {{Session::put('fe_error_msg', '')}}
+                    </div>
+                @endif
+
                 <div class="col-md-10 col-md-offset-1">
                     {{--<div class="b-infoblock-with-icon">--}}
-                    <a data-target="#person" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
+                    <a  href="{{ url('loan-car') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
                         <i class="fa fa-home z_1_5"><br><span class="f-s-12">Home Loan</span></i>
                     </a>
                     <a href="{{ url('loan-car') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
@@ -43,13 +50,13 @@
                             </div>
                             <div class="modal-body" style="overflow: hidden;">
                                 <div class="col-md-12 t-a-c m-t-10 m-b-10">
-                                    <a href="{{ url('loan-home-salaried') }}" class="btn btn-default m-t-10 m-b-10 m-l-10" style="width: 160px;">
+                                    <a href="{{ url('loan-home/'.'salaried') }}" class="btn btn-default m-t-10 m-b-10 m-l-10" style="width: 160px;">
                                         <i class="fa fa-user z_1_5"><br><span class="f-s-12">Salaried Person</span></i>
                                     </a>
-                                    <a href="{{ url('loan-home-business') }}" class="btn btn-default m-t-10 m-b-10 m-l-10" style="width: 160px;">
+                                    <a href="{{ url('loan-home/'.'business') }}" class="btn btn-default m-t-10 m-b-10 m-l-10" style="width: 160px;">
                                         <i class="fa fa-user z_1_5"><br><span class="f-s-12">Business Person</span></i>
                                     </a>
-                                    <a href="{{ url('loan-home-others') }}" class="btn btn-default m-t-10 m-b-10 m-l-10" style="width: 160px;">
+                                    <a href="{{ url('loan-home/'.'others') }}" class="btn btn-default m-t-10 m-b-10 m-l-10" style="width: 160px;">
                                         <i class="fa fa-user z_1_5"><br><span class="f-s-12">Others Person</span></i>
                                     </a>
                                 </div>

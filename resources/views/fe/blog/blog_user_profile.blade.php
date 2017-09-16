@@ -257,7 +257,7 @@
                                                     <td>
                                                         <i class="fa">{!! str_limit($v->blog_short_desc, 45, '...') !!}</i>
                                                         <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}kkk" title="Click To Edit">
-                                                            <img src="{{ asset($v->blog_image) }}" height="16px" width="30px" alt="pic">
+                                                            <img src="{{ asset('fe/img/blog_pic/'.$v->blog_image) }}" height="16px" width="30px" alt="pic">
                                                         </a>
                                                         <a class="c-pointer" data-toggle="modal" data-target="#{{$v->id}}k" title="Click To Details"><i class="fa"> details</i></a>
                                                     </td>
@@ -301,7 +301,7 @@
                                                                                 </div>
 
                                                                                 <div class="col-sm-12">
-                                                                                    <img src="{{ asset($v->blog_image) }}" class="img-thumbnail" alt="Cinque Terre" height="150">
+                                                                                    <img src="{{ asset('fe/img/blog_pic/'.$v->blog_image) }}" class="img-thumbnail" alt="Cinque Terre" height="150">
                                                                                 </div>
 
                                                                                 <div class="col-sm-12 m-t-10">
@@ -435,7 +435,7 @@
                                                                             <div class="form-group">
                                                                                 <label for="exampleInputName2" class="col-sm-4 control-label m-t-20">Image :</label>
                                                                                 <div class="col-sm-6">
-                                                                                    <img src="{{ asset($v->blog_image) }}" height="60px" width="90px" alt="pic">
+                                                                                    <img src="{{ asset('fe/img/blog_pic/'.$v->blog_image) }}" height="60px" width="90px" alt="pic">
                                                                                 </div>
                                                                             </div>
                                                                             <hr>

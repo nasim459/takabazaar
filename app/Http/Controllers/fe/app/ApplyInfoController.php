@@ -68,6 +68,10 @@ class ApplyInfoController extends Controller
                 //----77 means cards table
                 $save['card_id'] = $id;
                 break;
+            case "99":
+                //----77 means carddebits table
+                $save['carddebit_id'] = $id;
+                break;
             default:
                 return Redirect::to($previous_url);
         }

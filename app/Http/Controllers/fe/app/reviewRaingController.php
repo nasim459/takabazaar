@@ -110,6 +110,12 @@ class reviewRaingController extends Controller
                 DB::table('reviews')->insert($save);
                 return redirect($previous_url);
                 break;
+            case "99":
+                //----99 means carddebits table
+                $save['carddebit_id'] = $id;
+                DB::table('reviews')->insert($save);
+                return redirect($previous_url);
+                break;
             default:
                 return Redirect::to($previous_url);
         }

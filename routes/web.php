@@ -106,10 +106,17 @@ Route::get('dboard-regi', 'DashBoardController@regi_dboard');
 
 
 //=====================================Start Front End Template Design================
-Route::get('', 'fe\app\ViewFileController@view_file');
+//----api development
 Route::get('loan-home-api', 'fe\app\ViewFileController@view_file');
+Route::get('investment-api', 'fe\app\ViewFileController@view_file');
+Route::get('insurance-api', 'fe\app\ViewFileController@view_file');
+Route::get('card-credit-api', 'fe\app\ViewFileController@view_file');
+Route::get('card-debit-api', 'fe\app\ViewFileController@view_file');
+
+Route::get('', 'fe\app\ViewFileController@view_file');
 Route::get('loan', 'fe\app\ViewFileController@view_file');
 Route::get('loan-home', 'fe\app\ViewFileController@view_file');
+//Route::get('loan-home/{person}', 'fe\app\ViewFilePersonController@view_file_person');
 Route::get('loan-car', 'fe\app\ViewFileController@view_file');
 Route::get('loan-personal', 'fe\app\ViewFileController@view_file');
 Route::get('loan-sme', 'fe\app\ViewFileController@view_file');

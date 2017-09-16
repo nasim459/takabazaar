@@ -33,7 +33,7 @@
                     @foreach($data_view as $v)
                         <div class="b-blog-short-post--popular col-md-12  col-xs-12 f-primary-b">
                             <div class="b-blog-short-post__item_img">
-                                <a href="{{URL::to('blog-details/'.$v->id.'/'.$v->blog_title)}}"><img data-retina src="{{ asset($v->blog_image) }}" height="55" width="60" alt=""/></a>
+                                <a href="{{URL::to('blog-details/'.$v->id.'/'.$v->blog_title)}}"><img data-retina src="{{ asset('fe/img/blog_pic/'.$v->blog_image) }}" height="55" width="60" alt=""/></a>
                             </div>
                             <div class="b-remaining">
                                 <div class="b-blog-short-post__item_text f-blog-short-post__item_text">

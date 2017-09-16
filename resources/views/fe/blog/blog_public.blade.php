@@ -30,11 +30,11 @@
                     <div class="b-blog-listing__block">
                         <div class="b-blog-listing__block-top">
                             <div class=" view view-sixth">
-                                <img data-retina="" src="{{ asset($v->blog_image) }}" alt="Picture Coming Soon">
+                                <img data-retina="" src="{{ asset('fe/img/blog_pic/'.$v->blog_image) }}" alt="Picture Coming Soon">
                                 <div class="b-item-hover-action f-center mask">
                                     <div class="b-item-hover-action__inner">
                                         <div class="b-item-hover-action__inner-btn_group">
-                                            <a href="{{ asset($v->blog_image) }}" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
+                                            <a href="{{ asset('fe/img/blog_pic/'.$v->blog_image) }}" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -45,7 +45,7 @@
                                 <i class="fa fa-pencil"></i>
                             </a>
                             <div class="b-infoblock-with-icon__info f-infoblock-with-icon__info">
-                                <a href="{{ asset($v->blog_image) }}" class="m-t-5 f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-primary-l b-title-b-hr f-title-b-hr">
+                                <a href="{{ asset('fe/img/blog_pic/'.$v->blog_image) }}" class="m-t-5 f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-primary-l b-title-b-hr f-title-b-hr">
                                     <b>{{ $v->blog_title }}</b>
                                 </a>
                                 <div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text f-primary-b">
@@ -72,11 +72,11 @@
                         <div class="j-masonry-item col-xs-12 col-sm-12 col-md-4">
                             <div class="b-blog-preview">
                                 <div class="b-blog-preview__img view view-sixth">
-                                    <img data-retina="" src="{{ asset($v->blog_image) }}" height="160" alt="Picture Coming Soon">
+                                    <img data-retina="" src="{{ asset('fe/img/blog_pic/'.$v->blog_image) }}" height="160" alt="Picture Coming Soon">
                                     <div class="b-item-hover-action f-center mask">
                                         <div class="b-item-hover-action__inner">
                                             <div class="b-item-hover-action__inner-btn_group">
-                                                <a href="{{ asset($v->blog_image) }}" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
+                                                <a href="{{ asset('fe/img/blog_pic/'.$v->blog_image) }}" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
                                             </div>
                                         </div>
                                     </div>

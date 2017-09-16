@@ -46,7 +46,7 @@
                         </td>
                         <td class="col-xs-12 col-sm-2 text-success" title="{{$v->cardcategorie['cc_name']}}">
                             <a class="" data-toggle="modal" data-target="#{{$v->id}}kkk">
-                                <img src="{{ asset($v->cardcategorie['cc_image_url']) }}" height="20px" width="30px" alt="pic">
+                                <img src="{{ asset('ap/images/card_category/'.$v->cardcategorie['cc_image_url']) }}" height="20px" width="30px" alt="pic">
                             </a>
                             {{str_limit($v->cardcategorie['cc_name'], 15, ' ...')}}
                         </td>

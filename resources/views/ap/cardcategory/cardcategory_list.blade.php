@@ -41,7 +41,7 @@
                     </td>
                     <td class="col-xs-12 col-sm-1">
                         <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}kkk" title="Click To Edit">
-                            <img src="{{ asset($v->cc_image_url) }}" height="16px" width="30px" alt="pic">
+                            <img src="{{ asset('ap/images/card_category/'.$v->cc_image_url) }}" height="16px" width="30px">
                         </a>
                     </td>
                     <td class="col-xs-12 col-sm-6">{{$v->cc_name}}</td>
@@ -136,7 +136,7 @@
                                             <div class="form-group">
                                                 <label for="exampleInputName2" class="col-sm-4 control-label m-t-20">Image :</label>
                                                 <div class="col-sm-6">
-                                                    <img src="{{ asset($v->cc_image_url) }}" height="60px" width="90px" alt="pic">
+                                                    <img src="{{ asset('ap/images/card_category/'.$v->cc_image_url) }}" height="60px" width="90px" alt="pic">
                                                 </div>
                                             </div>
                                             <hr>
