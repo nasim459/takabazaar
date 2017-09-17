@@ -4,8 +4,32 @@
     <div class="b-inner-page-header f-inner-page-header b-bg-header-inner-page">
         <div class="b-inner-page-header__content">
             <div class="container">
-                <h1 class="f-primary-l c-default"><i class="fa fa-home"> Blog Information</i></h1>
-                <div class="f-primary-l f-inner-page-header_title-add c-senary"><i class="fa">What's on your mind & Read your blog here </i></div>
+                <div class="pull-left">
+                    <h1 class="f-primary-l c-default"><i class="fa fa-home"> Blog Information</i></h1>
+                    <div class="f-primary-l f-inner-page-header_title-add c-senary"><i class="fa">What's on your mind & Read your blog here </i></div>
+                </div>
+
+                @if(Session::get('fe_error_blog') != NULL)
+                    <div class="col-xs-12 col-md-6 m-l-5 alert alert-danger" style="font-size: 20px;">
+                        <a href="#" class="pull-right" data-dismiss="alert">&times;</a>
+                        {{Session::get('fe_error_blog')}} {{Session::put('fe_error_blog', '')}}
+                    </div>
+                @endif
+
+                @if(Session::get('fe_msg_blog') != NULL)
+                    <div class="col-xs-12 col-md-6 m-l-5 alert alert-success" style="font-size: 20px;">
+                        <a href="#" class="pull-right" data-dismiss="alert">&times;</a>
+                        {{Session::get('fe_msg_blog')}} {{Session::put('fe_msg_blog', '')}}
+                    </div>
+                @endif
+
+                <div class="pull-right">
+                    <div class="t-a-c">
+                        <i class="fa f-s-25 m-b-10">Hotline</i><br>
+                        <i class="fa f-s-16 c-red m-b-5">01 777 888 757</i><br>
+                        <i class="fa f-s-14">info@finFObd.com</i>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -49,7 +73,7 @@
                                     <b>{{ $v->blog_title }}</b>
                                 </a>
                                 <div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text f-primary-b">
-                                    By <a href="" class="f-more">Md Nasim</a>, {{ $v->updated_at }}
+                                    By <a href="" class="f-more">{{ $v->bloguser['user_name'] }}</a>, {{ $v->updated_at }}
                                     <a class="f-more b-blog-listing__additional-text f-primary"><i class="fa fa-hand-o-right"></i> {{ $v->blog_hit_count }} Views</a>,
                                     <a href="" class="f-more b-blog-listing__additional-text f-primary"><i class="fa fa-comment-o"></i>12 Comments</a>
                                 </div>
@@ -78,27 +102,146 @@
                                                 <div class="b-comment__list">
                                                     <ul>
                                                         <li>
+
+                                                            @foreach($v->comments as $c)
                                                             <div class="b-comment-item">
                                                                 <div class="b-comment__img">
-                                                                    <img data-retina src="{{ asset('fe/img/users/comment_img.jpg') }}" alt="">
+                                                                    <img data-retina src="{{ asset('fe/img/img_blank.jpg') }}" width="65" height="65" alt="Pic">
                                                                 </div>
                                                                 <div class="b-comment__descr">
                                                                     <div class="b-comment__descr__data">
-                                                                        <div class="b-comment__descr__name f-comment__descr__name f-primary-b">Md Nasim</div>
+                                                                        <div class="b-comment__descr__name f-comment__descr__name f-primary-b">{{ $c->bloguser['user_name'] }}</div>
                                                                         <div class="b-comment__descr__info f-comment__descr__info">
-                                                                            <span class="f-comment__date">{{ $v->updated_at }}</span>
+                                                                            <span class="f-comment__date">{{ $c->created_at }}</span>
                                                                         </div>
                                                                     </div>
                                                                     <div class="f-comment__descr__txt">
-                                                                        <p>Pellentesque pulvinar dolor eu erat aliquet iaculis. Ut lacus lectus, scelerisque at mi id, pharetra mollis elit. Fusce diam mi, laoreet non luctus et, iaculis a risus. Phasellus volutpat ipsum id facilisis sagittis. Integer eget laoreet nibh. Nullam fringilla sem rhoncus felis suscipit accumsan.</p>
+                                                                        <p>{{ $c->comment_desc }}</p>
+                                                                        <a data-toggle="modal" data-target="#{{$c->id}}rep" class="f-comment-link-color" title="Click to replay of this comment"><i class="fa fa-reply"></i> Reply</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
+
+                                                                <!--start blog_user_replay-->
+                                                                <div id="{{$c->id}}rep" class="modal fade" role="dialog">
+                                                                    <div class="modal-dialog">
+
+                                                                        <!--start Modal content-->
+                                                                        <div class="modal-content m-t-80">
+                                                                            <div class="modal-header">
+                                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                                <h4 class="modal-title text-success text-center">
+                                                                                    Replay For This Comment
+                                                                                </h4>
+                                                                            </div>
+                                                                            <div class="modal-body" style="overflow: hidden">
+                                                                                <div class="col-md-12">
+                                                                                    <div class="col-md-12 f-s-14 f-f-s">
+
+                                                                                        {!! Form::open(array('url'=>'blog-user-comment-replay', 'role'=>'form', 'method'=>'POST')) !!}
+                                                                                        <div class="row">
+                                                                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                                                            <input type="hidden" name="comment_id" value="{{ $c->id }}">
+                                                                                            <input type="hidden" name="id" value="{{ $v->id }}">
+                                                                                            <input type="hidden" name="first_user" value="replay_user">
+
+                                                                                            <div class="col-md-4">
+                                                                                                <div class="b-form-row">
+                                                                                                    <label class="b-form-vertical__label" for="create_account_email">Your Name</label>
+                                                                                                    <div class="b-form-vertical__input">
+                                                                                                        <input type="text" name="name" id="create_account_email" class="form-control" placeholder="Write name..." required />
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="b-form-row">
+                                                                                                    <label class="b-form-vertical__label" for="create_account_email">Your Email</label>
+                                                                                                    <div class="b-form-vertical__input">
+                                                                                                        <input type="email" name="email" id="create_account_email" class="form-control" placeholder="yourEmail@email.com" required />
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="b-form-row">
+                                                                                                    <label class="b-form-vertical__label" for="create_account_password">Your password</label>
+                                                                                                    <div class="b-form-vertical__input">
+                                                                                                        <input type="password" name="password" id="create_account_password" class="form-control" required=""/>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="col-md-8">
+                                                                                                <div class="b-form-row b-form--contact-size">
+                                                                                                    <label class="b-form-vertical__label" for="create_account_phone">Your replay</label>
+                                                                                                    <textarea class="form-control" name="comment" rows="5" placeholder="What's on your mind..." required></textarea>
+                                                                                                </div>
+                                                                                                <div class="b-form-row">
+                                                                                                    <input type="submit" value="Save Replay" class="btn btn-success" />
+                                                                                                    <a data-toggle="modal" data-target="#login" class="btn btn-default pull-right" title="Click to login"> login</a>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        {!! Form::close() !!}
+                                                                                    </div>
+
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!--end Modal content-->
+
+                                                                    </div>
+                                                                </div>
+                                                                <!--end blog_user_replay -->
+
+                                                                <!--start blog_user_login-->
+                                                                <div id="login" class="modal fade" role="dialog">
+                                                                    <div class="modal-dialog">
+
+                                                                        <!--start Modal content-->
+                                                                        <div class="modal-content m-t-80">
+                                                                            <div class="modal-header">
+                                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                                <h4 class="modal-title text-success text-center">
+                                                                                    Registration Panel
+                                                                                </h4>
+                                                                            </div>
+                                                                            <div class="modal-body" style="overflow: hidden">
+                                                                                <div class="col-md-12">
+                                                                                    <div class="col-md-12 f-s-14 f-f-s">
+
+                                                                                        {!! Form::open(array('url'=>'define', 'role'=>'form', 'method'=>'POST')) !!}
+                                                                                        <div class="m-t-10">
+                                                                                            <div class="form-group">
+                                                                                                <label for="email">Email Address:</label>
+                                                                                                <input type="email" class="form-control" id="email" placeholder="example@ralitsoft.com">
+                                                                                            </div>
+                                                                                            <div class="form-group">
+                                                                                                <label for="email">Password:</label>
+                                                                                                <input type="password" class="form-control" id="username" placeholder="Write password">
+                                                                                            </div>
+
+                                                                                            <button type="submit" class="btn btn-success btn-sm">Login</button>
+                                                                                            <a data-toggle="modal" data-target="#signUp" class="btn btn-default btn-sm pull-right">Sign Up</a>
+                                                                                        </div>
+                                                                                        {!! Form::close() !!}
+                                                                                    </div>
+
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!--end Modal content-->
+
+                                                                    </div>
+                                                                </div>
+                                                                <!--end blog_user_login -->
+                                                            @endforeach
+
                                                             <ul>
                                                                 <li>
                                                                     <div class="b-comment-item">
                                                                         <div class="b-comment__img">
-                                                                            <img data-retina src="{{ asset('fe/img/users/comment_img.jpg') }}" alt="">
+                                                                            <img data-retina src="{{ asset('fe/img/img_blank.jpg') }}" width="55" height="55" alt="Pic">
                                                                         </div>
                                                                         <div class="b-comment__descr">
                                                                             <div class="b-comment__descr__data">
@@ -117,7 +260,7 @@
                                                                 <li>
                                                                     <div class="b-comment-item">
                                                                         <div class="b-comment__img">
-                                                                            <img data-retina src="{{ asset('fe/img/blog/ann.jpg') }}" alt="">
+                                                                            <img data-retina src="{{ asset('fe/img/img_blank.jpg') }}" width="55" height="55" alt="Pic">
                                                                         </div>
                                                                         <div class="b-comment__descr">
                                                                             <div class="b-comment__descr__data">
@@ -135,11 +278,14 @@
                                                                     </div>
                                                                 </li>
                                                             </ul>
+
+
+
                                                         </li>
                                                         <li>
                                                             <div class="b-comment-item">
                                                                 <div class="b-comment__img">
-                                                                    <img data-retina src="{{ asset('fe/img/users/comment_img.jpg') }}" alt="">
+                                                                    <img data-retina src="{{ asset('fe/img/img_blank.jpg') }}" width="65" height="65" alt="Pic">
                                                                 </div>
                                                                 <div class="b-comment__descr">
                                                                     <div class="b-comment__descr__data">
@@ -165,43 +311,51 @@
                                     <h3 class="b-accordion__title f-accordion__title">Write Your Comment</h3>
                                     <div class="b-accordion__content">
                                         <div class="b-blog-form-box">
+
+                                            {!! Form::open(array('url'=>'blog-user-comment-replay', 'role'=>'form', 'method'=>'POST')) !!}
                                             <div class="row">
+                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                <input type="hidden" name="id" value="{{ $v->id }}">
+                                                <input type="hidden" name="first_user" value="first_user">
+
                                                 <div class="col-md-4">
+                                                    <div class="b-form-row">
+                                                        <label class="b-form-vertical__label" for="create_account_email">Your Name</label>
+                                                        <div class="b-form-vertical__input">
+                                                            <input type="text" name="name" id="create_account_email" class="form-control" placeholder="Write name..." required />
+                                                        </div>
+                                                    </div>
                                                     <div class="b-form-row">
                                                         <label class="b-form-vertical__label" for="create_account_email">Your Email</label>
                                                         <div class="b-form-vertical__input">
-                                                            <input type="text" id="create_account_email" class="form-control" />
+                                                            <input type="email" name="email" id="create_account_email" class="form-control" placeholder="yourEmail@email.com" required />
                                                         </div>
                                                     </div>
                                                     <div class="b-form-row">
                                                         <label class="b-form-vertical__label" for="create_account_password">Your password</label>
                                                         <div class="b-form-vertical__input">
-                                                            <input type="text" id="create_account_password" class="form-control" />
+                                                            <input type="password" name="password" id="create_account_password" class="form-control" required=""/>
                                                         </div>
                                                     </div>
-                                                    <div class="b-form-row">
-                                                        <label class="b-form-vertical__label" for="create_account_confirm">Confirm password</label>
-                                                        <div class="b-form-vertical__input">
-                                                            <input type="text" id="create_account_confirm" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="b-form-row">
-                                                        <label class="b-form-vertical__label" for="create_account_phone">Phone Number</label>
-                                                        <div class="b-form-vertical__input">
-                                                            <input type="text" id="create_account_phone" class="form-control" />
-                                                        </div>
-                                                    </div>
+                                                    {{--<div class="b-form-row">--}}
+                                                        {{--<label class="b-form-vertical__label" for="create_account_phone">Phone Number</label>--}}
+                                                        {{--<div class="b-form-vertical__input">--}}
+                                                            {{--<input type="number" name="phone" id="create_account_phone" class="form-control" placeholder="01xxxxxxxxx" required="" />--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
                                                 </div>
                                                 <div class="col-md-8">
                                                     <div class="b-form-row b-form--contact-size">
-                                                        <label class="b-form-vertical__label" for="create_account_phone">Your message</label>
-                                                        <textarea class="form-control" rows="5"></textarea>
+                                                        <label class="b-form-vertical__label" for="create_account_phone">Your comment</label>
+                                                        <textarea class="form-control" name="comment" rows="5" placeholder="What's on your mind..." required></textarea>
                                                     </div>
                                                     <div class="b-form-row">
-                                                        <a href="#" class="b-btn f-btn b-btn-md b-btn-default f-primary-b b-btn__w100">send message</a>
+                                                        <input type="submit" value="Save Comment" class="b-btn f-btn b-btn-md b-btn-default f-primary-b b-btn__w100" />
                                                     </div>
                                                 </div>
                                             </div>
+                                            {!! Form::close() !!}
+
                                         </div>
                                     </div>
                                 </div>
@@ -230,7 +384,7 @@
                                 </div>
                                 <div class="b-blog-preview__content b-diagonal-line-bg-light">
                                     <div class="b-blog-preview__content-padding_box" style="height: 210px;">
-                                        <p class="f-blog-preview__content-title f-primary-b"><a href="blog_detail_right_slidebar.html">{{ str_limit($v->blog_title, 45, ' ...') }}</a></p>
+                                        <p class="f-blog-preview__content-title f-primary-b"><a href="{{URL::to('blog-details/'.$v->id.'/'.$v->blog_title)}}">{{ str_limit($v->blog_title, 45, ' ...') }}</a></p>
                                         <p class="f-blog-preview__content-date f-primary-it">{{$v->updated_at}}</p>
                                         <p class="b-blog-preview__content-text f-blog-preview__content-text">{!! str_limit($v->blog_short_desc, 115, ' ...') !!}</p>
                                     </div>

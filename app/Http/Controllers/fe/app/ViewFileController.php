@@ -5,6 +5,7 @@ namespace App\Http\Controllers\fe\app;
 use App\Model\bank\Bank;
 use App\Model\blog\Blog;
 use App\Model\blog\Categories;
+use App\Model\blog\Comment;
 use App\Model\card\Card;
 use App\Model\carddebit\Carddebit;
 use App\Model\fe\app\About;
@@ -185,7 +186,7 @@ class ViewFileController extends Controller
     }
 
 
-    //----Blog (blog view_file_blog)
+    //----Blog-User-Profile (blog-user-profile view_file_blog)
     public function view_file_blog() {
 
         $child= Route::getFacadeRoot()->current()->uri();
@@ -236,7 +237,7 @@ class ViewFileController extends Controller
         return view('fe_master')->with('fe_maincontent', $open_file);
     }
 
-    //----Blog (blog view_file_blog)
+    //----Blog Details (blog-details/{id}/{blog_title} view_file_details)
     public function view_file_details($id, $blog_title) {
 
         $child= Route::getFacadeRoot()->current()->uri();
@@ -245,8 +246,12 @@ class ViewFileController extends Controller
 
         $file_open = 'fe.blog.blog_public_details';
         $data_view = Blog::orderBy('blog_hit_count', 'desc')->where('blog_control', 1)->limit(9)->get();
-        $data_view_one = Blog::where('id', $id)->get();
-        //dd($data_view_one);
+        $data_view_one = Blog::with(['bloguser', 'category', 'comments'])->where('id', $id)->get();
+        $data_comment = Comment::all();
+
+        //$data_rough = Blog::with(['bloguser', 'category', 'comments'])->get();
+        //dd($data_rough);
+
         $blog_category = Categories::orderBy('id', 'DESC')->limit(10)->get();
         $blog_category_all = Categories::all();
 
