@@ -35,7 +35,7 @@ class ApplyingController extends Controller
         } elseif ($child == 'rating') {
             $file_open = 'ap.applying.applying_rating';
             $apply_view = Applying::orderBy('id', 'DESC')->where('aply_status', 0)->get();
-            
+
             //----NB: see rough rating code into z_rought_personal.php file that are created 22-09-2017
         }
 
