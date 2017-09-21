@@ -40,7 +40,7 @@
                         </td>
 
                         <td class="col-xs-12 col-sm-3" title="[ {{ $v->category['category_name'] }} ] {{ $v->blog_title }}">
-                            {{str_limit($v->blog_title, 30, ' ...')}}
+                            {{str_limit($v->blog_title, 28, ' ...')}}
                         </td>
 
                         <td class="col-xs-12 col-sm-2">
@@ -91,7 +91,7 @@
                                                     </div>
 
                                                     <div class="col-sm-12">
-                                                        <img src="{{ asset($v->blog_image) }}" class="img-thumbnail" alt="Cinque Terre" height="150">
+                                                        <img src="{{ asset('fe/img/blog_pic/'.$v->blog_image) }}" class="img-thumbnail" alt="Cinque Terre" height="150">
                                                     </div>
 
                                                     <div class="col-sm-12 m-t-10">

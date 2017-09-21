@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Login</title>
+      <link rel="shortcut icon" href="{{ asset('fe/img/logo.ico') }}" type="image/x-icon">
 
     <!-- Bootstrap -->
     <link href="ap/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -31,11 +32,14 @@
                             <h3 class="panel-title text-primary text-center">Login Panel</h3>
                         </div>
                         <div class="panel-body">
-                            <form class="form-horizontal m-b-30">
+                            {!! Form::open(array('url'=>'login', 'role'=>'form', 'method'=>'POST')) !!}
+                            <div class="form-horizontal m-b-30">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                                 <div class="form-group">
                                     <label for="inputEmail3" class="col-sm-4 control-label"></label>
-                                    <div class="col-xs-12 text-center m-t-20  m-b-20">
-                                    	<i class="fa text-success" style="font-size: 23px"> Taka Bazaar Software</i>
+                                    <div class="col-xs-12 col-sm-6 m-t-10">
+                                        <a href=""><img src="{{ asset('fe/img/logo.ico') }}" style="width: 150px; margin-left: 25px;" alt="Dizzy Bangla" title="FinFoBD"></a>
                                     </div>
                                 </div>
 
@@ -56,7 +60,8 @@
                                         <a href="{{URL::to('dboard')}}" class="btn btn-primary col-sm-12">Sign in</a>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
+                            {!! Form::close() !!}
                         </div>
                     </div>
                     <!--end login panel-->

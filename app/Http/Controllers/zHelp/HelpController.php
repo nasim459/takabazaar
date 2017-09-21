@@ -25,8 +25,8 @@ class HelpController extends Controller
     //| 99  = carddebits
     //| 111 = abouts
     //| 222 = contacts
-    //| 333 =
-    //| 444 = blog
+    //| 333 = videos
+    //| 444 = blogs
     //| 555 = categories
     //| 666 = comments
     //| 777 = commentreplaies
@@ -34,7 +34,7 @@ class HelpController extends Controller
     //| 999 =
     //| 1111 = ratings
     //| 2222 = reviews
-    //| 3333 =
+    //| 3333 = headerimages
     //|
     //|
     //|

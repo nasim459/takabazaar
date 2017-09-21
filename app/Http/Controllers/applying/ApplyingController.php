@@ -19,21 +19,25 @@ class ApplyingController extends Controller
         //$route = Route::getFacadeRoot()->current()->uri();
         if ($child == 'info'){
             $file_open = 'ap.applying.applying_info';
-            $apply_view = Applying::all();
+            $apply_view = Applying::orderBy('id', 'DESC')->get();
 
         } elseif ($child == 'request') {
             $file_open = 'ap.applying.applying_request';
-            $apply_view = Applying::all()->where('aply_status', 1);
+            $apply_view = Applying::orderBy('id', 'DESC')->where('aply_status', 1)->get();
 
         } elseif ($child == 'pending') {
             $file_open = 'ap.applying.applying_pending';
-            $apply_view = Applying::all()->where('aply_status', 2);
+            $apply_view = Applying::orderBy('id', 'DESC')->where('aply_status', 2)->get();
 
         } elseif ($child == 'completed') {
             $file_open = 'ap.applying.applying_completed';
-            $apply_view = Applying::all()->where('aply_status', 0);
+            $apply_view = Applying::orderBy('id', 'DESC')->where('aply_status', 0)->get();
+        } elseif ($child == 'rating') {
+            $file_open = 'ap.applying.applying_rating';
+            $apply_view = Applying::orderBy('id', 'DESC')->where('aply_status', 0)->get();
+            
+            //----NB: see rough rating code into z_rought_personal.php file that are created 22-09-2017
         }
-
 
         $bank_view = Applying::all();
         $count = count($apply_view);

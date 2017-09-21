@@ -171,7 +171,7 @@
                 <ul class="b-top-nav__1level_wrap">
                     <li class="b-top-nav__1level f-top-nav__1level is-active-top-nav__1level f-primary-b b-top-nav-big"><a href="{{ url('/') }}" class="fa"><i class="fa fa-home b-menu-1level-ico"></i><b>Home</b> <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a></li>
                     <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
-                        <a href="{{ url('loan-home') }}" class="fa"><i class="fa fa-folder-open b-menu-1level-ico"></i><b>Loan</b><span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+                        <a href="{{ url('loan') }}" class="fa"><i class="fa fa-folder-open b-menu-1level-ico"></i><b>Loan</b><span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
                         <div class="b-top-nav__dropdomn">
                             <ul class="b-top-nav__2level_wrap">
                                 <li class="b-top-nav__2level_title f-top-nav__2level_title">Loan</li>
@@ -185,7 +185,7 @@
                         </div>
                     </li>
                     <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
-                        <a href="{{ url('investment-saving') }}" class="fa"><i class="fa fa-picture-o b-menu-1level-ico"></i><b>Investment</b> <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+                        <a href="{{ url('investment') }}" class="fa"><i class="fa fa-picture-o b-menu-1level-ico"></i><b>Investment</b> <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
                         <div class="b-top-nav__dropdomn">
                             <ul class="b-top-nav__2level_wrap">
                                 <li class="b-top-nav__2level_title f-top-nav__2level_title">Investment</li>
@@ -196,7 +196,7 @@
                         </div>
                     </li>
                     <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
-                        <a href="{{ url('insurance-life') }}" class="fa"><i class="fa fa-code b-menu-1level-ico"></i><b>Insurance</b> <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+                        <a href="{{ url('insurance') }}" class="fa"><i class="fa fa-code b-menu-1level-ico"></i><b>Insurance</b> <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
                         <div class="b-top-nav__dropdomn">
                             <ul class="b-top-nav__2level_wrap">
                                 <li class="b-top-nav__2level_title f-top-nav__2level_title">Insurance</li>
@@ -214,7 +214,7 @@
                         </div>
                     </li>
                     <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
-                        <a href="{{ url('card-credit') }}" class="fa"><i class="fa fa-picture-o b-menu-1level-ico"></i><b>Card</b> <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+                        <a href="{{ url('card') }}" class="fa"><i class="fa fa-picture-o b-menu-1level-ico"></i><b>Card</b> <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
                         <div class="b-top-nav__dropdomn">
                             <ul class="b-top-nav__2level_wrap">
                                 <li class="b-top-nav__2level_title f-top-nav__2level_title">Card</li>
@@ -225,13 +225,12 @@
                     </li>
                     <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
                         <a href="{{ url('blog') }}" class="fa"><i class="fa fa-picture-o b-menu-1level-ico"></i><b>Blog</b> <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
-                        <div class="b-top-nav__dropdomn">
-                            <ul class="b-top-nav__2level_wrap">
-                                <li class="b-top-nav__2level_title f-top-nav__2level_title">Blog</li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('blog') }}"><i class="fa fa-angle-right"></i>Blog View</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('/') }}"><i class="fa fa-angle-right"></i>Debit Card</a></li>
-                            </ul>
-                        </div>
+                        {{--<div class="b-top-nav__dropdomn">--}}
+                            {{--<ul class="b-top-nav__2level_wrap">--}}
+                                {{--<li class="b-top-nav__2level_title f-top-nav__2level_title">Blog</li>--}}
+                                {{--<li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('blog') }}"><i class="fa fa-angle-right"></i>Blog View</a></li>--}}
+                            {{--</ul>--}}
+                        {{--</div>--}}
                     </li>
                     <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
                         <a href="{{ url('about-us') }}" class="fa"><i class="fa fa-list b-menu-1level-ico"></i><b>About Us</b> <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>

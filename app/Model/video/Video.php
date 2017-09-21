@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Model\blog;
+namespace App\Model\video;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Commentreplay extends Model
+class Video extends Model
 {
     //
 }

@@ -7,8 +7,8 @@ use App\Http\Controllers\Controller;
 
 use App\model\advertise\Advertise;
 use App\Http\Requests;
-use Session;
-use DB;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Redirect;
 use App\Model\loan\Loan;

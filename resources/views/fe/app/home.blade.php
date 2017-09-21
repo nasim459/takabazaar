@@ -87,74 +87,43 @@
                         <h2 class="f-primary-b" style="text-transform: capitalize">Popular Article Here</h2>
                         <p class="f-section-info__text_short f-primary-sb">These articles have been read a lot of time</p>
                         <div class="b-ol-list-text-container">
-                            <div class="b-ol-list-text__item">
-                                <div class="b-ol-list-text__item_number f-ol-list-text__item_number f-primary-b">1</div>
-                                <div class="b-ol-list-text__item_info">
-                                    <a href="#" class="b-ol-list-text__item_info-title f-ol-list-text__item_info-title f-primary-sb">Frexy template for Travel website</a>
-                                    <p class="b-ol-list-text__item_info-desc f-ol-list-text__item_info-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut massa </p>
+
+                            @php $number = 0; @endphp
+                            @foreach($blog_view_4 as $v)
+                                <div class="b-ol-list-text__item">
+                                    <div class="b-ol-list-text__item_number f-ol-list-text__item_number f-primary-b"><a href="{{URL::to('blog-details/'.$v->id.'/'.$v->blog_title)}}">{{$number = $number+1}}</a></div>
+                                    <div class="b-ol-list-text__item_info" style="text-align: justify">
+                                        <a href="{{URL::to('blog-details/'.$v->id.'/'.$v->blog_title)}}" class="b-ol-list-text__item_info-title f-ol-list-text__item_info-title f-primary-sb" title="{{ $v->blog_title }}">{{ str_limit($v->blog_title, 36, ' ...') }}</a>
+                                        <p class="b-ol-list-text__item_info-desc f-ol-list-text__item_info-desc" style="margin-top: -15px;">{!! str_limit($v->blog_short_desc, 115, ' ...') !!}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="b-ol-list-text__item">
-                                <div class="b-ol-list-text__item_number f-ol-list-text__item_number f-primary-b">2</div>
-                                <div class="b-ol-list-text__item_info">
-                                    <a href="#" class="f-ol-list-text__item_info-title f-primary-sb">Frexy template for Corporate website</a>
-                                    <p class="b-ol-list-text__item_info-desc f-ol-list-text__item_info-desc">Lorem ipsum dolor sit amet, consectetur</p>
-                                </div>
-                            </div>
-                            <div class="b-ol-list-text__item">
-                                <div class="b-ol-list-text__item_number f-ol-list-text__item_number f-primary-b">3</div>
-                                <div class="b-ol-list-text__item_info">
-                                    <a href="#" class="f-ol-list-text__item_info-title f-primary-sb">Frexy template for Real Estate website</a>
-                                    <p class="b-ol-list-text__item_info-desc f-ol-list-text__item_info-desc">Lorem ipsum dolor sit amet, consectetur adipiscing </p>
-                                </div>
-                            </div>
-                            <div class="b-ol-list-text__item">
-                                <div class="b-ol-list-text__item_number f-ol-list-text__item_number f-primary-b">4</div>
-                                <div class="b-ol-list-text__item_info">
-                                    <a href="#" class="f-ol-list-text__item_info-title f-primary-sb">Frexy template for Education</a>
-                                    <p class="b-ol-list-text__item_info-desc f-ol-list-text__item_info-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut</p>
-                                </div>
-                            </div>
+                            @endforeach
+
                         </div>
                         <div class="clearfix">
-                            <a href="#" class="f-more f-primary-b">and much more...</a>
+                            <a href="{{url('blog')}}" class="f-more f-primary-b">and much more...</a>
                         </div>
                     </div>
+
                     <div class="b-section-info__text f-section-info__text col-sm-6 col-xs-12">
                         <h2 class="f-primary-b" style="text-transform: capitalize">Popular Article Here</h2>
                         <p class="f-section-info__text_short f-primary-sb">These articles have been read a lot of time</p>
                         <div class="b-ol-list-text-container">
-                            <div class="b-ol-list-text__item">
-                                <div class="b-ol-list-text__item_number f-ol-list-text__item_number f-primary-b">1</div>
-                                <div class="b-ol-list-text__item_info">
-                                    <a href="#" class="b-ol-list-text__item_info-title f-ol-list-text__item_info-title f-primary-sb">Frexy template for Travel website</a>
-                                    <p class="b-ol-list-text__item_info-desc f-ol-list-text__item_info-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut massa </p>
+
+                            @php $number = 4; @endphp
+                            @foreach($blog_view_8 as $v)
+                                <div class="b-ol-list-text__item">
+                                    <div class="b-ol-list-text__item_number f-ol-list-text__item_number f-primary-b"><a href="{{URL::to('blog-details/'.$v->id.'/'.$v->blog_title)}}">{{$number = $number+1}}</a></div>
+                                    <div class="b-ol-list-text__item_info" style="text-align: justify">
+                                        <a href="{{URL::to('blog-details/'.$v->id.'/'.$v->blog_title)}}" class="b-ol-list-text__item_info-title f-ol-list-text__item_info-title f-primary-sb" title="{{ $v->blog_title }}">{{ str_limit($v->blog_title, 36, ' ...') }}</a>
+                                        <p class="b-ol-list-text__item_info-desc f-ol-list-text__item_info-desc" style="margin-top: -15px;">{!! str_limit($v->blog_short_desc, 120, ' ...') !!}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="b-ol-list-text__item">
-                                <div class="b-ol-list-text__item_number f-ol-list-text__item_number f-primary-b">2</div>
-                                <div class="b-ol-list-text__item_info">
-                                    <a href="#" class="f-ol-list-text__item_info-title f-primary-sb">Frexy template for Corporate website</a>
-                                    <p class="b-ol-list-text__item_info-desc f-ol-list-text__item_info-desc">Lorem ipsum dolor sit amet, consectetur</p>
-                                </div>
-                            </div>
-                            <div class="b-ol-list-text__item">
-                                <div class="b-ol-list-text__item_number f-ol-list-text__item_number f-primary-b">3</div>
-                                <div class="b-ol-list-text__item_info">
-                                    <a href="#" class="f-ol-list-text__item_info-title f-primary-sb">Frexy template for Real Estate website</a>
-                                    <p class="b-ol-list-text__item_info-desc f-ol-list-text__item_info-desc">Lorem ipsum dolor sit amet, consectetur adipiscing </p>
-                                </div>
-                            </div>
-                            <div class="b-ol-list-text__item">
-                                <div class="b-ol-list-text__item_number f-ol-list-text__item_number f-primary-b">4</div>
-                                <div class="b-ol-list-text__item_info">
-                                    <a href="#" class="f-ol-list-text__item_info-title f-primary-sb">Frexy template for Education</a>
-                                    <p class="b-ol-list-text__item_info-desc f-ol-list-text__item_info-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut</p>
-                                </div>
-                            </div>
+                            @endforeach
+
                         </div>
                         <div class="clearfix">
-                            <a href="#" class="f-more f-primary-b">and much more...</a>
+                            <a href="{{url('blog')}}" class="f-more f-primary-b">and much more...</a>
                         </div>
                     </div>
                 </div>
@@ -166,15 +135,66 @@
     <!--start section-->
     <section class="b-desc-section-container b-diagonal-line-bg-light">
         <div class="container">
-            <h2 class="t-a-c">Loan Information</h2>
-            {{--<p class="b-desc-section f-desc-section f-center f-primary-l">Etiam consectetur pellentesque justo. Sed tristique bibendum elit non molestie. Donec et libero rutrum</p>--}}
-            <div class="b-hr-stars f-hr-stars">
-                <div class="b-hr-stars__group">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="b-infoblock-with-icon-group row">
+
+                        @php $number = 4; @endphp
+                        @foreach($video_view as $v)
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                {!! $v->v_embed_code !!}<br>
+                                {{str_limit($v->v_name, 46, '...')}}
+                            </div>
+                        @endforeach
+
+                        {{--<div class="col-md-4 col-sm-6 col-xs-12">--}}
+                            {{--<iframe src="https://www.youtube.com/embed/3rsGPNChtVU?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>--}}
+                        {{--</div>--}}
+
+                        {{--<div class="col-md-4 col-sm-6 col-xs-12">--}}
+                            {{--<iframe src="https://www.youtube.com/embed/q5jEY92Amgw?controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>--}}
+                        {{--</div>--}}
+
+                        {{--<div class="col-md-4 col-sm-6 col-xs-12">--}}
+                            {{--<iframe src="https://www.youtube.com/embed/yltlJEdSAHw?showinfo=0" frameborder="0" allowfullscreen></iframe>--}}
+                        {{--</div>--}}
+
+                        {{--<video class="col-md-4 col-sm-6 col-xs-12" controls>--}}
+                            {{--<source src="{{ asset('fe/video/mov_bbb.mp4') }}" type="video/mp4">--}}
+                            {{--<source src="{{ asset('fe/video/mov_bbb.ogg') }}" type="video/ogg">--}}
+                            {{--Your browser does not support HTML5 video.--}}
+                        {{--</video>--}}
+                        {{--<video class="col-md-4 col-sm-6 col-xs-12" controls>--}}
+                            {{--<source src="{{ asset('fe/video/mov_bbb.mp4') }}" type="video/mp4">--}}
+                            {{--<source src="{{ asset('fe/video/mov_bbb.ogg') }}" type="video/ogg">--}}
+                            {{--Your browser does not support HTML5 video.--}}
+                        {{--</video>--}}
+                        {{--<video class="col-md-4 col-sm-6 col-xs-12" controls>--}}
+                            {{--<source src="{{ asset('fe/video/mov_bbb.mp4') }}" type="video/mp4">--}}
+                            {{--<source src="{{ asset('fe/video/mov_bbb.ogg') }}" type="video/ogg">--}}
+                            {{--Your browser does not support HTML5 video.--}}
+                        {{--</video>--}}
+
+                    </div>
+
                 </div>
             </div>
+        </div>
+    </section>
+    <!--end section-->
+
+    <!--start section-->
+    <section class="b-desc-section-container b-diagonal-line-bg-light">
+        <div class="container">
+            {{--<h2 class="t-a-c">Loan Information</h2>--}}
+            {{--<p class="b-desc-section f-desc-section f-center f-primary-l">Etiam consectetur pellentesque justo. Sed tristique bibendum elit non molestie. Donec et libero rutrum</p>--}}
+            {{--<div class="b-hr-stars f-hr-stars">--}}
+                {{--<div class="b-hr-stars__group">--}}
+                    {{--<i class="fa fa-star"></i>--}}
+                    {{--<i class="fa fa-star"></i>--}}
+                    {{--<i class="fa fa-star"></i>--}}
+                {{--</div>--}}
+            {{--</div>--}}
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="b-infoblock-with-icon-group row">

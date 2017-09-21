@@ -68,14 +68,14 @@
                     <small>Advertise</small>
                 </a>
 
-                <a href="{{URL::to('purchase-add-supplier')}}" class="app btn btn-default">
-                    <i class="fa fa-plus text-success fa-2x fa-3y"></i><br/>
-                    <small>Marine</small>
+                <a href="{{URL::to('video-info')}}" class="app btn btn-default">
+                    <i class="fa fa-video-camera text-success fa-2x fa-3y"></i><br/>
+                    <small>Video</small>
                 </a>
 
                 <a href="{{URL::to('people-profile-all')}}" class="app btn btn-default">
-                    <i class="fa fa-users text-success fa-2x fa-3y"></i><br/>
-                    <small>Profile</small>
+                    <i class="fa fa-image text-success fa-2x fa-3y"></i><br/>
+                    <small>Header</small>
                 </a>
 
                 <a href="{{ url('info'.'/'.'team-member') }}" class="app btn btn-default">

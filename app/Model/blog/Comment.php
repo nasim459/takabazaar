@@ -13,6 +13,6 @@ class Comment extends Model
 
     //
     public function commentreplaies(){
-        return $this->hasMany(Commentreplay::class);
+        return $this->hasMany(Commentreplaie::class);
     }
 }

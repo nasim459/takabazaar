@@ -1,11 +1,42 @@
 @section('fe_maincontent')
     <div class="j-menu-container"></div>
 
-    <div class="b-inner-page-header f-inner-page-header b-bg-header-inner-page">
+    @foreach($header_image as $v)
+        @if($v->status == 0)
+            <div class="b-inner-page-header f-inner-page-header b-bg-header-inner-page">
+                @else
+                    <div class="b-inner-page-header f-inner-page-header" style="background: url({{ asset('ap/images/header_image/'.$v->header_image_url) }}) no-repeat center;
+                            background-size: cover;">
+                        @endif
+                        @endforeach
         <div class="b-inner-page-header__content">
             <div class="container">
-                <h1 class="f-primary-l c-default"><i class="fa fa-briefcase"> Motor Car Insurance</i></h1>
-                <div class="f-primary-l f-inner-page-header_title-add c-senary"><i class="fa">Create a motor car insurance from here</i></div>
+                <div class="pull-left">
+                    <h1 class="f-primary-l c-default"><i class="fa fa-briefcase"> Motor Car Insurance</i></h1>
+                    <div class="f-primary-l f-inner-page-header_title-add c-senary"><i class="fa">Create a motor car insurance from here</i></div>
+                </div>
+
+                @if(Session::get('fe_error_msg') != NULL)
+                    <div class="col-xs-12 col-md-6 m-l-5 alert alert-danger" style="font-size: 20px;">
+                        <a href="#" class="pull-right" data-dismiss="alert">&times;</a>
+                        {{Session::get('fe_error_msg')}} {{Session::put('fe_error_msg', '')}}
+                    </div>
+                @endif
+
+                @if(Session::get('fe_msg') != NULL)
+                    <div class="col-xs-12 col-md-6 m-l-5 alert alert-success" style="font-size: 20px;">
+                        <a href="#" class="pull-right" data-dismiss="alert">&times;</a>
+                        {{Session::get('fe_msg')}} {{Session::put('fe_msg', '')}}
+                    </div>
+                @endif
+
+                <div class="pull-right">
+                    <div class="t-a-c">
+                        <i class="fa f-s-25 m-b-10">Hotline</i><br>
+                        <i class="fa f-s-16 c-red m-b-5">01 777 888 757</i><br>
+                        <i class="fa f-s-14">info@finFObd.com</i>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

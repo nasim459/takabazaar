@@ -1,7 +1,14 @@
 @section('fe_maincontent')
     <div class="j-menu-container"></div>
 
-    <div class="b-inner-page-header f-inner-page-header b-bg-header-inner-page">
+    @foreach($header_image as $v)
+        @if($v->status == 0)
+            <div class="b-inner-page-header f-inner-page-header b-bg-header-inner-page">
+                @else
+                    <div class="b-inner-page-header f-inner-page-header" style="background: url({{ asset('ap/images/header_image/'.$v->header_image_url) }}) no-repeat center;
+                            background-size: cover;">
+                        @endif
+                        @endforeach
         <div class="b-inner-page-header__content">
             <div class="container">
                 <div class="pull-left">

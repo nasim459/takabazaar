@@ -59,3 +59,62 @@
 @endforeach
 
 </tbody>
+
+
+//---------------------------------------------start_rating_code-----------------------------
+$count = count($apply_view);
+echo 'Count ='. $count.'<br>';
+
+//echo $apply_view[5]->loan_id;
+foreach ($apply_view as $v){
+$loan_id = $v->loan_id;
+$user_rating_star = $v->user_rating_star;
+echo $loan_id.' = '.$user_rating_star.'<br>';
+}
+echo '----------'.'<br>';
+
+
+$loan_id_count = 0;
+
+$loan = array();
+$loan_count = array();
+
+foreach ($apply_view as $v){
+$loan_id = $v->loan_id;
+$user_rating_star = $v->user_rating_star;
+//echo $loan_id.' = '.$user_rating_star.'<br>';
+
+$rating_count = 0;
+$loan_id_count = 0;
+
+foreach ($apply_view as $vv){
+
+if($loan_id == $vv->loan_id){
+$user_rating_star = $vv->user_rating_star;
+
+$rating_count = $rating_count + $user_rating_star;
+$loan_id_count = $loan_id_count + 1;
+
+$loan[$loan_id] = $rating_count;
+$loan_count[$loan_id] = $loan_id_count;
+}
+
+}
+
+}
+echo '<pre>';
+            print_r($loan);
+            print_r($loan_count);
+
+            echo '----'.'<br>';
+            $keys = array_keys($loan);
+            foreach ($keys as $key) {
+                echo $loan_id_rating[$key] = $loan[$key]/$loan_count[$key].'<br>';
+            }
+            echo '----'.'<br>';
+
+
+            //dd($apply_view);
+            exit();
+
+//---------------------------------------------end_rating_code-----------------------------

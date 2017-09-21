@@ -1,15 +1,15 @@
 <!--start side-bar-category-->
 <div class="col-md-3">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="b-form-row b-input-search">
-                <input class="form-control" type="text" placeholder="Enter your keywords"/>
-                <span class="b-btn b-btn-search f-btn-search fa fa-search"></span>
-            </div>
-        </div>
-    </div>
+    {{--<div class="row">--}}
+        {{--<div class="col-md-12">--}}
+            {{--<div class="b-form-row b-input-search">--}}
+                {{--<input class="form-control" type="text" placeholder="Enter your keywords"/>--}}
+                {{--<span class="b-btn b-btn-search f-btn-search fa fa-search"></span>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
     <div class="row b-col-default-indent">
-        <div class="col-md-12">
+        <div class="col-md-12" style="margin-top: -7px;">
             <div class="b-categories-filter">
                 <h4 class="f-primary-b b-h4-special f-h4-special--gray f-h4-special">blog categories</h4>
                 <ul>
