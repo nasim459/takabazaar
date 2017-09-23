@@ -139,10 +139,10 @@
                                     <i class="fa app-head">Interest Rate</i>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <i class="fa app-head">Monthly Installment</i>
+                                    <i class="fa app-head">Amount UpTo</i>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <i class="fa app-head">Total Payable Interest</i>
+                                    <i class="fa app-head">Tenure Range</i>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2">
                                     <i class="fa app-head">Person</i>
@@ -154,7 +154,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-12 col-md-12 b-item-apartment-block" ng-repeat="v in display_data | filter : nas">
+                    <div class="col-sm-12 col-md-12 b-item-apartment-block" ng-repeat="v in investment_data | filter : nas">
                         <div class="b-some-examples__item f-some-examples__item b-hover">
                             <div class="b-some-examples__item_action app-box">
                                 <div class="col-xs-12 col-sm-2 col-md-2">
@@ -175,25 +175,25 @@
                                         <i class="fa"><span class="ralit">Interest Rate : </span></i>
                                     </div>
                                     <div class="col-xs-5 col-sm-12 col-md-12">
-                                        <i class="fa"><span class="ralit-r">@{{v.loan_interest_rate}} %</span></i>
+                                        <i class="fa"><span class="ralit-r">@{{v.invst_tenure_rate}} %</span></i>
                                     </div>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-2 col-md-2 nas">
                                     <div class="col-xs-7 t-a-r ralit-main">
-                                        <i class="fa"><span class="ralit">Monthly: </span></i>
+                                        <i class="fa"><span class="ralit">Amount UpTo: </span></i>
                                     </div>
                                     <div class="col-xs-5 col-sm-12 col-md-12">
-                                        <i class="fa"><span class="ralit-r">@{{v.loan_monthly_interest}} ৳</span></i>
+                                        <i class="fa"><span class="ralit-r">@{{v.invst_amount_upto}} ৳</span></i>
                                     </div>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-2 col-md-2 nas">
                                     <div class="col-xs-7 t-a-r ralit-main">
-                                        <i class="fa"><span class="ralit">Interest : </span></i>
+                                        <i class="fa"><span class="ralit">Tenure Range : </span></i>
                                     </div>
                                     <div class="col-xs-5 col-sm-12 col-md-12">
-                                        <i class="fa"><span class="ralit-r">@{{v.loan_interest_payable}} ৳</span></i>
+                                        <i class="fa"><span class="ralit-r">@{{v.invst_tenure_rate}} ৳</span></i>
                                     </div>
                                 </div>
 
@@ -202,9 +202,9 @@
                                         <i class="fa"><span class="ralit">Person : </span></i>
                                     </div>
                                     <div class="col-xs-5 col-sm-12 col-md-12">
-                                        <i class="fa"><span class="ralit-r" ng-if="v.loan_person_type == 1">Salaried</span></i>
-                                        <i class="fa"><span class="ralit-r" ng-if="v.loan_person_type == 2">Person</span></i>
-                                        <i class="fa"><span class="ralit-r" ng-if="v.loan_person_type == 3">Susiness</span></i>
+                                        <i class="fa"><span class="ralit-r" ng-if="v.invst_person_type == 1">Salaried</span></i>
+                                        <i class="fa"><span class="ralit-r" ng-if="v.invst_person_type == 2">Person</span></i>
+                                        <i class="fa"><span class="ralit-r" ng-if="v.invst_person_type == 3">Susiness</span></i>
                                     </div>
                                 </div>
 
@@ -238,7 +238,7 @@
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                     <input type="hidden" name="id" value="@{{ v.id }}">
                                                     <input type="hidden" name="t_id" value="33">
-                                                    <input type="text" name="t_id" value="">
+                                                    <input type="hidden" name="t_id" value="">
 
                                                     <div class="form-group" style="margin-bottom: -15px;">
                                                         <label for="exampleInputName2" class="col-xs-12 col-sm-6 control-label m-t-20">
@@ -502,7 +502,7 @@
                                         <div class="">
                                             <div class="row b-form-inline b-form-horizontal">
                                                 <div class="col-xs-12">
-                                                    <div class="b-form-row" ng-bind-html="v.loan_requirements"></div>
+                                                    <div class="b-form-row" ng-bind-html="v.invst_requirements"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -531,7 +531,7 @@
                                             <hr class="b-hr" style="margin-bottom: 12px; margin-top: 12px;" />
                                             <div class="row b-form-inline b-form-horizontal">
                                                 <div class="col-xs-12">
-                                                    <div class="b-form-row" ng-bind-html="v.loan_features_bfenefits"></div>
+                                                    <div class="b-form-row" ng-bind-html="v.invst_features_benefits"></div>
                                                 </div>
                                             </div>
 
@@ -539,7 +539,7 @@
                                             <hr class="b-hr" style="margin-bottom: 12px; margin-top: 12px;" />
                                             <div class="row b-form-inline b-form-horizontal">
                                                 <div class="col-xs-12">
-                                                    <div class="b-form-row" ng-bind-html="v.loan_eligibility"></div>
+                                                    <div class="b-form-row" ng-bind-html="v.invst_eligibility"></div>
                                                 </div>
                                             </div>
                                         </div>

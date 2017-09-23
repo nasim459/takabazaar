@@ -12,6 +12,15 @@ app.controller('fe_loanController', function($scope, $http) {
     $scope.show_data();
 
 
+    //-----investment-api
+    $scope.show_data = function() {
+        $http.get('/taka_bazaar/public/investment-api').then(function(response) {
+            $scope.investment_data = response.data;
+        });
+    }
+    $scope.show_data();
+
+
     //-----card-credit-api
     $scope.show_data = function() {
         $http.get('/taka_bazaar/public/card-credit-api').then(function(response) {

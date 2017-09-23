@@ -6,24 +6,23 @@
 |--------------------------------------------------------------------------
 */
 
-//----Loan Controller-------------------------------------------------------------------
+//=====================================Start Back_End Route=============================================
+//----Loan Controller
 Route::get('loan/{child}', 'loan\LoanController@loan_file_view');
-//----Investment Controller-------------------------------------------------------------
+//----Investment Controller
 Route::get('investment/{child}', 'investment\InvestmentController@investment_file_view');
-//----Insurance Controller--------------------------------------------------------------
+//----Insurance Controller
 Route::get('insurance/{child}', 'insurance\InsuranceController@insurance_file_view');
-//----Card Controller-------------------------------------------------------------------
+//----Card Controller
 Route::get('card/{child}', 'card\CardController@card_file_view');
-//----Advertise Controller--------------------------------------------------------------
+//----Advertise Controller
 Route::get('advertise', 'advertise\AdvertiseController@advertise_file_view');
-//----Video Controller--------------------------------------------------------------
+//----Video Controller
 Route::get('video-info', 'video\VideoController@video_file_view');
-//----Header Controller--------------------------------------------------------------
+//----Header Controller
 Route::get('header/{child}', 'headerimage\HeaderImageController@header_image_file_view');
 
-
-
-//----Blog Controller---------------------------------------------
+//----Blog Controller
 Route::get('blog-view', 'blog\BlogController@blog_file_view');
 Route::get('blog-subscriber', 'blog\BlogController@blog_file_view');
 Route::get('blog-settings', 'blog\BlogController@blog_file_view');
@@ -31,23 +30,22 @@ Route::get('blog-category', 'blog\BlogController@blog_file_view');
 Route::post('blog-category-insert', 'blog\BlogCategoryController@blog_category_insert');
 Route::get('blog-user', 'blog\BlogController@blog_file_view');
 
-//----Subscriber Controller---------------------------------------------
+//----Subscriber Controller
 Route::post('subscriber-insert', 'subscriber\SubscriberController@subscriber_insert');
 
-
-//----Bank Controller---------------------------------------------
+//----Bank Controller
 Route::get('bank/{child}', 'bank\BankController@bank_file_view');
 
-//----Bank Controller---------------------------------------------
+//----Bank Controller
 Route::get('cardcategory/{child}', 'cardcategory\CardCategoryController@cardcategory_file_view');
 
-//----Applying Controller---------------------------------------------
+//----Applying Controller
 Route::get('apply/{child}', 'applying\ApplyingController@applying_file_view');
 
-//----Info Controller---------------------------------------------
+//----Info Controller
 Route::get('info/{child}', 'info\InfoController@info_file_view');
 
-//----Form Controller---------------------------------------------
+//----Form Controller
 Route::get('form/{child}', 'form\FormController@form_file_view');
 
 //-----------form-advertise include data_save & data_update
@@ -79,44 +77,37 @@ Route::post('form-info', 'form\FormInfoController@info_form');
 Route::post('form-info-contact', 'form\FormInfoController@contact_info_form');
 
 
-
-//----Publication Controller---------------------------------------------
+//----Publication Controller
 Route::get('publication/{id}/{status}/{table}', 'publication\PublicationController@publication');
 Route::get('publication-alert/{id}/{status}/{table}', 'publication\PublicationController@publication_alert');
 
-//----ImageUpdate Controller---------------------------------------------
+//----ImageUpdate Controller
 Route::post('image-update', 'image\ImageUpdateController@image_update');
 Route::post('image-update-child', 'image\ImageUpdateController@child_image_update');
 
-//----Delete Controller---------------------------------------------
+//----Delete Controller
 Route::post('delete', 'delete\DeleteController@delete');
-
-
-
-
-
-
 
 //----Login Panel
 //Route::get('form', 'HomeController@form_people');
 Route::get('login', 'HomeController@login_people');
 
-//----Dash Board Controller------------------------------------------
+//----Dash Board Controller
 Route::get('dboard', 'DashBoardController@home_dboard');
 Route::get('dboard-regi', 'DashBoardController@regi_dboard');
+//=====================================End Back_End Route==============================================
 
 
 
 
-
-
-//=====================================Start Front End Template Design================
-//----api development
+//=====================================Start Front_End Route===========================================
+//----start api development
 Route::get('loan-home-api', 'fe\app\ViewFileController@view_file');
 Route::get('investment-api', 'fe\app\ViewFileController@view_file');
 Route::get('insurance-api', 'fe\app\ViewFileController@view_file');
 Route::get('card-credit-api', 'fe\app\ViewFileController@view_file');
 Route::get('card-debit-api', 'fe\app\ViewFileController@view_file');
+//----end api development
 
 Route::get('', 'fe\app\ViewFileController@view_file');
 Route::get('loan', 'fe\app\ViewFileController@view_file');
@@ -131,10 +122,12 @@ Route::get('loan-sme', 'fe\app\ViewFileController@view_file');
 Route::get('loan-working-capital', 'fe\app\ViewFileController@view_file');
 Route::get('loan-others', 'fe\app\ViewFileController@view_file');
 
+//----investment
 Route::get('investment-saving', 'fe\app\ViewFileController@view_file');
 Route::get('investment-fixed', 'fe\app\ViewFileController@view_file');
 Route::get('investment-mutual', 'fe\app\ViewFileController@view_file');
 
+//----insurance
 Route::get('insurance-life', 'fe\app\ViewFileController@view_file');
 Route::get('insurance-motor-bike', 'fe\app\ViewFileController@view_file');
 Route::get('insurance-motor-car', 'fe\app\ViewFileController@view_file');
@@ -142,9 +135,11 @@ Route::get('insurance-marine', 'fe\app\ViewFileController@view_file');
 Route::get('insurance-fire', 'fe\app\ViewFileController@view_file');
 Route::get('insurance-accident', 'fe\app\ViewFileController@view_file');
 
+//----card
 Route::get('card-credit', 'fe\app\ViewFileController@view_file');
 Route::get('card-debit', 'fe\app\ViewFileController@view_file');
 
+//----blog
 Route::get('blog', 'fe\app\ViewFileController@view_file_blog');
 Route::get('blog-details/{id}/{blog_title}', 'fe\app\ViewFileController@view_file_details');
 Route::post('blog-user-comment-replay', 'fe\app\blog\BlogUserCommentReplayController@blog_user_comment_replay');
@@ -153,16 +148,17 @@ Route::post('blog-user-insert', 'fe\app\blog\BlogUserController@blog_user_insert
 Route::get('blog-user-profile', 'fe\app\ViewFileController@view_file_blog');
 Route::post('blog-user-post-insert', 'fe\app\blog\BlogUserPostController@blog_user_post_insert');
 
-
-
+//----user working
 Route::post('user-apply', 'fe\app\ApplyInfoController@user_apply');
 Route::post('user-rating', 'fe\app\reviewRaingController@user_rating');
 Route::post('user-review', 'fe\app\reviewRaingController@user_review');
 
+//----information
 Route::get('contact-us', 'fe\app\ViewFileController@view_file_blog');
 Route::get('about-us', 'fe\app\ViewFileController@view_file_blog');
-//=====================================End Front End Template Design==================
+//=====================================End Front_End Route============================================
 
+//----rough testing
 Route::get('get-ip-details', function () {
     $ip = '66.102.0.0';
     $data = \Location::get($ip);
