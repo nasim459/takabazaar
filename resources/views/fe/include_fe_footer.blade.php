@@ -13,10 +13,10 @@
                     <nav class="b-bottom-nav f-bottom-nav b-right hidden-xs">
                         <ul>
                             <li><a href="{{ url('') }}">Home</a></li>
-                            <li class="is-active-bottom-nav"><a href="{{ url('loan-home') }}">Loan</a></li>
-                            <li><a href="{{ url('investment-saving') }}">Investment</a></li>
-                            <li><a href="{{ url('insurance-life') }}">Insurance</a></li>
-                            <li><a href="{{ url('card-credit') }}">Card</a></li>
+                            <li class="is-active-bottom-nav"><a href="{{ url('loan') }}">Loan</a></li>
+                            <li><a href="{{ url('investment') }}">Investment</a></li>
+                            <li><a href="{{ url('insurance') }}">Insurance</a></li>
+                            <li><a href="{{ url('card') }}">Card</a></li>
                             <li><a href="{{ url('blog') }}">Blog</a></li>
                             <li><a href="{{ url('about-us') }}">About Us</a></li>
                             <li><a href="{{ url('contact-us') }}">Contact Us</a></li>
@@ -28,9 +28,22 @@
     </div>
     <div class="container">
         <div class="b-footer-secondary row">
-            <div class="col-md-3 col-sm-12 col-xs-12 f-center b-footer-logo-containter">
-                <a href=""><img data-retina class="b-footer-logo color-theme" src="{{asset('fe/img/logo-footer.png')}}" alt="Logo"/></a><br>
-                <div class="b-footer-logo-text f-footer-logo-text">
+            <div class="col-md-3 col-sm-12 col-sm-12 f-center b-footer-logo-containter">
+                {{--{!! Form::open(array('url'=>'subscriber-insert', 'role'=>'form', 'method'=>'POST')) !!}--}}
+                {{--<div class="col-sm-12 m-b-10 m-t-10">--}}
+                    {{--<div class="col-xs-8">--}}
+                        {{--<div class="input-group">--}}
+                            {{--<input type="email" name="sub_email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-xs-4">--}}
+                        {{--<input type="submit" value="Subscribe" class="btn btn-success">--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--{!! Form::close() !!}--}}
+                {{--<br>--}}
+                <a href="" class="col-xs-12"><img data-retina class="b-footer-logo color-theme" src="{{asset('fe/img/logo-footer.png')}}" alt="Logo"/></a><br>
+                <div class="col-xs-12 b-footer-logo-text f-footer-logo-text">
                     <p><b>finFObd</b><br>Reliable Adequate Leading Information Technology</p>
                     <div class="b-btn-group-hor f-btn-group-hor">
                         <a href="#" class="b-btn-group-hor__item f-btn-group-hor__item" title="Facebook">

@@ -62,6 +62,11 @@ class PublicationController extends Controller
                 $publication_status = 'c_status';
                 $redirect = $previous_url;
                 break;
+            case "333":
+                $table_name = 'videos';
+                $publication_status = 'v_status';
+                $redirect = $previous_url;
+                break;
             case "444":
                 $table_name = 'blogs';
                 $publication_status = 'blog_status';
@@ -84,6 +89,11 @@ class PublicationController extends Controller
                 break;
             case "111":
                 $table_name = 'abouts';
+                $publication_status = 'status';
+                $redirect = $previous_url;
+                break;
+            case "3333":
+                $table_name = 'headerimages';
                 $publication_status = 'status';
                 $redirect = $previous_url;
                 break;

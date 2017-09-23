@@ -22,7 +22,7 @@ class SubscriberController extends Controller
             $save['subscriber_eamil'] = $sub_email;
             DB::table('blogsubscribers')->insert($save);
 
-            Session::put('msg', 'Successfully Subscribed!!!');
+            Session::put('fe_msg', 'Successfully Subscribed!!!');
             return redirect($previous_url);
         } else {
 

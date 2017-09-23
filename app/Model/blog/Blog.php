@@ -15,4 +15,14 @@ class Blog extends Model
     public function bloguser(){
         return $this->belongsTo(Bloguser::class);
     }
+
+    //
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
+
+    //
+    public function commentreplaies(){
+        return $this->hasMany(Commentreplaie::class);
+    }
 }

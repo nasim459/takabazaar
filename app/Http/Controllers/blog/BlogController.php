@@ -35,7 +35,7 @@ class BlogController extends Controller
             case "blog-subscriber":
                 $file_open = 'fe.info.contact_us';
                 $file_open = 'ap.blog.blog_subscriber';
-                $data_view = Blogsubscriber::all();
+                $data_view = Blogsubscriber::orderBy('id', 'DESC')->get();
 
                 break;
             case "blog-settings":

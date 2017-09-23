@@ -16,6 +16,7 @@
             <a href="{{ url('apply'.'/'.'request') }}" class="app-menu btn btn-default text-success-light">Request</a>
             <a href="{{ url('apply'.'/'.'pending') }}" class="app-menu btn btn-default text-success-light">Pending</a>
             <a href="{{ url('apply'.'/'.'completed') }}" class="app-menu btn btn-default text-success-light">Completed</a>
+            <a href="{{ url('apply'.'/'.'rating') }}" class="app-menu btn btn-default text-success-light">Client Rating</a>
         </div>
         <!--end Single button-->
     </div>

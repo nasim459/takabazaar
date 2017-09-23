@@ -5,12 +5,15 @@ namespace App\Http\Controllers\fe\app;
 use App\Model\bank\Bank;
 use App\Model\blog\Blog;
 use App\Model\blog\Categories;
+use App\Model\blog\Comment;
 use App\Model\card\Card;
 use App\Model\carddebit\Carddebit;
 use App\Model\fe\app\About;
+use App\Model\headerimage\Headerimage;
 use App\Model\insurance\Insurance;
 use App\Model\investment\Investment;
 use App\Model\loan\Loan;
+use App\Model\video\Video;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
@@ -30,12 +33,34 @@ class ViewFileController extends Controller
         switch($child){
             case "/":
                 $file_open = 'fe.app.home';
+                $blog_view_4 = Blog::orderBy('blog_hit_count', 'desc')->where('blog_control', 1)->limit(4)->get();
+                $blog_view_8 = Blog::orderBy('blog_hit_count', 'desc')->where('blog_control', 1)->limit(4)->offset(4)->get();
+                $video_view = Video::where('v_status', 1)->where('v_p_location', 1)->get();    //----v_p_location = 1 means home_page
+                //dd($video_view);
+                //$open_file = view($file_open, compact('blog_view_4', 'blog_view_8', 'video_view'));
+                //return view('fe_master')->with('fe_maincontent', $open_file);
                 break;
 
             case "loan":
                 $file_open = 'fe.app.loan';
-
+                $video_view = Video::where('v_status', 1)->where('v_p_location', 2)->get();    //----v_p_location = 1 means loan_page
                 break;
+
+            case "investment":
+                $file_open = 'fe.app.investment';
+                $video_view = Video::where('v_status', 1)->where('v_p_location', 3)->get();    //----v_p_location = 1 means investment_page
+                break;
+
+            case "insurance":
+                $file_open = 'fe.app.insurance';
+                $video_view = Video::where('v_status', 1)->where('v_p_location', 4)->get();    //----v_p_location = 1 means insurance_page
+                break;
+
+            case "card":
+                $file_open = 'fe.app.card';
+                $video_view = Video::where('v_status', 1)->where('v_p_location', 5)->get();    //----v_p_location = 1 means card_page
+                break;
+
             case "loan-home-api":
                 $loan_view = Loan::with(['bank'])->get();
                 return $loan_view;
@@ -64,110 +89,87 @@ class ViewFileController extends Controller
             case "loan-home":
                 $file_open = 'fe.loan.loan_home';
                 Session::put('person', 'S_p');    //----s_p meand Salaried_Person
-                //dd($loan_view);
-                //$data_view = Client::all();
-                //$rough_view = Packageitemdefault::all();
+                $header_image = Headerimage::where('header_image_type', 1)->get();    //----header_image_type = 1 means home_loan
 
                 break;
             case "loan-car":
                 $file_open = 'fe.loan.loan_car';
-                //dd($loan_view);
-                //$data_view = Client::all();
-                //$rough_view = Packageitemdefault::all();
+                $header_image = Headerimage::where('header_image_type', 2)->get();    //----header_image_type = 2 means car_loan
 
                 break;
             case "loan-personal":
                 $file_open = 'fe.loan.loan_personal';
-                //dd($loan_view);
-                //$data_view = Client::all();
-                //$rough_view = Packageitemdefault::all();
+                $header_image = Headerimage::where('header_image_type', 3)->get();    //----header_image_type = 3 means person_loan
 
                 break;
             case "loan-sme":
                 $file_open = 'fe.loan.loan_sme';
-                //dd($loan_view);
-                //$data_view = Client::all();
-                //$rough_view = Packageitemdefault::all();
+                $header_image = Headerimage::where('header_image_type', 4)->get();    //----header_image_type = 4 means sme_loan
 
                 break;
             case "loan-working-capital":
                 $file_open = 'fe.loan.loan_working_capital';
-                //dd($loan_view);
-                //$data_view = Client::all();
-                //$rough_view = Packageitemdefault::all();
+                $header_image = Headerimage::where('header_image_type', 5)->get();    //----header_image_type = 5 means working_capital_loan
 
                 break;
             case "loan-others":
                 $file_open = 'fe.loan.loan_others';
-                //dd($loan_view);
-                //$data_view = Client::all();
-                //$rough_view = Packageitemdefault::all();
+                $header_image = Headerimage::where('header_image_type', 6)->get();    //----header_image_type = 6 means others_loan
 
                 break;
             case "investment-saving":
                 $file_open = 'fe.investment.investment_saving';
-                //$data_view = Client::all();
-                //$rough_view = Packageitemdefault::all();
+                $header_image = Headerimage::where('header_image_type', 7)->get();    //----header_image_type = 7 means investment_saving
 
                 break;
             case "investment-fixed":
                 $file_open = 'fe.investment.investment_fixed';
-                //$data_view = Client::all();
-                //$rough_view = Packageitemdefault::all();
+                $header_image = Headerimage::where('header_image_type', 8)->get();    //----header_image_type = 8 means investment_fixed
 
                 break;
             case "investment-mutual":
                 $file_open = 'fe.investment.investment_mutual';
-                //$data_view = Client::all();
-                //$rough_view = Packageitemdefault::all();
+                $header_image = Headerimage::where('header_image_type', 9)->get();    //----header_image_type = 9 means investment_mutual
 
                 break;
             case "insurance-life":
                 $file_open = 'fe.insurance.insurance_life';
-                //$data_view = Client::all();
-                //$rough_view = Packageitemdefault::all();
+                $header_image = Headerimage::where('header_image_type', 10)->get();    //----header_image_type = 10 means sme_loan
 
                 break;
             case "insurance-motor-bike":
                 $file_open = 'fe.insurance.insurance_motor_bike';
-                //$data_view = Client::all();
-                //$rough_view = Packageitemdefault::all();
+                $header_image = Headerimage::where('header_image_type', 11)->get();    //----header_image_type = 11 means insurance_motor_bike
 
                 break;
             case "insurance-motor-car":
                 $file_open = 'fe.insurance.insurance_motor_car';
-                //$data_view = Client::all();
-                //$rough_view = Packageitemdefault::all();
+                $header_image = Headerimage::where('header_image_type', 12)->get();    //----header_image_type = 12 means insurance_motor_car
 
                 break;
             case "insurance-marine":
                 $file_open = 'fe.insurance.insurance_marine';
-                //$data_view = Client::all();
-                //$rough_view = Packageitemdefault::all();
+                $header_image = Headerimage::where('header_image_type', 13)->get();    //----header_image_type = 13 means insurance_marine
 
                 break;
             case "insurance-fire":
                 $file_open = 'fe.insurance.insurance_fire';
-                //$data_view = Client::all();
-                //$rough_view = Packageitemdefault::all();
+                $header_image = Headerimage::where('header_image_type', 14)->get();    //----header_image_type = 14 means insurance_fire
 
                 break;
             case "insurance-accident":
                 $file_open = 'fe.insurance.insurance_accident';
-                //$data_view = Client::all();
-                //$rough_view = Packageitemdefault::all();
+                $header_image = Headerimage::where('header_image_type', 15)->get();    //----header_image_type = 15 means insurance_accident
 
                 break;
             case "card-credit":
                 $file_open = 'fe.card.card_credit';
-                //$data_view = Client::all();
-                //$rough_view = Packageitemdefault::all();
+                $header_image = Headerimage::where('header_image_type', 16)->get();    //----header_image_type = 16 means card_credit
 
                 break;
             case "card-debit":
                 $file_open = 'fe.card.card_debit';
-                //$data_view = Client::all();
-                //$rough_view = Packageitemdefault::all();
+                $header_image = Headerimage::where('header_image_type', 17)->get();    //----header_image_type = 17 means card_debit
 
                 break;
             default:
@@ -179,13 +181,13 @@ class ViewFileController extends Controller
         //$count = count($data_view);
         //Session::put('count', $count);
 
-        $open_file = view($file_open);
-        //$open_file = view($file_open, compact('data_view'));
+        //$open_file = view($file_open);
+        $open_file = view($file_open, compact('blog_view_4', 'blog_view_8', 'video_view', 'header_image'));
         return view('fe_master')->with('fe_maincontent', $open_file);
     }
 
 
-    //----Blog (blog view_file_blog)
+    //----Blog-User-Profile (blog-user-profile view_file_blog)
     public function view_file_blog() {
 
         $child= Route::getFacadeRoot()->current()->uri();
@@ -219,6 +221,7 @@ class ViewFileController extends Controller
             case "about-us":
                 $file_open = 'fe.info.about_us';
                 $data_view = About::where('status', 1)->get();
+                $header_image = Headerimage::where('header_image_type', 18)->get();    //----header_image_type = 18 means about_us
                 //dd($data_view);
 
                 break;
@@ -232,11 +235,11 @@ class ViewFileController extends Controller
         Session::put('count', $count);
 
         $open_file = view($file_open);
-        $open_file = view($file_open, compact('data_view', 'data_view_one', 'blog_category', 'blog_category_all'));
+        $open_file = view($file_open, compact('data_view', 'data_view_one', 'blog_category', 'blog_category_all', 'header_image'));
         return view('fe_master')->with('fe_maincontent', $open_file);
     }
 
-    //----Blog (blog view_file_blog)
+    //----Blog Details (blog-details/{id}/{blog_title} view_file_details)
     public function view_file_details($id, $blog_title) {
 
         $child= Route::getFacadeRoot()->current()->uri();
@@ -245,8 +248,13 @@ class ViewFileController extends Controller
 
         $file_open = 'fe.blog.blog_public_details';
         $data_view = Blog::orderBy('blog_hit_count', 'desc')->where('blog_control', 1)->limit(9)->get();
-        $data_view_one = Blog::where('id', $id)->get();
-        //dd($data_view_one);
+        $data_view_one = Blog::with(['bloguser', 'category', 'comments'])->where('id', $id)->get();
+        $data_comment = Comment::all();
+
+        //$data_rough = Blog::with(['bloguser', 'category', 'comments'])->where('id', 14)->get();
+        //$data_rough = Comment::with(['commentreplaies'])->get();
+        //dd($data_rough);
+
         $blog_category = Categories::orderBy('id', 'DESC')->limit(10)->get();
         $blog_category_all = Categories::all();
 

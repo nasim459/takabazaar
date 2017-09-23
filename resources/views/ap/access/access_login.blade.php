@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Login</title>
+      <link rel="shortcut icon" href="{{ asset('fe/img/logo.ico') }}" type="image/x-icon">
 
     <!-- Bootstrap -->
     <link href="ap/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -42,11 +43,14 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                            <form action="{{route('postSignIn')}}" method="POST" class="form-horizontal m-b-30">
+
+                            {!! Form::open(array('route'=>'postSignIn', 'role'=>'form', 'method'=>'POST')) !!}
+                            <div class="form-horizontal m-b-30">
+
                                 <div class="form-group">
                                     <label for="inputEmail3" class="col-sm-4 control-label"></label>
-                                    <div class="col-xs-12 text-center m-t-20  m-b-20">
-                                    	<i class="fa text-success" style="font-size: 23px"> Taka Bazaar Software</i>
+                                    <div class="col-xs-12 col-sm-6 m-t-10">
+                                        <a href=""><img src="{{ asset('fe/img/logo.ico') }}" style="width: 150px; margin-left: 25px;" alt="Dizzy Bangla" title="FinFoBD"></a>
                                     </div>
                                 </div>
 
@@ -80,7 +84,8 @@
                                         <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
+                            {!! Form::close() !!}
                         </div>
                     </div>
                     <!--end login panel-->

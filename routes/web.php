@@ -18,8 +18,10 @@ Route::get('insurance/{child}', 'insurance\InsuranceController@insurance_file_vi
 Route::get('card/{child}', 'card\CardController@card_file_view');
 //----Advertise Controller--------------------------------------------------------------
 Route::get('advertise', 'advertise\AdvertiseController@advertise_file_view');
-
-
+//----Video Controller--------------------------------------------------------------
+Route::get('video-info', 'video\VideoController@video_file_view');
+//----Header Controller--------------------------------------------------------------
+Route::get('header/{child}', 'headerimage\HeaderImageController@header_image_file_view');
 
 
 
@@ -52,6 +54,9 @@ Route::get('form/{child}', 'form\FormController@form_file_view');
 
 //-----------form-advertise include data_save & data_update
 Route::post('form-advertise-save', 'form\FormAdvertiseController@save_advertise_form');
+
+//-----------form-video include data_save & data_update
+Route::post('form-video-save', 'form\FormVideoController@save_video_form');
 
 //-----------form-bank include data_save & data_update
 Route::post('form-bank-save', 'form\FormBankController@bank_form_save');
@@ -95,7 +100,7 @@ Route::post('delete', 'delete\DeleteController@delete');
 
 
 //----Login Panel
-Route::get('form', 'HomeController@form_people');
+//Route::get('form', 'HomeController@form_people');
 Route::get('login', 'HomeController@login_people');
 
 //----Dash Board Controller------------------------------------------
@@ -119,6 +124,9 @@ Route::get('card-debit-api', 'fe\app\ViewFileController@view_file');
 
 Route::get('', 'fe\app\ViewFileController@view_file');
 Route::get('loan', 'fe\app\ViewFileController@view_file');
+Route::get('investment', 'fe\app\ViewFileController@view_file');
+Route::get('insurance', 'fe\app\ViewFileController@view_file');
+Route::get('card', 'fe\app\ViewFileController@view_file');
 Route::get('loan-home', 'fe\app\ViewFileController@view_file');
 //Route::get('loan-home/{person}', 'fe\app\ViewFilePersonController@view_file_person');
 Route::get('loan-car', 'fe\app\ViewFileController@view_file');
@@ -143,6 +151,7 @@ Route::get('card-debit', 'fe\app\ViewFileController@view_file');
 
 Route::get('blog', 'fe\app\ViewFileController@view_file_blog');
 Route::get('blog-details/{id}/{blog_title}', 'fe\app\ViewFileController@view_file_details');
+Route::post('blog-user-comment-replay', 'fe\app\blog\BlogUserCommentReplayController@blog_user_comment_replay');
 Route::get('blog-category-view/{id}/{category_name}', 'fe\app\ViewFileController@view_file_category');
 Route::post('blog-user-insert', 'fe\app\blog\BlogUserController@blog_user_insert');
 Route::get('blog-user-profile', 'fe\app\ViewFileController@view_file_blog');
