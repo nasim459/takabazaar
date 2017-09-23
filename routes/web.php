@@ -5,7 +5,9 @@
 | Developed By RalitSoft (www.ralitsoft.com)
 |--------------------------------------------------------------------------
 */
-
+################################################
+########### Auth check Start       #############
+################################################
 //----Loan Controller-------------------------------------------------------------------
 Route::get('loan/{child}', 'loan\LoanController@loan_file_view');
 //----Investment Controller-------------------------------------------------------------
@@ -100,7 +102,9 @@ Route::get('login', 'HomeController@login_people');
 Route::get('dboard', 'DashBoardController@home_dboard');
 Route::get('dboard-regi', 'DashBoardController@regi_dboard');
 
-
+################################################
+########### End Auth check         #############
+################################################
 
 
 
@@ -152,6 +156,7 @@ Route::post('user-review', 'fe\app\reviewRaingController@user_review');
 
 Route::get('contact-us', 'fe\app\ViewFileController@view_file_blog');
 Route::get('about-us', 'fe\app\ViewFileController@view_file_blog');
+
 //=====================================End Front End Template Design==================
 
 Route::get('get-ip-details', function () {
@@ -159,3 +164,13 @@ Route::get('get-ip-details', function () {
     $data = \Location::get($ip);
     dd($data);
 });
+
+Route::post('/post-sign-in', [
+    'as' => 'postSignIn',
+    'uses' => 'access\AccessController@postSignIn'
+]);
+
+Route::get('/logout', [
+    'as' => 'logout',
+    'uses' => 'access\AccessController@getLogout',
+]);

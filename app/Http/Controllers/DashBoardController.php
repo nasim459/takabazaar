@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\applying\Applying;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 use Session;
 use DB;
 use Illuminate\Support\Facades\Redirect;

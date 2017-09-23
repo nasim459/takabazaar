@@ -30,7 +30,7 @@ class MigrationCartalystSentinel extends Migration
      */
     public function up()
     {
-        Schema::create('activations', function (Blueprint $table) {
+/*        Schema::create('activations', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->string('code');
@@ -105,7 +105,7 @@ class MigrationCartalystSentinel extends Migration
 
             $table->engine = 'InnoDB';
             $table->unique('email');
-        });
+        });*/
     }
 
     /**
@@ -115,12 +115,12 @@ class MigrationCartalystSentinel extends Migration
      */
     public function down()
     {
-        Schema::drop('activations');
+/*        Schema::drop('activations');
         Schema::drop('persistences');
         Schema::drop('reminders');
         Schema::drop('roles');
         Schema::drop('role_users');
         Schema::drop('throttle');
-        Schema::drop('users');
+        Schema::drop('users');*/
     }
 }

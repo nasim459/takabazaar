@@ -1,7 +1,18 @@
 <?php
 
 return [
+    /*
+    |--------------------------------------------------------------------------
+    | Authentication Model
+    |--------------------------------------------------------------------------
+    |
+    | When using the "Eloquent" authentication driver, we need to know which
+    | Eloquent model should be used to retrieve your users. Of course, it
+    | is often just the "User" model but you may use whatever you like.
+    |
+    */
 
+    'model' => 'BlogUser',
     /*
     |--------------------------------------------------------------------------
     | Authentication Defaults
@@ -65,15 +76,15 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        /*'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
-        ],
+        ],*/
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+         'users' => [
+             'driver' => 'database',
+             'table' => 'blogusers',
+         ],
     ],
 
     /*
@@ -93,7 +104,7 @@ return [
 
     'passwords' => [
         'users' => [
-            'provider' => 'users',
+            'provider' => 'blogusers',
             'table' => 'password_resets',
             'expire' => 60,
         ],

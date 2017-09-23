@@ -30,8 +30,19 @@
                         <div class="panel-heading">
                             <h3 class="panel-title text-primary text-center">Login Panel</h3>
                         </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                @if(Session::has('message_error'))
+                                    <div class="alert alert-danger alert-dismissible">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                        <h4><i class="icon fa fa-check"></i> Alert!</h4>
+                                        <span id="alert-message-error">{{ Session::get('message_error') }}</span>
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
                         <div class="panel-body">
-                            <form class="form-horizontal m-b-30">
+                            <form action="{{route('postSignIn')}}" method="POST" class="form-horizontal m-b-30">
                                 <div class="form-group">
                                     <label for="inputEmail3" class="col-sm-4 control-label"></label>
                                     <div class="col-xs-12 text-center m-t-20  m-b-20">
@@ -39,21 +50,34 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group m-t-30">
+                                <div class="form-group m-t-30{{ $errors->has('email') ? ' has-error' : '' }}">
+                                    {{csrf_field()}}
                                     <label for="inputEmail3" class="col-sm-3 control-label">User Name</label>
                                     <div class="col-sm-7">
-                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required>
+                                        <input type="email" name="email" value="{{old('email')}}" class="form-control" id="inputEmail3" placeholder="Email">
+                                        @if ($errors->has('email'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('email') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
                                 </div>
-                                <div class="form-group">
+
+                                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                     <label for="inputPassword3" class="col-sm-3 control-label">Password</label>
                                     <div class="col-sm-7">
-                                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password" required>
+                                        <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                        @if ($errors->has('password'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('password') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
                                 </div>
+
                                 <div class="form-group">
                                     <div class="col-sm-offset-3 col-sm-7">
-                                        <a href="{{URL::to('dboard')}}" class="btn btn-primary col-sm-12">Sign in</a>
+                                        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
                                     </div>
                                 </div>
                             </form>

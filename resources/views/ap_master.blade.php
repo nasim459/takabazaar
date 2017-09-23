@@ -53,7 +53,7 @@
                             <li><a href="#"><i class="fa fa-edit"> Edit All Profile</i></a></li>
                             <li><a href="{{URL::to('dboard')}}"><i class="fa fa-home"> Go Dashboarde</i></a></li>
                             <li class="divider"></li>
-                            <li><a href="{{URL::to('login')}}"><i class="fa fa-power-off text-success-light"> SignOut</i></a></li>
+                            <li><a href="{{route('logout')}}"><i class="fa fa-power-off text-success-light"> SignOut</i></a></li>
                         </ul>
                     </div>
                     <!--end button-group right-->
