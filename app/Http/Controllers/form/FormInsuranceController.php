@@ -13,42 +13,37 @@ class FormInsuranceController extends Controller
     //----Form investment Information(form-investment-save investment_form_save)
     public function insurance_form(Request $request) {
 
-
-
         //-----------nothing to define of investment insert & update date----------- must be define by you
-
-
-
 
         //dd($request->all());
         $data_insert = $request->insert;
         $previous_url = url()->previous();
 
         if ($data_insert == 'data_insert') {
-            $rate_from = $request->invst_rate_from;
-            $rate_to = $request->invst_rate_to;
-            if($rate_from == NULL) {
+            $insr_claim_ration = $request->insr_claim_ration;
+            if($insr_claim_ration == NULL) {
                 $rate_from = 0;
-            }
-            if ($rate_to == Null) {
-                $rate_to = 0;
             }
 
             //----invst means investment
             $invst = array();
-            $invst['invst_type'] = $request->invst_type;
-            $invst['invst_person_type'] = $request->invst_person;
-            $invst['invst_amount_upto'] = $request->invst_amount;
-            $invst['invst_tenure_rate'] = $request->invst_period;
-            $invst['invst_interest_rate_from'] = $rate_from;
-            $invst['invst_interest_rate_to'] = $rate_to;
+            $invst['insr_type'] = $request->insr_type;
+            $invst['insr_person_type'] = $request->insr_person;
+            $invst['insr_sum_insured'] = $request->insr_sum;
+            $invst['insr_period'] = $request->insr_period;
+            $invst['insr_cover_type'] = $request->insr_cover;
+            $invst['insr_monthly_payout'] = $request->insr_monthly_payout;
 
-            $invst['invst_features_benefits'] = $request->data_fsr;
-            $invst['invst_requirements'] = $request->data_req;
-            $invst['invst_eligibility'] = $request->data_elig;
+            $invst['insr_lump_sum_payout'] = $request->insr_lum_sum_payout;
+            $invst['insr_claim_ratio'] = $request->insr_claim_ration;
+            $invst['insr_premium'] = $request->insr_premium_;
+
+            $invst['insr_features_benefits'] = $request->data_fsr;
+            $invst['insr_eligibility'] = $request->data_elig;
+            $invst['insr_requirements'] = $request->data_req;
 
             $invst['bank_id'] = $request->bank_id;
-            DB::table('investments')->insert($invst);
+            DB::table('insurances')->insert($invst);
 
             Session::put('insert_suc', 'Data Inserted Successfully!');
             return redirect($previous_url);
@@ -57,32 +52,33 @@ class FormInsuranceController extends Controller
             //echo 'update data';
             //exit();
 
-            $rate_from = $request->invst_rate_from;
-            $rate_to = $request->invst_rate_to;
-            if($rate_from == NULL) {
+            $insr_claim_ration = $request->insr_claim_ration;
+            if($insr_claim_ration == NULL) {
                 $rate_from = 0;
             }
-            if ($rate_to == Null) {
-                $rate_to = 0;
-            }
 
-            $invst_id = $request->i_id;
+            $invst_id = $request->id;
             if ($invst_id == NULL){ return redirect($previous_url); }
 
             //----invst means investment
             $invst = array();
-            $invst['invst_type'] = $request->invst_type;
-            $invst['invst_person_type'] = $request->invst_person;
-            $invst['invst_amount_upto'] = $request->invst_amount;
-            $invst['invst_tenure_rate'] = $request->invst_period;
-            $invst['invst_interest_rate_from'] = $rate_from;
-            $invst['invst_interest_rate_to'] = $rate_to;
+            $invst['insr_type'] = $request->insr_type;
+            $invst['insr_person_type'] = $request->insr_person;
+            $invst['insr_sum_insured'] = $request->insr_sum;
+            $invst['insr_period'] = $request->insr_period;
+            $invst['insr_cover_type'] = $request->insr_cover;
+            $invst['insr_monthly_payout'] = $request->insr_monthly_payout;
 
-            $invst['invst_features_benefits'] = $request->data_fsr;
-            $invst['invst_requirements'] = $request->data_req;
-            $invst['invst_eligibility'] = $request->data_elig;
+            $invst['insr_lump_sum_payout'] = $request->insr_lum_sum_payout;
+            $invst['insr_claim_ratio'] = $request->insr_claim_ration;
+            $invst['insr_premium'] = $request->insr_premium;
+
+            $invst['insr_features_benefits'] = $request->data_fsr;
+            $invst['insr_eligibility'] = $request->data_elig;
+            $invst['insr_requirements'] = $request->data_req;
+
             $invst['bank_id'] = $request->bank_id;
-            DB::table('investments')->where('id', $invst_id)->update($invst);
+            DB::table('insurances')->where('id', $invst_id)->update($invst);
 
             Session::put('msg_suc', 'Data Updated Successfully!');
             return redirect($previous_url);

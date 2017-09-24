@@ -22,23 +22,24 @@ class InsuranceController extends Controller
         //$route = Route::getFacadeRoot()->current()->uri();
         if ($child == 'life'){
             $file_open = 'ap.insurance.insurance_life';
-            $loan_view = Insurance::all()->where('insr_type', '1');
+            $loan_view = Insurance::orderBy('id', 'DESC')->with('bank')->where('insr_type', '1')->get();
+            //dd($loan_view);
 
         } elseif ($child == 'motor') {
             $file_open = 'ap.insurance.insurance_motor';
-            $loan_view = Insurance::all()->where('insr_type', '2');
+            $loan_view = Insurance::orderBy('id', 'DESC')->with('bank')->where('insr_type', '2')->get();
 
         } elseif ($child == 'marine') {
             $file_open = 'ap.insurance.insurance_marine';
-            $loan_view = Insurance::all()->where('insr_type', '2');
+            $loan_view = Insurance::orderBy('id', 'DESC')->with('bank')->where('insr_type', '2')->get();
 
         } elseif ($child == 'fire') {
             $file_open = 'ap.insurance.insurance_fire';
-            $loan_view = Loan::all()->where('loan_type', '3');
+            $loan_view = Insurance::orderBy('id', 'DESC')->with('bank')->where('insr_type', '3')->get();
 
         }  elseif ($child == 'accident') {
             $file_open = 'ap.insurance.insurance_accident';
-            $loan_view = Loan::all()->where('loan_type', '4');
+            $loan_view = Insurance::orderBy('id', 'DESC')->with('bank')->where('insr_type', '4')->get();
         }
 
         $count = count($loan_view);

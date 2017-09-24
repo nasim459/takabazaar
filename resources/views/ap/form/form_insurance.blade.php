@@ -14,9 +14,8 @@
             </div>
 
             <div class="panel-body secondscreen" style="overflow: hidden; overflow-y: scroll;">
-                {!! Form::open(array('url'=>'form-investment-save', 'role'=>'form', 'method'=>'POST')) !!}
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+                {!! Form::open(array('url'=>'form-insurance', 'role'=>'form', 'method'=>'POST')) !!}
+                <input type="hidden" name="insert" value="data_insert">
 
                 <div class="col-sm-10 m-t-20 col-sm-offset-1" style="overflow: hidden;">
                     <div class="form-horizontal">
@@ -55,7 +54,7 @@
                         <div class="form-group">
                             <label for="exampleInputName2" class="col-sm-4 control-label">Sum Insured :</label>
                             <div class="col-sm-4">
-                                <input type="number" name="insr_amount" class="form-control" id="exampleInputName2" placeholder="Ex. 200000 TK" required>
+                                <input type="number" name="insr_sum" step="any" class="form-control" id="exampleInputName2" placeholder="Ex. 200000 TK" required>
                             </div>
                             <div class="col-sm-4">
                                 <select class="form-control" name="insr_period" required>
@@ -77,7 +76,7 @@
                         <div class="form-group">
                             <label for="exampleInputName2" class="col-sm-4 control-label">Types of Cover :</label>
                             <div class="col-sm-4">
-                                <select class="form-control" name="insr_period" required>
+                                <select class="form-control" name="insr_cover" required>
                                     <option value="">Select Insurance Cover</option>
                                     <option value="1">First Cover</option>
                                     <option value="2">Second Cover</option>
@@ -87,12 +86,24 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputName2" class="col-sm-4 control-label">Insurance Interest Rate % :</label>
-                            <div class="col-sm-2">
-                                <input type="number" name="invst_rate_from" class="form-control" id="exampleInputName2" placeholder="EX. 0%">
+                            <label for="exampleInputName2" class="col-sm-4 control-label">Monthly Payout :</label>
+                            <div class="col-sm-4">
+                                <input type="number" step="any" name="insr_monthly_payout" class="form-control" id="exampleInputName2" placeholder="EX. 2000">
                             </div>
-                            <div class="col-sm-2">
-                                <input type="number" name="invst_rate_to" class="form-control" id="exampleInputName2" placeholder="EX. 20%">
+
+                            <div class="col-sm-4">
+                                <input type="number" step="any" name="insr_lum_sum_payout" class="form-control" id="exampleInputName2" placeholder="Lump Sum Payout - Ex.160000">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputName2" class="col-sm-4 control-label">Claim Settelment Ratio :</label>
+                            <div class="col-sm-4">
+                                <input type="number" step="any" name="insr_claim_ration" class="form-control" id="exampleInputName2" placeholder="EX. 0%">
+                            </div>
+
+                            <div class="col-sm-4">
+                                <input type="number" step="any" name="insr_premium " class="form-control" id="exampleInputName2" placeholder="Premium -  Ex.1500">
                             </div>
                         </div>
                     </div>

@@ -18,6 +18,8 @@ app.controller('fe_loanController', function($scope, $http) {
             $scope.investment_data = response.data;
         });
     }
+    $scope.show_data();
+
 
     //-----insurance-api
     $scope.show_data = function() {
