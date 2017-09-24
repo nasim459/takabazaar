@@ -18,6 +18,13 @@ app.controller('fe_loanController', function($scope, $http) {
             $scope.investment_data = response.data;
         });
     }
+
+    //-----insurance-api
+    $scope.show_data = function() {
+        $http.get('/taka_bazaar/public/insurance-api').then(function(response) {
+            $scope.insurance_data = response.data;
+        });
+    }
     $scope.show_data();
 
 
