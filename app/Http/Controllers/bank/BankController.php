@@ -17,11 +17,11 @@ class BankController extends Controller
         //$route = Route::getFacadeRoot()->current()->uri();
         if ($child == 'list'){
             $file_open = 'ap.bank.bank_list';
-            $bank_view = Bank::all();
+            $bank_view = Bank::orderBy('id', 'DESC')->get();
 
         } elseif ($child == 'gride') {
             $file_open = 'ap.bank.bank_gride';
-            $bank_view = Bank::all();
+            $bank_view = Bank::orderBy('id', 'DESC')->get();
         }
 
         $count = count($bank_view);

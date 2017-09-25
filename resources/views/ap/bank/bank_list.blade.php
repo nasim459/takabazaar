@@ -26,14 +26,15 @@
                 <tr class="success">
                     <th class="col-sm-1">No</th>
                     <th class="col-sm-1">Picture</th>
-                    <th class="col-sm-6">Bank Name</th>
+                    <th class="col-sm-4">Bank Name</th>
+                    <th class="col-sm-2">Bank Type</th>
                     <th class="col-sm-2">Status</th>
                     <th class="col-sm-2">Action</th>
                 </tr>
                 </thead>
                 <tbody>
 
-                @php $number = 0; $off = 0; $on = 1; $table = 22; @endphp
+                @php $number = 0; $off = 0; $on = 1;  $table = 22; $table_b_t = '22_b'; @endphp
                 @foreach($bank_view as $v)
                 <tr>
                     <td class="col-xs-12 col-sm-1 text-success">
@@ -44,7 +45,18 @@
                             <img src="{{ asset('ap/images/banks/'.$v->bank_image_url) }}" height="16px" width="30px">
                         </a>
                     </td>
-                    <td class="col-xs-12 col-sm-6">{{$v->bank_name}}</td>
+                    <td class="col-xs-12 col-sm-4">
+                        {{--{{$v->bank_name}}--}}
+                        {{str_limit($v->bank_name, 20, ' ...')}}
+                    </td>
+                    <td class="col-xs-12 col-sm-2">
+                        &nbsp; &nbsp;  &nbsp;
+                        @if($v->bank_type==1)
+                            <a href="{{URL::to('publication/'.$v->id.'/'.$off.'/'.$table_b_t)}}" class="btn btn-default btn-xs" title="Bank Financial Institution"><i class="text-success-light fa fa-bank"> BFI &nbsp; &nbsp;</i></a>
+                        @else
+                            <a href="{{URL::to('publication/'.$v->id.'/'.$on.'/'.$table_b_t)}}" class="btn btn-default btn-xs" title="Non Bank Financial Institution">&nbsp;<i class="fa fa-bank"> NBFI</i></a>
+                        @endif
+                    </td>
                     <td class="col-xs-12 col-sm-2">
                         &nbsp; &nbsp;  &nbsp;
                         @if($v->bank_status==1)

@@ -110,6 +110,17 @@
 
                                         <div class="form-group pull-right">
                                             <div class="input-group">
+                                                {{--<div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>--}}
+                                                <select class="form-control">
+                                                    <option value="" title="See All Bank">All Bank</option>
+                                                    <option value="1" title="Bank Financial Institution">BFI</option>
+                                                    <option value="0" title="Non Bank Financial Institution">NBFI</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group pull-right">
+                                            <div class="input-group">
                                                 <div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>
                                                 <div class="input-group-addon" title="Are you a salaried or business or others person?"><i class="fa"> I am a</i></div>
                                                 <select class="form-control">

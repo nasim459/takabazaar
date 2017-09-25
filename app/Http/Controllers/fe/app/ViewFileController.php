@@ -62,7 +62,7 @@ class ViewFileController extends Controller
                 break;
 
             case "loan-home-api":
-                $loan_view = Loan::with(['bank'])->get();
+                $loan_view = Loan::with(['bank', 'reviews'])->get();
                 return $loan_view;
 
                 break;

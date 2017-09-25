@@ -46,7 +46,7 @@
             <div class="container">
                 <ul>
                     <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-                    <li><i class="fa fa-angle-right"></i><span>Home Loan</span></li>
+                    <li><i class="fa fa-angle-right"></i><span>Life Insurance</span></li>
                 </ul>
             </div>
         </div>
@@ -57,58 +57,58 @@
                     <div class="col-sm-12 col-md-12 b-item-apartment-block">
                         <div class="b-some-examples__item f-some-examples__item">
                             <div class="b-some-examples__item_action- -app-box"style="margin-top: 13px;">
-                                <div class="col-xs-12 col-sm-12 col-md-12">
-                                    <i class="fa fa-search f-s-20 m-b-10 t-a-c"> Search here ...</i>
-                                </div>
+                                {{--<div class="col-xs-12 col-sm-12 col-md-12">--}}
+                                    {{--<i class="fa fa-search f-s-20 m-b-10 t-a-c"> Search here ...</i>--}}
+                                {{--</div>--}}
 
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <form class="form-inline app-head">
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-addon"><i class="fa">Your amount</i></div>
-                                                <input type="text" ng-model="nas" class="form-control" id="exampleInputAmount" placeholder="Amount">
-                                                <input type="hidden" ng-model="year">
-                                                <div class="input-group-addon">৳</div>
-                                            </div>
-                                        </div>
+                                        {{--<div class="form-group">--}}
+                                            {{--<div class="input-group">--}}
+                                                {{--<div class="input-group-addon"><i class="fa">Your amount</i></div>--}}
+                                                {{--<input type="text" ng-model="nas" class="form-control" id="exampleInputAmount" placeholder="Amount">--}}
+                                                {{--<input type="hidden" ng-model="year">--}}
+                                                {{--<div class="input-group-addon">৳</div>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
 
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-addon"><i class="fa">For</i></div>
-                                                <select class="form-control">
-                                                    <option value="1">01 - Years</option>
-                                                    <option value="2">02 - Years</option>
-                                                    <option value="3">03 - Years</option>
-                                                    <option value="4">04 - Years</option>
-                                                    <option value="5">05 - Years</option>
-                                                    <option value="6">06 - Years</option>
-                                                    <option value="7">07 - Years</option>
-                                                    <option value="8">08 - Years</option>
-                                                    <option value="9">09 - Years</option>
-                                                    <option value="10">10 - Years</option>
-                                                    <option value="11">11 - Years</option>
-                                                    <option value="12">12 - Years</option>
-                                                    <option value="13">13 - Years</option>
-                                                    <option value="14">14 - Years</option>
-                                                    <option value="15">15 - Years</option>
-                                                </select>
-                                            </div>
-                                        </div>
+                                        {{--<div class="form-group">--}}
+                                            {{--<div class="input-group">--}}
+                                                {{--<div class="input-group-addon"><i class="fa">For</i></div>--}}
+                                                {{--<select class="form-control">--}}
+                                                    {{--<option value="1">01 - Years</option>--}}
+                                                    {{--<option value="2">02 - Years</option>--}}
+                                                    {{--<option value="3">03 - Years</option>--}}
+                                                    {{--<option value="4">04 - Years</option>--}}
+                                                    {{--<option value="5">05 - Years</option>--}}
+                                                    {{--<option value="6">06 - Years</option>--}}
+                                                    {{--<option value="7">07 - Years</option>--}}
+                                                    {{--<option value="8">08 - Years</option>--}}
+                                                    {{--<option value="9">09 - Years</option>--}}
+                                                    {{--<option value="10">10 - Years</option>--}}
+                                                    {{--<option value="11">11 - Years</option>--}}
+                                                    {{--<option value="12">12 - Years</option>--}}
+                                                    {{--<option value="13">13 - Years</option>--}}
+                                                    {{--<option value="14">14 - Years</option>--}}
+                                                    {{--<option value="15">15 - Years</option>--}}
+                                                {{--</select>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
 
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-addon"><i class="fa">Upto Rate 14 %</i></div>
-                                                <select class="form-control">
-                                                    <option value="1">11.0 %</option>
-                                                    <option value="2" selected>14.5 %</option>
-                                                    <option value="3">11.5 %</option>
-                                                    <option value="3">12.0 %</option>
-                                                    <option value="3">12.5 %</option>
-                                                </select>
-                                            </div>
-                                        </div>
+                                        {{--<div class="form-group">--}}
+                                            {{--<div class="input-group">--}}
+                                                {{--<div class="input-group-addon"><i class="fa">Upto Rate 14 %</i></div>--}}
+                                                {{--<select class="form-control">--}}
+                                                    {{--<option value="1">11.0 %</option>--}}
+                                                    {{--<option value="2" selected>14.5 %</option>--}}
+                                                    {{--<option value="3">11.5 %</option>--}}
+                                                    {{--<option value="3">12.0 %</option>--}}
+                                                    {{--<option value="3">12.5 %</option>--}}
+                                                {{--</select>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
 
-                                        <div class="form-group pull-right">
+                                        <div class="form-group pull-right m-b-10">
                                             <div class="input-group">
                                                 <div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>
                                                 <div class="input-group-addon" title="Are you a salaried or business or others person?"><i class="fa"> I am a</i></div>
@@ -136,16 +136,16 @@
                                     <i class="fa app-head">Bank Name</i>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <i class="fa app-head">Interest Rate</i>
+                                    <i class="fa app-head">Sum Insured</i>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <i class="fa app-head">Monthly Installment</i>
+                                    <i class="fa app-head">Claim Ratio</i>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <i class="fa app-head">Total Payable Interest</i>
+                                    <i class="fa app-head">Installment Pay/m</i>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <i class="fa app-head">Person</i>
+                                    <i class="fa app-head">Premium</i>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2">
                                     <i class="fa app-head">Details</i>
@@ -162,26 +162,17 @@
                                     <p class="b-stars-group" style="font-size: 12px; margin-top: 4px">
                                         <span><b>@{{v.bank.bank_name | limitTo: 18 }}</b></span><br>
                                         <a href="" data-target="#@{{v.id}}pr" data-toggle="modal" >Give Review</a><br>
-                                        <i data-target="#@{{v.id}}p" data-toggle="modal" class="fa fa-star is-active-stars"></i>
-                                        <i data-target="#@{{v.id}}p" data-toggle="modal" class="fa fa-star is-active-stars"></i>
-                                        <i data-target="#@{{v.id}}p" data-toggle="modal" class="fa fa-star"></i>
-                                        <i data-target="#@{{v.id}}p" data-toggle="modal" class="fa fa-star"></i>
-                                        <i data-target="#@{{v.id}}p" data-toggle="modal" class="fa fa-star"></i>
+                                        <i class="fa fa-star is-active-stars"></i>
+                                        <i class="fa fa-star is-active-stars"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
                                     </p>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-2 col-md-2 nas">
                                     <div class="col-xs-7 t-a-r ralit-main">
-                                        <i class="fa"><span class="ralit">Interest Rate : </span></i>
-                                    </div>
-                                    <div class="col-xs-5 col-sm-12 col-md-12">
-                                        <i class="fa"><span class="ralit-r">@{{v.insr_sum_insured}} %</span></i>
-                                    </div>
-                                </div>
-
-                                <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <div class="col-xs-7 t-a-r ralit-main">
-                                        <i class="fa"><span class="ralit">Monthly: </span></i>
+                                        <i class="fa"><span class="ralit">Sum Insured : </span></i>
                                     </div>
                                     <div class="col-xs-5 col-sm-12 col-md-12">
                                         <i class="fa"><span class="ralit-r">@{{v.insr_sum_insured}} ৳</span></i>
@@ -190,21 +181,28 @@
 
                                 <div class="col-xs-12 col-sm-2 col-md-2 nas">
                                     <div class="col-xs-7 t-a-r ralit-main">
-                                        <i class="fa"><span class="ralit">Interest : </span></i>
+                                        <i class="fa"><span class="ralit">Claim Ratio: </span></i>
                                     </div>
                                     <div class="col-xs-5 col-sm-12 col-md-12">
-                                        <i class="fa"><span class="ralit-r">@{{v.insr_sum_insured}} ৳</span></i>
+                                        <i class="fa"><span class="ralit-r">@{{v.insr_claim_ratio}} %</span></i>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-2 col-md-2 nas">
+                                    <div class="col-xs-7 t-a-r ralit-main">
+                                        <i class="fa"><span class="ralit">Installment Pay/m : </span></i>
+                                    </div>
+                                    <div class="col-xs-5 col-sm-12 col-md-12">
+                                        <i class="fa"><span class="ralit-r">@{{v.insr_monthly_payout}} ৳</span></i>
                                     </div>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-2 col-md-2 nas m-b-5">
                                     <div class="col-xs-7 t-a-r ralit-main">
-                                        <i class="fa"><span class="ralit">Person : </span></i>
+                                        <i class="fa"><span class="ralit">Premium : </span></i>
                                     </div>
                                     <div class="col-xs-5 col-sm-12 col-md-12">
-                                        <i class="fa"><span class="ralit-r" ng-if="v.insr_person_type == 1">Salaried</span></i>
-                                        <i class="fa"><span class="ralit-r" ng-if="v.insr_person_type == 2">Person</span></i>
-                                        <i class="fa"><span class="ralit-r" ng-if="v.insr_person_type == 3">Susiness</span></i>
+                                        <i class="fa"><span class="ralit-r">@{{v.insr_premium}} ৳</span></i>
                                     </div>
                                 </div>
 
@@ -219,128 +217,9 @@
                         </div>
 
                         <!--Start User_Rating -->
-                        <div id="@{{v.id}}p" class="modal fade" role="dialog">
-                            <div class="modal-dialog">
-
-                                <!--start Modal content-->
-                                <div class="modal-content modal-top">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <a href=""><i class="fa app-tab-in">Choose Your Option To Give Your Rating</i></a>
-                                    </div>
-                                    <div class="modal-body" style="overflow: hidden">
-                                        <div class="col-md-12">
-                                            <div class="col-md-12 f-s-14 f-f-s">
-
-
-                                                {!! Form::open(array('url'=>'user-rating', 'role'=>'form', 'method'=>'POST')) !!}
-                                                <div class="form-horizontal">
-                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                    <input type="hidden" name="id" value="@{{ v.id }}">
-                                                    <input type="hidden" name="t_id" value="33">
-                                                    <input type="text" name="t_id" value="">
-
-                                                    <div class="form-group" style="margin-bottom: -15px;">
-                                                        <label for="exampleInputName2" class="col-xs-12 col-sm-6 control-label m-t-20">
-                                                            <p class="b-stars-group" style="font-size: 18px;">
-                                                                <i class="fa fa-star is-active-stars"></i>
-                                                                <i class="fa fa-star is-active-stars"></i>
-                                                                <i class="fa fa-star is-active-stars"></i>
-                                                                <i class="fa fa-star is-active-stars"></i>
-                                                                <i class="fa fa-star is-active-stars"></i>
-                                                            </p>
-                                                        </label>
-                                                        <div class="col-xs-12 col-sm-4">
-                                                            <input type="radio" name="rating" value="5" checked><span class="m-l-10">5 Start</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group" style="margin-bottom: -15px;">
-                                                        <label for="exampleInputName2" class="col-xs-12 col-sm-6 control-label">
-                                                            <p class="b-stars-group" style="font-size: 18px;">
-                                                                <i class="fa fa-star is-active-stars"></i>
-                                                                <i class="fa fa-star is-active-stars"></i>
-                                                                <i class="fa fa-star is-active-stars"></i>
-                                                                <i class="fa fa-star is-active-stars"></i>
-                                                                <i class="fa fa-star"></i>
-                                                            </p>
-                                                        </label>
-                                                        <div class="col-xs-12 col-sm-4">
-                                                            <input type="radio" name="rating" value="4"><span class="m-l-10">4 Start</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group" style="margin-bottom: -15px;">
-                                                        <label for="exampleInputName2" class="col-xs-12 col-sm-6 control-label">
-                                                            <p class="b-stars-group" style="font-size: 18px;">
-                                                                <i class="fa fa-star is-active-stars"></i>
-                                                                <i class="fa fa-star is-active-stars"></i>
-                                                                <i class="fa fa-star is-active-stars"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                            </p>
-                                                        </label>
-                                                        <div class="col-xs-12 col-sm-4">
-                                                            <input type="radio" name="rating" value="3"><span class="m-l-10">3 Start</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group" style="margin-bottom: -15px;">
-                                                        <label for="exampleInputName2" class="col-xs-12 col-sm-6 control-label">
-                                                            <p class="b-stars-group" style="font-size: 18px;">
-                                                                <i class="fa fa-star is-active-stars"></i>
-                                                                <i class="fa fa-star is-active-stars"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                            </p>
-                                                        </label>
-                                                        <div class="col-xs-12 col-sm-4">
-                                                            <input type="radio" name="rating" value="2"><span class="m-l-10">2 Start</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <label for="exampleInputName2" class="col-xs-12 col-sm-6 control-label">
-                                                            <p class="b-stars-group" style="font-size: 18px;">
-                                                                <i class="fa fa-star is-active-stars"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                            </p>
-                                                        </label>
-                                                        <div class="col-xs-12 col-sm-4">
-                                                            <input type="radio" name="rating" value="1"><span class="m-l-10">1 Start</span>
-                                                        </div>
-                                                    </div>
-                                                    <hr>
-
-                                                </div>
-
-                                                <div class="form-horizontal">
-                                                    <div class="form-group">
-                                                        <div class="col-sm-offset-4 col-sm-10 m-t-15">
-                                                            <input type="submit" value="Submit Rating" class="btn btn-success col-xs-12 col-sm-4">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                {!! Form::close() !!}
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                                <!--end Modal content-->
-
-                            </div>
-                        </div>
                         <!--End User_Rating -->
 
-                        {{--Start_Modal Client_Review--}}
+                        {{--Start Client_Review--}}
                         <div id="@{{v.id}}pr" class="modal fade" role="dialog">
                             <div class="modal-dialog">
                                 {{--Start Modal--}}
@@ -400,17 +279,17 @@
                                 {{--End Modal--}}
                             </div>
                         </div>
-                        {{--End_Modal Client_Review--}}
+                        {{--End Client_Review--}}
 
 
-                        {{--Start Modal apply--}}
+                        {{--Start apply--}}
                         <div id="@{{v.id}}av" class="modal fade" role="dialog">
                             <div class="modal-dialog">
                                 {{--Start Modal--}}
                                 <div class="modal-content modal-top">
                                     <div class="modal-header t-a-c">
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <i class="fa app-tab-in">Home Loan</i>
+                                        <i class="fa app-tab-in">Life Insurance</i>
                                     </div>
                                     <div class="modal-body">
 
@@ -487,22 +366,22 @@
                                 {{--End Modal--}}
                             </div>
                         </div>
-                        {{--End Modal apply--}}
+                        {{--End apply--}}
 
-                        {{--Start Modal Required Documents--}}
+                        {{--Start Required Documents--}}
                         <div id="@{{v.id}}ar" class="modal fade" role="dialog">
                             <div class="modal-dialog">
                                 {{--Start Modal--}}
                                 <div class="modal-content modal-top">
                                     <div class="modal-header t-a-c">
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <i class="fa app-tab-in">Required Document For Home Loan</i>
+                                        <i class="fa app-tab-in">Required Document For Life Insurance</i>
                                     </div>
                                     <div class="modal-body">
                                         <div class="">
                                             <div class="row b-form-inline b-form-horizontal">
                                                 <div class="col-xs-12">
-                                                    <div class="b-form-row" ng-bind-html="v.loan_requirements"></div>
+                                                    <div class="b-form-row" ng-bind-html="v.insr_requirements"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -514,16 +393,16 @@
                                 {{--End Modal--}}
                             </div>
                         </div>
-                        {{--End Modal Required Documents--}}
+                        {{--End Required Documents--}}
 
-                        {{--Start Modal View Details--}}
+                        {{--Start View Details--}}
                         <div id="@{{v.id}}ad" class="modal fade" role="dialog">
                             <div class="modal-dialog">
                                 {{--Start Modal--}}
                                 <div class="modal-content modal-top">
                                     <div class="modal-header t-a-c">
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <i class="fa app-tab-in">Details Information For Home Loan</i>
+                                        <i class="fa app-tab-in">Details Information For Life Insurance</i>
                                     </div>
                                     <div class="modal-body">
                                         <div class="">
@@ -531,7 +410,7 @@
                                             <hr class="b-hr" style="margin-bottom: 12px; margin-top: 12px;" />
                                             <div class="row b-form-inline b-form-horizontal">
                                                 <div class="col-xs-12">
-                                                    <div class="b-form-row" ng-bind-html="v.loan_features_bfenefits"></div>
+                                                    <div class="b-form-row" ng-bind-html="v.insr_features_benefits"></div>
                                                 </div>
                                             </div>
 
@@ -539,7 +418,7 @@
                                             <hr class="b-hr" style="margin-bottom: 12px; margin-top: 12px;" />
                                             <div class="row b-form-inline b-form-horizontal">
                                                 <div class="col-xs-12">
-                                                    <div class="b-form-row" ng-bind-html="v.loan_eligibility"></div>
+                                                    <div class="b-form-row" ng-bind-html="v.insr_eligibility"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -551,7 +430,7 @@
                                 {{--End Modal--}}
                             </div>
                         </div>
-                        {{--End Modal View Details--}}
+                        {{--End View Details--}}
 
                     </div>
                 </div>
