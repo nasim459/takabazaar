@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <title>Taka Bazaar</title>
+        <link rel="shortcut icon" href="{{ asset('fe/img/logo.ico') }}" type="image/x-icon">
 
         <!-- Bootstrap -->
         <link href="{{URL::asset('ap/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">

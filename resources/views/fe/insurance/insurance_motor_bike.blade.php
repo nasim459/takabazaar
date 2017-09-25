@@ -40,13 +40,13 @@
             </div>
         </div>
     </div>
-    <div class="l-main-container">
+
+    <div class="l-main-container" ng-controller="fe_loanController">
         <div class="b-breadcrumbs f-breadcrumbs">
             <div class="container">
                 <ul>
                     <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
                     <li><i class="fa fa-angle-right"></i><span>Motor Bike Insurance</span></li>
-
                 </ul>
             </div>
         </div>
@@ -57,40 +57,70 @@
                     <div class="col-sm-12 col-md-12 b-item-apartment-block">
                         <div class="b-some-examples__item f-some-examples__item">
                             <div class="b-some-examples__item_action- -app-box"style="margin-top: 13px;">
-                                <div class="col-xs-12 col-sm-2 col-md-2"></div>
+                                {{--<div class="col-xs-12 col-sm-12 col-md-12">--}}
+                                {{--<i class="fa fa-search f-s-20 m-b-10 t-a-c"> Search here ...</i>--}}
+                                {{--</div>--}}
 
-                                <div class="col-xs-12 col-sm-12 col-md-8">
+                                <div class="col-xs-12 col-sm-12 col-md-12">
                                     <form class="form-inline app-head">
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-addon"><i class="fa">I want to borrow</i></div>
-                                                <input type="text" value="200000" class="form-control" id="exampleInputAmount" placeholder="Amount">
-                                                <div class="input-group-addon">৳</div>
-                                            </div>
-                                        </div>
+                                        {{--<div class="form-group">--}}
+                                        {{--<div class="input-group">--}}
+                                        {{--<div class="input-group-addon"><i class="fa">Your amount</i></div>--}}
+                                        {{--<input type="text" ng-model="nas" class="form-control" id="exampleInputAmount" placeholder="Amount">--}}
+                                        {{--<input type="hidden" ng-model="year">--}}
+                                        {{--<div class="input-group-addon">৳</div>--}}
+                                        {{--</div>--}}
+                                        {{--</div>--}}
 
-                                        <div class="form-group">
+                                        {{--<div class="form-group">--}}
+                                        {{--<div class="input-group">--}}
+                                        {{--<div class="input-group-addon"><i class="fa">For</i></div>--}}
+                                        {{--<select class="form-control">--}}
+                                        {{--<option value="1">01 - Years</option>--}}
+                                        {{--<option value="2">02 - Years</option>--}}
+                                        {{--<option value="3">03 - Years</option>--}}
+                                        {{--<option value="4">04 - Years</option>--}}
+                                        {{--<option value="5">05 - Years</option>--}}
+                                        {{--<option value="6">06 - Years</option>--}}
+                                        {{--<option value="7">07 - Years</option>--}}
+                                        {{--<option value="8">08 - Years</option>--}}
+                                        {{--<option value="9">09 - Years</option>--}}
+                                        {{--<option value="10">10 - Years</option>--}}
+                                        {{--<option value="11">11 - Years</option>--}}
+                                        {{--<option value="12">12 - Years</option>--}}
+                                        {{--<option value="13">13 - Years</option>--}}
+                                        {{--<option value="14">14 - Years</option>--}}
+                                        {{--<option value="15">15 - Years</option>--}}
+                                        {{--</select>--}}
+                                        {{--</div>--}}
+                                        {{--</div>--}}
+
+                                        {{--<div class="form-group">--}}
+                                        {{--<div class="input-group">--}}
+                                        {{--<div class="input-group-addon"><i class="fa">Upto Rate 14 %</i></div>--}}
+                                        {{--<select class="form-control">--}}
+                                        {{--<option value="1">11.0 %</option>--}}
+                                        {{--<option value="2" selected>14.5 %</option>--}}
+                                        {{--<option value="3">11.5 %</option>--}}
+                                        {{--<option value="3">12.0 %</option>--}}
+                                        {{--<option value="3">12.5 %</option>--}}
+                                        {{--</select>--}}
+                                        {{--</div>--}}
+                                        {{--</div>--}}
+
+                                        <div class="form-group pull-right m-b-10">
                                             <div class="input-group">
-                                                <div class="input-group-addon"><i class="fa">For</i></div>
+                                                <div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>
+                                                <div class="input-group-addon" title="Are you a salaried or business or others person?"><i class="fa"> I am a</i></div>
                                                 <select class="form-control">
-                                                    <option value="1">01 - Years</option>
-                                                    <option value="2" selected>02 - Years</option>
-                                                    <option value="3">03 - Years</option>
-                                                    <option value="4">04 - Years</option>
-                                                    <option value="5">05 - Years</option>
-                                                    <option value="6">06 - Years</option>
-                                                    <option value="7">07 - Years</option>
-                                                    <option value="8">08 - Years</option>
-                                                    <option value="9">09 - Years</option>
-                                                    <option value="10">10 - Years</option>
-                                                    <option value="11">11 - Years</option>
-                                                    <option value="12">12 - Years</option>
-                                                    <option value="13">13 - Years</option>
-                                                    <option value="14">14 - Years</option>
-                                                    <option value="15">15 - Years</option>
+                                                    <option value="1">Salaried Person</option>
+                                                    <option value="1">Salaried Person</option>
+                                                    <option value="2">Business Person</option>
+                                                    <option value="3">Others Person</option>
                                                 </select>
                                             </div>
                                         </div>
+
                                     </form>
                                 </div>
 
@@ -99,23 +129,23 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-12 col-md-12 b-item-apartment-block">
+                    <div class="col-sm-12 col-md-12 b-item-apartment-block ralit-hide">
                         <div class="b-some-examples__item f-some-examples__item">
                             <div class="b-some-examples__item_action app-box">
                                 <div class="col-xs-12 col-sm-2 col-md-2">
                                     <i class="fa app-head">Bank Name</i>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <i class="fa app-head">Interest Rate</i>
+                                    <i class="fa app-head">Sum Insured</i>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <i class="fa app-head">Monthly Installment</i>
+                                    <i class="fa app-head">Claim Ratio</i>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <i class="fa app-head">Total Payable Interest</i>
+                                    <i class="fa app-head">Installment Pay/m</i>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <i class="fa app-head">Year / Period</i>
+                                    <i class="fa app-head">Premium</i>
                                 </div>
                                 <div class="col-xs-12 col-sm-2 col-md-2">
                                     <i class="fa app-head">Details</i>
@@ -124,14 +154,14 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-12 col-md-12 b-item-apartment-block">
-                        <div class="b-some-examples__item f-some-examples__item">
+                    <div class="col-sm-12 col-md-12 b-item-apartment-block" ng-repeat="v in insurance_data | filter : nas">
+                        <div class="b-some-examples__item f-some-examples__item b-hover">
                             <div class="b-some-examples__item_action app-box">
                                 <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <img src="{{ asset('fe/img/bank/1.jpg') }}" class="img-app" alt="pic">
+                                    <img src="@{{ 'ap/images/banks/'+v.bank.bank_image_url }}" class="img-app" alt="pic" title="@{{v.bank.bank_name}}">
                                     <p class="b-stars-group" style="font-size: 12px; margin-top: 4px">
-                                        <span><b>Dhaka Bank</b></span><br>
-                                        <span>5020 views</span><br>
+                                        <span><b>@{{v.bank.bank_name | limitTo: 18 }}</b></span><br>
+                                        <a href="" data-target="#@{{v.id}}pr" data-toggle="modal" >Give Review</a><br>
                                         <i class="fa fa-star is-active-stars"></i>
                                         <i class="fa fa-star is-active-stars"></i>
                                         <i class="fa fa-star"></i>
@@ -139,224 +169,248 @@
                                         <i class="fa fa-star"></i>
                                     </p>
                                 </div>
+
                                 <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
+                                    <div class="col-xs-7 t-a-r ralit-main">
+                                        <i class="fa"><span class="ralit">Sum Insured : </span></i>
+                                    </div>
+                                    <div class="col-xs-5 col-sm-12 col-md-12">
+                                        <i class="fa"><span class="ralit-r">@{{v.insr_sum_insured}} ৳</span></i>
+                                    </div>
                                 </div>
+
                                 <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
+                                    <div class="col-xs-7 t-a-r ralit-main">
+                                        <i class="fa"><span class="ralit">Claim Ratio: </span></i>
+                                    </div>
+                                    <div class="col-xs-5 col-sm-12 col-md-12">
+                                        <i class="fa"><span class="ralit-r">@{{v.insr_claim_ratio}} %</span></i>
+                                    </div>
                                 </div>
+
                                 <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
+                                    <div class="col-xs-7 t-a-r ralit-main">
+                                        <i class="fa"><span class="ralit">Installment Pay/m : </span></i>
+                                    </div>
+                                    <div class="col-xs-5 col-sm-12 col-md-12">
+                                        <i class="fa"><span class="ralit-r">@{{v.insr_monthly_payout}} ৳</span></i>
+                                    </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
+
+                                <div class="col-xs-12 col-sm-2 col-md-2 nas m-b-5">
+                                    <div class="col-xs-7 t-a-r ralit-main">
+                                        <i class="fa"><span class="ralit">Premium : </span></i>
+                                    </div>
+                                    <div class="col-xs-5 col-sm-12 col-md-12">
+                                        <i class="fa"><span class="ralit-r">@{{v.insr_premium}} ৳</span></i>
+                                    </div>
                                 </div>
+
                                 <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <a data-target="#apply" data-toggle="modal" class="btn btn-success btn-xs col-md-12"> Apply</a>
-                                    <a data-target="#document" data-toggle="modal" class="btn btn-primary btn-xs col-md-12" style="margin-top: 4px;margin-bottom: 4px;"> Required Documents</a>
-                                    <a data-target="#details" data-toggle="modal" class="btn btn-danger btn-xs col-md-12"> View Details</a>
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <a data-target="#@{{v.id}}av" data-toggle="modal" class="btn btn-success btn-xs col-xs-12 col-sm-12 col-md-12" title="Apply"> Apply</a>
+                                        <a data-target="#@{{v.id}}ar" data-toggle="modal" class="btn btn-primary btn-xs  col-xs-12 col-sm-12 col-md-12" style="margin-top: 4px;margin-bottom: 4px;" title="Required Documents"> Required Documents</a>
+                                        <a data-target="#@{{v.id}}ad" data-toggle="modal" class="btn btn-danger btn-xs m-b-5 col-xs-12 col-sm-12 col-md-12" title="View Details"> View Details</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-sm-12 col-md-12 b-item-apartment-block">
-                        <div class="b-some-examples__item f-some-examples__item">
-                            <div class="b-some-examples__item_action app-box">
-                                <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <img src="{{ asset('fe/img/bank/1.jpg') }}" class="img-app" alt="pic">
-                                    <p class="b-stars-group" style="font-size: 12px; margin-top: 4px">
-                                        <span><b>Dhaka Bank</b></span><br>
-                                        <span>5020 views</span><br>
-                                        <i class="fa fa-star is-active-stars"></i>
-                                        <i class="fa fa-star is-active-stars"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </p>
-                                </div>
-                                <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
-                                </div>
-                                <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
-                                </div>
-                                <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
-                                </div>
-                                <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
-                                </div>
-                                <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <a href="" class="btn btn-success btn-xs col-md-12"> Apply</a>
-                                    <a href="" class="btn btn-primary btn-xs col-md-12" style="margin-top: 4px;margin-bottom: 4px;"> Required Documents</a>
-                                    <a href="" class="btn btn-danger btn-xs col-md-12"> View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <!--Start User_Rating -->
+                        <!--End User_Rating -->
 
-                    <div class="col-sm-12 col-md-12 b-item-apartment-block">
-                        <div class="b-some-examples__item f-some-examples__item">
-                            <div class="b-some-examples__item_action app-box">
-                                <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <img src="{{ asset('fe/img/bank/1.jpg') }}" class="img-app" alt="pic">
-                                    <p class="b-stars-group" style="font-size: 12px; margin-top: 4px">
-                                        <span><b>Dhaka Bank</b></span><br>
-                                        <span>5020 views</span><br>
-                                        <i class="fa fa-star is-active-stars"></i>
-                                        <i class="fa fa-star is-active-stars"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </p>
-                                </div>
-                                <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
-                                </div>
-                                <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
-                                </div>
-                                <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
-                                </div>
-                                <div class="col-xs-12 col-sm-2 col-md-2 nas">
-                                    <i class="fa">5462%</i>
-                                </div>
-                                <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <a href="" class="btn btn-success btn-xs col-md-12"> Apply</a>
-                                    <a href="" class="btn btn-primary btn-xs col-md-12" style="margin-top: 4px;margin-bottom: 4px;"> Required Documents</a>
-                                    <a href="" class="btn btn-danger btn-xs col-md-12"> View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                {{--Start Modal apply--}}
-                <div id="apply" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
-                        {{--Start Modal--}}
-                        <div class="modal-content modal-top">
-                            <div class="modal-header t-a-c">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <i class="fa app-tab-in">Home Loan</i>
-                            </div>
-                            <div class="modal-body">
-                                <div class="">
-                                    <!-- Nav tabs -->
-                                    <ul class="nav nav-tabs" role="tablist">
-                                        <li role="presentation" class="active"><a href="#tabs_10" aria-controls="tabs_10" role="tab" data-toggle="tab">Apply</a></li>
-                                        <li role="presentation"><a href="#tabs_11" aria-controls="tabs_11" role="tab" data-toggle="tab">Required Documents</a></li>
-                                        <li role="presentation"><a href="#tabs_12" aria-controls="tabs_12" role="tab" data-toggle="tab">View Details</a></li>
-                                    </ul>
-                                    <!-- Tab panes -->
-                                    <div class="tab-content app-tab">
-                                        <div id="tabs_10" role="tabpanel" class="tab-pane active">
-                                            <div class="fa app-tab-in">Apply here to fill up your information</div>
+                        {{--Start Client_Review--}}
+                        <div id="@{{v.id}}pr" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                {{--Start Modal--}}
+                                <div class="modal-content modal-top">
+                                    <div class="modal-header t-a-c">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <i class="fa app-tab-in">Give Your Review</i>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="">
+                                            <div class="fa app-tab-in">Tell us what's on your mind</div>
                                             <hr class="b-hr" />
-                                            {!! Form::open(array('url'=>'--', 'role'=>'form', 'method'=>'POST')) !!}
+                                            {!! Form::open(array('url'=>'user-review', 'role'=>'form', 'method'=>'POST')) !!}
                                             <div class="row b-form-inline b-form-horizontal">
                                                 <div class="col-xs-12">
+
+                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                    <input type="hidden" name="id" value="@{{ v.id }}">
+                                                    <input type="hidden" name="table" value="33">
                                                     <div class="b-form-row">
-                                                        <label class="b-form-horizontal__label" for="create_account_name">Name</label>
+
+                                                        <label class="b-form-horizontal__label t-a-r" for="create_account_name">Name : &nbsp;</label>
                                                         <div class="b-form-horizontal__input">
-                                                            <input type="text" id="create_account_name" class="form-control" required />
+                                                            <input type="text" name="name" id="create_account_name" class="form-control" required placeholder="Write name..." />
                                                         </div>
                                                     </div>
+
                                                     <div class="b-form-row">
-                                                        <label class="b-form-horizontal__label" for="create_account_name">Occupation</label>
+                                                        <label class="b-form-horizontal__label t-a-r" for="create_account_phone">E-Mail : &nbsp;</label>
                                                         <div class="b-form-horizontal__input">
-                                                            <input type="text" id="create_account_name" class="form-control" required />
+                                                            <input type="email" name="email" id="create_account_phone" class="form-control" placeholder="yourMail@example.com" />
                                                         </div>
                                                     </div>
+
                                                     <div class="b-form-row">
-                                                        <label class="b-form-horizontal__label" for="create_account_name">Organization</label>
+                                                        <label class="b-form-horizontal__label t-a-r" for="create_account_phone">Give Your Openion : &nbsp;</label>
                                                         <div class="b-form-horizontal__input">
-                                                            <input type="text" id="create_account_name" class="form-control" required />
-                                                        </div>
-                                                    </div>
-                                                    <div class="b-form-row">
-                                                        <label class="b-form-horizontal__label" for="create_account_name">Monthly Salary</label>
-                                                        <div class="b-form-horizontal__input">
-                                                            <input type="text" id="create_account_name" class="form-control" required />
-                                                        </div>
-                                                    </div>
-                                                    <div class="b-form-row">
-                                                        <label class="b-form-horizontal__label" for="create_account_phone">Mobile Number</label>
-                                                        <div class="b-form-horizontal__input">
-                                                            <input type="number" id="create_account_phone" class="form-control" required />
-                                                        </div>
-                                                    </div>
-                                                    <div class="b-form-row">
-                                                        <label class="b-form-horizontal__label" for="create_account_phone">E-Mail</label>
-                                                        <div class="b-form-horizontal__input">
-                                                            <input type="email" id="create_account_phone" class="form-control" required />
-                                                        </div>
-                                                    </div>
-                                                    <div class="b-form-row">
-                                                        <label class="b-form-horizontal__label" for="create_account_phone">Address</label>
-                                                        <div class="b-form-horizontal__input">
-                                                            <textarea class="form-control" rows="3" required></textarea>
+                                                            <textarea class="form-control" name="message" rows="4" required placeholder="Write a short review..."></textarea>
                                                         </div>
                                                     </div>
 
                                                     <div class="b-form-row">
                                                         <div class="b-form-horizontal__label"></div>
                                                         <div class="b-form-horizontal__input">
-                                                            <input type="submit" value="Apply" class="btn btn-success btn-sm col-sm-12">
+                                                            <input type="submit" value="Review" class="btn btn-success btn-sm col-sm-12">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             {!! Form::close() !!}
                                         </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                                {{--End Modal--}}
+                            </div>
+                        </div>
+                        {{--End Client_Review--}}
 
-                                        <div id="tabs_11" role="tabpanel" class="tab-pane">
-                                            <div class="fa app-tab-in">Essential Document</div>
-                                            <hr class="b-hr" style="margin-bottom: 12px; margin-top: 12px;" />
-                                            <div class="row b-form-inline b-form-horizontal">
-                                                <div class="col-xs-12">
-                                                    <div class="b-form-row">
-                                                        Lab print photo 2 copy<br>
-                                                        NID clear copy both<br>
-                                                        TIN Certificate<br>
-                                                        Bank statement of last 1 year<br>
-                                                        Trade license min 3 years<br>
-                                                        Visiting card<br>
+
+                        {{--Start apply--}}
+                        <div id="@{{v.id}}av" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                {{--Start Modal--}}
+                                <div class="modal-content modal-top">
+                                    <div class="modal-header t-a-c">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <i class="fa app-tab-in">Life Insurance</i>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        {{--<hr class="b-hr" />--}}
+                                        {!! Form::open(array('url'=>'user-apply', 'role'=>'form', 'method'=>'POST')) !!}
+                                        <div class="row b-form-inline b-form-horizontal m-l-15">
+                                            <i class="fa text-success m-b-10">Apply here to fill up your information</i>
+
+                                            <div class="col-xs-12">
+
+                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                <input type="hidden" name="id" value="@{{ v.id }}">
+                                                <input type="hidden" name="bank_id" value="@{{v.bank.id}}">
+                                                <input type="hidden" name="table" value="33">
+
+                                                <div class="b-form-row">
+                                                    <label class="b-form-horizontal__label t-a-r" for="create_account_name">Name <span class="c-red">*</span> : &nbsp; </label>
+                                                    <div class="b-form-horizontal__input" title="Needed Maximum 30 Character">
+                                                        <input type="text" name="name" maxlength="30" id="create_account_name" class="form-control" placeholder="Enter name..." required />
+                                                    </div>
+                                                </div>
+                                                <div class="b-form-row">
+                                                    <label class="b-form-horizontal__label t-a-r" for="create_account_name">Position <span>*</span> : &nbsp; </label>
+                                                    <div class="b-form-horizontal__input" title="Maximum 80 Character">
+                                                        <input type="text" name="ocpn" maxlength="80" id="create_account_name" class="form-control" placeholder="Enter your ocupation..." />
+                                                    </div>
+                                                </div>
+                                                <div class="b-form-row">
+                                                    <label class="b-form-horizontal__label t-a-r" for="create_account_name">Organization <span>*</span> : &nbsp; </label>
+                                                    <div class="b-form-horizontal__input" title="Needed Maximum 100 Character">
+                                                        <input type="text" name="org" maxlength="100" id="create_account_name" class="form-control" placeholder="Enter ogranization" />
+                                                    </div>
+                                                </div>
+                                                <div class="b-form-row">
+                                                    <label class="b-form-horizontal__label t-a-r" for="create_account_name">Monthly Salary <span class="c-red">*</span> : &nbsp; </label>
+                                                    <div class="b-form-horizontal__input">
+                                                        <input type="number" name="salary" id="create_account_name" class="form-control" placeholder="00.00" required />
+                                                    </div>
+                                                </div>
+                                                <div class="b-form-row">
+                                                    <label class="b-form-horizontal__label t-a-r" for="create_account_phone">Mobile Number <span class="c-red">*</span> : &nbsp; </label>
+                                                    <div class="b-form-horizontal__input">
+                                                        <input type="number" name="mobile" id="create_account_phone" class="form-control" placeholder="01xxxxxxxxx" required />
+                                                    </div>
+                                                </div>
+                                                <div class="b-form-row">
+                                                    <label class="b-form-horizontal__label t-a-r" for="create_account_phone">E-Mail <span class="c-red">*</span> : &nbsp; </label>
+                                                    <div class="b-form-horizontal__input">
+                                                        <input type="email" name="email" id="create_account_phone" class="form-control" required placeholder="example@finfobd.com" />
+                                                    </div>
+                                                </div>
+                                                <div class="b-form-row">
+                                                    <label class="b-form-horizontal__label t-a-r" for="create_account_phone">Location <span class="c-red">*</span> : &nbsp; </label>
+                                                    <div class="b-form-horizontal__input">
+                                                        <textarea class="form-control" name="location" rows="3" required placeholder="Write your location..."></textarea>
+                                                    </div>
+                                                </div>
+
+                                                <div class="b-form-row">
+                                                    <div class="b-form-horizontal__label"></div>
+                                                    <div class="b-form-horizontal__input">
+                                                        <input type="submit" value="Apply" class="btn btn-success btn-sm col-sm-12">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        {!! Form::close() !!}
 
-                                        <div id="tabs_12" role="tabpanel" class="tab-pane">
-                                            <div class="fa app-tab-in">FEES AND CHARGES</div>
-                                            <hr class="b-hr" style="margin-bottom: 12px; margin-top: 12px;" />
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                                {{--End Modal--}}
+                            </div>
+                        </div>
+                        {{--End apply--}}
+
+                        {{--Start Required Documents--}}
+                        <div id="@{{v.id}}ar" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                {{--Start Modal--}}
+                                <div class="modal-content modal-top">
+                                    <div class="modal-header t-a-c">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <i class="fa app-tab-in">Required Document For Life Insurance</i>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="">
                                             <div class="row b-form-inline b-form-horizontal">
                                                 <div class="col-xs-12">
-                                                    <div class="b-form-row">
-                                                        Processing Fee:1 %+15% VAT  of the approved loan amount.<br>
-                                                        Early Adjustment Fee: 2%+ 15% VAT within 5 years 1%+ 15% VAT  After 5 years.<br>
-                                                        Partial Payment Fee : 2%+ 15% VAT within 5 years 1%+ 15% VAT After 5 years.<br>
-                                                        Penal Charges :2%+ 15% VAT Per month on overdue amount<br>
-                                                        Post approval Quotation Change Fee: Tk. 1000 per change of quotation.<br>
-                                                    </div>
+                                                    <div class="b-form-row" ng-bind-html="v.insr_requirements"></div>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                                {{--End Modal--}}
+                            </div>
+                        </div>
+                        {{--End Required Documents--}}
 
+                        {{--Start View Details--}}
+                        <div id="@{{v.id}}ad" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                {{--Start Modal--}}
+                                <div class="modal-content modal-top">
+                                    <div class="modal-header t-a-c">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <i class="fa app-tab-in">Details Information For Life Insurance</i>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="">
                                             <div class="fa app-tab-in" style="margin-top: 10px;">ADDITIONAL FEATURES </div>
                                             <hr class="b-hr" style="margin-bottom: 12px; margin-top: 12px;" />
                                             <div class="row b-form-inline b-form-horizontal">
                                                 <div class="col-xs-12">
-                                                    <div class="b-form-row">
-                                                        Processing Fee:1 %+15% VAT  of the approved loan amount.<br>
-                                                        Early Adjustment Fee: 2%+ 15% VAT within 5 years 1%+ 15% VAT  After 5 years.<br>
-                                                        Partial Payment Fee : 2%+ 15% VAT within 5 years 1%+ 15% VAT After 5 years.<br>
-                                                        Penal Charges :2%+ 15% VAT Per month on overdue amount<br>
-                                                        Post approval Quotation Change Fee: Tk. 1000 per change of quotation.<br>
-                                                    </div>
+                                                    <div class="b-form-row" ng-bind-html="v.insr_features_benefits"></div>
                                                 </div>
                                             </div>
 
@@ -364,15 +418,63 @@
                                             <hr class="b-hr" style="margin-bottom: 12px; margin-top: 12px;" />
                                             <div class="row b-form-inline b-form-horizontal">
                                                 <div class="col-xs-12">
-                                                    <div class="b-form-row">
-                                                        Minimum Income : BDT 50,000<br>
-                                                        Minimum Trade Licence Age: 3 years<br>
-                                                        Age: 23 years to 65 years<br>
-                                                    </div>
+                                                    <div class="b-form-row" ng-bind-html="v.insr_eligibility"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                                {{--End Modal--}}
+                            </div>
+                        </div>
+                        {{--End View Details--}}
+
+                    </div>
+                </div>
+
+
+
+                {{--Start Modal Rating--}}
+                <div id="pp" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        {{--Start Modal--}}
+                        <div class="modal-content modal-top">
+                            <div class="modal-header t-a-c">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <i class="fa app-tab-in">Give Your Rating</i>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-md-12 f-s-14 f-f-s">
+
+
+                                    {!! Form::open(array('url'=>'ryryry', 'role'=>'form', 'method'=>'POST', 'files'=>'true')) !!}
+                                    <div class="form-horizontal">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <input type="hidden" name="id" value="">
+                                        <input type="hidden" name="t_id" value="33">
+
+                                        <div class="form-group">
+                                            <label for="exampleInputName2" class="col-sm-4 control-label">Change Bank:</label>
+                                            <div class="col-sm-8">
+                                                <select class="form-control" name="bank_id" required>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <hr>
+
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-4 col-sm-10 m-t-15">
+                                                <input type="submit" value="Submit" class="btn btn-success col-sm-4">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {!! Form::close() !!}
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -382,305 +484,9 @@
                         {{--End Modal--}}
                     </div>
                 </div>
-                {{--End Modal apply--}}
+                {{--End Modal Rating--}}
 
-                {{--Start Modal apply--}}
-                <div id="document" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
-                        {{--Start Modal--}}
-                        <div class="modal-content modal-top">
-                            <div class="modal-header t-a-c">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <i class="fa app-tab-in">Home Loan</i>
-                            </div>
-                            <div class="modal-body">
-                                <div class="">
-                                    <!-- Nav tabs -->
-                                    <ul class="nav nav-tabs" role="tablist">
-                                        <li role="presentation"><a href="#tabs_13" aria-controls="tabs_13" role="tab" data-toggle="tab">Apply</a></li>
-                                        <li role="presentation" class="active"><a href="#tabs_14" aria-controls="tabs_14" role="tab" data-toggle="tab">Required Documents</a></li>
-                                        <li role="presentation"><a href="#tabs_15" aria-controls="tabs_15" role="tab" data-toggle="tab">View Details</a></li>
-                                    </ul>
-                                    <!-- Tab panes -->
-                                    <div class="tab-content app-tab">
-                                        <div id="tabs_13" role="tabpanel" class="tab-pane">
-                                            <div class="fa app-tab-in">Apply here to fill up your information</div>
-                                            <hr class="b-hr" />
-                                            {!! Form::open(array('url'=>'--', 'role'=>'form', 'method'=>'POST')) !!}
-                                            <div class="row b-form-inline b-form-horizontal">
-                                                <div class="col-xs-12">
-                                                    <div class="b-form-row">
-                                                        <label class="b-form-horizontal__label" for="create_account_name">Name</label>
-                                                        <div class="b-form-horizontal__input">
-                                                            <input type="text" id="create_account_name" class="form-control" required />
-                                                        </div>
-                                                    </div>
-                                                    <div class="b-form-row">
-                                                        <label class="b-form-horizontal__label" for="create_account_name">Occupation</label>
-                                                        <div class="b-form-horizontal__input">
-                                                            <input type="text" id="create_account_name" class="form-control" required />
-                                                        </div>
-                                                    </div>
-                                                    <div class="b-form-row">
-                                                        <label class="b-form-horizontal__label" for="create_account_name">Organization</label>
-                                                        <div class="b-form-horizontal__input">
-                                                            <input type="text" id="create_account_name" class="form-control" required />
-                                                        </div>
-                                                    </div>
-                                                    <div class="b-form-row">
-                                                        <label class="b-form-horizontal__label" for="create_account_name">Monthly Salary</label>
-                                                        <div class="b-form-horizontal__input">
-                                                            <input type="text" id="create_account_name" class="form-control" required />
-                                                        </div>
-                                                    </div>
-                                                    <div class="b-form-row">
-                                                        <label class="b-form-horizontal__label" for="create_account_phone">Mobile Number</label>
-                                                        <div class="b-form-horizontal__input">
-                                                            <input type="number" id="create_account_phone" class="form-control" required />
-                                                        </div>
-                                                    </div>
-                                                    <div class="b-form-row">
-                                                        <label class="b-form-horizontal__label" for="create_account_phone">E-Mail</label>
-                                                        <div class="b-form-horizontal__input">
-                                                            <input type="email" id="create_account_phone" class="form-control" required />
-                                                        </div>
-                                                    </div>
-                                                    <div class="b-form-row">
-                                                        <label class="b-form-horizontal__label" for="create_account_phone">Address</label>
-                                                        <div class="b-form-horizontal__input">
-                                                            <textarea class="form-control" rows="3" required></textarea>
-                                                        </div>
-                                                    </div>
 
-                                                    <div class="b-form-row">
-                                                        <div class="b-form-horizontal__label"></div>
-                                                        <div class="b-form-horizontal__input">
-                                                            <input type="submit" value="Apply" class="btn btn-success btn-sm col-sm-12">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {!! Form::close() !!}
-                                        </div>
-
-                                        <div id="tabs_14" role="tabpanel" class="tab-pane active">
-                                            <div class="fa app-tab-in">Essential Document</div>
-                                            <hr class="b-hr" style="margin-bottom: 12px; margin-top: 12px;" />
-                                            <div class="row b-form-inline b-form-horizontal">
-                                                <div class="col-xs-12">
-                                                    <div class="b-form-row">
-                                                        Lab print photo 2 copy<br>
-                                                        NID clear copy both<br>
-                                                        TIN Certificate<br>
-                                                        Bank statement of last 1 year<br>
-                                                        Trade license min 3 years<br>
-                                                        Visiting card<br>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div id="tabs_15" role="tabpanel" class="tab-pane">
-                                            <div class="fa app-tab-in">FEES AND CHARGES</div>
-                                            <hr class="b-hr" style="margin-bottom: 12px; margin-top: 12px;" />
-                                            <div class="row b-form-inline b-form-horizontal">
-                                                <div class="col-xs-12">
-                                                    <div class="b-form-row">
-                                                        Processing Fee:1 %+15% VAT  of the approved loan amount.<br>
-                                                        Early Adjustment Fee: 2%+ 15% VAT within 5 years 1%+ 15% VAT  After 5 years.<br>
-                                                        Partial Payment Fee : 2%+ 15% VAT within 5 years 1%+ 15% VAT After 5 years.<br>
-                                                        Penal Charges :2%+ 15% VAT Per month on overdue amount<br>
-                                                        Post approval Quotation Change Fee: Tk. 1000 per change of quotation.<br>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="fa app-tab-in" style="margin-top: 10px;">ADDITIONAL FEATURES </div>
-                                            <hr class="b-hr" style="margin-bottom: 12px; margin-top: 12px;" />
-                                            <div class="row b-form-inline b-form-horizontal">
-                                                <div class="col-xs-12">
-                                                    <div class="b-form-row">
-                                                        Processing Fee:1 %+15% VAT  of the approved loan amount.<br>
-                                                        Early Adjustment Fee: 2%+ 15% VAT within 5 years 1%+ 15% VAT  After 5 years.<br>
-                                                        Partial Payment Fee : 2%+ 15% VAT within 5 years 1%+ 15% VAT After 5 years.<br>
-                                                        Penal Charges :2%+ 15% VAT Per month on overdue amount<br>
-                                                        Post approval Quotation Change Fee: Tk. 1000 per change of quotation.<br>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="fa app-tab-in" style="margin-top: 10px;">ELIGIBILITY </div>
-                                            <hr class="b-hr" style="margin-bottom: 12px; margin-top: 12px;" />
-                                            <div class="row b-form-inline b-form-horizontal">
-                                                <div class="col-xs-12">
-                                                    <div class="b-form-row">
-                                                        Minimum Income : BDT 50,000<br>
-                                                        Minimum Trade Licence Age: 3 years<br>
-                                                        Age: 23 years to 65 years<br>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                        {{--End Modal--}}
-                    </div>
-                </div>
-                {{--End Modal apply--}}
-
-                {{--Start Modal apply--}}
-                <div id="details" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
-                        {{--Start Modal--}}
-                        <div class="modal-content modal-top">
-                            <div class="modal-header t-a-c">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <i class="fa app-tab-in">Home Loan</i>
-                            </div>
-                            <div class="modal-body">
-                                <div class="">
-                                    <!-- Nav tabs -->
-                                    <ul class="nav nav-tabs" role="tablist">
-                                        <li role="presentation"><a href="#tabs_16" aria-controls="tabs_16" role="tab" data-toggle="tab">Apply</a></li>
-                                        <li role="presentation"><a href="#tabs_17" aria-controls="tabs_17" role="tab" data-toggle="tab">Required Documents</a></li>
-                                        <li role="presentation" class="active"><a href="#tabs_18" aria-controls="tabs_18" role="tab" data-toggle="tab">View Details</a></li>
-                                    </ul>
-                                    <!-- Tab panes -->
-                                    <div class="tab-content app-tab">
-                                        <div id="tabs_16" role="tabpanel" class="tab-pane">
-                                            <div class="fa app-tab-in">Apply here to fill up your information</div>
-                                            <hr class="b-hr" />
-                                            {!! Form::open(array('url'=>'--', 'role'=>'form', 'method'=>'POST')) !!}
-                                            <div class="row b-form-inline b-form-horizontal">
-                                                <div class="col-xs-12">
-                                                    <div class="b-form-row">
-                                                        <label class="b-form-horizontal__label" for="create_account_name">Name</label>
-                                                        <div class="b-form-horizontal__input">
-                                                            <input type="text" id="create_account_name" class="form-control" required />
-                                                        </div>
-                                                    </div>
-                                                    <div class="b-form-row">
-                                                        <label class="b-form-horizontal__label" for="create_account_name">Occupation</label>
-                                                        <div class="b-form-horizontal__input">
-                                                            <input type="text" id="create_account_name" class="form-control" required />
-                                                        </div>
-                                                    </div>
-                                                    <div class="b-form-row">
-                                                        <label class="b-form-horizontal__label" for="create_account_name">Organization</label>
-                                                        <div class="b-form-horizontal__input">
-                                                            <input type="text" id="create_account_name" class="form-control" required />
-                                                        </div>
-                                                    </div>
-                                                    <div class="b-form-row">
-                                                        <label class="b-form-horizontal__label" for="create_account_name">Monthly Salary</label>
-                                                        <div class="b-form-horizontal__input">
-                                                            <input type="text" id="create_account_name" class="form-control" required />
-                                                        </div>
-                                                    </div>
-                                                    <div class="b-form-row">
-                                                        <label class="b-form-horizontal__label" for="create_account_phone">Mobile Number</label>
-                                                        <div class="b-form-horizontal__input">
-                                                            <input type="number" id="create_account_phone" class="form-control" required />
-                                                        </div>
-                                                    </div>
-                                                    <div class="b-form-row">
-                                                        <label class="b-form-horizontal__label" for="create_account_phone">E-Mail</label>
-                                                        <div class="b-form-horizontal__input">
-                                                            <input type="email" id="create_account_phone" class="form-control" required />
-                                                        </div>
-                                                    </div>
-                                                    <div class="b-form-row">
-                                                        <label class="b-form-horizontal__label" for="create_account_phone">Address</label>
-                                                        <div class="b-form-horizontal__input">
-                                                            <textarea class="form-control" rows="3" required></textarea>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="b-form-row">
-                                                        <div class="b-form-horizontal__label"></div>
-                                                        <div class="b-form-horizontal__input">
-                                                            <input type="submit" value="Apply" class="btn btn-success btn-sm col-sm-12">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {!! Form::close() !!}
-                                        </div>
-
-                                        <div id="tabs_17" role="tabpanel" class="tab-pane">
-                                            <div class="fa app-tab-in">Essential Document</div>
-                                            <hr class="b-hr" style="margin-bottom: 12px; margin-top: 12px;" />
-                                            <div class="row b-form-inline b-form-horizontal">
-                                                <div class="col-xs-12">
-                                                    <div class="b-form-row">
-                                                        Lab print photo 2 copy<br>
-                                                        NID clear copy both<br>
-                                                        TIN Certificate<br>
-                                                        Bank statement of last 1 year<br>
-                                                        Trade license min 3 years<br>
-                                                        Visiting card<br>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div id="tabs_18" role="tabpanel" class="tab-pane active">
-                                            <div class="fa app-tab-in">FEES AND CHARGES</div>
-                                            <hr class="b-hr" style="margin-bottom: 12px; margin-top: 12px;" />
-                                            <div class="row b-form-inline b-form-horizontal">
-                                                <div class="col-xs-12">
-                                                    <div class="b-form-row">
-                                                        Processing Fee:1 %+15% VAT  of the approved loan amount.<br>
-                                                        Early Adjustment Fee: 2%+ 15% VAT within 5 years 1%+ 15% VAT  After 5 years.<br>
-                                                        Partial Payment Fee : 2%+ 15% VAT within 5 years 1%+ 15% VAT After 5 years.<br>
-                                                        Penal Charges :2%+ 15% VAT Per month on overdue amount<br>
-                                                        Post approval Quotation Change Fee: Tk. 1000 per change of quotation.<br>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="fa app-tab-in" style="margin-top: 10px;">ADDITIONAL FEATURES </div>
-                                            <hr class="b-hr" style="margin-bottom: 12px; margin-top: 12px;" />
-                                            <div class="row b-form-inline b-form-horizontal">
-                                                <div class="col-xs-12">
-                                                    <div class="b-form-row">
-                                                        Processing Fee:1 %+15% VAT  of the approved loan amount.<br>
-                                                        Early Adjustment Fee: 2%+ 15% VAT within 5 years 1%+ 15% VAT  After 5 years.<br>
-                                                        Partial Payment Fee : 2%+ 15% VAT within 5 years 1%+ 15% VAT After 5 years.<br>
-                                                        Penal Charges :2%+ 15% VAT Per month on overdue amount<br>
-                                                        Post approval Quotation Change Fee: Tk. 1000 per change of quotation.<br>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="fa app-tab-in" style="margin-top: 10px;">ELIGIBILITY </div>
-                                            <hr class="b-hr" style="margin-bottom: 12px; margin-top: 12px;" />
-                                            <div class="row b-form-inline b-form-horizontal">
-                                                <div class="col-xs-12">
-                                                    <div class="b-form-row">
-                                                        Minimum Income : BDT 50,000<br>
-                                                        Minimum Trade Licence Age: 3 years<br>
-                                                        Age: 23 years to 65 years<br>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                        {{--End Modal--}}
-                    </div>
-                </div>
-                {{--End Modal apply--}}
 
             </div>
         </div>

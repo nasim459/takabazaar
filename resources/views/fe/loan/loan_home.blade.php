@@ -111,6 +111,17 @@
 
                                         <div class="form-group pull-right">
                                             <div class="input-group">
+                                                {{--<div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>--}}
+                                                <select class="form-control">
+                                                    <option value="" title="See All Bank">All Bank</option>
+                                                    <option value="1" title="Bank Financial Institution">BFI</option>
+                                                    <option value="0" title="Non Bank Financial Institution">NBFI</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group pull-right">
+                                            <div class="input-group">
                                                 <div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>
                                                 <div class="input-group-addon" title="Are you a salaried or business or others person?"><i class="fa"> I am a</i></div>
                                                 <select class="form-control">
@@ -386,13 +397,43 @@
                                                     <div class="b-form-row">
                                                         <div class="b-form-horizontal__label"></div>
                                                         <div class="b-form-horizontal__input">
-                                                            <input type="submit" value="Review" class="btn btn-success btn-sm col-sm-12">
+                                                            <input type="submit" value="Send Review" class="btn btn-success btn-sm col-sm-12">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             {!! Form::close() !!}
                                         </div>
+
+                                        {{--start review_area--}}
+                                        <hr class="b-hr" />
+                                        <div class="fa app-tab-in m-b-20">People says about this ...</div>
+                                        <div class=""  ng-repeat="r in v.reviews">
+                                            <div class="b-mention-item">
+                                                <div class="b-mention-item__user f-center">
+                                                    {{--<div class="b-mention-item__user_img">--}}
+                                                        {{--<img class="fade-in-animate" data-retina src="img/users/user_md.png" alt="">--}}
+                                                    {{--</div>--}}
+                                                    <div class="b-mention-item__user_info f-mention-item__user_info f-center--xs f-left">
+                                                        <div class="f-mention-item__user_name f-primary-b" title="@{{ r.r_name }}">
+                                                            <i class="fa fa-user"> @{{ r.r_name | limitTo: 14 }} @{{r.r_name.length > 14 ? '...' : ''}}</i>
+                                                        </div>
+                                                        <div class="f-mention-item__user_position" title="@{{ r.r_email }}">
+                                                            @{{ r.r_email | limitTo: 16 }} @{{r.r_email.length > 16 ? '...' : ''}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="b-remaining">
+                                                    <div class="b-mention-item__comment">
+                                                        <div class="b-mention-item__comment_text f-mention-item__comment_text">
+                                                            @{{ r.r_message }}<br/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{--end review_area--}}
+
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

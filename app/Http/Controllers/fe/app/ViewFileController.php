@@ -62,27 +62,27 @@ class ViewFileController extends Controller
                 break;
 
             case "loan-home-api":
-                $loan_view = Loan::with(['bank'])->get();
+                $loan_view = Loan::with(['bank', 'reviews'])->get();
                 return $loan_view;
 
                 break;
             case "investment-api":
-                $loan_view = Investment::with(['bank'])->get();
+                $loan_view = Investment::with(['bank', 'reviews'])->get();
                 return $loan_view;
 
                 break;
             case "insurance-api":
-                $loan_view = Insurance::with(['bank'])->get();
+                $loan_view = Insurance::with(['bank'], 'reviews')->get();
                 return $loan_view;
 
                 break;
             case "card-credit-api":
-                $loan_view = Card::with(['bank', 'cardcategorie', 'review'])->get();
+                $loan_view = Card::with(['bank', 'cardcategorie', 'reviews'])->get();
                 return $loan_view;
 
                 break;
             case "card-debit-api":
-                $loan_view = Carddebit::with(['bank', 'cardcategorie'])->get();
+                $loan_view = Carddebit::with(['bank', 'cardcategorie', 'reviews'])->get();
                 return $loan_view;
 
                 break;

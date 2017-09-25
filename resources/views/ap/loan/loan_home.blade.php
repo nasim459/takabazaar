@@ -79,7 +79,7 @@
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     <h4 class="modal-title text-success text-center">
-                                        <img src="{{ asset($v->bank->bank_image_url) }}" height="20px" width="30px" alt="pic">&nbsp;
+                                        <img src="{{ asset('ap/images/banks/'.$v->bank->bank_image_url) }}" height="20px" width="30px" alt="pic">&nbsp;
                                         {{$v->bank->bank_name}}
                                     </h4>
                                 </div>
@@ -130,7 +130,7 @@
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     <h4 class="modal-title text-success text-center">
-                                        <img src="{{ asset($v->bank->bank_image_url) }}" height="20px" width="30px" alt="pic">&nbsp;
+                                        <img src="{{ asset('ap/images/banks/'.$v->bank->bank_image_url) }}" height="20px" width="30px" alt="pic">&nbsp;
                                         {{$v->bank->bank_name}}
                                     </h4>
                                 </div>

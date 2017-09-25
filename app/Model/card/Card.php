@@ -22,8 +22,8 @@ class Card extends Model
     }
 
     //
-    public function review()
+    public function reviews()
     {
-        return $this->hasMany(Review::class, 'id', 'card_id');
+        return $this->hasMany(Review::class);
     }
 }

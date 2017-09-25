@@ -12,7 +12,7 @@
         <!--start Single button-->
         <div class="col-md-12 text-center m-t-mi-6">
             <a href="{{ url('insurance'.'/'.'life') }}" class="app-menu btn btn-default text-success-light">Life</a>
-            <a href="{{ url('insurance'.'/'.'motor') }}" class="app-menu btn btn-default text-success-light">Motor</a>
+            {{--<a href="{{ url('insurance'.'/'.'motor') }}" class="app-menu btn btn-default text-success-light">Motor</a>--}}
             <a href="{{ url('insurance'.'/'.'marine') }}" class="app-menu btn btn-default text-success-light">Marine</a>
             <a href="{{ url('insurance'.'/'.'fire') }}" class="app-menu btn btn-default text-success-light">Fire</a>
             <a href="{{ url('insurance'.'/'.'accident') }}" class="app-menu btn btn-default text-success-light">Accident</a>

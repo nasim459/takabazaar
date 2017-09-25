@@ -27,6 +27,11 @@ class PublicationController extends Controller
                 $publication_status = 'bank_status';
                 $redirect = $previous_url;
                 break;
+            case "22_b":
+                $table_name = 'banks';
+                $publication_status = 'bank_type';
+                $redirect = $previous_url;
+                break;
             case "33":
                 $table_name = 'loans';
                 $publication_status = 'loan_status';
