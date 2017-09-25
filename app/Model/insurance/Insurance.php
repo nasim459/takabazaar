@@ -11,4 +11,10 @@ class Insurance extends Model
     {
         return $this->belongsTo('App\Model\bank\Bank');
     }
+
+    //
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }
