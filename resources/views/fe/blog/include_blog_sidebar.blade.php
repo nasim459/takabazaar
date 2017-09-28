@@ -35,12 +35,15 @@
                             <div class="b-blog-short-post__item_img">
                                 <a href="{{URL::to('blog-details/'.$v->id.'/'.$v->blog_title)}}"><img data-retina src="{{ asset('fe/img/blog_pic/'.$v->blog_image) }}" height="55" width="60" alt=""/></a>
                             </div>
-                            <div class="b-remaining">
+                            <div class="b-remaining" title="{{ $v->blog_title }}">
                                 <div class="b-blog-short-post__item_text f-blog-short-post__item_text">
                                     <a href="{{URL::to('blog-details/'.$v->id.'/'.$v->blog_title)}}">{{ str_limit($v->blog_title, 20, ' ...') }}</a>
                                 </div>
-                                <div class="b-blog-short-post__item_date f-blog-short-post__item_date f-primary-it">
-                                    {{$v->updated_at}}
+                                <div class="">
+                                    <a href="{{URL::to('blog-details/'.$v->id.'/'.$v->blog_title)}}"><i class="fa fa-calendar-times-o"> {{$v->updated_at}}</i></a>
+                                </div>
+                                <div class=" text-success">
+                                    <a href="{{URL::to('blog-details/'.$v->id.'/'.$v->blog_title)}}"><i class="fa fa-hand-o-right"> {{$v->blog_hit_count}} views</i></a>
                                 </div>
                             </div>
                         </div>

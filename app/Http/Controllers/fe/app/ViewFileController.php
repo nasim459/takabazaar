@@ -198,7 +198,7 @@ class ViewFileController extends Controller
         switch($child){
             case "blog":
                 $file_open = 'fe.blog.blog_public';
-                $data_view = Blog::orderBy('blog_hit_count', 'desc')->where('blog_control', 1)->limit(9)->get();
+                $data_view = Blog::orderBy('blog_hit_count', 'DESC')->where('blog_status', 1)->where('blog_control', 1)->limit(9)->get();
                 $data_view_one = Blog::orderBy('id', 'DESC')->limit(1)->get();
                 $blog_category = Categories::orderBy('id', 'DESC')->limit(10)->get();
                 $blog_category_all = Categories::all();
@@ -247,12 +247,10 @@ class ViewFileController extends Controller
         $previous_url = url()->previous();
 
         $file_open = 'fe.blog.blog_public_details';
-        $data_view = Blog::orderBy('blog_hit_count', 'desc')->where('blog_control', 1)->limit(9)->get();
-        $data_view_one = Blog::with(['bloguser', 'category', 'comments'])->where('id', $id)->get();
+        $data_view = Blog::orderBy('blog_hit_count', 'DESC')->where('blog_status', 1)->where('blog_control', 1)->limit(9)->get();
+        $data_view_one = Blog::with(['bloguser', 'category', 'comments'])->where('id', $id)->where('blog_status', 1)->get();
         $data_comment = Comment::all();
 
-        //$data_rough = Blog::with(['bloguser', 'category', 'comments'])->where('id', 14)->get();
-        //$data_rough = Comment::with(['commentreplaies'])->get();
         //dd($data_rough);
 
         $blog_category = Categories::orderBy('id', 'DESC')->limit(10)->get();
@@ -283,7 +281,7 @@ class ViewFileController extends Controller
         $file_open = 'fe.blog.blog_category';
         //$data_view = Blog::orderBy('blog_hit_count', 'desc')->limit(9)->get();
         $data_view = Blog::where('category_id', $id)->get();
-        $data_view_one = Blog::orderBy('id', 'DESC')->limit(1)->get();
+        $data_view_one = Blog::orderBy('id', 'DESC')->where('blog_status', 1)->where('blog_control', 1)->limit(1)->get();
         $blog_category = Categories::orderBy('id', 'DESC')->limit(10)->get();
         $blog_category_all = Categories::all();
 
