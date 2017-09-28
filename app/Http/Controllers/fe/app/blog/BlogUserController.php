@@ -21,9 +21,9 @@ class BlogUserController extends Controller
             case "insert_save":
                 $save = array();
                 $save['user_name'] = $request->name;
-                $save['user_email'] = $request->email;
-                $save['user_pass'] = bcrypt($request->pass);
-                DB::table('blogusers')->insert($save);
+                $save['email'] = $request->email;
+                $save['password'] = bcrypt($request->pass);
+                DB::table('users')->insert($save);
 
                 //Session::put('msg', 'Registration Inserted Successfully!!!');
                 return redirect('/');

@@ -10,13 +10,17 @@ use Illuminate\Support\Facades\Auth;
 
 class AccessController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        //$this->middleware('guest', ['except' => ['logout', 'post-sign-in']]);
+    }
     /**
      * do login.
      * @request param
      */
     public function postSignIn(Request $request)
     {
-
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required|min:6'
@@ -28,7 +32,7 @@ class AccessController extends Controller
         }
         //Auth::attempt(['email' => $request['email'], 'password' => $request['password']], true);
 
-        Auth::loginUsingId(10, true);
+        //Auth::loginUsingId(10, true);
 
         if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']], true))
         {
