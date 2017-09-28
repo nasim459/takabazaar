@@ -12,7 +12,7 @@ return [
     |
     */
 
-    'model' => 'BlogUser',
+    //'model' => 'BlogUser',
     /*
     |--------------------------------------------------------------------------
     | Authentication Defaults
@@ -76,15 +76,15 @@ return [
     */
 
     'providers' => [
-        /*'users' => [
+        'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
-        ],*/
+        ],
 
-         'users' => [
+         /*'users' => [
              'driver' => 'database',
              'table' => 'blogusers',
-         ],
+         ],*/
     ],
 
     /*
@@ -104,7 +104,7 @@ return [
 
     'passwords' => [
         'users' => [
-            'provider' => 'blogusers',
+            'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
         ],

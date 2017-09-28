@@ -5,8 +5,8 @@ namespace App\Http\Controllers\access;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Validator;
-use Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class AccessController extends Controller
 {
@@ -30,11 +30,10 @@ class AccessController extends Controller
 
         Auth::loginUsingId(10, true);
 
-        //if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']], true))
+        if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']], true))
         {
             return redirect('/dboard');
         }
-
 
         return redirect()->back()->with('message_error', 'Invalid Email and password combination!');
     }

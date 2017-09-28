@@ -5,10 +5,9 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class BlogUser extends Authenticatable
+class User extends Authenticatable
 {
     use Notifiable;
-    protected $table = 'blogusers';
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +15,7 @@ class BlogUser extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'user_name', 'user_email', 'user_pass', 'user_image', 'status'
+        'user_name', 'email', 'password', 'user_image', 'status'
     ];
 
     /**
@@ -25,16 +24,16 @@ class BlogUser extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'user_pass', 'remember_token',
+        'password', 'remember_token',
     ];
 
-    public function getAuthPassword() {
+/*    public function getAuthPassword() {
         return $this->user_pass;
     }
 
     public function getAuthEmail() {
         return $this->user_email;
-    }
+    }*/
 
 
     public function role()
