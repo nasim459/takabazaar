@@ -270,6 +270,40 @@
 
 @include('fe.include_fe_footer')
 
+
+{{--start modal_popup_loadin_after_5_secounds--}}
+
+<div>
+    <div id="popup" title="page load modal popup" style="display: none;">
+        <b>Today News:</b><br>
+        Currently launched windows 10 professional version
+    </div>
+</div>
+
+{{--end modal_popup_loadin_after_5_secounds--}}
+
+<script>
+    $(function () {
+        $(document).ready(function () {
+
+            $('#popup').dialog({
+                title: "JQuery popup tutorila",
+                width: 450,
+                height: 250,
+                modal: true,
+                button: {
+                    close: function () {
+                        $(this).dialog('close');
+                    }
+                }
+            });
+
+        });
+
+    })
+</script>
+
+
 <script src="{{URL::asset('ap/ckeditor/ckeditor.js')}}"></script>
 <script src="{{URL::asset('fe/angular/js/angular.js')}}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
