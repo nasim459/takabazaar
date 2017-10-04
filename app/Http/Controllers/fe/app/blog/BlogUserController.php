@@ -23,6 +23,7 @@ class BlogUserController extends Controller
 
                 $save['name'] = $request->name;
                 $save['email'] = $request->email;
+                $save['role_id'] = 2;
                 $save['password'] = bcrypt($request->pass);
                 DB::table('users')->insert($save);
 
