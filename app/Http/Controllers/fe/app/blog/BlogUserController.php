@@ -20,9 +20,10 @@ class BlogUserController extends Controller
         switch($insert_save){
             case "insert_save":
                 $save = array();
-                $save['user_name'] = $request->name;
+
+                $save['name'] = $request->name;
                 $save['email'] = $request->email;
-                $save['password'] = bcrypt($request->pass);
+                $save['password'] = $request->pass;
                 DB::table('users')->insert($save);
 
                 //Session::put('msg', 'Registration Inserted Successfully!!!');
@@ -30,9 +31,11 @@ class BlogUserController extends Controller
 
                 break;
             default:
+
                 /*DB::table('categories')
                     ->where('id', $request->c_id)
                     ->update(['category_name' => $category_name]);*/
+
                 Session::put('msg', 'Category Updated Successfully!!!');
                 return redirect('blog-category');
         }

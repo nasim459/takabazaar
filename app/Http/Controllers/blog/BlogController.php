@@ -4,7 +4,7 @@ namespace App\Http\Controllers\blog;
 
 use App\Model\blog\Blog;
 use App\Model\blog\Blogsubscriber;
-use App\Model\blog\Bloguser;
+use App\Model\blog\User;
 use App\Model\blog\Categories;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -51,7 +51,7 @@ class BlogController extends Controller
                 break;
             case "blog-user":
                 $file_open = 'ap.blog.blog_user';
-                $data_view = Bloguser::all();
+                $data_view = User::all();
                 //dd($data_view);
 
                 break;

@@ -40,6 +40,12 @@ class ImageUpdateController extends Controller
                 $destination_path_define = 'ap/images/card_category/';
                 $updated_tbl_field_img_url = 'cc_image_url';  //--change_image_url_of_table_field
                 break;
+            case "111":
+                $table_name = 'abouts';
+                $where_field_id = 'id';
+                $destination_path_define = 'ap/images/about_img/';
+                $updated_tbl_field_img_url = 'about_image';  //--change_image_url_of_table_field
+                break;
             case "444":
                 $table_name = 'blogs';
                 $where_field_id = 'id';
@@ -60,6 +66,7 @@ class ImageUpdateController extends Controller
         if (isset($image)) {
             $image_name = str_random(20);
             $ext = strtolower($image->getClientOriginalExtension());
+            //if(($ext != 'jpg') || ($ext != 'JPG') || ($ext != 'png') || ($ext != 'PNG') || ($ext != 'jpeg') || ($ext != 'JPEG') || ($ext != 'TIFF') || ($ext != 'GIF')){ return Redirect::to($previous_url); }
             $destination_path = $destination_path_define;
             $image_full_name = $image_name . '.' . $ext;
             $image_url = $destination_path . $image_full_name;

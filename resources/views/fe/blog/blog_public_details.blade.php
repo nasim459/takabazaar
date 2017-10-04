@@ -73,7 +73,7 @@
                                     <b>{{ $v->blog_title }}</b>
                                 </a>
                                 <div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text f-primary-b">
-                                    By <a href="" class="f-more">{{ $v->bloguser['user_name'] }}</a>, {{ $v->updated_at }}
+                                    By <a href="" class="f-more">{{ $v->user['name'] }}</a>, {{ $v->updated_at }}
                                     <a class="f-more b-blog-listing__additional-text f-primary"><i class="fa fa-hand-o-right"></i> {{ $v->blog_hit_count }} Views</a>,
                                     <a href="" class="f-more b-blog-listing__additional-text f-primary"><i class="fa fa-comment-o"></i>12 Comments</a>
                                 </div>
@@ -110,7 +110,7 @@
                                                                 </div>
                                                                 <div class="b-comment__descr">
                                                                     <div class="b-comment__descr__data">
-                                                                        <div class="b-comment__descr__name f-comment__descr__name f-primary-b">{{ $c->bloguser['user_name'] }}</div>
+                                                                        <div class="b-comment__descr__name f-comment__descr__name f-primary-b">{{ $c->user['name'] }}</div>
                                                                         <div class="b-comment__descr__info f-comment__descr__info">
                                                                             <span class="f-comment__date">{{ $c->created_at }}</span>
                                                                         </div>
@@ -123,28 +123,30 @@
                                                             </div>
 
                                                                 @foreach($v->commentreplaies as $cr)
-                                                                <ul>
-                                                                    <li>
-                                                                        <div class="b-comment-item">
-                                                                            <div class="b-comment__img">
-                                                                                <img data-retina src="{{ asset('fe/img/img_blank.jpg') }}" width="55" height="55" alt="Pic">
-                                                                            </div>
-                                                                            <div class="b-comment__descr">
-                                                                                <div class="b-comment__descr__data">
-                                                                                    <div class="b-comment__descr__name f-comment__descr__name f-primary-b">{{ $cr->bloguser_id }}gg</div>
-                                                                                    <div class="b-comment__descr__info f-comment__descr__info">
-                                                                                        <span class="f-comment__date">20:30 PM - 15 November, 2013</span> <i class="b-comment__infp__slash">/</i>
-                                                                                        <a href="#" class="f-comment-link-color">Report</a> <i class="b-comment__infp__slash">/</i>
-                                                                                        <a href="#" class="f-comment-link-color">Reply</a>
+
+                                                                    @if( ($cr->comment_id) == ($c->id) )
+                                                                        <ul>
+                                                                            <li>
+                                                                                <div class="b-comment-item">
+                                                                                    <div class="b-comment__img">
+                                                                                        <img data-retina src="{{ asset('fe/img/img_blank.jpg') }}" width="55" height="55" alt="Pic">
+                                                                                    </div>
+                                                                                    <div class="b-comment__descr">
+                                                                                        <div class="b-comment__descr__data">
+                                                                                            <div class="b-comment__descr__name f-comment__descr__name f-primary-b">{{ $cr->user['name'] }}</div>
+                                                                                            <div class="b-comment__descr__info f-comment__descr__info">
+                                                                                                <span class="f-comment__date">20:30 PM - 15 November, 2013</span> <i class="b-comment__infp__slash"></i>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="f-comment__descr__txt">
+                                                                                            <p>{{ $cr->comment_replay_desc }}</p>
+                                                                                        </div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="f-comment__descr__txt">
-                                                                                    <p>{{ $cr->comment_replay_desc }}</p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </li>
-                                                                </ul>
+                                                                            </li>
+                                                                        </ul>
+                                                                    @endif
+
                                                                 @endforeach
 
                                                                 <!--start blog_user_replay-->
@@ -300,26 +302,6 @@
 
 
 
-                                                        </li>
-                                                        <li>
-                                                            <div class="b-comment-item">
-                                                                <div class="b-comment__img">
-                                                                    <img data-retina src="{{ asset('fe/img/img_blank.jpg') }}" width="65" height="65" alt="Pic">
-                                                                </div>
-                                                                <div class="b-comment__descr">
-                                                                    <div class="b-comment__descr__data">
-                                                                        <div class="b-comment__descr__name f-comment__descr__name f-primary-b">John Doe</div>
-                                                                        <div class="b-comment__descr__info f-comment__descr__info">
-                                                                            <span class="f-comment__date">20:30 PM - 15 November, 2013</span> <i class="b-comment__infp__slash">/</i>
-                                                                            <a href="#" class="f-comment-link-color">Report</a> <i class="b-comment__infp__slash">/</i>
-                                                                            <a href="#" class="f-comment-link-color">Reply</a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="f-comment__descr__txt">
-                                                                        <p>Pellentesque pulvinar dolor eu erat aliquet iaculis. Ut lacus lectus, scelerisque at mi id, pharetra mollis elit. Fusce diam mi, laoreet non luctus et, iaculis a risus. Phasellus volutpat ipsum id facilisis sagittis. Integer eget laoreet nibh. Nullam fringilla sem rhoncus felis suscipit accumsan.</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
                                                         </li>
                                                     </ul>
                                                 </div>

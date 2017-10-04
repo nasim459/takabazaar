@@ -66,7 +66,7 @@
                         <div class="col-md-3 col-sm-4 col-xs-12 m-t-30">
                             <div class="b-employee-item b-employee-item--color f-employee-item">
                                 <div class=" view view-sixth">
-                                    <a href="#" title="{{$v->about_name}}"><img class="j-data-element" data-animate="fadeInDown" data-retina src="{{ asset($v->about_image) }}" height="230" style="padding: 5px;" alt=""/></a>
+                                    <a href="#" title="{{$v->about_name}}"><img class="j-data-element" data-animate="fadeInDown" data-retina src="{{ asset('ap/images/about_img/'.$v->about_image) }}" height="230" style="padding: 5px;" alt=""/></a>
                                 </div>
                                 <p class="text-success m-t-10" style="color: green;">
                                     <i class="fa" style="font-size: 18px;">{{$v->about_name}}</i><br>

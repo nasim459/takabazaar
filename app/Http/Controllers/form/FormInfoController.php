@@ -28,6 +28,19 @@ class FormInfoController extends Controller
         $about_google = $request->google_link;
         $about_twitter = $request->twitter_link;
 
+        //----start error handeler
+        if(strlen($about_name) > 28)
+        {
+            Session::put('msg_error', 'Name less than 28 character?');
+            return redirect($previous_url);
+        }
+        if(strlen($about_designation) > 28)
+        {
+            Session::put('msg_error', 'Designation less than 28 character?');
+            return redirect($previous_url);
+        }
+        //----end error handeler
+
         if (isset($image)) {
             $image_name = str_random(20);
             //$ext = strtolower($image->getClientOriginalExtension());
@@ -44,7 +57,7 @@ class FormInfoController extends Controller
                 $save['about_fb'] = $about_fb;
                 $save['about_google'] = $about_google;
                 $save['about_twitter'] = $about_twitter;
-                $save['about_image'] = $image_url;
+                $save['about_image'] = $image_full_name;
 
                 if($insert_update == 'insert_update'){
 
@@ -100,6 +113,19 @@ class FormInfoController extends Controller
         $contact_email = $request->email;
         $contact_title = $request->title;
         $contact_message = $request->message;
+
+        //----start error handeler
+        if(strlen($contact_name) > 40)
+        {
+            Session::put('msg_suc', 'Name less than 40 character?');
+            return redirect($previous_url);
+        }
+        if(strlen($contact_title) > 80)
+        {
+            Session::put('msg_suc', 'title less than 80 character?');
+            return redirect($previous_url);
+        }
+        //----end error handeler
 
         $save = array();
         $save['contact_name'] = $contact_name;

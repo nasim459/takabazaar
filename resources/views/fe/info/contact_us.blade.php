@@ -23,7 +23,7 @@
                 <div class="row">
                     <div class="col-sm-6 b-contact-form-box">
                         <h3 class="f-primary-b b-title-description f-title-description">
-                            drop a line <i class="fa text-danger">{{Session::get('msg_suc')}} {{Session::Put('msg_suc', '')}}</i>
+                            drop a line <i class="fa text-danger pull-right">{{Session::get('msg_suc')}} {{Session::Put('msg_suc', '')}}</i>
                             <div class="b-title-description__comment f-title-description__comment f-primary-l">What's on your mind & knock to us feel free by send your query</div>
                         </h3>
                         <div class="row">

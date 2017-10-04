@@ -4,7 +4,7 @@ namespace App\Model\blog;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Bloguser extends Model
+class User extends Model
 {
     //
 }
