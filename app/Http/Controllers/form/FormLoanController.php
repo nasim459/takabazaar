@@ -42,14 +42,14 @@ class FormLoanController extends Controller
         //--------------gdfgdfgdfgd
 
         //----Start_EMI_Calculation---------------------------------------------------------------------
-        $d_p = $request->d_p;          //----d_p means down_payment
+        $d_p = $request->d_p;               //----d_p means down_payment
         $p = $request->l_amount;            //----p means principal_amount_or_loan_amount
         $d = $request->l_period;            //----d means duration_of_manths_or_years
         $i_r = $request->l_interest_rate;   //----i_r means interest_rate
 
         //----start calculate_down_payment----------------------------------
         if (($d_p != 0) || ($d_p != NULL)) {
-            $c_d_p = ($p * $d_p) / 100;         //----$_c_d_p means calculate_down_payment
+            $c_d_p = ($p * $d_p) / 100;         //----$c_d_p means calculate_down_payment
             $r_d_p = $p - $c_d_p;               //----$r_d_p means result_down_payment
             $r_d_p_r = round($r_d_p, 10);       //----$r_d_p_r means result_down_payment_roundValue
 
@@ -71,7 +71,7 @@ class FormLoanController extends Controller
         //----End_EMI_Calculation----------------------------------------------------------------------
 
         //----start calculate_down_payment----------------------------------
-        $t_p_p_i = $e_m_i * $n;                 //----t_p_p_i_r means total_payable_principal_interest
+        $t_p_p_i = $e_m_i * $n;                 //----t_p_p_i means total_payable_principal_interest
         $t_p_p_i_r = round($t_p_p_i, 10);       //----t_p_p_i_r means total_payable_principal_interest_roundValue
         $t_i_p = $t_p_p_i_r - $r_d_p_r;         //----t_i_p_ means total_interest_payable
         $t_i_p_r = round($t_i_p);               //----t_i_p_r means total_interest_payable_roundValue

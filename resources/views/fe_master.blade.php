@@ -308,8 +308,8 @@
 <script src="{{URL::asset('fe/angular/js/angular.js')}}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
 <script src="{{URL::asset('fe/angular/js/fe_loanController.js')}}"></script>
-<script src="{{URL::asset('fe/angular/js/homeController.js')}}"></script>
-<script src="{{URL::asset('fe/angular/js/RegiController.js')}}"></script>
+{{--<script src="{{URL::asset('fe/angular/js/homeController.js')}}"></script>--}}
+{{--<script src="{{URL::asset('fe/angular/js/RegiController.js')}}"></script>--}}
 <script src="{{URL::asset('fe/angular/js/roughController.js')}}"></script>
 <script src="{{URL::asset('fe/angular/js/loan/LoanController.js')}}"></script>
 

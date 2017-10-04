@@ -53,7 +53,7 @@
         </div>
         <div class="container">
             <div class="l-inner-page-container">
-                <div class="row">
+                <div class="row" data-ng-app="" data-ng-init="p=2; year=2">
 
                     <div class="col-sm-12 col-md-12 b-item-apartment-block">
                         <div class="b-some-examples__item f-some-examples__item">
@@ -67,8 +67,7 @@
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="fa">Your amount</i></div>
-                                                <input type="text" ng-model="nas" class="form-control" id="exampleInputAmount" placeholder="Amount">
-                                                <input type="hidden" ng-model="year">
+                                                <input type="text" ng-model="Data.amount" ng-keyup="calculation()"  class="form-control" id="exampleInputAmount" placeholder="Amount">
                                                 <div class="input-group-addon">৳</div>
                                             </div>
                                         </div>
@@ -76,7 +75,7 @@
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="fa">For</i></div>
-                                                <select class="form-control">
+                                                <select class="form-control" ng-model="Data.year" ng-keyup="calculation()" >
                                                     <option value="1">01 - Years</option>
                                                     <option value="2">02 - Years</option>
                                                     <option value="3">03 - Years</option>
@@ -124,11 +123,11 @@
                                             <div class="input-group">
                                                 <div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>
                                                 <div class="input-group-addon" title="Are you a salaried or business or others person?"><i class="fa"> I am a</i></div>
-                                                <select class="form-control">
-                                                    <option value="1">Salaried Person</option>
-                                                    <option value="1">Salaried Person</option>
+                                                <select ng-model="rafi" class="form-control">
+                                                    <option value="">Salaried Person</option>
+                                                    <option value="11">Salaried Person</option>
                                                     <option value="2">Business Person</option>
-                                                    <option value="3">Others Person</option>
+                                                    <option value="gs" selected>Others Person</option>
                                                 </select>
                                             </div>
                                         </div>
