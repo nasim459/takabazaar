@@ -102,6 +102,7 @@ Route::group(['middleware' => ['web', 'auth', 'roles'], 'roles' => ['Admin']],
 //----Dash Board Controller
         Route::get('dboard', 'DashBoardController@home_dboard');
         Route::get('dboard-regi', 'DashBoardController@regi_dboard');
+
     });
 
 //=====================================End Back_End Route==============================================
