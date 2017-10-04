@@ -73,7 +73,7 @@
                                     <b>{{ $v->blog_title }}</b>
                                 </a>
                                 <div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text f-primary-b">
-                                    By <a href="" class="f-more">{{ $v->bloguser['user_name'] }}</a>, {{ $v->updated_at }}
+                                    By <a href="" class="f-more">{{ $v->user['name'] }}</a>, {{ $v->updated_at }}
                                     <a class="f-more b-blog-listing__additional-text f-primary"><i class="fa fa-hand-o-right"></i> {{ $v->blog_hit_count }} Views</a>,
                                     <a href="" class="f-more b-blog-listing__additional-text f-primary"><i class="fa fa-comment-o"></i>12 Comments</a>
                                 </div>
@@ -110,7 +110,7 @@
                                                                 </div>
                                                                 <div class="b-comment__descr">
                                                                     <div class="b-comment__descr__data">
-                                                                        <div class="b-comment__descr__name f-comment__descr__name f-primary-b">{{ $c->bloguser['user_name'] }}</div>
+                                                                        <div class="b-comment__descr__name f-comment__descr__name f-primary-b">{{ $c->user['name'] }}</div>
                                                                         <div class="b-comment__descr__info f-comment__descr__info">
                                                                             <span class="f-comment__date">{{ $c->created_at }}</span>
                                                                         </div>
@@ -133,7 +133,7 @@
                                                                                     </div>
                                                                                     <div class="b-comment__descr">
                                                                                         <div class="b-comment__descr__data">
-                                                                                            <div class="b-comment__descr__name f-comment__descr__name f-primary-b">{{ $cr->bloguser['user_name'] }}</div>
+                                                                                            <div class="b-comment__descr__name f-comment__descr__name f-primary-b">{{ $cr->user['name'] }}</div>
                                                                                             <div class="b-comment__descr__info f-comment__descr__info">
                                                                                                 <span class="f-comment__date">20:30 PM - 15 November, 2013</span> <i class="b-comment__infp__slash"></i>
                                                                                             </div>

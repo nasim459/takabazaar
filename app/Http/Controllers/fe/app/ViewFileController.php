@@ -266,7 +266,7 @@ class ViewFileController extends Controller
 
         $file_open = 'fe.blog.blog_public_details';
         $data_view = Blog::orderBy('blog_hit_count', 'DESC')->where('blog_status', 1)->where('blog_control', 1)->limit(9)->get();
-        $data_view_one = Blog::with(['bloguser', 'category', 'comments'])->where('id', $id)->where('blog_status', 1)->get();
+        $data_view_one = Blog::with(['user', 'category', 'comments'])->where('id', $id)->where('blog_status', 1)->get();
         $data_comment = Comment::all();
 
         //dd($data_rough);
