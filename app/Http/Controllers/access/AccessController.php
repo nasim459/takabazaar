@@ -10,11 +10,6 @@ use Illuminate\Support\Facades\Auth;
 
 class AccessController extends Controller
 {
-    public function __construct()
-    {
-        parent::__construct();
-        //$this->middleware('guest', ['except' => ['logout', 'post-sign-in']]);
-    }
     /**
      * do login.
      * @request param
