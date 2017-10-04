@@ -53,7 +53,15 @@
         </div>
         <div class="container">
             <div class="l-inner-page-container">
-                <div class="row" data-ng-app="" data-ng-init="p=2; year=2">
+                <div class="row">
+
+                    <div class="col-sm-12 col-md-12 b-item-apartment-block" style="text-align: center">
+                        @foreach($advertise_image as $v)
+                            @if(isset($v->add_name))
+                                <a href="{{$v->add_link}}" target="_blank"><img src="{{ asset('ap/images/advertise/'.$v->add_image_url) }}" border="0" width="728" height="90" alt="pic"></a>
+                            @endif
+                        @endforeach
+                    </div>
 
                     <div class="col-sm-12 col-md-12 b-item-apartment-block">
                         <div class="b-some-examples__item f-some-examples__item">

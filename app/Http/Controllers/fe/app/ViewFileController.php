@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\fe\app;
 
+use App\model\advertise\Advertise;
 use App\Model\bank\Bank;
 use App\Model\blog\Blog;
 use App\Model\blog\Categories;
@@ -90,86 +91,103 @@ class ViewFileController extends Controller
                 $file_open = 'fe.loan.loan_home';
                 Session::put('person', 'S_p');    //----s_p meand Salaried_Person
                 $header_image = Headerimage::where('header_image_type', 1)->get();    //----header_image_type = 1 means home_loan
+                $advertise_image = Advertise::where('add_type', 1)->where('add_status', 1)->get();    //----add_type = 1 means home_loan
 
                 break;
             case "loan-car":
                 $file_open = 'fe.loan.loan_car';
                 $header_image = Headerimage::where('header_image_type', 2)->get();    //----header_image_type = 2 means car_loan
+                $advertise_image = Advertise::where('add_type', 2)->where('add_status', 1)->get();    //----add_type = 1 means car_loan
 
                 break;
             case "loan-personal":
                 $file_open = 'fe.loan.loan_personal';
                 $header_image = Headerimage::where('header_image_type', 3)->get();    //----header_image_type = 3 means person_loan
+                $advertise_image = Advertise::where('add_type', 3)->where('add_status', 1)->get();    //----add_type = 1 means person_loan
 
                 break;
             case "loan-sme":
                 $file_open = 'fe.loan.loan_sme';
                 $header_image = Headerimage::where('header_image_type', 4)->get();    //----header_image_type = 4 means sme_loan
+                $advertise_image = Advertise::where('add_type', 4)->where('add_status', 1)->get();    //----add_type = 1 means sme_loan
 
                 break;
             case "loan-working-capital":
                 $file_open = 'fe.loan.loan_working_capital';
                 $header_image = Headerimage::where('header_image_type', 5)->get();    //----header_image_type = 5 means working_capital_loan
+                $advertise_image = Advertise::where('add_type', 5)->where('add_status', 1)->get();    //----add_type = 1 means working_capital_loan
 
                 break;
             case "loan-others":
                 $file_open = 'fe.loan.loan_others';
                 $header_image = Headerimage::where('header_image_type', 6)->get();    //----header_image_type = 6 means others_loan
+                $advertise_image = Advertise::where('add_type', 6)->where('add_status', 1)->get();    //----add_type = 1 means others_loan
 
                 break;
             case "investment-saving":
                 $file_open = 'fe.investment.investment_saving';
                 $header_image = Headerimage::where('header_image_type', 7)->get();    //----header_image_type = 7 means investment_saving
+                $advertise_image = Advertise::where('add_type', 7)->where('add_status', 1)->get();    //----add_type = 1 means investment_saving
 
                 break;
             case "investment-fixed":
                 $file_open = 'fe.investment.investment_fixed';
                 $header_image = Headerimage::where('header_image_type', 8)->get();    //----header_image_type = 8 means investment_fixed
+                $advertise_image = Advertise::where('add_type', 8)->where('add_status', 1)->get();    //----add_type = 1 means investment_fixed
 
                 break;
             case "investment-mutual":
                 $file_open = 'fe.investment.investment_mutual';
                 $header_image = Headerimage::where('header_image_type', 9)->get();    //----header_image_type = 9 means investment_mutual
+                $advertise_image = Advertise::where('add_type', 9)->where('add_status', 1)->get();    //----add_type = 1 means investment_mutual
 
                 break;
             case "insurance-life":
                 $file_open = 'fe.insurance.insurance_life';
                 $header_image = Headerimage::where('header_image_type', 10)->get();    //----header_image_type = 10 means sme_loan
+                $advertise_image = Advertise::where('add_type', 10)->where('add_status', 1)->get();    //----add_type = 1 means sme_loan
 
                 break;
             case "insurance-motor-bike":
                 $file_open = 'fe.insurance.insurance_motor_bike';
                 $header_image = Headerimage::where('header_image_type', 11)->get();    //----header_image_type = 11 means insurance_motor_bike
+                $advertise_image = Advertise::where('add_type', 11)->where('add_status', 1)->get();    //----add_type = 1 means insurance_motor_bike
 
                 break;
             case "insurance-motor-car":
                 $file_open = 'fe.insurance.insurance_motor_car';
                 $header_image = Headerimage::where('header_image_type', 12)->get();    //----header_image_type = 12 means insurance_motor_car
+                $advertise_image = Advertise::where('add_type', 12)->where('add_status', 1)->get();    //----add_type = 1 means insurance_motor_car
 
                 break;
             case "insurance-marine":
                 $file_open = 'fe.insurance.insurance_marine';
                 $header_image = Headerimage::where('header_image_type', 13)->get();    //----header_image_type = 13 means insurance_marine
+                $advertise_image = Advertise::where('add_type', 13)->where('add_status', 1)->get();    //----add_type = 1 means insurance_marine
 
                 break;
             case "insurance-fire":
                 $file_open = 'fe.insurance.insurance_fire';
                 $header_image = Headerimage::where('header_image_type', 14)->get();    //----header_image_type = 14 means insurance_fire
+                $advertise_image = Advertise::where('add_type', 14)->where('add_status', 1)->get();    //----add_type = 1 means insurance_fire
 
                 break;
             case "insurance-accident":
                 $file_open = 'fe.insurance.insurance_accident';
                 $header_image = Headerimage::where('header_image_type', 15)->get();    //----header_image_type = 15 means insurance_accident
+                $advertise_image = Advertise::where('add_type', 15)->where('add_status', 1)->get();    //----add_type = 1 means insurance_accident
 
                 break;
             case "card-credit":
                 $file_open = 'fe.card.card_credit';
                 $header_image = Headerimage::where('header_image_type', 16)->get();    //----header_image_type = 16 means card_credit
+                $advertise_image = Advertise::where('add_type', 16)->where('add_status', 1)->get();    //----add_type = 1 means card_credit
 
                 break;
             case "card-debit":
                 $file_open = 'fe.card.card_debit';
                 $header_image = Headerimage::where('header_image_type', 17)->get();    //----header_image_type = 17 means card_debit
+                $advertise_image = Advertise::where('add_type', 17)->where('add_status', 1)->get();    //----add_type = 1 means card_debit
 
                 break;
             default:
@@ -182,7 +200,7 @@ class ViewFileController extends Controller
         //Session::put('count', $count);
 
         //$open_file = view($file_open);
-        $open_file = view($file_open, compact('blog_view_4', 'blog_view_8', 'video_view', 'header_image'));
+        $open_file = view($file_open, compact('blog_view_4', 'blog_view_8', 'video_view', 'header_image', 'advertise_image'));
         return view('fe_master')->with('fe_maincontent', $open_file);
     }
 
