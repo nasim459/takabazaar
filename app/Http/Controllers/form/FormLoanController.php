@@ -94,7 +94,7 @@ class FormLoanController extends Controller
         $loan['bank_id'] = $request->bank_id;
         DB::table('loans')->insert($loan);
         Session::put('insert_suc', 'Data Inserted Successfully!');
-        return redirect('form-loan');
+        return redirect()->back();
         //----End_EMI_Data_Insert-------------------------------------------------------------------
     }
 
