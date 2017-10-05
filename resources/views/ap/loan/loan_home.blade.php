@@ -159,25 +159,25 @@
                                                     <div class="col-sm-4">
                                                         <select class="form-control" name="l_type" required>
                                                             @if($v->loan_type == 1) {
-                                                            <option value="1">SME</option>
+                                                            <option value="1">SME Loan</option>
                                                             }@elseif($v->loan_type ==2){
-                                                            <option value="2">Car</option>
+                                                            <option value="2">Car Loan</option>
                                                             }@elseif($v->loan_type ==3){
-                                                            <option value="3">Home</option>
+                                                            <option value="3">Home Loan</option>
                                                             }@elseif($v->loan_type ==4){
-                                                            <option value="4">Personal</option>
+                                                            <option value="4">Personal Loan</option>
                                                             }@elseif($v->loan_type ==5){
-                                                            <option value="5">Others</option>
+                                                            <option value="5">Others Loan</option>
                                                             }@elseif($v->loan_type ==6){
                                                             <option value="6">Working Capital</option>
                                                             }
                                                             @endif
 
-                                                            <option value="1">SME</option>
-                                                            <option value="2">Car</option>
-                                                            <option value="3">Home</option>
-                                                            <option value="4">Personal</option>
-                                                            <option value="5">Others</option>
+                                                            <option value="1">SME Loan</option>
+                                                            <option value="2">Car Loan</option>
+                                                            <option value="3">Home Loan</option>
+                                                            <option value="4">Personal Loan</option>
+                                                            <option value="5">Others Loan</option>
                                                             <option value="6">Working Capital</option>
                                                         </select>
                                                     </div>
@@ -302,11 +302,12 @@
                                         <div class="col-md-12 f-s-14 f-f-s">
 
 
-                                            {!! Form::open(array('url'=>'image-update-child', 'role'=>'form', 'method'=>'POST', 'files'=>'true')) !!}
+                                            {!! Form::open(array('url'=>'form-loan-save', 'role'=>'form', 'method'=>'POST', 'files'=>'true')) !!}
                                             <div class="form-horizontal">
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                 <input type="hidden" name="id" value="{{ $v->id }}">
                                                 <input type="hidden" name="t_id" value="33">
+                                                <input type="hidden" name="u_data" value="update_value">
 
                                                 <div class="form-group">
                                                     <label for="exampleInputName2" class="col-sm-4 control-label m-t-20">Image :</label>
