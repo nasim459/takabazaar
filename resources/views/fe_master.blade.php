@@ -62,15 +62,15 @@
                 <div class="b-option-total-cart__goods">
                     <a href="#" class="f-option-total-cart__numbers b-option-total-cart__numbers"><i class="fa fa-lock"></i>Login &nbsp;</a>
                     <div class="b-option-cart__items">
-                        {!! Form::open(array('url'=>'define', 'role'=>'form', 'method'=>'POST')) !!}
+                        {!! Form::open(array('url'=>'/postSignIn-for-user', 'role'=>'form', 'method'=>'POST')) !!}
                         <div class="m-t-10">
                             <div class="form-group">
                                 <label for="email">Email Address:</label>
-                                <input type="email" class="form-control" id="email" placeholder="example@ralitsoft.com">
+                                <input type="email" name="email" class="form-control" id="email" placeholder="example@ralitsoft.com">
                             </div>
                             <div class="form-group">
                                 <label for="email">Password:</label>
-                                <input type="password" class="form-control" id="username" placeholder="Write password">
+                                <input type="password" name="password" class="form-control" id="username" placeholder="Write password">
                             </div>
 
                             <button type="submit" class="btn btn-success btn-sm">Login</button>
@@ -302,9 +302,23 @@
 
         });
 
-    })
-</script>
+    });
 
+
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/59d66089c28eca75e462450b/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
+</script>
+<!--End of Tawk.to Script-->
 
 <script src="{{URL::asset('ap/ckeditor/ckeditor.js')}}"></script>
 <script src="{{URL::asset('fe/angular/js/angular.js')}}"></script>

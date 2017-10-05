@@ -64,16 +64,16 @@
                                     <div class="col-md-8 well">
                                         <dl class="dl-horizontal">
                                             <dt>Name :</dt>
-                                            <dd>Nasim Ralit Soft</dd>
+                                            <dd>{{Auth::user()->name}}</dd>
                                             <dt>Email Address :</dt>
-                                            <dd>ralitsoft@gmail.com</dd>
+                                            <dd>{{Auth::user()->email}}</dd>
                                         </dl>
                                         <br>
                                         <a data-toggle="modal" data-target="#infoUpdate" class="btn btn-default btn-sm m-t-5 pull-right"><i class="fa fa-edit"> Edit</i></a>
                                     </div>
                                     <div class="col-md-3">
                                         {{--<img src="{{ url('fe/img/blog_users/nasim.jpg') }}" class="img-thumbnail" alt="Cinque Terre" height="150">--}}
-                                        <img src="{{ url('fe/img/blog_users/img_blank.jpg') }}" class="img-thumbnail" alt="Cinque Terre" height="150">
+                                        <img src="/{{ Auth::user()->user_image}}" class="img-thumbnail" alt="{{ Auth::user()->user_image}}" height="150">
                                         <br>
                                         <a data-toggle="modal" data-target="#personPic" class="btn btn-default btn-sm m-t-5"><i class="fa fa-edit"> Picture Edit</i></a>
                                     </div>

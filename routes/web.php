@@ -8,7 +8,7 @@
 
 //----Login Panel
 //Route::get('form', 'HomeController@form_people');
-Route::get('login', 'HomeController@login_people')->name('login');
+Route::get('login', 'HomeController@login_people');
 
 ################################################
 ########### Auth check Start       #############
@@ -110,6 +110,24 @@ Route::group(['middleware' => ['web', 'auth', 'roles'], 'roles' => ['Admin']],
 ################################################
 ########### End Auth check         #############
 ################################################
+Route::group(['middleware' => ['web', 'auth', 'roles'], 'roles' => ['Admin', 'blog-user']],
+    function () {
+
+        Route::get('blog-user-profile', 'fe\app\ViewFileController@view_file_blog');
+
+    });
+
+
+
+###########################################################
+########### End Auth check for both user      #############
+###########################################################
+
+
+
+
+
+
 
 
 //=====================================Start Front_End Route===========================================
@@ -121,7 +139,7 @@ Route::get('card-credit-api', 'fe\app\ViewFileController@view_file');
 Route::get('card-debit-api', 'fe\app\ViewFileController@view_file');
 //----end api development
 
-Route::get('', 'fe\app\ViewFileController@view_file');
+Route::get('', 'fe\app\ViewFileController@view_file')->name('login');
 Route::get('loan', 'fe\app\ViewFileController@view_file');
 Route::get('investment', 'fe\app\ViewFileController@view_file');
 Route::get('insurance', 'fe\app\ViewFileController@view_file');
@@ -157,7 +175,6 @@ Route::get('blog-details/{id}/{blog_title}', 'fe\app\ViewFileController@view_fil
 Route::post('blog-user-comment-replay', 'fe\app\blog\BlogUserCommentReplayController@blog_user_comment_replay');
 Route::get('blog-category-view/{id}/{category_name}', 'fe\app\ViewFileController@view_file_category');
 Route::post('blog-user-insert', 'fe\app\blog\BlogUserController@blog_user_insert');
-Route::get('blog-user-profile', 'fe\app\ViewFileController@view_file_blog');
 Route::post('blog-user-post-insert', 'fe\app\blog\BlogUserPostController@blog_user_post_insert');
 
 //----user working
@@ -183,6 +200,11 @@ Route::get('get-ip-details', function () {
 Route::post('/post-sign-in', [
     'as' => 'postSignIn',
     'uses' => 'access\AccessController@postSignIn'
+]);
+
+Route::post('/postSignIn-for-user', [
+    'as' => 'postSignIn4BlogUserPopUp',
+    'uses' => 'access\AccessController@postSignIn4BlogUserPopUp'
 ]);
 
 Route::get('/logout', [

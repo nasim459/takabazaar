@@ -4,8 +4,7 @@
         <div class="container">
 
         <h2 class="f-center f-primary-b" style="text-transform: capitalize">
-            <i class="fa text-success">{{ Session::get('fe_error_msg') }} {{ Session::put('msg_suc', '') }}</i>
-            <i class="fa text-danger">{{ Session::get('fe_error_msg') }} {{ Session::put('msg_error', '') }}</i>
+            <i class="fa text-danger">{{ Session::get('fe_error_msg') }} {{ Session::put('fe_error_msg', '') }}</i>
         </h2>
         <h2 class="f-center f-primary-b" style="text-transform: capitalize">I am searchaing for</h2>
             {{--<p class="b-desc-section f-desc-section f-center f-primary-l">Etiam consectetur pellentesque justo. Sed tristique bibendum elit non molestie. Donec et libero rutrum</p>--}}
