@@ -143,7 +143,7 @@
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                                                 <input type="hidden" name="l_id" value="{{ $v->id }}">
-                                                <input type="text" name="b_id" value="{{ $v->bank['id'] }}">
+                                                <input type="text" name="bank_id" value="{{ $v->bank['id'] }}">
                                                 <input type="hidden" name="u_data" value="update_value">
 
                                                 <div class="form-group">
