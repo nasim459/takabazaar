@@ -18,7 +18,7 @@
                     <i class="fa text-success-light">{{ Session::get('msg') }}{{ Session::put('msg', '') }}</i>
                 </div>
                 <div class="col-md-3 text-right m-t-10">
-                    <a class="btn btn-default btn-xs text-success width-100" title="Create A Blog For Publishing"><i class="fa fa-user"> <b>{{Session::get('count')}}</b> Users</i></a>
+                    <a class="btn btn-default btn-xs text-success width-100" title="Create A Blog For Publishing"><i class="fa fa-user"> {{Session::get('count')}} Users</i></a>
                 </div>
             </div>
 
@@ -43,14 +43,14 @@
                         </td>
                         <td class="col-xs-12 col-sm-2">
                             <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}kkk">
-                                <img src="{{ asset($v->user_image) }}" height="16px" width="30px">
+                                <img src="{{ asset('fe/img/blog_pic/'.$v->user_image) }}" height="16px" width="30px">
                             </a>
                         </td>
-                        <td class="col-xs-12 col-sm-2" title="{{$v->user_name}}">
-                            {{$v->user_name}}
+                        <td class="col-xs-12 col-sm-2" title="{{$v->name}}">
+                            {{$v->name}}
                         </td>
                         <td class="col-xs-12 col-sm-2">
-                            {{$v->user_email}}
+                            {{$v->email}}
                         </td>
                         <td class="col-xs-12 col-sm-2">
                             {{$v->updated_at}}
@@ -83,12 +83,12 @@
                                                 <div class="form-group">
                                                     <div class="col-sm-4 text-center m-t-30">
                                                         <i class="fa">
-                                                            {{ $v->user_name }}<br>
-                                                            {{ $v->user_email }}
+                                                            {{ $v->name }}<br>
+                                                            {{ $v->email }}
                                                         </i>
                                                     </div>
                                                     <div class="col-sm-6">
-                                                        <img src="{{ asset($v->user_image) }}" class="img-thumbnail" alt="ব্যবহারকারীর ছবি তাড়াতাড়ি আসতেছে" width="304" height="236">
+                                                        <img src="{{ asset('fe/img/blog_pic/'.$v->user_image) }}" class="img-thumbnail" alt="ব্যবহারকারীর ছবি তাড়াতাড়ি আসতেছে" width="304" height="236">
                                                     </div>
                                                 </div>
                                             </div>

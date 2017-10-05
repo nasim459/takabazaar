@@ -19,7 +19,7 @@ class BlogUserCommentReplayController extends Controller
 
         $name = $request->name;
         $email = $request->email;
-        $password = $request->password;
+        $password = bcrypt($request->password);
         $comment = $request->comment;
         $blog_id = $request->id;
 
@@ -40,10 +40,10 @@ class BlogUserCommentReplayController extends Controller
         //----End form validation
 
         $save = array();
-        $save['user_name'] = $name;
-        $save['user_email'] = $email;
-        $save['user_pass'] = $password;
-        $bloguser_insertGetId = DB::table('blogusers')->insertGetId($save);
+        $save['name'] = $name;
+        $save['email'] = $email;
+        $save['password'] = $password;
+        $bloguser_insertGetId = DB::table('users')->insertGetId($save);
 
         if($first_user == 'first_user')
         {
@@ -51,7 +51,7 @@ class BlogUserCommentReplayController extends Controller
             $save = array();
             $save['comment_desc'] = $comment;
             $save['blog_id'] = $blog_id;
-            $save['bloguser_id'] = $bloguser_insertGetId;
+            $save['user_id'] = $bloguser_insertGetId;
             DB::table('comments')->insertGetId($save);
             //----end comment area
 
@@ -60,7 +60,7 @@ class BlogUserCommentReplayController extends Controller
             $save = array();
             $save['comment_replay_desc'] = $comment;
             $save['blog_id'] = $blog_id;
-            $save['bloguser_id'] = $bloguser_insertGetId;
+            $save['user_id'] = $bloguser_insertGetId;
             $save['comment_id'] = $comment_id;
             DB::table('commentreplaies')->insertGetId($save);
             //----end replsy area

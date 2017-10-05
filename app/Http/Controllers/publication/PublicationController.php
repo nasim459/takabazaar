@@ -88,7 +88,7 @@ class PublicationController extends Controller
                 $redirect = $previous_url;
                 break;
             case "888":
-                $table_name = 'blogusers';
+                $table_name = 'users';
                 $publication_status = 'status';
                 $redirect = $previous_url;
                 break;

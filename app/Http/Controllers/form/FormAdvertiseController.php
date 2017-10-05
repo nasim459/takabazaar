@@ -17,6 +17,21 @@ class FormAdvertiseController extends Controller
         //dd($request->all());
         $previous_url = url()->previous();
 
+        //------start_date_update
+        $data_ud = $request->data_ud;
+        if($data_ud == 'data_ud_date') {
+            $id = $request->l_id;
+            $change = array();
+            $change['add_start_date'] = $request->s_date;
+            $change['add_end_date'] = $request->e_date;
+            DB::table('advertises')->where('id', $id)->update($change);
+
+            Session::put('msg_suc', 'Date Updated Successfully!');
+            return redirect('advertise');
+        }
+        //------end_date_update
+
+
         //------start_information_update
         $data_ud = $request->data_ud;
         if($data_ud == 'data_ud') {
@@ -52,7 +67,7 @@ class FormAdvertiseController extends Controller
                 $save['add_name'] = $request->a_name;
                 $save['add_type'] = $request->a_type;
                 $save['add_desc'] = $request->a_desc;
-                $save['add_image_url'] = $image_url;
+                $save['add_image_url'] = $image_full_name;
                 $save['add_link'] = $request->a_link;
                 $save['add_company_name'] = $request->a_company_name;
                 DB::table('advertises')->insert($save);

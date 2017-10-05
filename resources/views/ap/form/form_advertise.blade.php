@@ -40,13 +40,27 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleInputName2" class="col-sm-4 control-label">Type:</label>
+                        <label for="exampleInputName2" class="col-sm-4 control-label">Page Area:</label>
                         <div class="col-sm-6">
                             <select class="form-control" name="a_type" required>
                                 <option value="">Select Type</option>
-                                <option value="1">Salaried</option>
-                                <option value="2">Personal</option>
-                                <option value="3">Bisiness</option>
+                                <option value="1" class="text-success">Home Loan</option>
+                                <option value="2" class="text-success">Car Loan</option>
+                                <option value="3" class="text-success">Personal Loan</option>
+                                <option value="4" class="text-success">SME Loan</option>
+                                <option value="5" class="text-success">Work Capital Loan</option>
+                                <option value="6" class="text-success">Other's Loan</option>
+                                <option value="7" class="text-danger">Saving Account</option>
+                                <option value="8" class="text-danger">Fixed Account</option>
+                                <option value="9" class="text-danger">Mutual Account</option>
+                                <option value="10" class="text-warning">Life Insureance</option>
+                                <option value="11" class="text-warning">Bike Insureance</option>
+                                <option value="12" class="text-warning">Car Insureance</option>
+                                <option value="13" class="text-warning">Marine Insureance</option>
+                                <option value="14" class="text-warning">Fire Insureance</option>
+                                <option value="15" class="text-warning">Accident Insureance</option>
+                                <option value="16" class="text-primary">Credit Card</option>
+                                <option value="17" class="text-primary">Debit Card</option>
                             </select>
                         </div>
                     </div>
@@ -76,7 +90,7 @@
 
                     <div class="form-group">
                         <div class="col-sm-offset-4 col-sm-10">
-                            <input type="submit" value="Update" class="btn btn-success col-sm-4">
+                            <input type="submit" value="Save" class="btn btn-success col-sm-4">
                         </div>
                     </div>
                 </div>

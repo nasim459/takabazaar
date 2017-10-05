@@ -107,6 +107,7 @@ echo '<pre>';
             print_r($loan_count);
 
             echo '----'.'<br>';
+
             $keys = array_keys($loan);
             foreach ($keys as $key) {
                 echo $loan_id_rating[$key] = $loan[$key]/$loan_count[$key].'<br>';

@@ -7,7 +7,7 @@
             <div class="table-h-t">
                 <div class="col-md-3 m-t-5">
                     <div class="form-group">
-                        <input type="text" value="Blog User" readonly class="form-control" placeholder="Search here...">
+                        <input type="text" value="Team Member" readonly class="form-control" placeholder="Search here...">
                     </div>
                 </div>
                 <div class="col-md-3 m-t-10 text-success">
@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-md-3 m-t-10">
                     <i class="fa text-danger-light">{{ Session::get('msg_error') }}{{ Session::put('msg_error', '') }}</i>
-                    <i class="fa text-success-light">{{ Session::get('msg') }}{{ Session::put('msg', '') }}</i>
+                    <i class="fa text-success-light">{{ Session::get('msg_suc') }}{{ Session::put('msg_suc', '') }}</i>
                 </div>
                 <div class="col-md-3 text-right m-t-10">
                     <a data-toggle="modal" data-target="#aboutTeam" class="btn btn-default btn-xs text-success width-100" title="Create A Member"><i class="fa fa-plus"> Add Member</i></a>
@@ -43,7 +43,7 @@
                         </td>
                         <td class="col-xs-12 col-sm-2">
                             <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}kkk">
-                                <img src="{{ asset($v->about_image) }}" height="16px" width="30px">
+                                <img src="{{ asset('ap/images/about_img/'.$v->about_image) }}" height="16px" width="30px">
                             </a>
                         </td>
                         <td class="col-xs-12 col-sm-3" title="{{$v->about_name}}">
@@ -89,14 +89,14 @@
                                                 <div class="form-group">
                                                     <label class="col-sm-4" style="text-align: right;" for="usr">Full Name:</label>
                                                     <div class="col-sm-6">
-                                                        <input type="text" name="name" class="form-control" id="usr" placeholder="Write full name..." required>
+                                                        <input type="text" name="name" class="form-control" id="usr" placeholder="Name less than 28 character" required>
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label class="col-sm-4" style="text-align: right;" for="usr">Designation :</label>
                                                     <div class="col-sm-6">
-                                                        <input type="text" name="designation" class="form-control" id="usr" placeholder="Write category name..." required>
+                                                        <input type="text" name="designation" class="form-control" id="usr" placeholder="Designation less than 28 character" required>
                                                     </div>
                                                 </div>
 
@@ -171,12 +171,12 @@
                                             <div class="form-horizontal">
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                 <input type="hidden" name="id" value="{{ $v->id }}">
-                                                <input type="hidden" name="t_id" value="22">
+                                                <input type="hidden" name="t_id" value="111">
 
                                                 <div class="form-group">
                                                     <label for="exampleInputName2" class="col-sm-4 control-label m-t-20">Image :</label>
                                                     <div class="col-sm-6">
-                                                        <img src="{{ asset($v->about_image) }}" class="img-thumbnail" height="70px" width="110px" alt="pic">
+                                                        <img src="{{ asset('ap/images/about_img/'.$v->about_image) }}" class="img-thumbnail" height="70px" width="110px" alt="pic">
                                                     </div>
                                                 </div>
                                                 <hr>

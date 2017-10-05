@@ -18,7 +18,7 @@
                     <i class="fa text-success-light">{{ Session::get('msg') }}{{ Session::put('msg', '') }}</i>
                 </div>
                 <div class="col-md-3 text-right m-t-10">
-                    <a data-toggle="modal" data-target="#aboutTeam" class="btn btn-default btn-xs text-success width-100" title="Create A Member"><i class="fa fa-plus"> Add Member</i></a>
+                    <a class="btn btn-default btn-xs text-success width-100" title="{{Session::get('count')}} Message"><i class="fa fa-hand-o-right"> {{Session::get('count')}} Message</i></a>
                 </div>
             </div>
 
@@ -45,13 +45,13 @@
                             {{str_limit($v->contact_name, 25, '...')}}
                         </td>
                         <td class="col-xs-12 col-sm-2" title="{{$v->about_name}}">
-                            {{str_limit($v->contact_title, 25, '...')}}
+                            {{str_limit($v->contact_title, 20, '...')}}
                         </td>
                         <td class="col-xs-12 col-sm-2">
                             {{str_limit($v->contact_email, 25, '...')}}
                         </td>
                         <td class="col-xs-12 col-sm-3">
-                            {{str_limit($v->contact_message, 30, '...')}}
+                            {{str_limit($v->contact_message, 20, '...')}}
                             <i data-toggle="modal" data-target="#{{$v->id}}p" class="fa" title="Click To Details">details</i>
                         </td>
                         <td class="col-xs-12 col-sm-2">

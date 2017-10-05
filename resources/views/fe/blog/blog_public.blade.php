@@ -107,8 +107,8 @@
                                 </div>
                                 <div class="b-blog-preview__content b-diagonal-line-bg-light">
                                     <div class="b-blog-preview__content-padding_box" style="height: 210px;">
-                                        <p class="f-blog-preview__content-title f-primary-b"><a href="blog_detail_right_slidebar.html">{{ str_limit($v->blog_title, 45, ' ...') }}</a></p>
-                                        <p class="f-blog-preview__content-date f-primary-it">{{$v->updated_at}}</p>
+                                        <p class="f-blog-preview__content-title f-primary-b"><a href="{{URL::to('blog-details/'.$v->id.'/'.$v->blog_title)}}">{{ str_limit($v->blog_title, 45, ' ...') }}</a></p>
+                                        <p class="f-blog-preview__content-date f-primary-it">{{$v->updated_at}} <i class="pull-right">{{$v->blog_hit_count}} views</i></p>
                                         <p class="b-blog-preview__content-text f-blog-preview__content-text">{!! str_limit($v->blog_short_desc, 115, ' ...') !!}</p>
                                     </div>
                                     <div class="b-footer-mini b-alternative-bg">

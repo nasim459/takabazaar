@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class CheckRole
 {
@@ -19,10 +20,11 @@ class CheckRole
         $roles = $this->getRequiredRoleForRoute($request->route());
         // Check if a role is required for the route, and
         // if so, ensure that the user has that role.
-        if ($request->user()->hasRole($roles) || !$roles) {
+        $authUser = Auth::user();
+        if ($authUser->hasRole($roles) || !$roles) {
             return $next($request);
         }
-        return view('errors.503');
+        return abort(503);//redirect('/');//'errors.503');
     }
 
     private function getRequiredRoleForRoute($route)

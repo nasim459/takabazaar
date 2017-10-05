@@ -20,19 +20,23 @@ class BlogUserController extends Controller
         switch($insert_save){
             case "insert_save":
                 $save = array();
-                $save['user_name'] = $request->name;
-                $save['user_email'] = $request->email;
-                $save['user_pass'] = bcrypt($request->pass);
-                DB::table('blogusers')->insert($save);
+
+                $save['name'] = $request->name;
+                $save['email'] = $request->email;
+                $save['role_id'] = 2;
+                $save['password'] = bcrypt($request->pass);
+                DB::table('users')->insert($save);
 
                 //Session::put('msg', 'Registration Inserted Successfully!!!');
                 return redirect('/');
 
                 break;
             default:
+
                 /*DB::table('categories')
                     ->where('id', $request->c_id)
                     ->update(['category_name' => $category_name]);*/
+
                 Session::put('msg', 'Category Updated Successfully!!!');
                 return redirect('blog-category');
         }

@@ -43,7 +43,7 @@ class BlogUserPostController extends Controller
                 $save['blog_long_desc'] = $blog_long_desc;
                 $save['blog_author_name'] = $blog_author_name;
                 $save['blog_image'] = $image_full_name;
-                $save['bloguser_id'] = $user_id;
+                $save['user_id'] = $user_id;
                 //$save['category_id'] = $category_id;
 
                 if($insert_update == 'insert_update'){
@@ -68,7 +68,7 @@ class BlogUserPostController extends Controller
             $save['blog_short_desc'] = $blog_short_desc;
             $save['blog_long_desc'] = $blog_long_desc;
             $save['blog_author_name'] = $blog_author_name;
-            $save['bloguser_id'] = $user_id;
+            $save['user_id'] = $user_id;
             //$save['category_id'] = $category_id;
 
             if($insert_update == 'insert_update'){
