@@ -2,14 +2,16 @@
 <html ng-app="nasFeApp">
 <head>
     <meta charset="utf-8">
-    <title>FinFObd</title>
+    <title>FiNFOBD</title>
     <link rel="shortcut icon" href="{{ asset('fe/img/logo.ico') }}" type="image/x-icon">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
     <!-- bxslider -->
     <link type="text/css" rel='stylesheet' href="{{URL::asset('fe/js/bxslider/jquery.bxslider.css')}}">
     <!-- End bxslider -->
+
     <!-- flexslider -->
     <link type="text/css" rel='stylesheet' href="{{URL::asset('fe/js/flexslider/flexslider.css')}}">
     <!-- End flexslider -->
@@ -52,9 +54,9 @@
     <div class="b-top-options-panel">
         <div class="container">
             <div class="b-option-contacts f-option-contacts">
-                <a href="mailto:frexystudio@gmail.com"><i class="fa fa-envelope-o"></i> info@ralitSoft.com</a>
-                <a href="#"><i class="fa fa-phone"></i> 01 777 888 757 </a>
-                <a href="#"><i class="fa fa-skype"></i> ralitsoft</a>
+                <a href="https://mail.google.com" target="_blank"><i class="fa fa-envelope-o"></i> info@finfobd.com</a>
+                <a href="#"><i class="fa fa-phone"></i> 01846 177 831 </a>
+                <a href="#"><i class="fa fa-skype"></i> finfobd</a>
             </div>
             <div class="b-option-total-cart">
                 <div class="b-option-total-cart__goods">

@@ -12,8 +12,9 @@ class FormLoanController extends Controller
 {
     //----Form Loan Information(form-loan-save loan_form_save)
     public function loan_form_save(Request $request) {
-        $all = $request->all();
-        //dd($all);
+
+        //dd($request->all());
+        $u_data = $request->u_data;
 
         $rate_from = $request->f_rate_from;
         $rate_to = $request->f_rate_to;
@@ -92,9 +93,19 @@ class FormLoanController extends Controller
         $loan['loan_requirements'] = $request->l_req;
         $loan['loan_eligibility'] = $request->l_elig;
         $loan['bank_id'] = $request->bank_id;
-        DB::table('loans')->insert($loan);
-        Session::put('insert_suc', 'Data Inserted Successfully!');
-        return redirect('form-loan');
+
+
+        if($u_data == 'update_value')
+        {
+            DB::table('loans')->where('id', $request->l_id)->update($loan);
+            $previous_url = url()->previous();
+            Session::put('insert_suc', 'Data Updated Successfully!');
+            return redirect()->back();
+        } else {
+            DB::table('loans')->insert($loan);
+            Session::put('insert_suc', 'Data Inserted Successfully!');
+            return redirect()->back();
+        }
         //----End_EMI_Data_Insert-------------------------------------------------------------------
     }
 
@@ -106,13 +117,13 @@ class FormLoanController extends Controller
         $loan = array();
         $loan['loan_type'] = $request->l_type;
         $loan['loan_person_type'] = $request->l_person;
-        $loan['loan_amount'] = $request->l_amount;
-        $loan['loan_period'] = $request->l_period;
-        $loan['loan_interest_rate'] = $request->l_interest_rate;
-        $loan['loan_monthly_interest'] = 930;
-        $loan['loan_interest_payable'] = 4525;
-        $loan['loan_flating_rate_form'] = $request->f_rate_from;
-        $loan['loan_flating_rate_to'] = $request->f_rate_to;
+        //$loan['loan_amount'] = $request->l_amount;
+        //$loan['loan_period'] = $request->l_period;
+        //$loan['loan_interest_rate'] = $request->l_interest_rate;
+        //$loan['loan_monthly_interest'] = 930;
+        //$loan['loan_interest_payable'] = 4525;
+        //$loan['loan_flating_rate_form'] = $request->f_rate_from;
+        //$loan['loan_flating_rate_to'] = $request->f_rate_to;
         $loan['loan_features_bfenefits'] = $request->l_fsr;
         $loan['loan_requirements'] = $request->l_req;
         $loan['loan_eligibility'] = $request->l_elig;
