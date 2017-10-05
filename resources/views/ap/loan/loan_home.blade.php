@@ -138,12 +138,13 @@
                                     <div class="col-md-12">
                                         <div class="col-md-12 f-s-14 f-f-s">
 
-                                            {!! Form::open(array('url'=>'form-loan-update', 'role'=>'form', 'method'=>'POST')) !!}
+                                            {!! Form::open(array('url'=>'form-loan-save', 'role'=>'form', 'method'=>'POST')) !!}
                                             <div class="form-horizontal">
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                                                 <input type="hidden" name="l_id" value="{{ $v->id }}">
-                                                <input type="hidden" name="b_id" value="{{ $v->bank_id }}">
+                                                <input type="text" name="b_id" value="{{ $v->bank_id }}">
+                                                <input type="hidden" name="u_data" value="update_value">
 
                                                 <div class="form-group">
                                                     <div class="col-sm-4">
@@ -302,12 +303,11 @@
                                         <div class="col-md-12 f-s-14 f-f-s">
 
 
-                                            {!! Form::open(array('url'=>'form-loan-save', 'role'=>'form', 'method'=>'POST', 'files'=>'true')) !!}
+                                            {!! Form::open(array('url'=>'image-update-child', 'role'=>'form', 'method'=>'POST', 'files'=>'true')) !!}
                                             <div class="form-horizontal">
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                 <input type="hidden" name="id" value="{{ $v->id }}">
                                                 <input type="hidden" name="t_id" value="33">
-                                                <input type="hidden" name="u_data" value="update_value">
 
                                                 <div class="form-group">
                                                     <label for="exampleInputName2" class="col-sm-4 control-label m-t-20">Image :</label>

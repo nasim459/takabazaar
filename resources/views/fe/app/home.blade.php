@@ -3,7 +3,11 @@
     <section class="b-desc-section-container b-diagonal-line-bg-light">
         <div class="container">
 
-            <h2 class="f-center f-primary-b" style="text-transform: capitalize">I am searchaing for</h2>
+        <h2 class="f-center f-primary-b" style="text-transform: capitalize">
+            <i class="fa text-success">{{ Session::get('msg_suc') }} {{ Session::put('msg_suc', '') }}</i>
+            <i class="fa text-danger">{{ Session::get('msg_error') }} {{ Session::put('msg_error', '') }}</i>
+        </h2>
+        <h2 class="f-center f-primary-b" style="text-transform: capitalize">I am searchaing for</h2>
             {{--<p class="b-desc-section f-desc-section f-center f-primary-l">Etiam consectetur pellentesque justo. Sed tristique bibendum elit non molestie. Donec et libero rutrum</p>--}}
             <div class="b-hr-stars f-hr-stars">
                 <div class="b-hr-stars__group">

@@ -12,8 +12,8 @@ class FormLoanController extends Controller
 {
     //----Form Loan Information(form-loan-save loan_form_save)
     public function loan_form_save(Request $request) {
-        $all = $request->all();
-        //dd($all);
+
+        //dd($request->all());
         $u_data = $request->u_data;
 
         $rate_from = $request->f_rate_from;
