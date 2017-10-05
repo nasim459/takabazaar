@@ -46,16 +46,16 @@
                 <div class="col-xs-12 b-footer-logo-text f-footer-logo-text">
                     <p><b>finFObd</b><br>Reliable Adequate Leading Information Technology</p>
                     <div class="b-btn-group-hor f-btn-group-hor">
-                        <a href="#" class="b-btn-group-hor__item f-btn-group-hor__item" title="Facebook">
+                        <a href="https://www.facebook.com" target="_blank" class="b-btn-group-hor__item f-btn-group-hor__item" title="Facebook">
                             <i class="fa fa-facebook"></i>
                         </a>
-                        <a href="#" class="b-btn-group-hor__item f-btn-group-hor__item" title="Youtube">
+                        <a href="https://www.youtube.com" target="_blank" class="b-btn-group-hor__item f-btn-group-hor__item" title="Youtube">
                             <i class="fa fa-youtube"></i>
                         </a>
-                        <a href="#" class="b-btn-group-hor__item f-btn-group-hor__item" title="Whatsapp">
+                        <a href="https://web.whatsapp.com/" class="b-btn-group-hor__item f-btn-group-hor__item" target="_blank" title="Whatsapp">
                             <i class="fa fa-phone-square"></i>
                         </a>
-                        <a href="#" class="b-btn-group-hor__item f-btn-group-hor__item" title="Instagram">
+                        <a href="https://www.instagram.com/" class="b-btn-group-hor__item f-btn-group-hor__item" target="_blank" title="Instagram">
                             <i class="fa fa-instagram"></i>
                         </a>
                     </div>
@@ -108,7 +108,7 @@
                             <i class="fa fa-skype"></i>
                         </div>
                         <div class="b-remaining f-contacts-short-item__text f-contacts-short-item__text_phone">
-                            Skype: ralitsoft
+                            Skype: finfobd
                         </div>
                     </div>
                     <div class="b-contacts-short-item col-md-12 col-sm-4 col-xs-12">
@@ -116,7 +116,7 @@
                             <i class="fa fa-envelope"></i>
                         </div>
                         <div class="b-remaining f-contacts-short-item__text f-contacts-short-item__text_email">
-                            <a href="mailto:frexystudio@gmail.com"> E-Mail: info@ralitsoft.com</a>
+                            <a href="https://mail.google.com" target="_blank"> E-Mail: info@finfobd.com</a>
                         </div>
                     </div>
                 </div>

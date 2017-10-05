@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Taka Bazaar</title>
+        <title>FiNFOBD</title>
         <link rel="shortcut icon" href="{{ asset('fe/img/logo.ico') }}" type="image/x-icon">
 
         <!-- Bootstrap -->
@@ -28,19 +28,19 @@
                 <div class="p-15" style="padding: 5px; background-color: #fff;">
                     <!--start button-group left-->
                     <div class="btn-group pull-left">
-                        <a href="{{URL::to('dboard')}}"><i class="fa fa-home logo-name"> Taka Bazaar</i></a>
+                        <a href="{{URL::to('dboard')}}"><i class="fa fa-home logo-name"> FiNFOBD</i></a>
                     </div>
                     <!--end button-group left-->
 
                     <!--start button-group right-->
                     <div class="btn-group pull-right m-r-20">
-                        <a href="" class="m-r-20" title="Notification For Applying">
-                            <i class="fa fa-bell">
-                                <sup class="text-danger-light f-s-14">
-                                    <b>0{{Session::get('count_alert')}} {{Session::put('count_alert', '')}}</b>
-                                </sup>
-                            </i>
-                        </a>
+                        {{--<a href="" class="m-r-20" title="Notification For Applying">--}}
+                            {{--<i class="fa fa-bell">--}}
+                                {{--<sup class="text-danger-light f-s-14">--}}
+                                    {{--<b>0{{Session::get('count_alert')}} {{Session::put('count_alert', '')}}</b>--}}
+                                {{--</sup>--}}
+                            {{--</i>--}}
+                        {{--</a>--}}
                         <a href="{{URL::to('')}}" target="_blank" class="m-r-20" title="Visite finFoBD.com Webiste">
                             <i class="fa fa-hand-o-right"></i>
                         </a>

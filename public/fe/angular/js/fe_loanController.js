@@ -13,13 +13,12 @@ app.controller('fe_loanController', function($scope, $http) {
 
         $scope.i =0;
         angular.forEach($scope.display_data, function (nas) {
-            $scope.display_data[$scope.i]['loan_monthly_interest'] = nas.loan_monthly_interest*$scope.Data.year;
-            $scope.i++;
-            console.log('hello');
+        //     $scope.display_data[$scope.i]['loan_monthly_interest'] = nas.loan_monthly_interest*$scope.Data.year;
+
 
             //----Start_EMI_Calculation---------------------------------------------------------------------
-            $scope.p = 200000;                                      //----p means principal_amount_or_loan_amount
-            $scope.d = 2;                                           //----d means duration_of_manths_or_years
+            $scope.p = $scope.Data.amount;                                      //----p means principal_amount_or_loan_amount
+            $scope.d = $scope.Data.year;                                           //----d means duration_of_manths_or_years
             $scope.n = $scope.d/12;                                 //----n means no_of_duration_month
             $scope.i_r_n = nas.loan_interest_rate;                  //----12 means 1_year_equal_is_12_month----calculate_by_month
             $scope.r = $scope.i_r_n/100;                            //----100 means rate_of_percent
@@ -43,24 +42,26 @@ app.controller('fe_loanController', function($scope, $http) {
             $scope.t_i_p_r = Math.round($scope.t_i_p);                          //----t_i_p_r means total_interest_payable_roundValue
             //----end calculate_down_payment------------------------------------
 
-            //$scope.display_data[$scope.i]['loan_monthly_interest'] = $scope.e_m_i;
-            //$scope.display_data[$scope.i]['loan_interest_payable'] = $scope.t_i_p_r;
+            $scope.display_data[$scope.i]['loan_monthly_interest'] = $scope.e_m_i;
+            $scope.display_data[$scope.i]['loan_interest_payable'] = $scope.t_p_p_i_r;
 
 
 
             $scope.k = parseFloat(Math.round($scope.r)).toFixed(10);
-            console.log($scope.r);
-            console.log($scope.k);
-            console.log(Math.pow(4, 8));
-            console.log('EMI='+$scope.e_m_i);
+            //console.log($scope.t_i_p_r);
+            //console.log('helloo');
+            // console.log($scope.k);
+            // console.log(Math.pow(4, 8));
+            // console.log('EMI='+$scope.e_m_i);
+            $scope.i++;
         })
 
     }
 
     $scope.show_data = function() {
-        //$scope.Data['year']=2;
-        //$scope.Data['amount']=200000;
+        $scope.Data={'year':2,'amount':200000};
         $http.get('/taka_bazaar/public/loan-home-api').then(function(response) {
+            console.log($scope.Data);
             $scope.display_data = response.data;
 
             //console.log($scope.display_data);
@@ -78,6 +79,18 @@ app.controller('fe_loanController', function($scope, $http) {
 
         });
     }
+
+    $scope.datas = [
+        {name:'01 - Years', id:'1'},
+        {name:'02 - Years', id:'2'},
+        {name:'03 - Years', id:'3'},
+        {name:'04 - Years', id:'4'},
+        {name:'05 - Years', id:'5'},
+        {name:'06 - Years', id:'6'},
+        {name:'07 - Years', id:'7'},
+        {name:'08 - Years', id:'8'}
+    ];
+
     $scope.show_data();
 
 
