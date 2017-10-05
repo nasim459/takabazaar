@@ -60,15 +60,15 @@
                 <div class="b-option-total-cart__goods">
                     <a href="#" class="f-option-total-cart__numbers b-option-total-cart__numbers"><i class="fa fa-lock"></i>Login &nbsp;</a>
                     <div class="b-option-cart__items">
-                        {!! Form::open(array('url'=>'define', 'role'=>'form', 'method'=>'POST')) !!}
+                        {!! Form::open(array('url'=>'/postSignIn-for-user', 'role'=>'form', 'method'=>'POST')) !!}
                         <div class="m-t-10">
                             <div class="form-group">
                                 <label for="email">Email Address:</label>
-                                <input type="email" class="form-control" id="email" placeholder="example@ralitsoft.com">
+                                <input type="email" name="email" class="form-control" id="email" placeholder="example@ralitsoft.com">
                             </div>
                             <div class="form-group">
                                 <label for="email">Password:</label>
-                                <input type="password" class="form-control" id="username" placeholder="Write password">
+                                <input type="password" password="passs" class="form-control" id="username" placeholder="Write password">
                             </div>
 
                             <button type="submit" class="btn btn-success btn-sm">Login</button>

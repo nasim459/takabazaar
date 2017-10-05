@@ -185,6 +185,11 @@ Route::post('/post-sign-in', [
     'uses' => 'access\AccessController@postSignIn'
 ]);
 
+Route::post('/postSignIn-for-user', [
+    'as' => 'postSignIn4BlogUserPopUp',
+    'uses' => 'access\AccessController@postSignIn4BlogUserPopUp'
+]);
+
 Route::get('/logout', [
     'as' => 'logout',
     'uses' => 'access\AccessController@getLogout',
