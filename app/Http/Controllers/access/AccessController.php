@@ -22,7 +22,7 @@ class AccessController extends Controller
             'password' => 'required|min:6'
         ]);
         if ($validator->fails()) {
-            return redirect()->route('login')
+            return redirect()->back()
                 ->withInput($request->all())
                 ->withErrors($validator);
         }
@@ -35,7 +35,7 @@ class AccessController extends Controller
             return redirect('/dboard');
         }
 
-        return redirect()->route('login')->with('fe_error_msg', 'Invalid Email and password combination!');
+        return redirect()->back()->with('fe_error_msg', 'Invalid Email and password combination!');
     }
 
     public function postSignIn4BlogUserPopUp(Request $request)
