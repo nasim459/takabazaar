@@ -58,9 +58,22 @@
                 <a href="#"><i class="fa fa-phone"></i> 01846 177 831 </a>
                 <a href="#"><i class="fa fa-skype"></i> finfobd</a>
             </div>
+
+            <div class="b-option-contacts f-option-contacts" style="float: right!important;">
+                <a href="#" data-toggle="modal" data-target="#subScribe"><i class="fa fa-send-o"></i> Subscribe</a>
+                <a href="#" data-toggle="modal" data-target="#signIn"><i class="fa fa-sign-in"></i> Sign In</a>
+                @if(isset(Auth::user()->email))
+                    <a href="{{ url('blog-user-profile') }}"><i class="fa fa-user"></i> Your Profile</a>
+                    <a href="{{route('logout')}}"><i class="fa fa-sign-out"></i> Sign Out</a>
+                @endif
+            </div>
+
             <div class="b-option-total-cart">
                 <div class="b-option-total-cart__goods">
-                    <a href="#" class="f-option-total-cart__numbers b-option-total-cart__numbers"><i class="fa fa-lock"></i>Login &nbsp;</a>
+                    @if(!isset(Auth::user()->email))
+                        {{--<a href="#" class="f-option-total-cart__numbers b-option-total-cart__numbers"><i class="fa fa-lock"></i>Login &nbsp;</a>--}}
+                    @endif
+
                     <div class="b-option-cart__items">
                         {!! Form::open(array('url'=>'/postSignIn-for-user', 'role'=>'form', 'method'=>'POST')) !!}
                         <div class="m-t-10">
@@ -74,29 +87,35 @@
                             </div>
 
                             <button type="submit" class="btn btn-success btn-sm">Login</button>
-                            <a data-toggle="modal" data-target="#signUp" class="btn btn-default btn-sm pull-right">Sign Up</a>
+                            <a href="#" data-toggle="modal" data-target="#signUp" class="btn btn-default btn-sm pull-right">Sign Up</a>
                         </div>
                         {!! Form::close() !!}
                     </div>
+
+                    {{--@if(isset(Auth::user()->email))--}}
+                        {{--<a href="{{ url('blog-user-profile') }}" class="btn btn-default btn-xs">Your Profile</a>--}}
+                        {{--<a href="{{route('logout')}}" class="btn btn-default btn-xs">Logout</a>--}}
+                    {{--@endif--}}
+
                 </div>
             </div>
 
-            <div class="b-option-total-cart">
-                <div class="b-option-total-cart__goods">
-                    <a href="#" class="f-option-total-cart__numbers b-option-total-cart__numbers"><i class="fa fa-arrow-down"></i>Subscribe &nbsp;</a>
-                    <div class="b-option-cart__items">
-                        {!! Form::open(array('url'=>'subscriber-insert', 'role'=>'form', 'method'=>'POST')) !!}
-                        <div class="m-t-10">
-                            <div class="form-group">
-                                <label for="email">Give Your Email address:</label>
-                                <input type="email" name="sub_email" class="form-control" id="email" placeholder="example@ralitsoft.com" required>
-                            </div>
-                            <button type="submit" class="btn btn-success btn-sm">Subscribe Me</button>
-                        </div>
-                        {!! Form::close() !!}
-                    </div>
-                </div>
-            </div>
+            {{--<div class="b-option-total-cart">--}}
+                {{--<div class="b-option-total-cart__goods">--}}
+                    {{--<a href="#" class="f-option-total-cart__numbers b-option-total-cart__numbers"><i class="fa fa-arrow-down"></i>Subscribe &nbsp;</a>--}}
+                    {{--<div class="b-option-cart__items">--}}
+                        {{--{!! Form::open(array('url'=>'subscriber-insert', 'role'=>'form', 'method'=>'POST')) !!}--}}
+                        {{--<div class="m-t-10">--}}
+                            {{--<div class="form-group">--}}
+                                {{--<label for="email">Give Your Email address:</label>--}}
+                                {{--<input type="email" name="sub_email" class="form-control" id="email" placeholder="example@ralitsoft.com" required>--}}
+                            {{--</div>--}}
+                            {{--<button type="submit" class="btn btn-success btn-sm">Subscribe Me</button>--}}
+                        {{--</div>--}}
+                        {{--{!! Form::close() !!}--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
             <!--start category -->
             <div id="signUp" class="modal fade" role="dialog">
@@ -163,6 +182,102 @@
                 </div>
             </div>
             <!--end detailsInfo -->
+
+            <!--start category -->
+            <div id="signIn" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!--start Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title text-success text-center">
+                                Sign In
+                            </h4>
+                        </div>
+                        <div class="modal-body" style="overflow: hidden">
+                            <div class="col-md-12">
+                                <div class="col-md-12 f-s-14 f-f-s">
+
+                                    {!! Form::open(array('url'=>'/postSignIn-for-user', 'role'=>'form', 'method'=>'POST')) !!}
+                                    <div class="m-t-10">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" id="basic-addon1"> &nbsp; &nbsp; &nbsp; &nbsp; Email :</span>
+                                            <input type="email" name="email" class="form-control" id="email" placeholder="Username" required>
+                                        </div>
+                                        <br>
+
+                                        <div class="input-group">
+                                            <span class="input-group-addon" id="basic-addon1">Password :</span>
+                                            <input type="password" name="password" class="form-control" id="password" placeholder="Write password" required>
+                                        </div>
+                                        <br>
+                                        <div class="input-group">
+                                            <button type="submit" class="btn btn-success" style="width: 200px;">Login</button>
+                                            <a href="" data-toggle="modal" data-target="#signUp" class="m-l-20">Sign Up</a>
+                                        </div>
+                                    </div>
+                                    {!! Form::close() !!}
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <!--end Modal content-->
+
+                </div>
+            </div>
+            <!--end detailsInfo -->
+
+            <!--start subscribe-->
+            <div id="subScribe" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!--start Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title text-success text-center">
+                                Subscribe Here
+                            </h4>
+                        </div>
+                        <div class="modal-body" style="overflow: hidden">
+                            <div class="col-md-12">
+                                <div class="col-md-12 f-s-14 f-f-s m-t-10 m-b-10">
+
+                                    {!! Form::open(array('url'=>'subscriber-insert', 'role'=>'form', 'method'=>'POST')) !!}
+                                    <div class="">
+                                        <div class="col-sm-6">
+                                            <div class="input-group">
+                                                <span class="input-group-addon" id="basic-addon1">@</span>
+                                                <input type="email" name="sub_email" class="form-control col-sm-6" placeholder="Enter eamil address" required  aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <div class="input-group">
+                                                <button type="submit" class="btn btn-success">Subscribe Me</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {!! Form::close() !!}
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <!--end Modal content-->
+
+                </div>
+            </div>
+            <!--end subscribe-->
         </div>
     </div>
     <div class="container b-header__box b-relative">
