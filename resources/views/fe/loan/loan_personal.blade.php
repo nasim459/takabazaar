@@ -74,8 +74,7 @@
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="fa">Your amount</i></div>
-                                                <input type="text" ng-model="nas" class="form-control" id="exampleInputAmount" placeholder="Amount">
-                                                <input type="hidden" ng-model="year">
+                                                <input type="text" ng-model="Data.amount" ng-keyup="calculation()"  class="form-control" id="exampleInputAmount" placeholder="Amount">
                                                 <div class="input-group-addon">৳</div>
                                             </div>
                                         </div>
@@ -83,56 +82,57 @@
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="fa">For</i></div>
-                                                <select class="form-control">
-                                                    <option value="1">01 - Years</option>
-                                                    <option value="2">02 - Years</option>
-                                                    <option value="3">03 - Years</option>
-                                                    <option value="4">04 - Years</option>
-                                                    <option value="5">05 - Years</option>
-                                                    <option value="6">06 - Years</option>
-                                                    <option value="7">07 - Years</option>
-                                                    <option value="8">08 - Years</option>
-                                                    <option value="9">09 - Years</option>
-                                                    <option value="10">10 - Years</option>
-                                                    <option value="11">11 - Years</option>
-                                                    <option value="12">12 - Years</option>
-                                                    <option value="13">13 - Years</option>
-                                                    <option value="14">14 - Years</option>
-                                                    <option value="15">15 - Years</option>
+                                                <select class="form-control" ng-model="Data.year"  ng-options="option.id as option.name for option in datas" ng-init="Data.year = datas[1].id"  ng-keyup="calculation()" >
+
                                                 </select>
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-addon"><i class="fa">Upto Rate 14 %</i></div>
-                                                <select class="form-control">
-                                                    <option value="1">11.0 %</option>
-                                                    <option value="2" selected>14.5 %</option>
-                                                    <option value="3">11.5 %</option>
-                                                    <option value="3">12.0 %</option>
-                                                    <option value="3">12.5 %</option>
-                                                </select>
-                                            </div>
-                                        </div>
+                                        {{--<div class="form-group">--}}
+                                        {{--<div class="input-group">--}}
+                                        {{--<div class="input-group-addon"><i class="fa">Upto Rate 14 %</i></div>--}}
+                                        {{--<select class="form-control">--}}
+                                        {{--<option value="1">11.0 %</option>--}}
+                                        {{--<option value="2" selected>14.5 %</option>--}}
+                                        {{--<option value="3">11.5 %</option>--}}
+                                        {{--<option value="3">12.0 %</option>--}}
+                                        {{--<option value="3">12.5 %</option>--}}
+                                        {{--</select>--}}
+                                        {{--</div>--}}
+                                        {{--</div>--}}
 
-                                        <div class="form-group pull-right">
-                                            <div class="input-group">
-                                                {{--<div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>--}}
-                                                <select class="form-control">
-                                                    <option value="" title="See All Bank">All Bank</option>
-                                                    <option value="1" title="Bank Financial Institution">BFI</option>
-                                                    <option value="0" title="Non Bank Financial Institution">NBFI</option>
-                                                </select>
-                                            </div>
-                                        </div>
+                                        {{--<div class="form-group pull-right" style="margin-left: 5px">--}}
+                                        {{--<div class="input-group">--}}
+                                        {{--<div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>--}}
+                                        {{--<select ng-model="_bank.bank['bank_type']" class="form-control">--}}
+                                        {{--<option value="" title="See All Bank">All Bank</option>--}}
+                                        {{--<option value="1" title="Bank Financial Institution">BFI</option>--}}
+                                        {{--<option value="0" title="Non Bank Financial Institution">NBFI</option>--}}
+                                        {{--</select>--}}
+                                        {{--</div>--}}
+                                        {{--</div>--}}
+
+                                        {{--<div class="form-group pull-right">--}}
+                                        {{--<div class="input-group">--}}
+                                        {{--<div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>--}}
+                                        {{--<select ng-model="loan.loan_type" class="form-control">--}}
+                                        {{--<option value="">Select Loan</option>--}}
+                                        {{--<option value="1">SME Loan</option>--}}
+                                        {{--<option value="2">Car Loan</option>--}}
+                                        {{--<option value="3">Home Loan</option>--}}
+                                        {{--<option value="4">Personal Loan</option>--}}
+                                        {{--<option value="5">Others Loan</option>--}}
+                                        {{--<option value="6">Working Capital Loan</option>--}}
+                                        {{--</select>--}}
+                                        {{--</div>--}}
+                                        {{--</div>--}}
 
                                         <div class="form-group pull-right">
                                             <div class="input-group">
                                                 <div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>
                                                 <div class="input-group-addon" title="Are you a salaried or business or others person?"><i class="fa"> I am a</i></div>
-                                                <select class="form-control">
-                                                    <option value="1">Salaried Person</option>
+                                                <select ng-model="person.loan_person_type" class="form-control">
+                                                    <option value="">Select Person</option>
                                                     <option value="1">Salaried Person</option>
                                                     <option value="2">Business Person</option>
                                                     <option value="3">Others Person</option>
@@ -173,7 +173,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-12 col-md-12 b-item-apartment-block" ng-repeat="v in display_data | filter : nas">
+                    <div class="col-sm-12 col-md-12 b-item-apartment-block" ng-if="v.loan_type == 4" ng-repeat="v in display_data | filter:person | filter:_bank">
                         <div class="b-some-examples__item f-some-examples__item b-hover">
                             <div class="b-some-examples__item_action app-box">
                                 <div class="col-xs-12 col-sm-2 col-md-2">
@@ -181,11 +181,11 @@
                                     <p class="b-stars-group" style="font-size: 12px; margin-top: 4px">
                                         <span><b>@{{v.bank.bank_name | limitTo: 18 }}</b></span><br>
                                         <a href="" data-target="#@{{v.id}}pr" data-toggle="modal" >Give Review</a><br>
-                                        <i data-target="#@{{v.id}}p" data-toggle="modal" class="fa fa-star is-active-stars"></i>
-                                        <i data-target="#@{{v.id}}p" data-toggle="modal" class="fa fa-star is-active-stars"></i>
-                                        <i data-target="#@{{v.id}}p" data-toggle="modal" class="fa fa-star"></i>
-                                        <i data-target="#@{{v.id}}p" data-toggle="modal" class="fa fa-star"></i>
-                                        <i data-target="#@{{v.id}}p" data-toggle="modal" class="fa fa-star"></i>
+                                        <i data-target="#" data-toggle="modal" class="fa fa-star is-active-stars"></i>
+                                        <i data-target="#" data-toggle="modal" class="fa fa-star is-active-stars"></i>
+                                        <i data-target="#" data-toggle="modal" class="fa fa-star"></i>
+                                        <i data-target="#" data-toggle="modal" class="fa fa-star"></i>
+                                        <i data-target="#" data-toggle="modal" class="fa fa-star"></i>
                                     </p>
                                 </div>
 
@@ -223,7 +223,7 @@
                                     <div class="col-xs-5 col-sm-12 col-md-12">
                                         <i class="fa"><span class="ralit-r" ng-if="v.loan_person_type == 1">Salaried</span></i>
                                         <i class="fa"><span class="ralit-r" ng-if="v.loan_person_type == 2">Person</span></i>
-                                        <i class="fa"><span class="ralit-r" ng-if="v.loan_person_type == 3">Susiness</span></i>
+                                        <i class="fa"><span class="ralit-r" ng-if="v.loan_person_type == 3">Others</span></i>
                                     </div>
                                 </div>
 
@@ -257,7 +257,7 @@
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                     <input type="hidden" name="id" value="@{{ v.id }}">
                                                     <input type="hidden" name="t_id" value="33">
-                                                    <input type="text" name="t_id" value="">
+                                                    <input type="hidden" name="t_id" value="">
 
                                                     <div class="form-group" style="margin-bottom: -15px;">
                                                         <label for="exampleInputName2" class="col-xs-12 col-sm-6 control-label m-t-20">
@@ -404,7 +404,7 @@
                                                     <div class="b-form-row">
                                                         <div class="b-form-horizontal__label"></div>
                                                         <div class="b-form-horizontal__input">
-                                                            <input type="submit" value="Review" class="btn btn-success btn-sm col-sm-12">
+                                                            <input type="submit" value="Send Review" class="btn btn-success btn-sm col-sm-12">
                                                         </div>
                                                     </div>
                                                 </div>

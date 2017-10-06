@@ -71,52 +71,52 @@
 
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <form class="form-inline app-head">
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-addon"><i class="fa">Your amount</i></div>
-                                                <input type="text" ng-model="nas" class="form-control" id="exampleInputAmount" placeholder="Amount">
-                                                <input type="hidden" ng-model="year">
-                                                <div class="input-group-addon">৳</div>
-                                            </div>
-                                        </div>
+                                        {{--<div class="form-group">--}}
+                                            {{--<div class="input-group">--}}
+                                                {{--<div class="input-group-addon"><i class="fa">Your amount</i></div>--}}
+                                                {{--<input type="text" ng-model="nas" class="form-control" id="exampleInputAmount" placeholder="Amount">--}}
+                                                {{--<input type="hidden" ng-model="year">--}}
+                                                {{--<div class="input-group-addon">৳</div>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
 
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-addon"><i class="fa">For</i></div>
-                                                <select class="form-control">
-                                                    <option value="1">01 - Years</option>
-                                                    <option value="2">02 - Years</option>
-                                                    <option value="3">03 - Years</option>
-                                                    <option value="4">04 - Years</option>
-                                                    <option value="5">05 - Years</option>
-                                                    <option value="6">06 - Years</option>
-                                                    <option value="7">07 - Years</option>
-                                                    <option value="8">08 - Years</option>
-                                                    <option value="9">09 - Years</option>
-                                                    <option value="10">10 - Years</option>
-                                                    <option value="11">11 - Years</option>
-                                                    <option value="12">12 - Years</option>
-                                                    <option value="13">13 - Years</option>
-                                                    <option value="14">14 - Years</option>
-                                                    <option value="15">15 - Years</option>
-                                                </select>
-                                            </div>
-                                        </div>
+                                        {{--<div class="form-group">--}}
+                                            {{--<div class="input-group">--}}
+                                                {{--<div class="input-group-addon"><i class="fa">For</i></div>--}}
+                                                {{--<select class="form-control">--}}
+                                                    {{--<option value="1">01 - Years</option>--}}
+                                                    {{--<option value="2">02 - Years</option>--}}
+                                                    {{--<option value="3">03 - Years</option>--}}
+                                                    {{--<option value="4">04 - Years</option>--}}
+                                                    {{--<option value="5">05 - Years</option>--}}
+                                                    {{--<option value="6">06 - Years</option>--}}
+                                                    {{--<option value="7">07 - Years</option>--}}
+                                                    {{--<option value="8">08 - Years</option>--}}
+                                                    {{--<option value="9">09 - Years</option>--}}
+                                                    {{--<option value="10">10 - Years</option>--}}
+                                                    {{--<option value="11">11 - Years</option>--}}
+                                                    {{--<option value="12">12 - Years</option>--}}
+                                                    {{--<option value="13">13 - Years</option>--}}
+                                                    {{--<option value="14">14 - Years</option>--}}
+                                                    {{--<option value="15">15 - Years</option>--}}
+                                                {{--</select>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
 
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-addon"><i class="fa">Upto Rate 14 %</i></div>
-                                                <select class="form-control">
-                                                    <option value="1">11.0 %</option>
-                                                    <option value="2" selected>14.5 %</option>
-                                                    <option value="3">11.5 %</option>
-                                                    <option value="3">12.0 %</option>
-                                                    <option value="3">12.5 %</option>
-                                                </select>
-                                            </div>
-                                        </div>
+                                        {{--<div class="form-group">--}}
+                                            {{--<div class="input-group">--}}
+                                                {{--<div class="input-group-addon"><i class="fa">Upto Rate 14 %</i></div>--}}
+                                                {{--<select class="form-control">--}}
+                                                    {{--<option value="1">11.0 %</option>--}}
+                                                    {{--<option value="2" selected>14.5 %</option>--}}
+                                                    {{--<option value="3">11.5 %</option>--}}
+                                                    {{--<option value="3">12.0 %</option>--}}
+                                                    {{--<option value="3">12.5 %</option>--}}
+                                                {{--</select>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
 
-                                        <div class="form-group pull-right">
+                                        <div class="form-group pull-right" style="margin-bottom: 10px">
                                             <div class="input-group">
                                                 <div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>
                                                 <div class="input-group-addon" title="Are you a salaried or business or others person?"><i class="fa"> I am a</i></div>
