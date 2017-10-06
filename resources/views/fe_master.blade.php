@@ -59,63 +59,33 @@
                 <a href="#"><i class="fa fa-skype"></i> finfobd</a>
             </div>
 
-            <div class="b-option-contacts f-option-contacts" style="float: right!important;">
-                <a href="#" data-toggle="modal" data-target="#subScribe"><i class="fa fa-send-o"></i> Subscribe</a>
-                <a href="#" data-toggle="modal" data-target="#signIn"><i class="fa fa-sign-in"></i> Sign In</a>
-                @if(isset(Auth::user()->email))
-                    <a href="{{ url('blog-user-profile') }}"><i class="fa fa-user"></i> Your Profile</a>
-                    <a href="{{route('logout')}}"><i class="fa fa-sign-out"></i> Sign Out</a>
-                @endif
-            </div>
-
             <div class="b-option-total-cart">
-                <div class="b-option-total-cart__goods">
+                <div class="b-option-total-cart__goods" style="margin-top: 15px">
                     @if(!isset(Auth::user()->email))
-                        {{--<a href="#" class="f-option-total-cart__numbers b-option-total-cart__numbers"><i class="fa fa-lock"></i>Login &nbsp;</a>--}}
+                        <a href="#" class=""><i class="fa fa-sign-in"></i> Sign In</a>
                     @endif
 
                     <div class="b-option-cart__items">
                         {!! Form::open(array('url'=>'/postSignIn-for-user', 'role'=>'form', 'method'=>'POST')) !!}
                         <div class="m-t-10">
-                            <div class="form-group">
-                                <label for="email">Email Address:</label>
-                                <input type="email" name="email" class="form-control" id="email" placeholder="example@ralitsoft.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Password:</label>
-                                <input type="password" name="password" class="form-control" id="username" placeholder="Write password">
-                            </div>
+                            <i class="fa text-success m-t-5 m-b-20">Choose your opiton</i><br>
 
-                            <button type="submit" class="btn btn-success btn-sm">Login</button>
-                            <a href="#" data-toggle="modal" data-target="#signUp" class="btn btn-default btn-sm pull-right">Sign Up</a>
+                            <a href="#" data-toggle="modal" data-target="#signIn" class="btn btn-success btn-sm" style="width: 100px;">Sing In</a>
+                            <a href="#" data-toggle="modal" data-target="#signUp" class="btn btn-default btn-sm pull-right" style="width: 100px;">Sign Up</a>
                         </div>
                         {!! Form::close() !!}
                     </div>
 
-                    {{--@if(isset(Auth::user()->email))--}}
-                        {{--<a href="{{ url('blog-user-profile') }}" class="btn btn-default btn-xs">Your Profile</a>--}}
-                        {{--<a href="{{route('logout')}}" class="btn btn-default btn-xs">Logout</a>--}}
-                    {{--@endif--}}
-
                 </div>
             </div>
 
-            {{--<div class="b-option-total-cart">--}}
-                {{--<div class="b-option-total-cart__goods">--}}
-                    {{--<a href="#" class="f-option-total-cart__numbers b-option-total-cart__numbers"><i class="fa fa-arrow-down"></i>Subscribe &nbsp;</a>--}}
-                    {{--<div class="b-option-cart__items">--}}
-                        {{--{!! Form::open(array('url'=>'subscriber-insert', 'role'=>'form', 'method'=>'POST')) !!}--}}
-                        {{--<div class="m-t-10">--}}
-                            {{--<div class="form-group">--}}
-                                {{--<label for="email">Give Your Email address:</label>--}}
-                                {{--<input type="email" name="sub_email" class="form-control" id="email" placeholder="example@ralitsoft.com" required>--}}
-                            {{--</div>--}}
-                            {{--<button type="submit" class="btn btn-success btn-sm">Subscribe Me</button>--}}
-                        {{--</div>--}}
-                        {{--{!! Form::close() !!}--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
+            <div class="b-option-contacts f-option-contacts" style="float: right!important;">
+                <a href="#" data-toggle="modal" data-target="#subScribe"><i class="fa fa-send-o"></i> Subscribe</a>
+                @if(isset(Auth::user()->email))
+                    <a href="{{ url('blog-user-profile') }}"><i class="fa fa-user"></i> Your Profile</a>
+                    <a href="{{route('logout')}}"><i class="fa fa-sign-out"></i> Sign Out</a>
+                @endif
+            </div>
 
             <!--start category -->
             <div id="signUp" class="modal fade" role="dialog">
@@ -214,7 +184,6 @@
                                         <br>
                                         <div class="input-group">
                                             <button type="submit" class="btn btn-success" style="width: 200px;">Login</button>
-                                            <a href="" data-toggle="modal" data-target="#signUp" class="m-l-20">Sign Up</a>
                                         </div>
                                     </div>
                                     {!! Form::close() !!}
