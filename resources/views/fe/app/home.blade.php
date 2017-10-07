@@ -1,20 +1,74 @@
 @section('fe_maincontent')
+    @foreach($header_image as $v)
+        @if($v->status == 0)
+            <div class="b-inner-page-header f-inner-page-header b-bg-header-inner-page">
+                @else
+    <div class="b-inner-page-header f-inner-page-header" style="background: url({{ asset('ap/images/header_image/'.$v->header_image_url) }}) no-repeat center;
+            background-size: cover;">
+        @endif
+        @endforeach
+        {{--<div class="b-inner-page-header f-inner-page-header b-bg-header-inner-page">--}}
+        <div class="b-inner-page-header__content">
+            <div class="container">
+                <div class="pull-left">
+                    <h1 class="f-primary-l c-default"><i class="fa fa-home"> Home</i></h1>
+                    <div class="f-primary-l f-inner-page-header_title-add c-senary"><i class="fa">I am searching for</i></div>
+                </div>
+
+                @if(Session::get('fe_error_msg') != NULL)
+                    <div class="col-xs-12 col-md-6 m-l-5 alert alert-danger" style="font-size: 20px;">
+                        <a href="#" class="pull-right" data-dismiss="alert">&times;</a>
+                        {{Session::get('fe_error_msg')}} {{Session::put('fe_error_msg', '')}}
+                    </div>
+                @endif
+
+                @if(Session::get('fe_msg') != NULL)
+                    <div class="col-xs-12 col-md-6 m-l-5 alert alert-success" style="font-size: 20px;">
+                        <a href="#" class="pull-right" data-dismiss="alert">&times;</a>
+                        {{Session::get('fe_msg')}} {{Session::put('fe_msg', '')}}
+                    </div>
+                @endif
+
+                <div class="pull-right">
+                    <div class="t-a-c">
+                        <i class="fa f-s-25 m-b-10">Hotline</i><br>
+                        <i class="fa f-s-16 c-red m-b-5">01 777 888 757</i><br>
+                        <i class="fa f-s-14">info@finFObd.com</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="l-main-container" ng-controller="fe_loanController">
+        <div class="b-breadcrumbs f-breadcrumbs">
+            <div class="container">
+                <ul>
+                    <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+                    <li><i class="fa fa-angle-right"></i><span>Home</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <!--start section-->
     <section class="b-desc-section-container b-diagonal-line-bg-light">
         <div class="container">
 
-        <h2 class="f-center f-primary-b" style="text-transform: capitalize">
-            <i class="fa text-danger">{{ Session::get('fe_error_msg') }} {{ Session::put('fe_error_msg', '') }}</i>
-        </h2>
+            @if(Session::get('fe_error_msg') != NULL)
+                <h2 class="f-center f-primary-b" style="text-transform: capitalize">
+                    <i class="fa text-danger">{{ Session::get('fe_error_msg') }} {{ Session::put('fe_error_msg', '') }}</i>
+                </h2>
+            @endif
+
         <h2 class="f-center f-primary-b" style="text-transform: capitalize">I am searchaing for</h2>
             {{--<p class="b-desc-section f-desc-section f-center f-primary-l">Etiam consectetur pellentesque justo. Sed tristique bibendum elit non molestie. Donec et libero rutrum</p>--}}
-            <div class="b-hr-stars f-hr-stars">
-                <div class="b-hr-stars__group">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div>
+            {{--<div class="b-hr-stars f-hr-stars">--}}
+                {{--<div class="b-hr-stars__group">--}}
+                    {{--<i class="fa fa-star"></i>--}}
+                    {{--<i class="fa fa-star"></i>--}}
+                    {{--<i class="fa fa-star"></i>--}}
+                {{--</div>--}}
+            {{--</div>--}}
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     {{--<div class="b-infoblock-with-icon">--}}

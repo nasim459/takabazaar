@@ -73,7 +73,7 @@
                     <small>Video</small>
                 </a>
 
-                <a href="{{URL::to('people-profile-all')}}" class="app btn btn-default">
+                <a href="{{ url('header'.'/'.'image') }}" class="app btn btn-default">
                     <i class="fa fa-image text-success fa-2x fa-3y"></i><br/>
                     <small>Header</small>
                 </a>

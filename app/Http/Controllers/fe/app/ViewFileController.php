@@ -37,9 +37,8 @@ class ViewFileController extends Controller
                 $blog_view_4 = Blog::orderBy('blog_hit_count', 'desc')->where('blog_control', 1)->limit(4)->get();
                 $blog_view_8 = Blog::orderBy('blog_hit_count', 'desc')->where('blog_control', 1)->limit(4)->offset(4)->get();
                 $video_view = Video::where('v_status', 1)->where('v_p_location', 1)->get();    //----v_p_location = 1 means home_page
+                $header_image = Headerimage::where('header_image_type', 19)->get();    //----header_image_type = 1 means home_page
                 //dd($video_view);
-                //$open_file = view($file_open, compact('blog_view_4', 'blog_view_8', 'video_view'));
-                //return view('fe_master')->with('fe_maincontent', $open_file);
                 break;
 
             case "loan":

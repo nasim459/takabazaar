@@ -81,8 +81,10 @@
                             Credit Card
                         @elseif($v->header_image_type == 17)
                             Debit Card
-                        @else
+                        @elseif($v->header_image_type == 18)
                             About Us
+                        @else
+                            Home Page
                         @endif
                     </td>
                     <td class="col-xs-12 col-sm-2">
