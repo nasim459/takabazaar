@@ -5764,11 +5764,13 @@ body .b-slider--thumb-visible .tp-bullets {
   transition: background 0.7s ease;
   background: #2DC36A;
   border: 2px solid transparent;
-  border-radius: 3px;
-  display: block;
+  /*border-radius: 3px;*/
+  border-radius: 100%;
+  /*display: block;*/
+  display: inline-block;
   padding: 18px 5px;
   position: relative;
-  float: left;
+  /*float: left;*/
   width: 68px; }
   .b-infoblock-with-icon__icon:hover {
     background: white;
@@ -12844,7 +12846,9 @@ textarea.b-product-card-textarea {
 .f-s-14{font-size: 14px!important;}
 .f-s-16{font-size: 16px!important;}
 .f-s-20{font-size: 20px!important;}
+.f-s-22{font-size: 22px!important;}
 .f-s-25{font-size: 25px!important;}
+.f-s-50{font-size: 50px!important;}
 
 .m-l-5{margin-left: 5px!important;}
 .m-l-10{margin-left: 10px!important;}
@@ -12911,5 +12915,5 @@ textarea.b-product-card-textarea {
 
 /*----Start User Rating Star----*/
 
-
+.d-i-b{display: inline-block!important;}
 

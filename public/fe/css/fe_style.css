@@ -2,8 +2,19 @@
 
 .f-s-16{ font-size: 16px!important;}
 .z_1_5{zoom: 1.5!important;}
+
 .app{
     width: 140px!important;
     margin-left: 45px!important;
     margin-top: 26px!important;
 }
+
+/*app-circle-style*/
+.app-c-s{
+    width: 150px!important;
+    height: 146px!important;
+    margin-top: 4px!important;
+}
+
+/*float-left*/
+.f-l{float: left!important;}

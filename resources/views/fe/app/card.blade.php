@@ -2,43 +2,33 @@
     <!--start section-->
     <section class="b-desc-section-container b-diagonal-line-bg-light">
         <div class="container">
+
+            @if(Session::get('fe_error_msg') != NULL)
+                <h2 class="f-center f-primary-b" style="text-transform: capitalize;">
+                    <i class="fa text-danger m-b-10">{{ Session::get('fe_error_msg') }} {{ Session::put('fe_error_msg', '') }}</i>
+                </h2>
+            @endif
+
             <h2 class="f-center f-primary-b" style="text-transform: capitalize">Choose Your Card From here</h2>
-            {{--<p class="b-desc-section f-desc-section f-center f-primary-l">Etiam consectetur pellentesque justo. Sed tristique bibendum elit non molestie. Donec et libero rutrum</p>--}}
-            <div class="b-hr-stars f-hr-stars">
-                <div class="b-hr-stars__group">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div>
-            <div class="row">
-
-                @if(Session::get('fe_error_msg') != NULL)
-                    <div class="col-xs-12 col-md-6 alert alert-danger" style="font-size: 20px;">
-                        <a href="#" class="pull-right" data-dismiss="alert">&times;</a>
-                        {{Session::get('fe_error_msg')}} {{Session::put('fe_error_msg', '')}}
+                <div class="b-hr-stars f-hr-stars">
+                    <div class="b-hr-stars__group">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
                     </div>
-                @endif
-
-                <div class="col-md-10 col-md-offset-1">
-                    {{--<div class="b-infoblock-with-icon">--}}
-                    <a  href="{{ url('card-credit') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
-                        <i class="fa fa-credit-card z_1_5"><br><span class="f-s-12">Credit Card</span></i>
-                    </a>
-                    <a href="{{ url('card-debit') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
-                        <i class="fa fa-credit-card z_1_5"><br><span class="f-s-12">Debit Card</span></i>
-                    </a>
-                    <a href="{{ url('loan-home') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
-                        <i class="fa fa-home z_1_5"><br><span class="f-s-12">Home Loan</span></i>
-                    </a>
-                    <a href="{{ url('investment-saving') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app" title="Capital Marketing">
-                        <i class="fa fa-bank z_1_5"><br><span class="f-s-12">Saving Accound</span></i>
-                    </a>
-                    <a href="{{ url('insurance-life') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
-                        <i class="fa fa-user-md z_1_5"><br><span class="f-s-12">Life Insurance</span></i>
-                    </a>
                 </div>
 
+            <div class="row">
+                <div class="col-md-12 t-a-c">
+                    <div class="b-infoblock-with-icon">
+                        <a  href="{{ url('card-credit') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s">
+                            <i class="fa fa-credit-card f-s-50"><br><span class="f-s-22">Credit Card</span></i>
+                        </a>
+                        <a href="{{ url('card-debit') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s">
+                            <i class="fa fa-credit-card f-s-50"><br><span class="f-s-22">Debit Card</span></i>
+                        </a>
+                    </div>
+                </div>
             </div>
 
         </div>

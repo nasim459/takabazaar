@@ -2,6 +2,13 @@
     <!--start section-->
     <section class="b-desc-section-container b-diagonal-line-bg-light">
         <div class="container">
+
+            @if(Session::get('fe_error_msg') != NULL)
+                <h2 class="f-center f-primary-b" style="text-transform: capitalize;">
+                    <i class="fa text-danger m-b-10">{{ Session::get('fe_error_msg') }} {{ Session::put('fe_error_msg', '') }}</i>
+                </h2>
+            @endif
+
             <h2 class="f-center f-primary-b" style="text-transform: capitalize">Choose Your Insurance From here</h2>
             {{--<p class="b-desc-section f-desc-section f-center f-primary-l">Etiam consectetur pellentesque justo. Sed tristique bibendum elit non molestie. Donec et libero rutrum</p>--}}
             <div class="b-hr-stars f-hr-stars">
@@ -11,34 +18,21 @@
                     <i class="fa fa-star"></i>
                 </div>
             </div>
+
             <div class="row">
-
-                @if(Session::get('fe_error_msg') != NULL)
-                    <div class="col-xs-12 col-md-6 alert alert-danger" style="font-size: 20px;">
-                        <a href="#" class="pull-right" data-dismiss="alert">&times;</a>
-                        {{Session::get('fe_error_msg')}} {{Session::put('fe_error_msg', '')}}
+                <div class="col-md-12 t-a-c">
+                    <div class="b-infoblock-with-icon">
+                        <a  href="{{ url('insurance-life') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Life Insurance">
+                            <i class="fa fa-user-md f-s-50"><br><span class="f-s-22">Life</span></i>
+                        </a>
+                        <a href="{{ url('insurance-motor-car') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Car Insurance">
+                            <i class="fa fa-car f-s-50"><br><span class="f-s-22">Car</span></i>
+                        </a>
+                        <a href="{{ url('insurance-marine') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Marine Insurance">
+                            <i class="fa fa-leaf f-s-50"><br><span class="f-s-22">Marine</span></i>
+                        </a>
                     </div>
-                @endif
-
-                <div class="col-md-10 col-md-offset-1">
-                    {{--<div class="b-infoblock-with-icon">--}}
-                    <a  href="{{ url('insurance-life') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
-                        <i class="fa fa-user-md z_1_5"><br><span class="f-s-12">Life Insurance</span></i>
-                    </a>
-                    <a href="{{ url('insurance-motor-car') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app">
-                        <i class="fa fa-car z_1_5"><br><span class="f-s-12">Car Insurance</span></i>
-                    </a>
-                    <a href="{{ url('insurance-marine') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app" title="Marine Insurance">
-                        <i class="fa fa-leaf z_1_5"><br><span class="f-s-12">Marine</span></i>
-                    </a>
-                    <a href="{{ url('insurance-fire') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app" title="Capital Marketing">
-                        <i class="fa fa-fire z_1_5"><br><span class="f-s-12">Fire Insurance</span></i>
-                    </a>
-                    <a href="{{ url('insurance-accident') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app" title="Accident Insurance">
-                        <i class="fa fa-chain-broken z_1_5"><br><span class="f-s-12">Accident</span></i>
-                    </a>
                 </div>
-
             </div>
 
         </div>
