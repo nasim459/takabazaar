@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col-md-12 t-a-c">
                     <div class="b-infoblock-with-icon">
-                        <a  href="{{ url('loan-car') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Home Loan">
+                        <a  href="{{ url('loan-home') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Home Loan">
                             <i class="fa fa-home f-s-50"><br><span class="f-s-22">Home Loan</span></i>
                         </a>
                         <a href="{{ url('loan-car') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Car Loan">

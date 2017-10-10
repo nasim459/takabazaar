@@ -26,8 +26,8 @@
                     <th class="col-sm-2">Client Name</th>
                     <th class="col-sm-2">Phone</th>
                     <th class="col-sm-2">Offering Type</th>
-                    <th class="col-sm-1">Status</th>
-                    <th class="col-sm-2">Details</th>
+                    <th class="col-sm-1">Time</th>
+                    <th class="col-sm-2">Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -58,10 +58,12 @@
                             @endif
                         </td>
                         <td class="col-xs-12 col-sm-1">
-                            <a href="{{URL::to('publication-alert/'.$v->id.'/'.$reqs.'/'.$table)}}" class="btn btn-default btn-xs m-l-20" title="Applying Request"><i class="text-danger-light fa fa-arrow-down"></i></a>
+                            {{$v->aply_mobile_call}}
                         </td>
                         <td class="col-xs-12 col-sm-2">&nbsp;
-                            <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}" title="Details Information"><i class="fa fa-list"> Details</i></a>
+                            <a href="{{URL::to('publication-alert/'.$v->id.'/'.$reqs.'/'.$table)}}" class="btn btn-default btn-xs m-l-20" title="Applying Request"><i class="text-danger-light fa fa-arrow-down"></i></a>
+                            &nbsp;
+                            <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}" title="Details Information"><i class="fa fa-list"></i></a>
                         </td>
                     </tr>
 

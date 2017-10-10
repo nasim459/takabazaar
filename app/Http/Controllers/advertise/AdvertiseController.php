@@ -22,7 +22,7 @@ class AdvertiseController extends Controller
         $route = Route::getFacadeRoot()->current()->uri();
         if ($route == 'advertise'){
             $file_open = 'ap.advertise.advertise_info';
-            $loan_view = Advertise::all();
+            $loan_view = Advertise::orderBy('add_type', 'ASC')->get();
             //$loan_view = Loan::all()->where('loan_type', '1');
 
         } elseif ($route == 'advertise-car') {

@@ -55,13 +55,13 @@
             <div class="l-inner-page-container">
                 <div class="row">
 
-                    <div class="col-sm-12 col-md-12 b-item-apartment-block" style="text-align: center">
-                        @foreach($advertise_image as $v)
-                            @if(isset($v->add_name))
-                                <a href="{{$v->add_link}}" target="_blank"><img src="{{ asset('ap/images/advertise/'.$v->add_image_url) }}" border="0" width="728" height="90" alt="pic"></a>
-                            @endif
-                        @endforeach
-                    </div>
+                    {{--<div class="col-sm-12 col-md-12 b-item-apartment-block" style="text-align: center">--}}
+                        {{--@foreach($advertise_image as $v)--}}
+                            {{--@if(isset($v->add_name))--}}
+                                {{--<a href="{{$v->add_link}}" target="_blank"><img src="{{ asset('ap/images/advertise/'.$v->add_image_url) }}" border="0" width="728" height="90" alt="pic"></a>--}}
+                            {{--@endif--}}
+                        {{--@endforeach--}}
+                    {{--</div>--}}
 
                     <div class="col-sm-12 col-md-12 b-item-apartment-block">
                         <div class="b-some-examples__item f-some-examples__item">
@@ -174,6 +174,14 @@
                         </div>
                     </div>
 
+                    <div class="col-sm-12 col-md-12 b-item-apartment-block" style="text-align: center">
+                        @foreach($advertise_image as $v)
+                            @if(isset($v->add_name))
+                                <a href="{{$v->add_link}}" target="_blank"><img src="{{ asset('ap/images/advertise/'.$v->add_image_url) }}" border="0" width="728" height="90" alt="pic"></a>
+                            @endif
+                        @endforeach
+                    </div>
+
                     <div class="col-sm-12 col-md-12 b-item-apartment-block" ng-if="v.loan_type == 3" ng-repeat="v in display_data | filter:person | filter:_bank">
                         <div class="b-some-examples__item f-some-examples__item b-hover">
                             <div class="b-some-examples__item_action app-box">
@@ -195,7 +203,7 @@
                                         <i class="fa"><span class="ralit">Interest Rate : </span></i>
                                     </div>
                                     <div class="col-xs-5 col-sm-12 col-md-12">
-                                        <i class="fa"><span class="ralit-r">@{{v.loan_interest_rate}} %</span></i>
+                                        <i class="fa"><span class="ralit-r">@{{$index + 1}} @{{v.loan_interest_rate}} %</span></i>
                                     </div>
                                 </div>
 
@@ -501,9 +509,15 @@
                                                     </div>
                                                 </div>
                                                 <div class="b-form-row">
-                                                    <label class="b-form-horizontal__label t-a-r" for="create_account_phone">Mobile Number <span class="c-red">*</span> : &nbsp; </label>
+                                                    <label class="b-form-horizontal__label t-a-r" for="create_account_phone">Mobile Number <span class="c-red">*</span> &nbsp; </label>
                                                     <div class="b-form-horizontal__input">
                                                         <input type="number" name="mobile" id="create_account_phone" class="form-control" placeholder="01xxxxxxxxx" required />
+                                                    </div>
+                                                </div>
+                                                <div class="b-form-row">
+                                                    <label class="b-form-horizontal__label t-a-r" for="create_account_phone">When We Call You<span class="c-red">*</span>  &nbsp; </label>
+                                                    <div class="b-form-horizontal__input">
+                                                        <input type="time" name="mobile_call" id="create_account_phone" class="form-control" required />
                                                     </div>
                                                 </div>
                                                 <div class="b-form-row">
@@ -604,6 +618,7 @@
                         {{--End Modal View Details--}}
 
                     </div>
+
                 </div>
 
 

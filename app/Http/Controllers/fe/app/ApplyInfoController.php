@@ -21,6 +21,7 @@ class ApplyInfoController extends Controller
         $aply_company_name = $request->org;
         $aply_monthly_income = $request->salary;
         $aply_mobile = $request->mobile;
+        $mobile_call = $request->mobile_call;
         $aply_email = $request->email;
         $aply_location = $request->location;
 
@@ -43,6 +44,7 @@ class ApplyInfoController extends Controller
         $save = array();
         $save['aply_name'] = $aply_name;
         $save['aply_mobile'] = $aply_mobile;
+        $save['aply_mobile_call'] = $mobile_call;
         $save['aply_email'] = $aply_email;
         $save['aply_location'] = $aply_location;
         $save['aply_company_name'] = $aply_company_name;

@@ -28,8 +28,8 @@
                     <th class="col-sm-2">Client Name</th>
                     <th class="col-sm-2">Phone</th>
                     <th class="col-sm-2">Offering Type</th>
-                    <th class="col-sm-1">Status</th>
-                    <th class="col-sm-2">Details</th>
+                    <th class="col-sm-1">Time</th>
+                    <th class="col-sm-2">Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -58,6 +58,9 @@
                         @endif
                     </td>
                     <td class="col-xs-12 col-sm-1">
+                        {{$v->aply_mobile_call}}
+                    </td>
+                    <td class="col-xs-12 col-sm-2">&nbsp;
                         @if($v->aply_status == 0 )
                             <a class="btn btn-default btn-xs m-l-20" readonly="" title="Successfully Done Your Work!"><i class="text-success-light fa fa-check"></i></a>
                         @elseif($v->aply_status == 1)
@@ -65,9 +68,8 @@
                         @else
                             <a class="btn btn-default btn-xs m-l-20" title="Request Pending"><i class="text-danger-light fa fa-arrow-right"></i></a>
                         @endif
-                    </td>
-                    <td class="col-xs-12 col-sm-2">&nbsp;
-                        <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}" title="Details Information"><i class="fa fa-list"> Details</i></a>
+                        &nbsp;
+                        <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}" title="Details Information"><i class="fa fa-list"></i></a>
                     </td>
                 </tr>
 

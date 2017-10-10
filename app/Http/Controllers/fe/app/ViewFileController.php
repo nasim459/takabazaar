@@ -90,7 +90,7 @@ class ViewFileController extends Controller
                 $file_open = 'fe.loan.loan_home';
                 Session::put('person', 'S_p');    //----s_p meand Salaried_Person
                 $header_image = Headerimage::where('header_image_type', 1)->get();    //----header_image_type = 1 means home_loan
-                $advertise_image = Advertise::where('add_type', 1)->where('add_status', 1)->get();    //----add_type = 1 means home_loan
+                $advertise_image = Advertise::where('add_type', 1)->where('add_status', 1)->limit(1)->get();    //----add_type = 1 means home_loan
 
                 break;
             case "loan-car":
