@@ -432,7 +432,7 @@
                                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                                 <input type="hidden" name="id" value="@{{ v.id }}">
                                                                 <input type="hidden" name="bank_id" value="@{{v.bank.id}}">
-                                                                <input type="hidden" name="table" value="33">
+                                                                <input type="hidden" name="table" value="44">
 
                                                                 <div class="b-form-row">
                                                                     <label class="b-form-horizontal__label t-a-r" for="create_account_name">Name <span class="c-red">*</span> : &nbsp; </label>
