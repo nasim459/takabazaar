@@ -16,6 +16,7 @@
             <a href="{{ url('insurance'.'/'.'marine') }}" class="app-menu btn btn-default text-success-light">Marine</a>
             <a href="{{ url('insurance'.'/'.'fire') }}" class="app-menu btn btn-default text-success-light">Fire</a>
             <a href="{{ url('insurance'.'/'.'accident') }}" class="app-menu btn btn-default text-success-light">Accident</a>
+            <a href="{{ url('insurance'.'/'.'health') }}" class="app-menu btn btn-default text-success-light">Health</a>
         </div>
         <!--end Single button-->
     </div>

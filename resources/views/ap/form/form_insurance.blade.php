@@ -38,6 +38,7 @@
                                     <option value="4">Accident</option>
                                     <option value="5">Car</option>
                                     <option value="6">Bike</option>
+                                    <option value="7">Health</option>
                                 </select>
                             </div>
 

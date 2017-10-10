@@ -164,6 +164,7 @@ Route::get('insurance-motor-car', 'fe\app\ViewFileController@view_file');
 Route::get('insurance-marine', 'fe\app\ViewFileController@view_file');
 Route::get('insurance-fire', 'fe\app\ViewFileController@view_file');
 Route::get('insurance-accident', 'fe\app\ViewFileController@view_file');
+Route::get('insurance-health', 'fe\app\ViewFileController@view_file');
 
 //----card
 Route::get('card-credit', 'fe\app\ViewFileController@view_file');

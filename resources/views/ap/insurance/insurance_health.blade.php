@@ -7,7 +7,7 @@
             <div class="table-h-t">
                 <div class="col-md-3 m-t-5">
                     <div class="form-group">
-                        <input type="text" value="Fire Insurance" readonly class="form-control" placeholder="Search here...">
+                        <input type="text" value="Health Insurance" readonly class="form-control" placeholder="Search here...">
                     </div>
                 </div>
                 <div class="col-md-3 m-t-10 text-success"><b></b></div>
@@ -61,9 +61,9 @@
 
                             <span class="pull-right">
                                 {{--@if($v->insr_status==1)--}}
-                                {{--<a href="{{URL::to('publication/'.$v->id.'/'.$off.'/'.$table)}}" class="btn btn-default btn-xs" title="Publish"><i class="text-success-light fa fa-check"></i></a>--}}
+                                    {{--<a href="{{URL::to('publication/'.$v->id.'/'.$off.'/'.$table)}}" class="btn btn-default btn-xs" title="Publish"><i class="text-success-light fa fa-check"></i></a>--}}
                                 {{--@else--}}
-                                {{--<a href="{{URL::to('publication/'.$v->id.'/'.$on.'/'.$table)}}" class="btn btn-default btn-xs" title="unPublish">&nbsp;<i class="text-danger-light fa fa-lock"> </i></a>--}}
+                                    {{--<a href="{{URL::to('publication/'.$v->id.'/'.$on.'/'.$table)}}" class="btn btn-default btn-xs" title="unPublish">&nbsp;<i class="text-danger-light fa fa-lock"> </i></a>--}}
                                 {{--@endif--}}
 
                                 <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}" title="Details Information"><i class="fa fa-list"></i></a>
@@ -303,7 +303,7 @@
                                                                 <option value="{{$v->bank->id}}">{{$v->bank->bank_name}}</option>
 
                                                                 @foreach($bank_view as $v)
-                                                                    <option value="{{$v->id}}">{{$v->bank_name}}</option>
+                                                                <option value="{{$v->id}}">{{$v->bank_name}}</option>
                                                                 @endforeach
                                                             </select>
                                                         </div>

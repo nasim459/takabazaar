@@ -296,6 +296,7 @@
                                 <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('insurance-marine') }}"><i class="fa fa-angle-right"></i>Marine Insurance</a></li>
                                 <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('insurance-fire') }}"><i class="fa fa-angle-right"></i>Fire Insurance</a></li>
                                 <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('insurance-accident') }}"><i class="fa fa-angle-right"></i>Accident Insurance</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('insurance-health') }}"><i class="fa fa-angle-right"></i>Health Insurance</a></li>
                             </ul>
                         </div>
                     </li>

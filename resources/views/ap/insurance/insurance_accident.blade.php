@@ -164,6 +164,8 @@
                                                                 <option value="5">Car</option>
                                                                 }@elseif($v->insr_type ==6){
                                                                 <option value="6">Bike</option>
+                                                                }@elseif($v->insr_type ==7){
+                                                                <option value="7">Health</option>
                                                                 }
                                                                 @endif
 
@@ -174,6 +176,7 @@
                                                                 <option value="4">Accident</option>
                                                                 <option value="5">Car</option>
                                                                 <option value="6">Bike</option>
+                                                                <option value="7">Health</option>
                                                             </select>
                                                         </div>
 

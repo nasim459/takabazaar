@@ -177,6 +177,12 @@ class ViewFileController extends Controller
                 $advertise_image = Advertise::where('add_type', 15)->where('add_status', 1)->get();    //----add_type = 1 means insurance_accident
 
                 break;
+            case "insurance-health":
+                $file_open = 'fe.insurance.insurance_health';
+                $header_image = Headerimage::where('header_image_type', 15)->get();    //----header_image_type = 15 means insurance_accident
+                $advertise_image = Advertise::where('add_type', 15)->where('add_status', 1)->get();    //----add_type = 1 means insurance_accident
+
+                break;
             case "card-credit":
                 $file_open = 'fe.card.card_credit';
                 $header_image = Headerimage::where('header_image_type', 16)->get();    //----header_image_type = 16 means card_credit

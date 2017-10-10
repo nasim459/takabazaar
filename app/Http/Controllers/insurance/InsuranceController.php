@@ -40,6 +40,9 @@ class InsuranceController extends Controller
         }  elseif ($child == 'accident') {
             $file_open = 'ap.insurance.insurance_accident';
             $loan_view = Insurance::orderBy('id', 'DESC')->with('bank')->where('insr_type', '4')->get();
+        }  elseif ($child == 'health') {
+            $file_open = 'ap.insurance.insurance_health';
+            $loan_view = Insurance::orderBy('id', 'DESC')->with('bank')->where('insr_type', '7')->get();
         }
 
         $count = count($loan_view);
