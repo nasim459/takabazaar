@@ -77,7 +77,6 @@
                         <a href="{{ url('card') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s">
                             <i class="fa fa-credit-card f-s-50"><br><span class="f-s-22">Card</span></i>
                         </a>
-                        </a>
                     </div>
                 </div>
             </div>

@@ -12829,6 +12829,21 @@ textarea.b-product-card-textarea {
   font-size: 16px;
 }
 
+/*app-person*/
+.app-psn{
+  width: 150px!important;
+  margin-top: 10px!important;
+  margin-bottom: 10px!important;
+  margin-left: 10px!important;
+  margin-right: 10px!important;
+}
+
+/*app-image-into-app-person*/
+.app-img{
+  width: 90px!important;
+  height: 90px!important;
+}
+
 .c-red{color: red!important;}
 
 .t-a-c{text-align: center!important;}
@@ -12845,6 +12860,7 @@ textarea.b-product-card-textarea {
 .f-s-13{font-size: 13px!important;}
 .f-s-14{font-size: 14px!important;}
 .f-s-16{font-size: 16px!important;}
+.f-s-18{font-size: 18px!important;}
 .f-s-20{font-size: 20px!important;}
 .f-s-22{font-size: 22px!important;}
 .f-s-25{font-size: 25px!important;}

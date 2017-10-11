@@ -74,8 +74,7 @@
                                         {{--<div class="form-group">--}}
                                         {{--<div class="input-group">--}}
                                         {{--<div class="input-group-addon"><i class="fa">Your amount</i></div>--}}
-                                        {{--<input type="text" ng-model="nas" class="form-control" id="exampleInputAmount" placeholder="Amount">--}}
-                                        {{--<input type="hidden" ng-model="year">--}}
+                                        {{--<input type="text" ng-model="Data.amount" ng-keyup="calculation()"  class="form-control" id="exampleInputAmount" placeholder="Amount">--}}
                                         {{--<div class="input-group-addon">৳</div>--}}
                                         {{--</div>--}}
                                         {{--</div>--}}
@@ -83,22 +82,8 @@
                                         {{--<div class="form-group">--}}
                                         {{--<div class="input-group">--}}
                                         {{--<div class="input-group-addon"><i class="fa">For</i></div>--}}
-                                        {{--<select class="form-control">--}}
-                                        {{--<option value="1">01 - Years</option>--}}
-                                        {{--<option value="2">02 - Years</option>--}}
-                                        {{--<option value="3">03 - Years</option>--}}
-                                        {{--<option value="4">04 - Years</option>--}}
-                                        {{--<option value="5">05 - Years</option>--}}
-                                        {{--<option value="6">06 - Years</option>--}}
-                                        {{--<option value="7">07 - Years</option>--}}
-                                        {{--<option value="8">08 - Years</option>--}}
-                                        {{--<option value="9">09 - Years</option>--}}
-                                        {{--<option value="10">10 - Years</option>--}}
-                                        {{--<option value="11">11 - Years</option>--}}
-                                        {{--<option value="12">12 - Years</option>--}}
-                                        {{--<option value="13">13 - Years</option>--}}
-                                        {{--<option value="14">14 - Years</option>--}}
-                                        {{--<option value="15">15 - Years</option>--}}
+                                        {{--<select class="form-control" ng-model="Data.year"  ng-options="option.id as option.name for option in datas" ng-init="Data.year = datas[1].id"  ng-keyup="calculation()" >--}}
+
                                         {{--</select>--}}
                                         {{--</div>--}}
                                         {{--</div>--}}
@@ -116,17 +101,56 @@
                                         {{--</div>--}}
                                         {{--</div>--}}
 
-                                        <div class="form-group pull-right m-b-10">
+                                        <div class="form-group pull-right" style="margin-left: 5px; margin-bottom: 15px;">
                                             <div class="input-group">
                                                 <div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>
-                                                <div class="input-group-addon" title="Are you a salaried or business or others person?"><i class="fa"> I am a</i></div>
-                                                <select class="form-control">
-                                                    <option value="1">Salaried Person</option>
-                                                    <option value="1">Salaried Person</option>
-                                                    <option value="2">Business Person</option>
-                                                    <option value="3">Others Person</option>
+                                                <select ng-model="src_bank.bank.bank_type" class="form-control">
+                                                    <option value="" title="See All Bank">All Bank</option>
+                                                    <option value="1" title="Bank Financial Institution">BFI</option>
+                                                    <option value="0" title="Non Bank Financial Institution">NBFI</option>
                                                 </select>
                                             </div>
+                                        </div>
+
+                                        {{--<div class="form-group pull-right">--}}
+                                        {{--<div class="input-group">--}}
+                                        {{--<div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>--}}
+                                        {{--<select ng-model="loan.loan_type" class="form-control">--}}
+                                        {{--<option value="">Select Loan</option>--}}
+                                        {{--<option value="1">SME Loan</option>--}}
+                                        {{--<option value="2">Car Loan</option>--}}
+                                        {{--<option value="3">Home Loan</option>--}}
+                                        {{--<option value="4">Personal Loan</option>--}}
+                                        {{--<option value="5">Others Loan</option>--}}
+                                        {{--<option value="6">Working Capital Loan</option>--}}
+                                        {{--</select>--}}
+                                        {{--</div>--}}
+                                        {{--</div>--}}
+
+                                        <div class="form-group pull-right">
+                                            {{--<div class="input-group">--}}
+                                            {{--<div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>--}}
+                                            {{--<div class="input-group-addon" title="Are you a salaried or business or others person?"><i class="fa"> I am a</i></div>--}}
+                                            {{--<select ng-model="person.loan_person_type" class="form-control">--}}
+                                            {{--<option  value="1">Select Person</option>--}}
+
+                                            {{--<option value="1">Salaried Person</option>--}}
+                                            {{--<option value="2">Business Person</option>--}}
+                                            {{--<option value="3">Others Person</option>--}}
+                                            {{--</select>--}}
+                                            {{--</div>--}}
+
+                                            <?php $person = Session::get('person'); ?>
+
+                                            @if($person==1)
+                                                <div ng-model="person.insr_person_type=1"></div>
+                                            @elseif($person==2)
+                                                <div ng-model="person.insr_person_type=2"></div>
+                                            @elseif($person==3)
+                                                <div ng-model="person.insr_person_type=3"></div>
+                                            @else
+                                                <div ng-model="person.insr_person_type=''"></div>
+                                            @endif
                                         </div>
 
                                     </form>
@@ -162,7 +186,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-12 col-md-12 b-item-apartment-block" ng-repeat="v in insurance_data | filter : nas">
+                    <div class="col-sm-12 col-md-12 b-item-apartment-block" ng-if="v.insr_type==4" ng-repeat="v in insurance_data | filter:person | filter:src_bank">
                         <div class="b-some-examples__item f-some-examples__item b-hover">
                             <div class="b-some-examples__item_action app-box">
                                 <div class="col-xs-12 col-sm-2 col-md-2">

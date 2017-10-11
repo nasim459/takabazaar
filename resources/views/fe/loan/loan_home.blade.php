@@ -102,16 +102,16 @@
                                             {{--</div>--}}
                                         {{--</div>--}}
 
-                                        {{--<div class="form-group pull-right" style="margin-left: 5px">--}}
-                                            {{--<div class="input-group">--}}
-                                                {{--<div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>--}}
-                                                {{--<select ng-model="_bank.bank['bank_type']" class="form-control">--}}
-                                                    {{--<option value="" title="See All Bank">All Bank</option>--}}
-                                                    {{--<option value="1" title="Bank Financial Institution">BFI</option>--}}
-                                                    {{--<option value="0" title="Non Bank Financial Institution">NBFI</option>--}}
-                                                {{--</select>--}}
-                                            {{--</div>--}}
-                                        {{--</div>--}}
+                                        <div class="form-group pull-right" style="margin-left: 5px">
+                                            <div class="input-group">
+                                                <div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>
+                                                <select ng-model="src_bank.bank.bank_type" class="form-control">
+                                                    <option value="" title="See All Bank">All Bank</option>
+                                                    <option value="1" title="Bank Financial Institution">BFI</option>
+                                                    <option value="0" title="Non Bank Financial Institution">NBFI</option>
+                                                </select>
+                                            </div>
+                                        </div>
 
                                         {{--<div class="form-group pull-right">--}}
                                             {{--<div class="input-group">--}}
@@ -129,16 +129,29 @@
                                         {{--</div>--}}
 
                                         <div class="form-group pull-right">
-                                            <div class="input-group">
-                                                <div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>
-                                                <div class="input-group-addon" title="Are you a salaried or business or others person?"><i class="fa"> I am a</i></div>
-                                                <select ng-model="person.loan_person_type" class="form-control">
-                                                    <option value="">Select Person</option>
-                                                    <option value="1">Salaried Person</option>
-                                                    <option value="2">Business Person</option>
-                                                    <option value="3">Others Person</option>
-                                                </select>
-                                            </div>
+                                            {{--<div class="input-group">--}}
+                                                {{--<div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>--}}
+                                                {{--<div class="input-group-addon" title="Are you a salaried or business or others person?"><i class="fa"> I am a</i></div>--}}
+                                                {{--<select ng-model="person.loan_person_type" class="form-control">--}}
+                                                    {{--<option  value="1">Select Person</option>--}}
+
+                                                    {{--<option value="1">Salaried Person</option>--}}
+                                                    {{--<option value="2">Business Person</option>--}}
+                                                    {{--<option value="3">Others Person</option>--}}
+                                                {{--</select>--}}
+                                            {{--</div>--}}
+
+                                            <?php $person = Session::get('person'); ?>
+
+                                            @if($person==1)
+                                                <div ng-model="person.loan_person_type=1"></div>
+                                            @elseif($person==2)
+                                                <div ng-model="person.loan_person_type=2"></div>
+                                            @elseif($person==3)
+                                                <div ng-model="person.loan_person_type=3"></div>
+                                            @else
+                                                <div ng-model="person.loan_person_type=''"></div>
+                                            @endif
                                         </div>
 
                                     </form>
@@ -182,7 +195,7 @@
                         @endforeach
                     </div>
 
-                    <div class="col-sm-12 col-md-12 b-item-apartment-block" ng-if="v.loan_type == 3" ng-repeat="v in display_data | filter:person | filter:_bank">
+                    <div class="col-sm-12 col-md-12 b-item-apartment-block" ng-if="v.loan_type==3" ng-repeat="v in display_data | filter:person | filter:src_bank">
                         <div class="b-some-examples__item f-some-examples__item b-hover">
                             <div class="b-some-examples__item_action app-box">
                                 <div class="col-xs-12 col-sm-2 col-md-2">
@@ -203,7 +216,7 @@
                                         <i class="fa"><span class="ralit">Interest Rate : </span></i>
                                     </div>
                                     <div class="col-xs-5 col-sm-12 col-md-12">
-                                        <i class="fa"><span class="ralit-r">@{{$index + 1}} @{{v.loan_interest_rate}} %</span></i>
+                                        <i class="fa"><span class="ralit-r">@{{v.loan_interest_rate}} %</span></i>
                                     </div>
                                 </div>
 
@@ -231,8 +244,11 @@
                                     </div>
                                     <div class="col-xs-5 col-sm-12 col-md-12">
                                         <i class="fa"><span class="ralit-r" ng-if="v.loan_person_type == 1">Salaried</span></i>
-                                        <i class="fa"><span class="ralit-r" ng-if="v.loan_person_type == 2">Person</span></i>
+                                        <i class="fa"><span class="ralit-r" ng-if="v.loan_person_type == 2">Business</span></i>
                                         <i class="fa"><span class="ralit-r" ng-if="v.loan_person_type == 3">Others</span></i>
+
+                                        {{--<i class="fa"><span class="ralit-r" ng-if="v.bank.bank_type == 1">BFI</span></i>--}}
+                                        {{--<i class="fa"><span class="ralit-r" ng-if="v.bank.bank_type == 0">NBFI</span></i>--}}
                                     </div>
                                 </div>
 

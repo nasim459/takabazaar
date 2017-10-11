@@ -187,6 +187,8 @@ Route::post('user-review', 'fe\app\reviewRaingController@user_review');
 Route::get('contact-us', 'fe\app\ViewFileController@view_file_blog');
 Route::get('about-us', 'fe\app\ViewFileController@view_file_blog');
 
+Route::get('person/{offering}/{select_psn}', 'RoughController@person');
+
 
 //=====================================End Front End Template Design==================
 

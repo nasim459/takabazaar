@@ -21,10 +21,10 @@
             <div class="row">
                 <div class="col-md-12 t-a-c">
                     <div class="b-infoblock-with-icon">
-                        <a  href="{{ url('card-credit') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s">
+                        <a  href="{{URL::to('card-credit')}}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s">
                             <i class="fa fa-credit-card f-s-50"><br><span class="f-s-22">Credit Card</span></i>
                         </a>
-                        <a href="{{ url('card-debit') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s">
+                        <a href="{{URL::to('card-debit')}}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s">
                             <i class="fa fa-credit-card f-s-50"><br><span class="f-s-22">Debit Card</span></i>
                         </a>
                     </div>
