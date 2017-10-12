@@ -22,13 +22,13 @@
             <div class="row">
                 <div class="col-md-12 t-a-c">
                     <div class="b-infoblock-with-icon">
-                        <a  href="#" data-target="#saving" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Saving Accoutn">
+                        <a data-target="#saving" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Saving Accoutn">
                             <i class="fa fa-bank f-s-50"><br><span class="f-s-22">Saving</span></i>
                         </a>
-                        <a  href="#" data-target="#fixed" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Fixed Accoutn">
+                        <a data-target="#fixed" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Fixed Accoutn">
                             <i class="fa fa-bank f-s-50"><br><span class="f-s-22">Fixed</span></i>
                         </a>
-                        <a  href="#" data-target="#mutual" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Mutual Accoutn">
+                        <a data-target="#mutual" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Mutual Accoutn">
                             <i class="fa fa-bank f-s-50"><br><span class="f-s-22">Mutual</span></i>
                         </a>
                     </div>

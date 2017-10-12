@@ -261,12 +261,12 @@
                         <div class="b-top-nav__dropdomn">
                             <ul class="b-top-nav__2level_wrap">
                                 <li class="b-top-nav__2level_title f-top-nav__2level_title">Loan</li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('loan-home') }}"><i class="fa fa-angle-right"></i>Home Loan</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('loan-car') }}"><i class="fa fa-angle-right"></i>Car Loan</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('loan-personal') }}"><i class="fa fa-angle-right"></i>Personal Loan</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('loan-sme') }}"><i class="fa fa-angle-right"></i>SME Loan</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('loan-working-capital') }}"><i class="fa fa-angle-right"></i>Working Capital Loan</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('loan-others') }}"><i class="fa fa-angle-right"></i>Others Loan</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#home" data-toggle="modal"><i class="fa fa-angle-right"></i>Home Loan</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#car" data-toggle="modal"><i class="fa fa-angle-right"></i>Car Loan</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#personal" data-toggle="modal"><i class="fa fa-angle-right"></i>Personal Loan</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#sme" data-toggle="modal"><i class="fa fa-angle-right"></i>SME Loan</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#working" data-toggle="modal"><i class="fa fa-angle-right"></i>Working Capital Loan</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#others" data-toggle="modal"><i class="fa fa-angle-right"></i>Others Loan</a></li>
                             </ul>
                         </div>
                     </li>
@@ -275,9 +275,9 @@
                         <div class="b-top-nav__dropdomn">
                             <ul class="b-top-nav__2level_wrap">
                                 <li class="b-top-nav__2level_title f-top-nav__2level_title">Investment</li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('investment-saving') }}"><i class="fa fa-angle-right"></i>Saving Accounts</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('investment-fixed') }}"><i class="fa fa-angle-right"></i>Fixed Accounts</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('investment-mutual') }}"><i class="fa fa-angle-right"></i>Mutual Accounts</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#saving" data-toggle="modal"><i class="fa fa-angle-right"></i>Saving Accounts</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#fixed" data-toggle="modal"><i class="fa fa-angle-right"></i>Fixed Accounts</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#mutual" data-toggle="modal"><i class="fa fa-angle-right"></i>Mutual Accounts</a></li>
                             </ul>
                         </div>
                     </li>
@@ -286,17 +286,17 @@
                         <div class="b-top-nav__dropdomn">
                             <ul class="b-top-nav__2level_wrap">
                                 <li class="b-top-nav__2level_title f-top-nav__2level_title">Insurance</li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('insurance-life') }}"><i class="fa fa-angle-right"></i>Life Insurance</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#life" data-toggle="modal"><i class="fa fa-angle-right"></i>Life Insurance</a></li>
                                 <li class="b-top-nav__2level f-top-nav__2level f-primary b-top-nav__with-multi-lvl"><a onclick="return false" href=""><i class="fa fa-angle-right"></i>Motor Insurance</a>
                                     <ul class="b-top-nav__multi-lvl-box">
-                                        <li class="b-top-nav__multi-lvl"><a href="{{ url('insurance-motor-bike') }}"><i class="fa fa-angle-right"></i>Bike Insurance</a></li>
-                                        <li class="b-top-nav__multi-lvl"><a href="{{ url('insurance-motor-car') }}"><i class="fa fa-angle-right"></i>Car Insurance</a></li>
+                                        <li class="b-top-nav__multi-lvl"><a data-target="#motor_bike" data-toggle="modal"><i class="fa fa-angle-right"></i>Bike Insurance</a></li>
+                                        <li class="b-top-nav__multi-lvl"><a data-target="#motor_car" data-toggle="modal"><i class="fa fa-angle-right"></i>Car Insurance</a></li>
                                     </ul>
                                 </li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('insurance-marine') }}"><i class="fa fa-angle-right"></i>Marine Insurance</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('insurance-fire') }}"><i class="fa fa-angle-right"></i>Fire Insurance</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('insurance-accident') }}"><i class="fa fa-angle-right"></i>Accident Insurance</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('insurance-health') }}"><i class="fa fa-angle-right"></i>Health Insurance</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#marine" data-toggle="modal"><i class="fa fa-angle-right"></i>Marine Insurance</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#fire" data-toggle="modal"><i class="fa fa-angle-right"></i>Fire Insurance</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#accident" data-toggle="modal"><i class="fa fa-angle-right"></i>Accident Insurance</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#health" data-toggle="modal"><i class="fa fa-angle-right"></i>Health Insurance</a></li>
                             </ul>
                         </div>
                     </li>
@@ -312,42 +312,604 @@
                     </li>
                     <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
                         <a href="{{ url('blog') }}" class="fa"><i class="fa fa-picture-o b-menu-1level-ico"></i><b>Blog</b> <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
-                        {{--<div class="b-top-nav__dropdomn">--}}
-                            {{--<ul class="b-top-nav__2level_wrap">--}}
-                                {{--<li class="b-top-nav__2level_title f-top-nav__2level_title">Blog</li>--}}
-                                {{--<li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('blog') }}"><i class="fa fa-angle-right"></i>Blog View</a></li>--}}
-                            {{--</ul>--}}
-                        {{--</div>--}}
                     </li>
                     <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
                         <a href="{{ url('about-us') }}" class="fa"><i class="fa fa-list b-menu-1level-ico"></i><b>About Us</b> <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
-                        {{--<div class="b-top-nav__dropdomn">--}}
-                            {{--<ul class="b-top-nav__2level_wrap">--}}
-                                {{--<li class="b-top-nav__2level_title f-top-nav__2level_title">Shopping</li>--}}
-                                {{--<li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="shop_listing_col.html"><i class="fa fa-angle-right"></i>Shop List Column</a></li>--}}
-                                {{--<li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="shop_listing_row.html"><i class="fa fa-angle-right"></i>Shop List Row</a></li>--}}
-                                {{--<li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="shop_listing_col_full_width.html"><i class="fa fa-angle-right"></i>Shop List Full width v1</a></li>--}}
-                                {{--<li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="shop_listing_col_full_width_v2.html"><i class="fa fa-angle-right"></i>Shop List Full width v2</a></li>--}}
-                                {{--<li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="shop_detail.html"><i class="fa fa-angle-right"></i>Single Product</a></li>--}}
-                                {{--<li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="shop_cart.html"><i class="fa fa-angle-right"></i>Shopping cart</a></li>--}}
-                                {{--<li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="shop_check_out.html"><i class="fa fa-angle-right"></i>Check out page</a></li>--}}
-                            {{--</ul>--}}
-                        {{--</div>--}}
                     </li>
                     <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
                         <a href="{{ url('contact-us') }}" class="fa"><i class="fa fa-folder-open b-menu-1level-ico"></i><b>Contact Us</b><span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
-                        {{--<div class="b-top-nav__dropdomn">--}}
-                            {{--<ul class="b-top-nav__2level_wrap">--}}
-                                {{--<li class="b-top-nav__2level_title f-top-nav__2level_title">Contact us</li>--}}
-                                {{--<li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="contact_us.html"><i class="fa fa-angle-right"></i>Version1</a></li>--}}
-                                {{--<li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="contact_us_v2.html"><i class="fa fa-angle-right"></i>Version2</a></li>--}}
-                            {{--</ul>--}}
-                        {{--</div>--}}
                     </li>
                 </ul>
 
             </nav>
         </div>
+
+        {{--Start loan_Area-------------------------------------------------}}
+        {{--Start home_loan--}}
+        <div id="home" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                {{--Start Modal--}}
+                <div class="modal-content modal-top">
+                    <div class="modal-header t-a-c">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <i class="fa app-tab-in f-s-20">What is your position?</i>
+                    </div>
+                    <div class="modal-body" style="overflow: hidden">
+
+                        <div class="col-md-12 t-a-c">
+                            <a href="{{URL::to('person/'.'loan-home'.'/'.'salaried')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/salaried.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Salaried Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'loan-home'.'/'.'business')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/business.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Business Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'loan-home'.'/'.'others')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/others.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Other's Person</span></i>
+                            </a>
+
+                            {{--<a href="{{ url('loan-home') }}" class="btn btn-default" title="Home Loan">--}}
+                            {{--<i class="fa fa-home f-s-50"><br><span class="f-s-22">Others Person</span></i>--}}
+                            {{--</a>--}}
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                {{--End Modal--}}
+            </div>
+        </div>
+        {{--End home_loan--}}
+
+        {{--Start car_loan--}}
+        <div id="car" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                {{--Start Modal--}}
+                <div class="modal-content modal-top">
+                    <div class="modal-header t-a-c">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <i class="fa app-tab-in f-s-20">What is your position?</i>
+                    </div>
+                    <div class="modal-body" style="overflow: hidden">
+
+                        <div class="col-md-12 t-a-c">
+                            <a href="{{URL::to('person/'.'loan-car'.'/'.'salaried')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/salaried.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Salaried Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'loan-car'.'/'.'business')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/business.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Business Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'loan-car'.'/'.'others')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/others.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Other's Person</span></i>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                {{--End Modal--}}
+            </div>
+        </div>
+        {{--End car_loan--}}
+
+        {{--Start personal_loan--}}
+        <div id="personal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                {{--Start Modal--}}
+                <div class="modal-content modal-top">
+                    <div class="modal-header t-a-c">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <i class="fa app-tab-in f-s-20">What is your position?</i>
+                    </div>
+                    <div class="modal-body" style="overflow: hidden">
+
+                        <div class="col-md-12 t-a-c">
+                            <a href="{{URL::to('person/'.'loan-personal'.'/'.'salaried')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/salaried.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Salaried Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'loan-personal'.'/'.'business')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/business.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Business Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'loan-personal'.'/'.'others')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/others.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Other's Person</span></i>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                {{--End Modal--}}
+            </div>
+        </div>
+        {{--End personal_loan--}}
+
+        {{--Start sme_loan--}}
+        <div id="sme" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                {{--Start Modal--}}
+                <div class="modal-content modal-top">
+                    <div class="modal-header t-a-c">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <i class="fa app-tab-in f-s-20">What is your position?</i>
+                    </div>
+                    <div class="modal-body" style="overflow: hidden">
+
+                        <div class="col-md-12 t-a-c">
+                            <a href="{{URL::to('person/'.'loan-sme'.'/'.'salaried')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/salaried.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Salaried Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'loan-sme'.'/'.'business')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/business.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Business Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'loan-sme'.'/'.'others')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/others.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Other's Person</span></i>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                {{--End Modal--}}
+            </div>
+        </div>
+        {{--End sme_loan--}}
+
+        {{--Start working_loan--}}
+        <div id="working" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                {{--Start Modal--}}
+                <div class="modal-content modal-top">
+                    <div class="modal-header t-a-c">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <i class="fa app-tab-in f-s-20">What is your position?</i>
+                    </div>
+                    <div class="modal-body" style="overflow: hidden">
+
+                        <div class="col-md-12 t-a-c">
+                            <a href="{{URL::to('person/'.'loan-working-capital'.'/'.'salaried')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/salaried.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Salaried Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'loan-working-capital'.'/'.'business')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/business.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Business Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'loan-working-capital'.'/'.'others')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/others.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Other's Person</span></i>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                {{--End Modal--}}
+            </div>
+        </div>
+        {{--End workingloan--}}
+
+        {{--Start others_loan--}}
+        <div id="others" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                {{--Start Modal--}}
+                <div class="modal-content modal-top">
+                    <div class="modal-header t-a-c">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <i class="fa app-tab-in f-s-20">What is your position?</i>
+                    </div>
+                    <div class="modal-body" style="overflow: hidden">
+
+                        <div class="col-md-12 t-a-c">
+                            <a href="{{URL::to('person/'.'loan-others'.'/'.'salaried')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/salaried.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Salaried Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'loan-others'.'/'.'business')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/business.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Business Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'loan-others'.'/'.'others')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/others.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Other's Person</span></i>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                {{--End Modal--}}
+            </div>
+        </div>
+        {{--End others_loan--}}
+        {{--End loan_Area---------------------------------------------------}}
+
+        {{--Start Investment_Area-------------------------------------------}}
+        {{--Start investment_saving--}}
+        <div id="saving" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                {{--Start Modal--}}
+                <div class="modal-content modal-top">
+                    <div class="modal-header t-a-c">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <i class="fa app-tab-in f-s-20">What is your position?</i>
+                    </div>
+                    <div class="modal-body" style="overflow: hidden">
+
+                        <div class="col-md-12 t-a-c">
+                            <a href="{{URL::to('person/'.'investment-saving'.'/'.'salaried')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/salaried.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Salaried Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'investment-saving'.'/'.'business')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/business.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Business Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'investment-saving'.'/'.'others')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/others.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Other's Person</span></i>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                {{--End Modal--}}
+            </div>
+        </div>
+        {{--End investment_saving--}}
+
+        {{--Start investment_fixed--}}
+        <div id="fixed" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                {{--Start Modal--}}
+                <div class="modal-content modal-top">
+                    <div class="modal-header t-a-c">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <i class="fa app-tab-in f-s-20">What is your position?</i>
+                    </div>
+                    <div class="modal-body" style="overflow: hidden">
+
+                        <div class="col-md-12 t-a-c">
+                            <a href="{{URL::to('person/'.'investment-fixed'.'/'.'salaried')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/salaried.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Salaried Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'investment-fixed'.'/'.'business')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/business.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Business Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'investment-fixed'.'/'.'others')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/others.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Other's Person</span></i>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                {{--End Modal--}}
+            </div>
+        </div>
+        {{--End investment_fixed--}}
+
+        {{--Start investment_mutual--}}
+        <div id="mutual" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                {{--Start Modal--}}
+                <div class="modal-content modal-top">
+                    <div class="modal-header t-a-c">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <i class="fa app-tab-in f-s-20">What is your position?</i>
+                    </div>
+                    <div class="modal-body" style="overflow: hidden">
+
+                        <div class="col-md-12 t-a-c">
+                            <a href="{{URL::to('person/'.'investment-mutual'.'/'.'salaried')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/salaried.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Salaried Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'investment-mutual'.'/'.'business')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/business.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Business Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'investment-mutual'.'/'.'others')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/others.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Other's Person</span></i>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                {{--End Modal--}}
+            </div>
+        </div>
+        {{--End investment_mutual--}}
+        {{--End Investment_Area---------------------------------------------}}
+
+        {{--Start Insurance_Area--------------------------------------------}}
+        {{--Start insurance_life--}}
+        <div id="life" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                {{--Start Modal--}}
+                <div class="modal-content modal-top">
+                    <div class="modal-header t-a-c">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <i class="fa app-tab-in f-s-20">What is your position?</i>
+                    </div>
+                    <div class="modal-body" style="overflow: hidden">
+
+                        <div class="col-md-12 t-a-c">
+                            <a href="{{URL::to('person/'.'insurance-life'.'/'.'salaried')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/salaried.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Salaried Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'insurance-life'.'/'.'business')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/business.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Business Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'insurance-life'.'/'.'others')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/others.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Other's Person</span></i>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                {{--End Modal--}}
+            </div>
+        </div>
+        {{--End insurance_life--}}
+
+        {{--Start insurance_motor_car--}}
+        <div id="motor_car" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                {{--Start Modal--}}
+                <div class="modal-content modal-top">
+                    <div class="modal-header t-a-c">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <i class="fa app-tab-in f-s-20">What is your position?</i>
+                    </div>
+                    <div class="modal-body" style="overflow: hidden">
+
+                        <div class="col-md-12 t-a-c">
+                            <a href="{{URL::to('person/'.'insurance-motor-car'.'/'.'salaried')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/salaried.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Salaried Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'insurance-motor-car'.'/'.'business')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/business.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Business Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'insurance-motor-car'.'/'.'others')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/others.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Other's Person</span></i>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                {{--End Modal--}}
+            </div>
+        </div>
+        {{--End insurance_motor_car--}}
+
+        {{--Start insurance_motor_bike--}}
+        <div id="motor_bike" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                {{--Start Modal--}}
+                <div class="modal-content modal-top">
+                    <div class="modal-header t-a-c">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <i class="fa app-tab-in f-s-20">What is your position?</i>
+                    </div>
+                    <div class="modal-body" style="overflow: hidden">
+
+                        <div class="col-md-12 t-a-c">
+                            <a href="{{URL::to('person/'.'insurance-motor-bike'.'/'.'salaried')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/salaried.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Salaried Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'insurance-motor-bike'.'/'.'business')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/business.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Business Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'insurance-motor-bike'.'/'.'others')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/others.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Other's Person</span></i>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                {{--End Modal--}}
+            </div>
+        </div>
+        {{--End insurance_motor_bike--}}
+
+        {{--Start insurance_marine--}}
+        <div id="marine" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                {{--Start Modal--}}
+                <div class="modal-content modal-top">
+                    <div class="modal-header t-a-c">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <i class="fa app-tab-in f-s-20">What is your position?</i>
+                    </div>
+                    <div class="modal-body" style="overflow: hidden">
+
+                        <div class="col-md-12 t-a-c">
+                            <a href="{{URL::to('person/'.'insurance-marine'.'/'.'salaried')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/salaried.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Salaried Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'insurance-marine'.'/'.'business')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/business.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Business Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'insurance-marine'.'/'.'others')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/others.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Other's Person</span></i>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                {{--End Modal--}}
+            </div>
+        </div>
+        {{--End insurance_marine--}}
+
+        {{--Start insurance_fire--}}
+        <div id="fire" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                {{--Start Modal--}}
+                <div class="modal-content modal-top">
+                    <div class="modal-header t-a-c">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <i class="fa app-tab-in f-s-20">What is your position?</i>
+                    </div>
+                    <div class="modal-body" style="overflow: hidden">
+
+                        <div class="col-md-12 t-a-c">
+                            <a href="{{URL::to('person/'.'insurance-fire'.'/'.'salaried')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/salaried.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Salaried Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'insurance-fire'.'/'.'business')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/business.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Business Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'insurance-fire'.'/'.'others')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/others.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Other's Person</span></i>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                {{--End Modal--}}
+            </div>
+        </div>
+        {{--End insurance_fire--}}
+
+        {{--Start insurance_accident--}}
+        <div id="accident" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                {{--Start Modal--}}
+                <div class="modal-content modal-top">
+                    <div class="modal-header t-a-c">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <i class="fa app-tab-in f-s-20">What is your position?</i>
+                    </div>
+                    <div class="modal-body" style="overflow: hidden">
+
+                        <div class="col-md-12 t-a-c">
+                            <a href="{{URL::to('person/'.'insurance-accident'.'/'.'salaried')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/salaried.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Salaried Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'insurance-accident'.'/'.'business')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/business.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Business Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'insurance-accident'.'/'.'others')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/others.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Other's Person</span></i>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                {{--End Modal--}}
+            </div>
+        </div>
+        {{--End insurance_accident--}}
+
+        {{--Start insurance_health--}}
+        <div id="health" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                {{--Start Modal--}}
+                <div class="modal-content modal-top">
+                    <div class="modal-header t-a-c">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <i class="fa app-tab-in f-s-20">What is your position?</i>
+                    </div>
+                    <div class="modal-body" style="overflow: hidden">
+
+                        <div class="col-md-12 t-a-c">
+                            <a href="{{URL::to('person/'.'insurance-health'.'/'.'salaried')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/salaried.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Salaried Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'insurance-health'.'/'.'business')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/business.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Business Person</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'insurance-health'.'/'.'others')}}" class="btn btn-default app-psn" title="Home Loan">
+                                <img src="{{ asset('fe/img/person/others.jpg') }}" class="app-img" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Other's Person</span></i>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                {{--End Modal--}}
+            </div>
+        </div>
+        {{--End insurance_health--}}
+        {{--End Insurance_Area----------------------------------------------}}
+
     </div>
 </header>
 <div class="j-menu-container"></div>

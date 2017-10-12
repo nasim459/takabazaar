@@ -23,22 +23,22 @@
             <div class="row">
                 <div class="col-md-12 t-a-c">
                     <div class="b-infoblock-with-icon">
-                        <a  href="#" data-target="#home" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Home Loan">
+                        <a data-target="#home" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Home Loan">
                             <i class="fa fa-home f-s-50"><br><span class="f-s-18">Home Loan</span></i>
                         </a>
-                        <a href="#" data-target="#car" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Car Loan">
+                        <a data-target="#car" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Car Loan">
                             <i class="fa fa-car f-s-50"><br><span class="f-s-18">Car Loan</span></i>
                         </a>
-                        <a href="#" data-target="#personal" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Persoanal Loan">
-                            <i class="fa fa-user f-s-50"><br><span class="f-s-18">Persoanal</span></i>
+                        <a data-target="#personal" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Persoanal Loan">
+                            <i class="fa fa-user f-s-50"><br><span class="f-s-18">Persoanal Loan</span></i>
                         </a>
-                        <a href="#" data-target="#sme" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Sme Loan">
-                            <i class="fa fa-life-ring f-s-50"><br><span class="f-s-18">Sme Loan</span></i>
+                        <a data-target="#sme" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Sme Loan">
+                            <i class="fa fa-life-ring f-s-50"><br><span class="f-s-18">SME Loan</span></i>
                         </a>
-                        <a href="#" data-target="#working" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Others Loan">
+                        <a data-target="#working" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Others Loan">
                             <i class="fa fa-won f-s-50"><br><span class="f-s-18">Working Capital</span></i>
                         </a>
-                        <a href="#" data-target="#others" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Others Loan">
+                        <a data-target="#others" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Others Loan">
                             <i class="fa fa-book f-s-50"><br><span class="f-s-18">Others Loan</span></i>
                         </a>
                     </div>
