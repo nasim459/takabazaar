@@ -7,10 +7,10 @@
             <div class="table-h-t">
                 <div class="col-md-3 m-t-5">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search here...">
+                        <input type="text" value="Applying Pending" readonly class="form-control" placeholder="Search here...">
                     </div>
                 </div>
-                <div class="col-md-3 m-t-10 text-success"><b>Applying Pending</b></div>
+                <div class="col-md-3 m-t-10 text-success"><b></b></div>
                 <div class="col-md-4 m-t-10">
                     <i class="fa text-success">{{ Session::get('msg_apply') }} {{ Session::put('msg_apply', '') }}</i>
                 </div>

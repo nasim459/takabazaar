@@ -78,9 +78,9 @@
                     <small>Header</small>
                 </a>
 
-                <a href="{{ url('info'.'/'.'team-member') }}" class="app btn btn-default">
-                    <i class="fa fa-users text-success fa-2x fa-3y"></i><br/>
-                    <small>Team Member</small>
+                <a href="{{ url('form'.'/'.'bank') }}" class="app btn btn-default">
+                    <i class="fa fa-plus text-success fa-2x fa-3y"></i><br/>
+                    <small>Card Category</small>
                 </a>
             </div>
         </div>
@@ -97,14 +97,14 @@
                     <small>Card Category</small>
                 </a>
 
-                <a href="{{ url('form'.'/'.'bank') }}" class="app btn btn-default">
-                    <i class="fa fa-plus text-success fa-2x fa-3y"></i><br/>
-                    <small>Card Category</small>
+                <a href="{{ url('info'.'/'.'team-member') }}" class="app btn btn-default">
+                    <i class="fa fa-users text-success fa-2x fa-3y"></i><br/>
+                    <small>Team Member</small>
                 </a>
 
-                <a href="{{ url('bank'.'/'.'list') }}" class="app btn btn-default">
-                    <i class="fa fa-lock text-success fa-2x fa-3y"></i><br/>
-                    <small>Bank</small>
+                <a href="{{ url('info'.'/'.'contact-us') }}" class="app btn btn-default">
+                    <i class="fa fa-contao text-success fa-2x fa-3y"></i><br/>
+                    <small>Contact Us</small>
                 </a>
             </div>
         </div>
