@@ -25,9 +25,13 @@ class InsuranceController extends Controller
             $loan_view = Insurance::orderBy('id', 'DESC')->with('bank')->where('insr_type', '1')->get();
             //dd($loan_view);
 
-        } elseif ($child == 'motor') {
-            $file_open = 'ap.insurance.insurance_motor';
-            $loan_view = Insurance::orderBy('id', 'DESC')->with('bank')->where('insr_type', '2')->get();
+        } elseif ($child == 'motor-car') {
+            $file_open = 'ap.insurance.insurance_motor_car';
+            $loan_view = Insurance::orderBy('id', 'DESC')->with('bank')->where('insr_type', '5')->get();
+
+        } elseif ($child == 'motor-bike') {
+            $file_open = 'ap.insurance.insurance_motor_bike';
+            $loan_view = Insurance::orderBy('id', 'DESC')->with('bank')->where('insr_type', '6')->get();
 
         } elseif ($child == 'marine') {
             $file_open = 'ap.insurance.insurance_marine';
