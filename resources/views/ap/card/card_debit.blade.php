@@ -7,10 +7,10 @@
             <div class="table-h-t">
                 <div class="col-md-3 m-t-5">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search here...">
+                        <input type="text" value="Debit Card" readonly class="form-control" placeholder="Search here...">
                     </div>
                 </div>
-                <div class="col-md-3 m-t-10 text-success"><b>Debit Card</b></div>
+                <div class="col-md-3 m-t-10 text-success"><b></b></div>
                 <div class="col-md-4">
                     <i class="fa text-success">{{ Session::get('msg_suc') }} {{ Session::put('msg_suc', '') }}</i>
                     <i class="fa text-danger">{{ Session::get('msg_error') }} {{ Session::put('msg_error', '') }}</i>
