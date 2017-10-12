@@ -7,10 +7,10 @@
             <div class="table-h-t">
                 <div class="col-md-3 m-t-5">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search here...">
+                        <input type="text" value="Personal Loan" readonly class="form-control" placeholder="Search here...">
                     </div>
                 </div>
-                <div class="col-md-3 m-t-10 text-success"><b>SME Lone</b></div>
+                <div class="col-md-3 m-t-10 text-success"><b></b></div>
                 <div class="col-md-4">
                     <i class="fa text-success">{{ Session::get('msg_suc') }} {{ Session::put('msg_suc', '') }}</i>
                     <i class="fa text-danger">{{ Session::get('msg_error') }} {{ Session::put('msg_error', '') }}</i>
@@ -36,11 +36,11 @@
                 @php $number = 0; $off = 0; $on = 1; $table = 33; @endphp
                 @foreach($loan_view as $v)
                     <tr>
-                        <td class="col-xs-12 col-sm-2 text-success" title="{{$v->bank->bank_name}}">
+                        <td class="col-xs-12 col-sm-2 text-success" title="{{$v->bank['bank_name']}}">
                             <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}kkk">
-                                <img src="{{ asset($v->bank->bank_image_url) }}" height="16px" width="30px" alt="pic">
+                                <img src="{{ asset('ap/images/banks/'.$v->bank['bank_image_url']) }}" height="16px" width="30px">
                             </a>
-                            {{str_limit($v->bank->bank_name, 11, ' ...')}}
+                            {{str_limit($v->bank['bank_name'], 11, ' ...')}}
                         </td>
                         <td class="col-xs-12 col-sm-2">{{$v->loan_interest_rate}}%</td>
                         <td class="col-xs-12 col-sm-2">{{$v->loan_monthly_interest}} BDT</td>
@@ -79,8 +79,8 @@
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     <h4 class="modal-title text-success text-center">
-                                        <img src="{{ asset($v->bank->bank_image_url) }}" height="20px" width="30px" alt="pic">&nbsp;
-                                        {{$v->bank->bank_name}}
+                                        <img src="{{ asset('ap/images/banks/'.$v->bank['bank_image_url']) }}" height="20px" width="30px" alt="pic">&nbsp;
+                                        {{$v->bank['bank_name']}}
                                     </h4>
                                 </div>
                                 <div class="modal-body" style="overflow: hidden">
@@ -130,20 +130,21 @@
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     <h4 class="modal-title text-success text-center">
-                                        <img src="{{ asset($v->bank->bank_image_url) }}" height="20px" width="30px" alt="pic">&nbsp;
-                                        {{$v->bank->bank_name}}
+                                        <img src="{{ asset('ap/images/banks/'.$v->bank['bank_image_url']) }}" height="20px" width="30px" alt="pic">&nbsp;
+                                        {{$v->bank['bank_name']}}
                                     </h4>
                                 </div>
                                 <div class="modal-body" style="overflow: hidden">
                                     <div class="col-md-12">
                                         <div class="col-md-12 f-s-14 f-f-s">
 
-                                            {!! Form::open(array('url'=>'form-loan-update', 'role'=>'form', 'method'=>'POST')) !!}
+                                            {!! Form::open(array('url'=>'form-loan-save', 'role'=>'form', 'method'=>'POST')) !!}
                                             <div class="form-horizontal">
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                                                 <input type="hidden" name="l_id" value="{{ $v->id }}">
-                                                <input type="hidden" name="b_id" value="{{ $v->bank_id }}">
+                                                <input type="hidden" name="bank_id" value="{{ $v->bank['id'] }}">
+                                                <input type="hidden" name="u_data" value="update_value">
 
                                                 <div class="form-group">
                                                     <div class="col-sm-4">
@@ -159,25 +160,25 @@
                                                     <div class="col-sm-4">
                                                         <select class="form-control" name="l_type" required>
                                                             @if($v->loan_type == 1) {
-                                                            <option value="1">SME</option>
+                                                            <option value="1">SME Loan</option>
                                                             }@elseif($v->loan_type ==2){
-                                                            <option value="2">Car</option>
+                                                            <option value="2">Car Loan</option>
                                                             }@elseif($v->loan_type ==3){
-                                                            <option value="3">Home</option>
+                                                            <option value="3">Home Loan</option>
                                                             }@elseif($v->loan_type ==4){
-                                                            <option value="4">Personal</option>
+                                                            <option value="4">Personal Loan</option>
                                                             }@elseif($v->loan_type ==5){
-                                                            <option value="5">Others</option>
+                                                            <option value="5">Others Loan</option>
                                                             }@elseif($v->loan_type ==6){
                                                             <option value="6">Working Capital</option>
                                                             }
                                                             @endif
 
-                                                            <option value="1">SME</option>
-                                                            <option value="2">Car</option>
-                                                            <option value="3">Home</option>
-                                                            <option value="4">Personal</option>
-                                                            <option value="5">Others</option>
+                                                            <option value="1">SME Loan</option>
+                                                            <option value="2">Car Loan</option>
+                                                            <option value="3">Home Loan</option>
+                                                            <option value="4">Personal Loan</option>
+                                                            <option value="5">Others Loan</option>
                                                             <option value="6">Working Capital</option>
                                                         </select>
                                                     </div>
@@ -311,7 +312,7 @@
                                                 <div class="form-group">
                                                     <label for="exampleInputName2" class="col-sm-4 control-label m-t-20">Image :</label>
                                                     <div class="col-sm-6">
-                                                        <img src="{{ asset($v->bank->bank_image_url) }}" height="60px" width="90px" alt="pic">
+                                                        <img src="{{ asset('ap/images/banks/'.$v->bank['bank_image_url']) }}" height="60px" width="90px" alt="pic">
                                                     </div>
                                                 </div>
                                                 <hr>

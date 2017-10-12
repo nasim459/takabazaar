@@ -7,10 +7,10 @@
             <div class="table-h-t">
                 <div class="col-md-3 m-t-5">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search here...">
+                        <input type="text" value="Home Loan" readonly class="form-control" placeholder="Search here...">
                     </div>
                 </div>
-                <div class="col-md-3 m-t-10 text-success"><b>Home Lone</b></div>
+                <div class="col-md-3 m-t-10 text-success"><b></b></div>
                 <div class="col-md-4">
                     <i class="fa text-success">{{ Session::get('msg_suc') }} {{ Session::put('msg_suc', '') }}</i>
                     <i class="fa text-danger">{{ Session::get('msg_error') }} {{ Session::put('msg_error', '') }}</i>
@@ -143,7 +143,7 @@
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                                                 <input type="hidden" name="l_id" value="{{ $v->id }}">
-                                                <input type="text" name="bank_id" value="{{ $v->bank['id'] }}">
+                                                <input type="hidden" name="bank_id" value="{{ $v->bank['id'] }}">
                                                 <input type="hidden" name="u_data" value="update_value">
 
                                                 <div class="form-group">
