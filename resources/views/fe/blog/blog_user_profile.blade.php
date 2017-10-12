@@ -73,7 +73,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         {{--<img src="{{ url('fe/img/blog_users/nasim.jpg') }}" class="img-thumbnail" alt="Cinque Terre" height="150">--}}
-                                        <img src="/{{ Auth::user()->user_image}}" class="img-thumbnail" alt="{{ Auth::user()->user_image}}" height="150">
+                                        <img src="/{{ Auth::user()->user_image }}" class="img-thumbnail" alt="{{ Auth::user()->user_image }}" height="150">
                                         <br>
                                         <a data-toggle="modal" data-target="#personPic" class="btn btn-default btn-sm m-t-5"><i class="fa fa-edit"> Picture Edit</i></a>
                                     </div>
