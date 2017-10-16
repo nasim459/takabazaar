@@ -12837,11 +12837,22 @@ textarea.b-product-card-textarea {
   margin-left: 10px!important;
   margin-right: 10px!important;
 }
+/*app-person-card*/
+.app-psn-card{
+  margin-top: 10px!important;
+  margin-bottom: 10px!important;
+  margin-left: 10px!important;
+  margin-right: 10px!important;
+}
 
 /*app-image-into-app-person*/
 .app-img{
   width: 90px!important;
   height: 90px!important;
+}
+.app-img-card{
+  width: 170px!important;
+  height: 100px!important;
 }
 
 .c-red{color: red!important;}

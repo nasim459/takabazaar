@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="col-md-12 t-a-c">
                     <div class="b-infoblock-with-icon">
-                        <a  href="{{URL::to('card-credit')}}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s">
+                        <a data-target="#card_credit" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s">
                             <i class="fa fa-credit-card f-s-50"><br><span class="f-s-22">Credit Card</span></i>
                         </a>
                         <a href="{{URL::to('card-debit')}}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s">
@@ -29,6 +29,51 @@
                         </a>
                     </div>
                 </div>
+
+                {{--Start card_credit--}}
+                <div id="card_credit" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        {{--Start Modal--}}
+                        <div class="modal-content modal-top">
+                            <div class="modal-header t-a-c">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <i class="fa app-tab-in f-s-20">Choose Your Credit Card</i>
+                            </div>
+                            <div class="modal-body" style="overflow: hidden">
+
+                                <div class="col-md-12 t-a-c">
+                                    <a href="{{URL::to('person/'.'card-credit'.'/'.'visa_card')}}" class="btn btn-default app-psn-card" title="Visa Card">
+                                        <img src="{{ asset('fe/img/card_credit/11.png') }}" class="app-img-card" alt=""><br>
+                                        <i class="fa"><br><span class="f-s-18">Visa Card</span></i>
+                                    </a>
+                                    <a href="{{URL::to('person/'.'card-credit'.'/'.'master_card')}}" class="btn btn-default app-psn-card" title="Master Card">
+                                        <img src="{{ asset('fe/img/card_credit/22.png') }}" class="app-img-card" alt=""><br>
+                                        <i class="fa"><br><span class="f-s-18">Master Card</span></i>
+                                    </a>
+                                    <a href="{{URL::to('person/'.'card-credit'.'/'.'american_express')}}" class="btn btn-default app-psn-card" title="American Express">
+                                        <img src="{{ asset('fe/img/card_credit/33.png') }}" class="app-img-card" alt=""><br>
+                                        <i class="fa"><br><span class="f-s-18">American Express</span></i>
+                                    </a>
+                                    <a href="{{URL::to('person/'.'card-credit'.'/'.'world_card')}}" class="btn btn-default app-psn-card" title="World Card">
+                                        <img src="{{ asset('fe/img/card_credit/44.png') }}" class="app-img-card" alt=""><br>
+                                        <i class="fa"><br><span class="f-s-18">World Card</span></i>
+                                    </a>
+                                    <a href="{{URL::to('person/'.'card-credit'.'/'.'dinner_club')}}" class="btn btn-default app-psn-card" title="Diners Club">
+                                        <img src="{{ asset('fe/img/card_credit/55.png') }}" class="app-img-card" alt=""><br>
+                                        <i class="fa"><br><span class="f-s-18">Diners Club</span></i>
+                                    </a>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        {{--End Modal--}}
+                    </div>
+                </div>
+                {{--End card_credit--}}
+
             </div>
 
         </div>

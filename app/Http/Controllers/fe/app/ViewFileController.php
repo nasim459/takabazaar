@@ -8,6 +8,7 @@ use App\Model\blog\Blog;
 use App\Model\blog\Categories;
 use App\Model\blog\Comment;
 use App\Model\card\Card;
+use App\Model\cardcategorie\Cardcategorie;
 use App\Model\carddebit\Carddebit;
 use App\Model\fe\app\About;
 use App\Model\headerimage\Headerimage;
@@ -187,6 +188,7 @@ class ViewFileController extends Controller
                 $file_open = 'fe.card.card_credit';
                 $header_image = Headerimage::where('header_image_type', 16)->get();    //----header_image_type = 16 means card_credit
                 $advertise_image = Advertise::where('add_type', 16)->where('add_status', 1)->get();    //----add_type = 1 means card_credit
+                $cardcategory =  Cardcategorie::all();
 
                 break;
             case "card-debit":
@@ -205,7 +207,7 @@ class ViewFileController extends Controller
         //Session::put('count', $count);
 
         //$open_file = view($file_open);
-        $open_file = view($file_open, compact('blog_view_4', 'blog_view_8', 'video_view', 'header_image', 'advertise_image'));
+        $open_file = view($file_open, compact('blog_view_4', 'blog_view_8', 'video_view', 'header_image', 'advertise_image', 'cardcategory'));
         return view('fe_master')->with('fe_maincontent', $open_file);
     }
 

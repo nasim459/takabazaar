@@ -25,6 +25,21 @@ class RoughController extends Controller
         } elseif ($select_psn == 'others') {
             Session::put('person', '3');
 
+        } elseif ($select_psn == 'visa_card') {
+            Session::put('person', '11');
+
+        } elseif ($select_psn == 'master_card') {
+            Session::put('person', '22');
+
+        } elseif ($select_psn == 'american_express') {
+            Session::put('person', '33');
+
+        } elseif ($select_psn == 'world_card') {
+            Session::put('person', '44');
+
+        } elseif ($select_psn == 'dinner_club') {
+            Session::put('person', '55');
+
         } else{
             return back();
         }
@@ -94,6 +109,10 @@ class RoughController extends Controller
 
             case "insurance-health":
                 return redirect('insurance-health');
+                break;
+
+            case "card-credit":
+                return redirect('card-credit');
                 break;
 
             default:

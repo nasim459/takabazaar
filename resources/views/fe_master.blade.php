@@ -305,7 +305,7 @@
                         <div class="b-top-nav__dropdomn">
                             <ul class="b-top-nav__2level_wrap">
                                 <li class="b-top-nav__2level_title f-top-nav__2level_title">Card</li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('card-credit') }}"><i class="fa fa-angle-right"></i>Credit Card</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#card_credit" data-toggle="modal"><i class="fa fa-angle-right"></i>Credit Card</a></li>
                                 <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('card-debit') }}"><i class="fa fa-angle-right"></i>Debit Card</a></li>
                             </ul>
                         </div>
@@ -908,6 +908,50 @@
             </div>
         </div>
         {{--End insurance_health--}}
+
+        {{--Start card_credit--}}
+        <div id="card_credit" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                {{--Start Modal--}}
+                <div class="modal-content modal-top">
+                    <div class="modal-header t-a-c">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <i class="fa app-tab-in f-s-20">Choose Your Credit Card</i>
+                    </div>
+                    <div class="modal-body" style="overflow: hidden">
+
+                        <div class="col-md-12 t-a-c">
+                            <a href="{{URL::to('person/'.'card-credit'.'/'.'visa_card')}}" class="btn btn-default app-psn-card" title="Visa Card">
+                                <img src="{{ asset('fe/img/card_credit/11.png') }}" class="app-img-card" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Visa Card</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'card-credit'.'/'.'master_card')}}" class="btn btn-default app-psn-card" title="Master Card">
+                                <img src="{{ asset('fe/img/card_credit/22.png') }}" class="app-img-card" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Master Card</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'card-credit'.'/'.'american_express')}}" class="btn btn-default app-psn-card" title="American Express">
+                                <img src="{{ asset('fe/img/card_credit/33.png') }}" class="app-img-card" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">American Express</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'card-credit'.'/'.'world_card')}}" class="btn btn-default app-psn-card" title="World Card">
+                                <img src="{{ asset('fe/img/card_credit/44.png') }}" class="app-img-card" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">World Card</span></i>
+                            </a>
+                            <a href="{{URL::to('person/'.'card-credit'.'/'.'dinner_club')}}" class="btn btn-default app-psn-card" title="Diners Club">
+                                <img src="{{ asset('fe/img/card_credit/55.png') }}" class="app-img-card" alt=""><br>
+                                <i class="fa"><br><span class="f-s-18">Diners Club</span></i>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                {{--End Modal--}}
+            </div>
+        </div>
+        {{--End card_credit--}}
         {{--End Insurance_Area----------------------------------------------}}
 
     </div>

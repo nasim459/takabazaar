@@ -65,98 +65,95 @@
                     <div class="col-sm-12 col-md-12 b-item-apartment-block">
                         <div class="b-some-examples__item f-some-examples__item">
                             <div class="b-some-examples__item_action- -app-box"style="margin-top: 13px;">
-                                {{--<div class="col-xs-12 col-sm-12 col-md-12">--}}
-                                    {{--<i class="fa fa-search f-s-20 m-b-10 t-a-c"> Search here ...</i>--}}
-                                {{--</div>--}}
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <i class="fa fa-sort f-s-20 m-b-10 t-a-c"> Sort by ...</i>
+                                </div>
 
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <form class="form-inline app-head">
-                                        {{--<div class="form-group">--}}
-                                            {{--<div class="input-group">--}}
-                                                {{--<div class="input-group-addon"><i class="fa">Your amount</i></div>--}}
-                                                {{--<input type="text" ng-model="Data.amount" ng-keyup="calculation()"  class="form-control" id="exampleInputAmount" placeholder="Amount">--}}
-                                                {{--<div class="input-group-addon">৳</div>--}}
-                                            {{--</div>--}}
-                                        {{--</div>--}}
 
-                                        {{--<div class="form-group">--}}
-                                            {{--<div class="input-group">--}}
-                                                {{--<div class="input-group-addon"><i class="fa">For</i></div>--}}
-                                                {{--<select class="form-control" ng-model="Data.year"  ng-options="option.id as option.name for option in datas" ng-init="Data.year = datas[1].id"  ng-keyup="calculation()" >--}}
+                                        <div class="form-group pull-right">
 
-                                                {{--</select>--}}
-                                            {{--</div>--}}
-                                        {{--</div>--}}
+                                            <?php $person = Session::get('person'); ?>
 
-                                        {{--<div class="form-group">--}}
-                                        {{--<div class="input-group">--}}
-                                        {{--<div class="input-group-addon"><i class="fa">Upto Rate 14 %</i></div>--}}
-                                        {{--<select class="form-control">--}}
-                                        {{--<option value="1">11.0 %</option>--}}
-                                        {{--<option value="2" selected>14.5 %</option>--}}
-                                        {{--<option value="3">11.5 %</option>--}}
-                                        {{--<option value="3">12.0 %</option>--}}
-                                        {{--<option value="3">12.5 %</option>--}}
-                                        {{--</select>--}}
-                                        {{--</div>--}}
-                                        {{--</div>--}}
+                                            @if($person==11)
+                                                <div ng-model="person.cardcategorie.cc_type=11"></div>
+                                            @elseif($person==22)
+                                                <div ng-model="person.cardcategorie.cc_type=22"></div>
+                                            @elseif($person==33)
+                                                <div ng-model="person.cardcategorie.cc_type=33"></div>
+                                            @elseif($person==44)
+                                                <div ng-model="person.cardcategorie.cc_type=44"></div>
+                                            @elseif($person==55)
+                                                <div ng-model="person.cardcategorie.cc_type=55"></div>
+                                            @else
+                                                <div ng-model="person.cardcategorie.cc_type=''"></div>
+                                            @endif
 
-                                        <div class="form-group" style="margin-left: 5px">
-                                            <div class="input-group">
-                                                {{--<div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>--}}
-                                                <div class="input-group-addon" title="Are you a salaried or business or others person?"><i class="fa"> Card Categories</i></div>
-                                                <select ng-model="card_Categories.cardcategorie.id" class="form-control">
-                                                    <option value="" title="See All Card">All Card</option>
-
-                                                    <option value="1" title="Bank Financial Institution">Gold Local(Master Card)</option>
-                                                    <option value="2" title="Bank Financial Institution">Classic Local (Master)</option>
-                                                    <option value="3" title="Bank Financial Institution">VISA Ralit New</option>
-                                                    <option value="5" title="Bank Financial Institution">Classic Local (VISA)</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group pull-right" style="margin-left: 5px">
-                                            <div class="input-group">
-                                                <div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>
-                                                <select ng-model="src_bank.bank.bank_type" class="form-control">
-                                                    <option value="" title="See All Bank">All Bank</option>
-
-                                                    <option value="1" title="Bank Financial Institution">BFI</option>
-                                                    <option value="0" title="Non Bank Financial Institution">NBFI</option>
-                                                </select>
-                                            </div>
                                         </div>
 
 
-
-                                        {{--<div class="form-group pull-right">--}}
-                                        {{--<div class="input-group">--}}
-                                        {{--select ng-model="loan.loan_type" class="form-control">--}}
-                                        {{--<option value="">Select Loan</option>--}}
-                                        {{--<option value="1">SME Loan</option>--}}
-                                        {{--<option value="2">Car Loan</option>--}}
-                                        {{--<option value="3">Home Loan</option>--}}
-                                        {{--<option value="4">Personal Loan</option>--}}
-                                        {{--<option value="5">Others Loan</option>--}}
-                                        {{--<option value="6">Working Capital Loan</option>--}}
-                                        {{--</select>--}}
-                                        {{--</div>--}}
-                                        {{--</div>--}}
-
-                                        {{--<div class="form-group pull-right">--}}
-                                            {{--<div class="input-group">--}}
-                                            {{--<div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>--}}
-                                            {{--<div class="input-group-addon" title="Are you a salaried or business or others person?"><i class="fa"> I am a</i></div>--}}
-                                                {{--<select ng-model="person.loan_person_type" class="form-control">--}}
-                                                    {{--<option  value="1">Select Person</option>--}}
-
-                                                    {{--<option value="1">Salaried Person</option>--}}
-                                                    {{--<option value="2">Business Person</option>--}}
-                                                    {{--<option value="3">Others Person</option>--}}
-                                                {{--</select>--}}
-                                            {{--</div>--}}
-                                        {{--</div>--}}
+                                        @if($person==11)
+                                            <div class="form-group" style="margin-left: 5px">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>
+                                                    <div class="input-group-addon" title="Are you a salaried or business or others person?"><i class="fa"> Visa Card</i></div>
+                                                    <select ng-model="card_Categories.cardcategorie.id" class="form-control">
+                                                        <option value="">All Card View</option>
+                                                        @foreach($cardcategory as $v)
+                                                            @if($v->cc_type  == 11)
+                                                                <option value="{{$v->id}}">{{$v->cc_name}}</option>
+                                                            @endif
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        @elseif($person==22)
+                                            <div class="form-group" style="margin-left: 5px">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>
+                                                    <div class="input-group-addon" title="Are you a salaried or business or others person?"><i class="fa"> Visa Card</i></div>
+                                                    <select ng-model="card_Categories.cardcategorie.id" class="form-control">
+                                                        <option value="">All Card View</option>
+                                                        @foreach($cardcategory as $v)
+                                                            @if($v->cc_type  == 22)
+                                                                <option value="{{$v->id}}">{{$v->cc_name}}</option>
+                                                            @endif
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        @elseif($person==33)
+                                            <div class="form-group" style="margin-left: 5px">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>
+                                                    <div class="input-group-addon" title="Are you a salaried or business or others person?"><i class="fa"> Card</i></div>
+                                                    <select ng-model="card_Categories.cardcategorie.id" class="form-control">
+                                                        <option value="">American Express</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        @elseif($person==44)
+                                            <div class="form-group" style="margin-left: 5px">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>
+                                                    <div class="input-group-addon" title="Are you a salaried or business or others person?"><i class="fa"> Card</i></div>
+                                                    <select ng-model="card_Categories.cardcategorie.id" class="form-control">
+                                                        <option value="">World Card</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        @elseif($person==55)
+                                            <div class="form-group" style="margin-left: 5px">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>
+                                                    <div class="input-group-addon" title="Are you a salaried or business or others person?"><i class="fa"> Card</i></div>
+                                                    <select ng-model="card_Categories.cardcategorie.id" class="form-control">
+                                                        <option value="">Diners Club</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        @endif
 
                                     </form>
                                 </div>
@@ -191,7 +188,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-12 col-md-12 b-item-apartment-block" ng-repeat="v in card_data | filter:card_Categories | filter:src_bank">
+                    <div class="col-sm-12 col-md-12 b-item-apartment-block" ng-repeat="v in card_data | filter:person | filter:card_Categories">
                         <div class="b-some-examples__item f-some-examples__item b-hover">
                             <div class="b-some-examples__item_action app-box">
                                 <div class="col-xs-12 col-sm-2 col-md-2">
