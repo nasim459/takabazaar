@@ -21,8 +21,9 @@ class FormCardCategoryController extends Controller
         if($data_ud == 'data_ud') {
             $id = $request->cc_id;
             $cardcategory_name = $request->cc_name;
+            $cardcategory_type = $request->cc_type;
 
-            DB::table('cardcategories')->where('id', $id)->update(['cc_name' => $cardcategory_name]);
+            DB::table('cardcategories')->where('id', $id)->update(['cc_name' => $cardcategory_name, 'cc_type' =>$cardcategory_type]);
             Session::put('msg_suc', 'Data Updated Successfully!');
             return Redirect::to($previous_url);
         }
@@ -33,6 +34,7 @@ class FormCardCategoryController extends Controller
         //------start_picture
         $image = $request->file('image');
         $bank_name = $request->cc_name;
+        $cc_type = $request->cc_type;
 
         if (isset($image)) {
             $image_name = str_random(20);
@@ -45,6 +47,7 @@ class FormCardCategoryController extends Controller
             if ($success) {
                 $save = array();
                 $save['cc_name'] = $bank_name;
+                $save['cc_type'] = $cc_type;
                 $save['cc_image_url'] = $image_full_name;
                 DB::table('cardcategories')->insert($save);
 

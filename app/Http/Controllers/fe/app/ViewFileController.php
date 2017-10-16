@@ -78,12 +78,12 @@ class ViewFileController extends Controller
 
                 break;
             case "card-credit-api":
-                $loan_view = Card::with(['bank', 'cardcategorie', 'reviews'])->get();
+                $loan_view = Card::with(['bank', 'cardcategorie', 'reviews'])->where('c_status', '1')->get();
                 return $loan_view;
 
                 break;
             case "card-debit-api":
-                $loan_view = Carddebit::with(['bank', 'cardcategorie', 'reviews'])->get();
+                $loan_view = Carddebit::with(['bank', 'cardcategorie', 'reviews'])->where('c_status', '1')->get();
                 return $loan_view;
 
                 break;

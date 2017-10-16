@@ -74,6 +74,20 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="exampleInputName2" class="col-sm-4 control-label">Card Type : </label>
+                                <div class="col-sm-8">
+                                    <select name="cc_type" class="form-control" required>
+                                        <option value="">Choose Option</option>
+                                        <option value="11">Visa Card</option>
+                                        <option value="22">Master Card</option>
+                                        <option value="33">American Express</option>
+                                        <option value="44">World Card</option>
+                                        <option value="55">Diners Club</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 <label for="exampleInputName2" class="col-sm-4 control-label">Logo :</label>
                                 <div class="col-sm-6">
                                     <input type="file" name="image" required>

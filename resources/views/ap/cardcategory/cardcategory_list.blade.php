@@ -60,7 +60,7 @@
                 </tr>
 
 
-                <!--start detailsInfo information_save-->
+                <!--start information_save-->
                 <div id="{{$v->id}}kk" class="modal fade" role="dialog">
                     <div class="modal-dialog">
 
@@ -69,7 +69,7 @@
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title text-success text-center">
-                                    <img src="{{ asset($v->cc_image_url) }}" height="20px" width="30px" alt="pic">
+                                    <img src="{{ asset('ap/images/card_category/'.$v->cc_image_url) }}" height="20px" width="30px" alt="pic">
                                     {{$v->cc_name}}
                                 </h4>
                             </div>
@@ -87,6 +87,30 @@
                                                 <label for="exampleInputName2" class="col-sm-4 control-label">Bank Name :</label>
                                                 <div class="col-sm-6">
                                                     <input type="text" name="cc_name" value="{{$v->cc_name}}" class="form-control" id="exampleInputName2" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-t-15">
+                                                <label for="exampleInputName2" class="col-sm-4 control-label">Card Type :</label>
+                                                <div class="col-sm-6">
+                                                    <select name="cc_type" class="form-control" required>
+                                                        @if($v->cc_type == 11)
+                                                            <option value="11">Visa Card</option>
+                                                        @elseif($v->cc_type == 22)
+                                                            <option value="22">Master Card</option>
+                                                        @elseif($v->cc_type == 33)
+                                                            <option value="33">American Express</option>
+                                                        @elseif($v->cc_type == 44)
+                                                            <option value="44">World Card</option>
+                                                        @elseif($v->cc_type == 55)
+                                                            <option value="55">Diners Club</option>
+                                                        @endif
+
+                                                        <option value="11">Visa Card</option>
+                                                        <option value="22">Master Card</option>
+                                                        <option value="33">American Express</option>
+                                                        <option value="44">World Card</option>
+                                                        <option value="55">Diners Club</option>
+                                                    </select>
                                                 </div>
                                             </div>
 
@@ -109,9 +133,9 @@
 
                     </div>
                 </div>
-                <!--end detailsInfo -->
+                <!--end information_save-->
 
-                <!--start detailsInfo image_update-->
+                <!--start image_update-->
                 <div id="{{$v->id}}kkk" class="modal fade" role="dialog">
                     <div class="modal-dialog">
 
@@ -170,9 +194,9 @@
 
                     </div>
                 </div>
-                <!--end detailsInfo -->
+                <!--end image_update-->
 
-                <!--start detailsInfo Delete-->
+                <!--start Delete-->
                 <div id="{{$v->id}}kkd" class="modal fade" role="dialog">
                     <div class="modal-dialog">
 
@@ -223,7 +247,7 @@
 
                     </div>
                 </div>
-                <!--end detailsInfo -->
+                <!--end Delete-->
                 @endforeach
 
                 </tbody>
