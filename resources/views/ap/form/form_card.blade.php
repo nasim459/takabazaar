@@ -30,7 +30,7 @@
                             </div>
 
                             <div class="col-sm-4">
-                                <select class="form-control" name="cc_id" required>
+                                <select class="form-control" name="cc_id_old" required>
                                     <option value="">Select Card Type</option>
                                     @foreach($cardcategorie_view as $v)
                                         <option value="{{$v->id}}">{{$v->cc_name}}</option>
