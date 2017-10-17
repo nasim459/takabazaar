@@ -99,7 +99,7 @@
                                                     <div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>
                                                     <div class="input-group-addon" title="Are you a salaried or business or others person?"><i class="fa"> Visa Card</i></div>
                                                     <select ng-model="card_Categories.cardcategorie.id" class="form-control">
-                                                        <option value="">All Card View</option>
+                                                        <option value="">View Visa Card</option>
                                                         @foreach($cardcategory as $v)
                                                             @if($v->cc_type  == 11)
                                                                 <option value="{{$v->id}}">{{$v->cc_name}}</option>
@@ -112,9 +112,9 @@
                                             <div class="form-group" style="margin-left: 5px">
                                                 <div class="input-group">
                                                     <div class="input-group-addon" title="Search by selected option"><i class="fa fa-search"></i></div>
-                                                    <div class="input-group-addon" title="Are you a salaried or business or others person?"><i class="fa"> Visa Card</i></div>
+                                                    <div class="input-group-addon" title="Are you a salaried or business or others person?"><i class="fa"> Master Card</i></div>
                                                     <select ng-model="card_Categories.cardcategorie.id" class="form-control">
-                                                        <option value="">All Card View</option>
+                                                        <option value="">View Master Card</option>
                                                         @foreach($cardcategory as $v)
                                                             @if($v->cc_type  == 22)
                                                                 <option value="{{$v->id}}">{{$v->cc_name}}</option>
@@ -397,6 +397,12 @@
                                                     <label class="b-form-horizontal__label t-a-r" for="create_account_phone">Mobile Number <span class="c-red">*</span> : &nbsp; </label>
                                                     <div class="b-form-horizontal__input">
                                                         <input type="number" name="mobile" id="create_account_phone" class="form-control" placeholder="01xxxxxxxxx" required />
+                                                    </div>
+                                                </div>
+                                                <div class="b-form-row">
+                                                    <label class="b-form-horizontal__label t-a-r" for="create_account_phone">When We Call You<span class="c-red">*</span>  &nbsp; </label>
+                                                    <div class="b-form-horizontal__input">
+                                                        <input type="time" name="mobile_call" id="create_account_phone" class="form-control" required />
                                                     </div>
                                                 </div>
                                                 <div class="b-form-row">

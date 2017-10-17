@@ -38,6 +38,11 @@ class ApplyInfoController extends Controller
                 Session::put('fe_error_msg', 'Enter Correct phone Number?');
                 return redirect($previous_url);
             }
+
+            if(strlen($aply_location) > 150){
+                Session::put('fe_error_msg', 'Enter Correct Address?');
+                return redirect($previous_url);
+            }
         }
         //----End form validation
 
