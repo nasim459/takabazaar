@@ -18,9 +18,9 @@
                     <small>Bank</small>
                 </a>
 
-                <a href="{{ url('form'.'/'.'investment') }}" class="app btn btn-default">
-                    <i class="fa fa-plus text-success fa-2x fa-3y"></i><br/>
-                    <small>Investment</small>
+                <a data-toggle="modal" data-target="#addInfo" class="app btn btn-default">
+                    <i class="fa fa-info-circle text-success fa-2x fa-3y"></i><br/>
+                    <small>All Information</small>
                 </a>
 
                 <a href="{{ url('form'.'/'.'insurance') }}" class="app btn btn-default">
@@ -43,9 +43,9 @@
                     <small>Card</small>
                 </a>
 
-                <a class="app btn btn-default" data-toggle="modal" data-target="#addInfo">
-                    <i class="fa fa-info-circle text-success fa-2x fa-3y"></i><br/>
-                    <small>All Information</small>
+                <a href="{{ url('banner') }}" class="app btn btn-default">
+                    <i class="fa fa-crosshairs text-success fa-2x fa-3y"></i><br/>
+                    <small>Banner</small>
                 </a>
 
                 <a href="{{ url('form'.'/'.'blog') }}" class="app btn btn-default">

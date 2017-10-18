@@ -4,6 +4,7 @@ namespace App\Http\Controllers\fe\app;
 
 use App\model\advertise\Advertise;
 use App\Model\bank\Bank;
+use App\Model\banner\Banner;
 use App\Model\blog\Blog;
 use App\Model\blog\Categories;
 use App\Model\blog\Comment;
@@ -39,7 +40,9 @@ class ViewFileController extends Controller
                 $blog_view_8 = Blog::orderBy('blog_hit_count', 'desc')->where('blog_control', 1)->limit(4)->offset(4)->get();
                 $video_view = Video::where('v_status', 1)->where('v_p_location', 1)->get();    //----v_p_location = 1 means home_page
                 $header_image = Headerimage::where('header_image_type', 19)->get();    //----header_image_type = 1 means home_page
-                //dd($video_view);
+                $banner_image = Banner::where('add_status', 1)->orderBy('id', 'DESC')->get();    //----add_status = 1 means publish
+                $banner_value = count($banner_image); Session::put('banner_value', $banner_value);
+                //dd($banner_image);
                 break;
 
             case "loan":
@@ -207,7 +210,7 @@ class ViewFileController extends Controller
         //Session::put('count', $count);
 
         //$open_file = view($file_open);
-        $open_file = view($file_open, compact('blog_view_4', 'blog_view_8', 'video_view', 'header_image', 'advertise_image', 'cardcategory'));
+        $open_file = view($file_open, compact('blog_view_4', 'blog_view_8', 'video_view', 'header_image', 'advertise_image', 'cardcategory', 'banner_image'));
         return view('fe_master')->with('fe_maincontent', $open_file);
     }
 

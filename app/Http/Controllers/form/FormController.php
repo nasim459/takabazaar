@@ -34,6 +34,8 @@ class FormController extends Controller
 
         } elseif ($child == 'advertise') {
             $file_open = 'ap.form.form_advertise';
+        } elseif ($child == 'banner') {
+            $file_open = 'ap.form.form_banner';
         }
 
         $bank_view = Bank::all();

@@ -86,6 +86,64 @@
     <!--end section-->
 
     <!--start section-->
+    <section class="b-desc-section-container b-diagonal-line-bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="b-infoblock-with-icon-group row">
+
+                        @php $number = 4; @endphp
+                        @foreach($video_view as $v)
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                {!! $v->v_embed_code !!}<br>
+                                {{str_limit($v->v_name, 46, '...')}}
+                            </div>
+                        @endforeach
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--end section-->
+
+    <!--start section-->
+    @if(Session::get('banner_value') != 0)
+    <section class="b-bg-block f-bg-block" style="background-color: green; padding: 60px 0 60px 0;">
+        <div class="container f-center">
+
+            @php $number = 4; @endphp
+            @foreach($banner_image as $v)
+                {{--<div class="col-md-offset-3 col-sm-12 col-xs-12"></div>--}}
+                {{--<div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12">--}}
+                <div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12">
+                    <a href="{{$v->add_link}}" target="_blank" title="Click To Get Details Information">
+                        <img src="{{ asset('ap/images/banner/'.$v->add_image_url) }}" class="img-thumbnail" alt="Picture Coming Soon" style="height: 220px; width: 100%">
+                        {{--<img src="{{asset('fe/img/banner/b2.jpg')}}" class="img-thumbnail" alt="Picture Coming Soon" style="height: 220px; width: 100%">--}}
+                    </a>
+                    <i class="fa m-t-20 t-a-j f-s-25 m-b-10">{{$v->add_desc}}</i>
+                    {{--<a href="#" class="b-btn f-btn b-btn-md f-btn-md f-primary-sb j-data-element animated shake" data-animate="shake"><i class="fa fa-money"></i> Visite Site</a>--}}
+                </div>
+                {{--</div>--}}
+                {{--<div class="col-md-pull-3 col-sm-12 col-xs-12"></div>--}}
+            @endforeach
+
+
+
+            {{--@php $number = 4; @endphp--}}
+            {{--@foreach($banner_image as $v)--}}
+            {{--<div class="col-md-4 col-sm-6 col-xs-12">--}}
+            {{--{!! $v->v_embed_code !!}<br>--}}
+            {{--{{str_limit($v->v_name, 46, '...')}}--}}
+            {{--</div>--}}
+            {{--@endforeach--}}
+
+        </div>
+    </section>
+    @endif
+    <!--start section-->
+
+    <!--start section-->
     <section class="b-diagonal-line-bg-light b-section-info">
         <div class="container">
             <div class="row">
@@ -132,28 +190,6 @@
                         <div class="clearfix">
                             <a href="{{url('blog')}}" class="f-more f-primary-b">and much more...</a>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--end section-->
-
-    <!--start section-->
-    <section class="b-desc-section-container b-diagonal-line-bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                    <div class="b-infoblock-with-icon-group row">
-
-                        @php $number = 4; @endphp
-                        @foreach($video_view as $v)
-                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                {!! $v->v_embed_code !!}<br>
-                                {{str_limit($v->v_name, 46, '...')}}
-                            </div>
-                        @endforeach
-
                     </div>
                 </div>
             </div>

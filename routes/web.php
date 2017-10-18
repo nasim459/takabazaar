@@ -28,6 +28,8 @@ Route::group(['middleware' => ['web', 'auth', 'roles'], 'roles' => ['Admin']],
         Route::get('card/{child}', 'card\CardController@card_file_view');
 //----Advertise Controller
         Route::get('advertise', 'advertise\AdvertiseController@advertise_file_view');
+//----Banner Controller
+        Route::get('banner', 'banner\BannerController@banner_file_view');
 //----Video Controller
         Route::get('video-info', 'video\VideoController@video_file_view');
 //----Header Controller
@@ -61,6 +63,9 @@ Route::group(['middleware' => ['web', 'auth', 'roles'], 'roles' => ['Admin']],
 
 //-----------form-advertise include data_save & data_update
         Route::post('form-advertise-save', 'form\FormAdvertiseController@save_advertise_form');
+
+//-----------form-banner include data_save & data_update
+        Route::post('form-banner-save', 'form\FormBannerController@save_banner_form');
 
 //-----------form-video include data_save & data_update
         Route::post('form-video-save', 'form\FormVideoController@save_video_form');

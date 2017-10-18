@@ -16,7 +16,7 @@ use App\Model\bank\Bank;
 
 class AdvertiseController extends Controller
 {
-    //----Loan Information(loan-all_file loan_file_view)
+    //----Advertise Information(advertise loan_file_view)
     public function advertise_file_view() {
 
         $route = Route::getFacadeRoot()->current()->uri();

@@ -35,6 +35,7 @@ class HelpController extends Controller
     //| 1111 = ratings
     //| 2222 = reviews
     //| 3333 = headerimages
+    //| 4444 = banners
     //|
     //|
     //|
