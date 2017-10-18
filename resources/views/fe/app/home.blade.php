@@ -12,7 +12,7 @@
             <div class="container">
                 <div class="pull-left">
                     <h1 class="f-primary-l c-default"><i class="fa fa-home"> Home</i></h1>
-                    <div class="f-primary-l f-inner-page-header_title-add c-senary"><i class="fa">I am searching for</i></div>
+                    {{--<div class="f-primary-l f-inner-page-header_title-add c-senary"><i class="fa">I am searching for</i></div>--}}
                 </div>
 
                 @if(Session::get('fe_error_msg') != NULL)
@@ -32,8 +32,8 @@
                 <div class="pull-right">
                     <div class="t-a-c">
                         <i class="fa f-s-25 m-b-10">Hotline</i><br>
-                        <i class="fa f-s-16 c-red m-b-5">01 777 888 757</i><br>
-                        <i class="fa f-s-14">info@finFObd.com</i>
+                        <a href="#" class="btn btn-danger"><i class="fa f-s-20 c-red- m-b-5">01846 177 831</i></a><br>
+                        {{--<i class="fa f-s-14">info@finFObd.com</i>--}}
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
             <h2 class="f-center f-primary-b" style="text-transform: capitalize;margin-top: -22px;">I am searchaing for</h2>
 
             <div class="row">
-                <div class="col-md-12 t-a-c">
+                <div class="col-md-12 t-a-c m-b-20">
                     <div class="b-infoblock-with-icon">
                         <a href="{{ url('loan') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s">
                             <i class="fa fa-home f-s-50"><br><span class="f-s-22">Loan</span></i>

@@ -51,7 +51,7 @@
 </head>
 <body>
 <header>
-    <div class="b-top-options-panel">
+    <div class="b-top-options-panel b-top-options-panel--color">
         <div class="container">
             <div class="b-option-contacts f-option-contacts">
                 <a href="https://mail.google.com" target="_blank"><i class="fa fa-envelope-o"></i> info@finfobd.com</a>
