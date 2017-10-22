@@ -46,7 +46,7 @@
                     </td>
                     <td class="col-xs-12 col-sm-6">
                         {{--<a data-toggle="modal" data-target="#{{$v->id}}kkd" class="btn btn-default btn-xs" title="Click To Edit"><i class="fa fa-pencil"></i></a>--}}
-                        {{ $v->slider_message }}
+                        {{str_limit($v->slider_message, 70, ' ...')}}
                     </td>
                     <td class="col-xs-12 col-sm-2">
                         &nbsp; &nbsp;  &nbsp;

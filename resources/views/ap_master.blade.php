@@ -44,23 +44,15 @@
                         <a href="{{URL::to('')}}" target="_blank" class="m-r-20" title="Visite finFoBD.com Webiste">
                             <i class="fa fa-hand-o-right"></i>
                         </a>
-                        <a href="{{URL::to('dboard')}}" class="dropdown-toggle logo-name" data-toggle="dropdown"><i class="fa">{{Auth::user()->name}}</i><i class="caret"></i>
+                        <a href="{{URL::to('dboard')}}" class="dropdown-toggle logo-name" title="{{Auth::user()->name}}"><i class="fa">{{Auth::user()->name}}</i>
                             @if(isset(Auth::user()->user_image))
                                 <img class="img-h-w" src="{{URL::asset('ap/images/img_nasim.jpg')}}" alt="pic">
                             @else
                                 <img class="img-h-w" src="{{URL::asset('ap/images/img_blank.jpg')}}" alt="pic">
                             @endif
                         </a>
-
-                    <!--<a class="dropdown-toggle" data-toggle="dropdown">ss<span class="caret"></span></a>-->
-                        <ul class="dropdown-menu" role="menu" style="margin-top: 15px">
-                            {{--<li><a href="#" data-toggle="modal" title="Update Picture"><i class="fa fa-pencil"> Edit Picture</i></a></li>--}}
-                            {{--<li><a href="#rental-bld-edit" data-toggle="modal" title="Edit Buinding-Floor-Unit"><i class="fa fa-pencil"> Edit Building</i></a></li>--}}
-                            {{--<li><a href="#"><i class="fa fa-edit"> Edit All Profile</i></a></li>--}}
-                            <li><a href="{{URL::to('dboard')}}"><i class="fa fa-home"> Go Dashboarde</i></a></li>
-                            <li class="divider"></li>
-                            <li><a href="{{route('logout')}}"><i class="fa fa-power-off text-success-light"> SignOut</i></a></li>
-                        </ul>
+                        &nbsp; &nbsp; &nbsp;
+                        <a href="{{route('logout')}}" title="Click to SignOut"><i class="fa fa-power-off logo-name text-default-light"></i></a>
                     </div>
                     <!--end button-group right-->
                     <nav class=""><div class="container-fluid"></div></nav>
