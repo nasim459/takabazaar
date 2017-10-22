@@ -13,6 +13,7 @@ use App\Model\cardcategorie\Cardcategorie;
 use App\Model\carddebit\Carddebit;
 use App\Model\fe\app\About;
 use App\Model\headerimage\Headerimage;
+use App\Model\headerimage\Sliderimage;
 use App\Model\insurance\Insurance;
 use App\Model\investment\Investment;
 use App\Model\loan\Loan;
@@ -42,7 +43,8 @@ class ViewFileController extends Controller
                 $header_image = Headerimage::where('header_image_type', 19)->get();    //----header_image_type = 1 means home_page
                 $banner_image = Banner::where('add_status', 1)->orderBy('id', 'DESC')->get();    //----add_status = 1 means publish
                 $banner_value = count($banner_image); Session::put('banner_value', $banner_value);
-                //dd($banner_image);
+                $slider_image = Sliderimage::where('status', 1)->limit(6)->get();    //----uhkuhkh = 1 means uhkjhk
+                //dd($slider_image);
                 break;
 
             case "loan":
@@ -210,7 +212,7 @@ class ViewFileController extends Controller
         //Session::put('count', $count);
 
         //$open_file = view($file_open);
-        $open_file = view($file_open, compact('blog_view_4', 'blog_view_8', 'video_view', 'header_image', 'advertise_image', 'cardcategory', 'banner_image'));
+        $open_file = view($file_open, compact('blog_view_4', 'blog_view_8', 'video_view', 'header_image', 'advertise_image', 'cardcategory', 'banner_image', 'slider_image'));
         return view('fe_master')->with('fe_maincontent', $open_file);
     }
 

@@ -12,6 +12,7 @@
         <!--start Single button-->
         <div class="col-md-12 text-center m-t-mi-6">
             <a href="{{ url('header'.'/'.'image') }}" class="app-menu btn btn-default text-success-light">Header Image</a>
+            <a href="{{ url('header'.'/'.'slider') }}" class="app-menu btn btn-default text-success-light">Slider Image</a>
         </div>
         <!--end Single button-->
     </div>

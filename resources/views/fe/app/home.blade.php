@@ -1,55 +1,138 @@
 @section('fe_maincontent')
-    @foreach($header_image as $v)
-        @if($v->status == 0)
-            <div class="b-inner-page-header f-inner-page-header b-bg-header-inner-page">
-                @else
-    <div class="b-inner-page-header f-inner-page-header" style="background: url({{ asset('ap/images/header_image/'.$v->header_image_url) }}) no-repeat center;
-            background-size: cover;">
-        @endif
-        @endforeach
+
+    {{--@foreach($header_image as $v)--}}
+        {{--@if($v->status == 0)--}}
+            {{--<div class="b-inner-page-header f-inner-page-header b-bg-header-inner-page">--}}
+                {{--@else--}}
+    {{--<div class="b-inner-page-header f-inner-page-header" style="background: url({{ asset('ap/images/header_image/'.$v->header_image_url) }}) no-repeat center;--}}
+            {{--background-size: cover;">--}}
+        {{--@endif--}}
+        {{--@endforeach--}}
         {{--<div class="b-inner-page-header f-inner-page-header b-bg-header-inner-page">--}}
-        <div class="b-inner-page-header__content">
-            <div class="container">
-                <div class="pull-left">
-                    <h1 class="f-primary-l c-default"><i class="fa fa-home"> Home</i></h1>
+        {{--<div class="b-inner-page-header__content">--}}
+            {{--<div class="container">--}}
+                {{--<div class="pull-left">--}}
+                    {{--<h1 class="f-primary-l c-default"><i class="fa fa-home"> Home</i></h1>--}}
                     {{--<div class="f-primary-l f-inner-page-header_title-add c-senary"><i class="fa">I am searching for</i></div>--}}
-                </div>
+                {{--</div>--}}
 
-                @if(Session::get('fe_error_msg') != NULL)
-                    <div class="col-xs-12 col-md-6 m-l-5 alert alert-danger" style="font-size: 20px;">
-                        <a href="#" class="pull-right" data-dismiss="alert">&times;</a>
-                        {{Session::get('fe_error_msg')}} {{Session::put('fe_error_msg', '')}}
-                    </div>
-                @endif
+                {{--@if(Session::get('fe_error_msg') != NULL)--}}
+                    {{--<div class="col-xs-12 col-md-6 m-l-5 alert alert-danger" style="font-size: 20px;">--}}
+                        {{--<a href="#" class="pull-right" data-dismiss="alert">&times;</a>--}}
+                        {{--{{Session::get('fe_error_msg')}} {{Session::put('fe_error_msg', '')}}--}}
+                    {{--</div>--}}
+                {{--@endif--}}
 
-                @if(Session::get('fe_msg') != NULL)
-                    <div class="col-xs-12 col-md-6 m-l-5 alert alert-success" style="font-size: 20px;">
-                        <a href="#" class="pull-right" data-dismiss="alert">&times;</a>
-                        {{Session::get('fe_msg')}} {{Session::put('fe_msg', '')}}
-                    </div>
-                @endif
+                {{--@if(Session::get('fe_msg') != NULL)--}}
+                    {{--<div class="col-xs-12 col-md-6 m-l-5 alert alert-success" style="font-size: 20px;">--}}
+                        {{--<a href="#" class="pull-right" data-dismiss="alert">&times;</a>--}}
+                        {{--{{Session::get('fe_msg')}} {{Session::put('fe_msg', '')}}--}}
+                    {{--</div>--}}
+                {{--@endif--}}
 
-                <div class="pull-right">
-                    <div class="t-a-c">
-                        <i class="fa f-s-25 m-b-10">Hotline</i><br>
-                        <a href="#" class="btn btn-danger"><i class="fa f-s-20 c-red- m-b-5">01846 177 831</i></a><br>
+                {{--<div class="pull-right">--}}
+                    {{--<div class="t-a-c">--}}
+                        {{--<i class="fa f-s-25 m-b-10">Hotline</i><br>--}}
+                        {{--<a href="#" class="btn btn-danger"><i class="fa f-s-20 c-red- m-b-5">01846 177 831</i></a><br>--}}
                         {{--<i class="fa f-s-14">info@finFObd.com</i>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+
+
+
+    <div class="b-slider-primary" >
+        <div class="j-slider-primary">
+
+            {{--<div class="b-slider-primary-item b-slider-primary-item--bg f-slider-primary-item h-156">--}}
+                {{--<div class="container">--}}
+                    {{--<div class="f-slider-primary-item__title b-slider-primary-item__title f-primary-b">--}}
+                        {{--<i class="fa fa-twitter"></i><br/>--}}
+                        {{--<span><b>@frexystudio</b></span>--}}
+                    {{--</div>--}}
+                    {{--<p class="b-slider-primary-item__text f-slider-primary-item__text f-primary-l">1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In accumsan porttitor egestas.<br/> Suspendisse gravida ultrices convallis. Interdum et malesuada fames<br/>--}}
+                        {{--<a href="http://bly.shotlinks.com">http://bly.shotlinks.com</a></p>--}}
+                    {{--<div class="pull-right">--}}
+                        {{--<div class="t-a-c">--}}
+                            {{--<i class="fa f-s-25 m-b-10">Hotline</i><br>--}}
+                            {{--<a href="#" class="btn btn-danger"><i class="fa f-s-20 c-red- m-b-5">01846 177 831</i></a><br>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="b-slider-primary-item b-slider-primary-item--bg1 f-slider-primary-item h-156">--}}
+                {{--<div class="container">--}}
+                    {{--<div class="f-slider-primary-item__title b-slider-primary-item__title f-primary-b">--}}
+                        {{--<i class="fa fa-facebook"></i><br/>--}}
+                        {{--<span><b>@frexystudio</b></span>--}}
+                    {{--</div>--}}
+                    {{--<p class="b-slider-primary-item__text f-slider-primary-item__text f-primary-l">2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In accumsan porttitor egestas.<br/> Suspendisse gravida ultrices convallis. Interdum et malesuada fames<br/>--}}
+                        {{--<a href="http://bly.shotlinks.com">http://bly.shotlinks.com</a>--}}
+                    {{--</p>--}}
+                    {{--<div class="pull-right">--}}
+                        {{--<div class="t-a-c">--}}
+                            {{--<i class="fa f-s-25 m-b-10">Hotline</i><br>--}}
+                            {{--<a href="#" class="btn btn-danger"><i class="fa f-s-20 c-red- m-b-5">01846 177 831</i></a><br>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="b-slider-primary-item b-slider-primary-item--bg2 f-slider-primary-item h-156">--}}
+                {{--<div class="container">--}}
+                    {{--<div class="f-slider-primary-item__title b-slider-primary-item__title f-primary-b">--}}
+                        {{--<i class="fa fa-linkedin"></i><br/>--}}
+                        {{--<span><b>@frexystudio</b></span>--}}
+                    {{--</div>--}}
+                    {{--<p class="b-slider-primary-item__text f-slider-primary-item__text f-primary-l">3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In accumsan porttitor egestas.<br/> Suspendisse gravida ultrices convallis. Interdum et malesuada fames<br/>--}}
+                        {{--<a href="http://bly.shotlinks.com">http://bly.shotlinks.com</a>--}}
+                    {{--</p>--}}
+                    {{--<div class="pull-right">--}}
+                        {{--<div class="t-a-c">--}}
+                            {{--<i class="fa f-s-25 m-b-10">Hotline</i><br>--}}
+                            {{--<a href="#" class="btn btn-danger"><i class="fa f-s-20 c-red- m-b-5">01846 177 831</i></a><br>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+
+            @foreach($slider_image as $v)
+                <div class="b-slider-primary-item- f-slider-primary-item h-156"style="background: url({{ asset('ap/images/slider_image/'.$v->slider_image_url) }}) no-repeat center; background-size: cover;">
+                    <div class="container">
+
+                        <div class="col-sm-12 m-t-40">
+                            <div class="col-sm-2"></div>
+
+                            <div class="col-sm-8 t-a-c">
+                                <i class="fa text-danger text-center f-s-25 m-b-10">{{ $v->slider_message }}</i>
+                            </div>
+
+                            <div class="col-sm-2 hotline-hide">
+                                <i class="fa text-danger f-s-25 m-b-10">Hotline</i><br>
+                                <a href="#" class="btn btn-danger"><i class="fa f-s-20 c-red- m-b-5">01846 177 831</i></a><br>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="l-main-container" ng-controller="fe_loanController">
-        <div class="b-breadcrumbs f-breadcrumbs">
-            <div class="container">
-                <ul>
-                    <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-                    <li><i class="fa fa-angle-right"></i><span>Home</span></li>
-                </ul>
-            </div>
+            @endforeach
+
+
         </div>
     </div>
 
+
+    {{--<div class="l-main-container" ng-controller="fe_loanController">--}}
+        {{--<div class="b-breadcrumbs f-breadcrumbs">--}}
+            {{--<div class="container">--}}
+                {{--<ul>--}}
+                    {{--<li><a href="#"><i class="fa fa-home"></i>Home</a></li>--}}
+                    {{--<li><i class="fa fa-angle-right"></i><span>Home</span></li>--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
     <!--start section-->
     <section class="b-desc-section-container b-diagonal-line-bg-light">
         <div class="container">

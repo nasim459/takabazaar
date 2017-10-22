@@ -107,6 +107,11 @@ class PublicationController extends Controller
                 $publication_status = 'add_status';
                 $redirect = $previous_url;
                 break;
+            case "5555":
+                $table_name = 'sliderimages';
+                $publication_status = 'status';
+                $redirect = $previous_url;
+                break;
             default:
                 return Redirect::to($previous_url);
         }

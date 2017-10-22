@@ -92,6 +92,8 @@ Route::group(['middleware' => ['web', 'auth', 'roles'], 'roles' => ['Admin']],
         Route::post('form-info', 'form\FormInfoController@info_form');
         Route::post('form-info-contact', 'form\FormInfoController@contact_info_form');
 
+//-----------form-slider include slider_update
+        Route::post('form-slider-save', 'headerimage\HeaderImageController@header_image_form');
 
 //----Publication Controller
         Route::get('publication/{id}/{status}/{table}', 'publication\PublicationController@publication');

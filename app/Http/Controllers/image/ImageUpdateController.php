@@ -64,6 +64,12 @@ class ImageUpdateController extends Controller
                 $destination_path_define = 'ap/images/banner/';
                 $updated_tbl_field_img_url = 'add_image_url';  //--change_image_url_of_table_field
                 break;
+            case "5555":
+                $table_name = 'sliderimages';
+                $where_field_id = 'id';
+                $destination_path_define = 'ap/images/slider_image/';
+                $updated_tbl_field_img_url = 'slider_image_url';  //--change_image_url_of_table_field
+                break;
             default:
                 return Redirect::to($previous_url);
         }

@@ -3652,7 +3652,8 @@ header.animated .b-ico-dropdown {
       background: none; }
     .b-slider-primary .bx-wrapper .bx-pager,
     .b-slider-primary .bx-wrapper .bx-controls-auto {
-      bottom: 68px;
+      /*bottom: 68px;*/
+      bottom: 10px;
       margin: 0;
       z-index: 5; }
       @media screen and (max-width: 979px) {
@@ -12818,6 +12819,15 @@ textarea.b-product-card-textarea {
     margin-top: 34px;
   }
 }
+
+/*hotline for slide_show into home_page*/
+@media screen and (max-width: 800px) {
+  .hotline-hide{
+    display: none;
+  }
+}
+/*hotline for slide_show into home_page*/
+
 .app-tab{
   border-left: 1px solid #DDDDDD;
   border-right: 1px solid #DDDDDD;
@@ -12888,6 +12898,7 @@ textarea.b-product-card-textarea {
 .m-t-15{margin-top: 15px!important;}
 .m-t-20{margin-top: 20px!important;}
 .m-t-30{margin-top: 30px!important;}
+.m-t-40{margin-top: 40px!important;}
 .m-t-80{margin-top: 80px!important;}
 
 .m-b-5{margin-bottom: 5px!important;}
@@ -12897,6 +12908,9 @@ textarea.b-product-card-textarea {
 .m-b-30{margin-bottom: 30px!important;}
 .c-pointer{cursor: pointer!important;}
 /*----End Define by me*/
+
+.h-156{height: 156px!important;}
+
 
 @media screen and (max-width: 600px) {
   .r-mobile{
