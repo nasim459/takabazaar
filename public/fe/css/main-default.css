@@ -12826,6 +12826,18 @@ textarea.b-product-card-textarea {
     display: none;
   }
 }
+
+@media screen and (min-width: 800px) {
+  .f-s-25-md-show{
+    font-size: 25px!important;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .f-s-16-sm-show{
+    font-size: 20px!important;
+  }
+}
 /*hotline for slide_show into home_page*/
 
 .app-tab{

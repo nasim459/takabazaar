@@ -156,7 +156,7 @@
                                                 <label for="exampleInputName2" class="col-sm-4 control-label">Slider Message :</label>
                                                 <div class="col-sm-8">
                                                     <textarea name="message" cols="10" rows="10" class="form-control">{{$v->slider_message}}</textarea>
-                                                    <i class="fa text-danger-light m-t-10"><b>NB:</b> Write your message within  <b>40</b> characters</i>
+                                                    <i class="fa text-danger-light m-t-10"><b>NB:</b> Write your message within  <b>80</b> characters</i>
                                                 </div>
                                             </div>
                                         </div>

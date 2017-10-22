@@ -101,14 +101,14 @@
                 <div class="b-slider-primary-item- f-slider-primary-item h-156"style="background: url({{ asset('ap/images/slider_image/'.$v->slider_image_url) }}) no-repeat center; background-size: cover;">
                     <div class="container">
 
-                        <div class="col-sm-12 m-t-40">
-                            <div class="col-sm-2"></div>
+                        <div class="col-sm-12 col-md-12 m-t-40">
+                            <div class="col-sm-12 col-md-2"></div>
 
-                            <div class="col-sm-8 t-a-c">
-                                <i class="fa text-danger text-center f-s-25 m-b-10">{{ $v->slider_message }}</i>
+                            <div class="col-sm-12 col-md-8 t-a-c">
+                                <i class="fa text-danger text-center f-s-25-md-show f-s-16-sm-show m-b-10">{{ $v->slider_message }}</i>
                             </div>
 
-                            <div class="col-sm-2 hotline-hide">
+                            <div class="col-sm-12 col-md-2 hotline-hide">
                                 <i class="fa text-danger f-s-25 m-b-10">Hotline</i><br>
                                 <a href="#" class="btn btn-danger"><i class="fa f-s-20 c-red- m-b-5">01846 177 831</i></a><br>
                             </div>
