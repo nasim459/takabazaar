@@ -261,12 +261,12 @@
                         <div class="b-top-nav__dropdomn">
                             <ul class="b-top-nav__2level_wrap">
                                 <li class="b-top-nav__2level_title f-top-nav__2level_title">Loan</li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#home" data-toggle="modal"><i class="fa fa-angle-right"></i>Home Loan</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#car" data-toggle="modal"><i class="fa fa-angle-right"></i>Car Loan</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#personal" data-toggle="modal"><i class="fa fa-angle-right"></i>Personal Loan</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#sme" data-toggle="modal"><i class="fa fa-angle-right"></i>SME Loan</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#working" data-toggle="modal"><i class="fa fa-angle-right"></i>Working Capital Loan</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#others" data-toggle="modal"><i class="fa fa-angle-right"></i>Others Loan</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#" data-target="#home" data-toggle="modal"><i class="fa fa-angle-right"></i>Home Loan</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#" data-target="#car" data-toggle="modal"><i class="fa fa-angle-right"></i>Car Loan</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#" data-target="#personal" data-toggle="modal"><i class="fa fa-angle-right"></i>Personal Loan</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#" data-target="#sme" data-toggle="modal"><i class="fa fa-angle-right"></i>SME Loan</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#" data-target="#working" data-toggle="modal"><i class="fa fa-angle-right"></i>Working Capital Loan</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#" data-target="#others" data-toggle="modal"><i class="fa fa-angle-right"></i>Others Loan</a></li>
                             </ul>
                         </div>
                     </li>
@@ -275,9 +275,9 @@
                         <div class="b-top-nav__dropdomn">
                             <ul class="b-top-nav__2level_wrap">
                                 <li class="b-top-nav__2level_title f-top-nav__2level_title">Investment</li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#saving" data-toggle="modal"><i class="fa fa-angle-right"></i>Saving Accounts</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#fixed" data-toggle="modal"><i class="fa fa-angle-right"></i>Fixed Accounts</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#mutual" data-toggle="modal"><i class="fa fa-angle-right"></i>Mutual Accounts</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#" data-target="#saving" data-toggle="modal"><i class="fa fa-angle-right"></i>Saving Accounts</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#" data-target="#fixed" data-toggle="modal"><i class="fa fa-angle-right"></i>Fixed Accounts</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#" data-target="#mutual" data-toggle="modal"><i class="fa fa-angle-right"></i>Mutual Accounts</a></li>
                             </ul>
                         </div>
                     </li>
@@ -286,17 +286,17 @@
                         <div class="b-top-nav__dropdomn">
                             <ul class="b-top-nav__2level_wrap">
                                 <li class="b-top-nav__2level_title f-top-nav__2level_title">Insurance</li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#life" data-toggle="modal"><i class="fa fa-angle-right"></i>Life Insurance</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#" data-target="#life" data-toggle="modal"><i class="fa fa-angle-right"></i>Life Insurance</a></li>
                                 <li class="b-top-nav__2level f-top-nav__2level f-primary b-top-nav__with-multi-lvl"><a onclick="return false" href=""><i class="fa fa-angle-right"></i>Motor Insurance</a>
                                     <ul class="b-top-nav__multi-lvl-box">
-                                        <li class="b-top-nav__multi-lvl"><a data-target="#motor_bike" data-toggle="modal"><i class="fa fa-angle-right"></i>Bike Insurance</a></li>
-                                        <li class="b-top-nav__multi-lvl"><a data-target="#motor_car" data-toggle="modal"><i class="fa fa-angle-right"></i>Car Insurance</a></li>
+                                        <li class="b-top-nav__multi-lvl"><a href="#" data-target="#motor_bike" data-toggle="modal"><i class="fa fa-angle-right"></i>Bike Insurance</a></li>
+                                        <li class="b-top-nav__multi-lvl"><a href="#" data-target="#motor_car" data-toggle="modal"><i class="fa fa-angle-right"></i>Car Insurance</a></li>
                                     </ul>
                                 </li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#marine" data-toggle="modal"><i class="fa fa-angle-right"></i>Marine Insurance</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#fire" data-toggle="modal"><i class="fa fa-angle-right"></i>Fire Insurance</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#accident" data-toggle="modal"><i class="fa fa-angle-right"></i>Accident Insurance</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#health" data-toggle="modal"><i class="fa fa-angle-right"></i>Health Insurance</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#" data-target="#marine" data-toggle="modal"><i class="fa fa-angle-right"></i>Marine Insurance</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#" data-target="#fire" data-toggle="modal"><i class="fa fa-angle-right"></i>Fire Insurance</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#" data-target="#accident" data-toggle="modal"><i class="fa fa-angle-right"></i>Accident Insurance</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#" data-target="#health" data-toggle="modal"><i class="fa fa-angle-right"></i>Health Insurance</a></li>
                             </ul>
                         </div>
                     </li>
@@ -305,7 +305,7 @@
                         <div class="b-top-nav__dropdomn">
                             <ul class="b-top-nav__2level_wrap">
                                 <li class="b-top-nav__2level_title f-top-nav__2level_title">Card</li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a data-target="#card_credit" data-toggle="modal"><i class="fa fa-angle-right"></i>Credit Card</a></li>
+                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#" data-target="#card_credit" data-toggle="modal"><i class="fa fa-angle-right"></i>Credit Card</a></li>
                                 <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="{{ url('card-debit') }}"><i class="fa fa-angle-right"></i>Debit Card</a></li>
                             </ul>
                         </div>
