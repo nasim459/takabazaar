@@ -75,12 +75,12 @@
 
                 <a href="{{ url('header'.'/'.'image') }}" class="app btn btn-default">
                     <i class="fa fa-image text-success fa-2x fa-3y"></i><br/>
-                    <small>Header</small>
+                    <small>Header Images</small>
                 </a>
 
-                <a href="{{ url('form'.'/'.'bank') }}" class="app btn btn-default">
-                    <i class="fa fa-plus text-success fa-2x fa-3y"></i><br/>
-                    <small>Card Category</small>
+                <a href="{{ url('header'.'/'.'slider') }}" class="app btn btn-default">
+                    <i class="fa fa-sliders text-success fa-2x fa-3y"></i><br/>
+                    <small>Slider Images</small>
                 </a>
             </div>
         </div>

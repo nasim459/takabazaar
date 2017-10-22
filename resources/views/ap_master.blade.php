@@ -51,7 +51,7 @@
                                 <img class="img-h-w" src="{{URL::asset('ap/images/img_blank.jpg')}}" alt="pic">
                             @endif
                         </a>
-                        &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp;
                         <a href="{{route('logout')}}" title="Click to SignOut"><i class="fa fa-power-off logo-name text-default-light"></i></a>
                     </div>
                     <!--end button-group right-->
