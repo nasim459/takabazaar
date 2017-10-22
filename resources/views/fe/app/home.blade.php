@@ -121,7 +121,7 @@
                         <img src="{{ asset('ap/images/banner/'.$v->add_image_url) }}" class="img-thumbnail" alt="Picture Coming Soon" style="height: 220px; width: 100%">
                         {{--<img src="{{asset('fe/img/banner/b2.jpg')}}" class="img-thumbnail" alt="Picture Coming Soon" style="height: 220px; width: 100%">--}}
                     </a>
-                    <i class="fa m-t-20 t-a-j f-s-25 m-b-10">{{$v->add_desc}}</i>
+                    <i class="fa m-t-20 t-a-j f-s-25 m-b-30">{{$v->add_desc}}</i>
                     {{--<a href="#" class="b-btn f-btn b-btn-md f-btn-md f-primary-sb j-data-element animated shake" data-animate="shake"><i class="fa fa-money"></i> Visite Site</a>--}}
                 </div>
                 {{--</div>--}}

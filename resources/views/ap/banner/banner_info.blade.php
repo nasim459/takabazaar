@@ -26,7 +26,7 @@
                     <th class="col-sm-1">No</th>
                     <th class="col-sm-1">Picture</th>
                     <th class="col-sm-2">Advertise Name</th>
-                    <th class="col-sm-4">Type</th>
+                    <th class="col-sm-4">Assign Date</th>
                     <th class="col-sm-2">Website Link</th>
                     <th class="col-sm-2">Action</th>
                 </tr>
@@ -47,7 +47,7 @@
                     <td class="col-xs-12 col-sm-2">{{$v->add_name}}</td>
                     <td class="col-xs-12 col-sm-4">
                         <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}kt" title="Change Date"><i class="fa fa-hand-o-right"></i></a>
-                        &nbsp; {{$v->add_start_date}} - <span class="text-danger">{{$v->add_end_date}}</span>
+                        &nbsp; {{$v->add_start_date}}&nbsp; - &nbsp;<span class="text-danger">{{$v->add_end_date}}</span>
                     </td>
                     <td class="col-xs-12 col-sm-2">
                         <a href="{{$v->add_link}}" target="_blank" class="btn btn-default btn-xs" title="Click to visite website"><i class="fa fa-link"> View Link</i></a>
@@ -88,7 +88,7 @@
 
                                         <hr>
                                         <dl class="dl-horizontal">
-                                            <dt>Advertise Name :</dt>
+                                            <dt>Banner Name :</dt>
                                             <dd>{{$v->add_name}}</dd>
                                             <dt>Status :</dt>
                                             <dd>
