@@ -52,6 +52,12 @@ class ImageUpdateController extends Controller
                 $destination_path_define = 'fe/img/blog_pic/';
                 $updated_tbl_field_img_url = 'blog_image';  //--change_image_url_of_table_field
                 break;
+            case "888":
+                $table_name = 'users';
+                $where_field_id = 'id';
+                $destination_path_define = 'fe/img/blog_users/';
+                $updated_tbl_field_img_url = 'user_image';  //--change_image_url_of_table_field
+                break;
             case "3333":
                 $table_name = 'headerimages';
                 $where_field_id = 'id';

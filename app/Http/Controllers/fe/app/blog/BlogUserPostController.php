@@ -5,6 +5,7 @@ namespace App\Http\Controllers\fe\app\blog;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
@@ -25,7 +26,7 @@ class BlogUserPostController extends Controller
         $blog_short_desc = $request->s_desc;
         $blog_long_desc = $request->l_desc;
         $blog_author_name = 'kamrul hassan';
-        $user_id = 2;
+        $user_id = Auth::user()->id;
         $category_id = $request->category_id;
 
         if (isset($image)) {

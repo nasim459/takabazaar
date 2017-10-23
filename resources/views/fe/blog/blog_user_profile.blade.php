@@ -61,7 +61,7 @@
                             <div id="tabs-11">
                                 <div class="b-tabs-vertical__content-text">
                                     <h3 class="f-tabs-vertical__title f-primary-b"><i class="fa">Personal Information</i></h3>
-                                    <div class="col-md-8 well">
+                                    <div class="col-xs-12 col-sm-8 col-md-8 well">
                                         <dl class="dl-horizontal">
                                             <dt>Name :</dt>
                                             <dd>{{Auth::user()->name}}</dd>
@@ -69,11 +69,11 @@
                                             <dd>{{Auth::user()->email}}</dd>
                                         </dl>
                                         <br>
+                                        <a href="#" data-toggle="modal" data-target="#passUpdate" class="m-t-10 pull-right"><i class="fa"> &nbsp; Change Password</i></a>
                                         <a data-toggle="modal" data-target="#infoUpdate" class="btn btn-default btn-sm m-t-5 pull-right"><i class="fa fa-edit"> Edit</i></a>
                                     </div>
-                                    <div class="col-md-3">
-                                        {{--<img src="{{ url('fe/img/blog_users/nasim.jpg') }}" class="img-thumbnail" alt="Cinque Terre" height="150">--}}
-                                        <img src="/{{ Auth::user()->user_image }}" class="img-thumbnail" alt="{{ Auth::user()->user_image }}" height="150">
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        <img src="{{ url('fe/img/blog_users/'.Auth::user()->user_image) }}" class="img-thumbnail" height="150" alt="Change Pciture" title="{{Auth::user()->name}}">
                                         <br>
                                         <a data-toggle="modal" data-target="#personPic" class="btn btn-default btn-sm m-t-5"><i class="fa fa-edit"> Picture Edit</i></a>
                                     </div>
@@ -94,21 +94,22 @@
                                                     <div class="col-md-12">
                                                         <div class="col-md-12 f-s-14 f-f-s" style="overflow: hidden;">
 
-                                                            {!! Form::open(array('url'=>'blog-user-insert', 'role'=>'form', 'method'=>'POST')) !!}
+                                                            {!! Form::open(array('url'=>'blog-user-update', 'role'=>'form', 'method'=>'POST')) !!}
                                                             <div class="form-horizontal m-t-10">
                                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                                <input type="hidden" name="insert_save" value="insert_save">
+                                                                <input type="hidden" name="insert" value="insert_update">
+                                                                <input type="hidden" name="id" value="{{Auth::user()->id}}">
 
                                                                 <div class="form-group">
                                                                     <label class="col-sm-4 m-t-8 text-right" for="username">Full Name :</label>
                                                                     <div class="col-sm-6">
-                                                                        <input type="text" name="name" class="form-control" id="username">
+                                                                        <input type="text" name="name" value="{{Auth::user()->name}}" class="form-control" id="username" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label class="col-sm-4 m-t-8 text-right" for="email">Email Address :</label>
                                                                     <div class="col-sm-6">
-                                                                        <input type="email" name="email" class="form-control" id="email">
+                                                                        <input type="email" name="email" value="{{Auth::user()->email}}" class="form-control" id="email" required>
                                                                     </div>
                                                                 </div>
 
@@ -151,12 +152,11 @@
                                                     <div class="col-md-12">
                                                         <div class="col-md-12 f-s-14 f-f-s">
 
-                                                            {!! Form::open(array('url'=>'image-update', 'role'=>'form', 'method'=>'POST', 'files'=>'true')) !!}
+                                                            {!! Form::open(array('url'=>'image-update-fe', 'role'=>'form', 'method'=>'POST', 'files'=>'true')) !!}
                                                             <div class="form-horizontal">
                                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                                <input type="hidden" name="id" value="2">
-                                                                <input type="hidden" name="user_id" value="2">
-                                                                <input type="hidden" name="t_id" value="444">
+                                                                <input type="hidden" name="id" value="{{Auth::user()->id}}">
+                                                                <input type="hidden" name="t_id" value="888">
 
                                                                 <div class="form-group">
                                                                     <label for="exampleInputName2" class="col-sm-4 control-label">Change Picture:</label>
@@ -188,6 +188,65 @@
                                         </div>
                                     </div>
                                     <!--end person_picture_update -->
+
+                                    <!--start password_update -->
+                                    <div id="passUpdate" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+
+                                            <!--start Modal content-->
+                                            <div class="modal-content m-t-80">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title text-success text-center">
+                                                        Chage Your Password
+                                                    </h4>
+                                                </div>
+                                                <div class="modal-body" style="overflow: hidden">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-12 f-s-14 f-f-s" style="overflow: hidden;">
+
+                                                            {!! Form::open(array('url'=>'blog-user-update', 'role'=>'form', 'method'=>'POST')) !!}
+                                                            <div class="form-horizontal m-t-10">
+                                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                                <input type="hidden" name="insert" value="insert_pass">
+                                                                <input type="hidden" name="id" value="{{Auth::user()->id}}">
+
+                                                                <div class="form-group">
+                                                                    <label class="col-sm-4 m-t-8 text-right" for="password">Password :</label>
+                                                                    <div class="col-sm-6">
+                                                                        <input type="password" name="pass1" class="form-control" id="username" placeholder="Enter password">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="col-sm-4 m-t-8 text-right" for="password">Re-Password :</label>
+                                                                    <div class="col-sm-6">
+                                                                        <input type="password" name="pass2" class="form-control" id="username" placeholder="Re-Entergit password">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="col-sm-4" for="email"></label>
+                                                                    <div class="col-sm-6 m-t-15">
+                                                                        <button type="submit" class="btn btn-success col-sm-12">Update</button>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            {!! Form::close() !!}
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                            <!--end Modal content-->
+
+                                        </div>
+                                    </div>
+                                    <!--end password_update -->
                                 </div>
                             </div>
 
@@ -504,6 +563,7 @@
 
                                 </div>
                             </div>
+
                             <div id="tabs-14">
                                 <div class="b-tabs-vertical__content-text">
                                     <h3 class="f-tabs-vertical__title f-primary-b"><i class="fa">Total Blog</i></h3>

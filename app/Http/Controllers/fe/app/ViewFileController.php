@@ -20,6 +20,7 @@ use App\Model\loan\Loan;
 use App\Model\video\Video;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
@@ -237,7 +238,7 @@ class ViewFileController extends Controller
                 break;
             case "blog-user-profile":
                 $file_open = 'fe.blog.blog_user_profile';
-                $data_view = Blog::orderBy('id', 'DESC')->get();
+                $data_view = Blog::orderBy('id', 'DESC')->where('user_id', Auth::user()->id)->get();
                 $blog_category = Categories::all();
                 //dd($data_view);
 

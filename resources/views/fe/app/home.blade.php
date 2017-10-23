@@ -139,7 +139,7 @@
 
             @if(Session::get('fe_error_msg') != NULL)
                 <h2 class="f-center f-primary-b" style="text-transform: capitalize;">
-                    <i class="fa text-danger m-b-10">{{ Session::get('fe_error_msg') }} {{ Session::put('fe_error_msg', '') }}</i>
+                    <i class="fa text-danger m-b-10 alert alert-danger" data-dismiss="alert">{{ Session::get('fe_error_msg') }} {{ Session::put('fe_error_msg', '') }} <span class="pull-right">&times;</span></i>
                 </h2>
             @endif
 
