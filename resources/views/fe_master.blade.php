@@ -6,7 +6,8 @@
     <link rel="shortcut icon" href="{{ asset('fe/img/logo.ico') }}" type="image/x-icon">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    {{--<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">--}}
+    <link href="{{URL::asset('ap/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
 
     <!-- bxslider -->
     <link type="text/css" rel='stylesheet' href="{{URL::asset('fe/js/bxslider/jquery.bxslider.css')}}">
