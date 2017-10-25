@@ -38,9 +38,9 @@
         <div class="b-breadcrumbs f-breadcrumbs">
             <div class="container">
                 <ul>
-                    <li><a href=""><i class="fa fa-home"></i>Home</a></li>
-                    <li><i class="fa fa-angle-right"></i><span>User Panel</span></li>
-                    {{--<li><i class="fa fa-angle-right"></i><span>Three Columns Right Sidebar v2</span></li>--}}
+                    <li><a href="{{ url('') }}"><i class="fa fa-home"></i>Home</a></li>
+                    <li><a href="{{ url('blog') }}"><i class="fa fa-angle-right"></i><span>Blog</span></a></li>
+                    <li><i class="fa fa-angle-right"></i><span>User Profile</span></li>
                 </ul>
             </div>
         </div>
