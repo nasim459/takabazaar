@@ -187,13 +187,13 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-12 col-md-12 b-item-apartment-block" style="text-align: center">
-                        @foreach($advertise_image as $v)
-                            @if(isset($v->add_name))
-                                <a href="{{$v->add_link}}" target="_blank"><img src="{{ asset('ap/images/advertise/'.$v->add_image_url) }}" border="0" width="728" height="90" alt="pic"></a>
-                            @endif
-                        @endforeach
-                    </div>
+                    {{--<div class="col-sm-12 col-md-12 b-item-apartment-block" style="text-align: center">--}}
+                        {{--@foreach($advertise_image as $v)--}}
+                            {{--@if(isset($v->add_name))--}}
+                                {{--<a href="{{$v->add_link}}" target="_blank"><img src="{{ asset('ap/images/advertise/'.$v->add_image_url) }}" border="0" width="728" height="90" alt="pic"></a>--}}
+                            {{--@endif--}}
+                        {{--@endforeach--}}
+                    {{--</div>--}}
 
                     <div class="col-sm-12 col-md-12 b-item-apartment-block" ng-if="v.loan_type==3" ng-repeat="v in display_data | filter:person | filter:src_bank">
                         <div class="b-some-examples__item f-some-examples__item b-hover">

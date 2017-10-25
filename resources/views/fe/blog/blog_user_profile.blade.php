@@ -73,7 +73,11 @@
                                         <a data-toggle="modal" data-target="#infoUpdate" class="btn btn-default btn-sm m-t-5 pull-right"><i class="fa fa-edit"> Edit</i></a>
                                     </div>
                                     <div class="col-xs-12 col-sm-3 col-md-3">
-                                        <img src="{{ url('fe/img/blog_users/'.Auth::user()->user_image) }}" class="img-thumbnail" height="150" alt="Change Pciture" title="{{Auth::user()->name}}">
+                                        @if(isset(Auth::user()->user_image))
+                                            <img src="{{ url('fe/img/blog_users/'.Auth::user()->user_image) }}" data-toggle="modal" data-target="#personPic" class="img-thumbnail" height="150" alt="Change Pciture" title="{{Auth::user()->name}}">
+                                        @else
+                                            <img src="{{ asset('fe/img/img_blank.jpg') }}" data-toggle="modal" data-target="#personPic" class="img-thumbnail" height="150" alt="Change Pciture" title="{{Auth::user()->name}}">
+                                        @endif
                                         <br>
                                         <a data-toggle="modal" data-target="#personPic" class="btn btn-default btn-sm m-t-5"><i class="fa fa-edit"> Picture Edit</i></a>
                                     </div>
@@ -214,14 +218,14 @@
                                                                 <div class="form-group">
                                                                     <label class="col-sm-4 m-t-8 text-right" for="password">Password :</label>
                                                                     <div class="col-sm-6">
-                                                                        <input type="password" name="pass1" class="form-control" id="username" placeholder="Enter password">
+                                                                        <input type="password" name="pass1" class="form-control" id="username" placeholder="Enter password" required>
                                                                     </div>
                                                                 </div>
 
                                                                 <div class="form-group">
                                                                     <label class="col-sm-4 m-t-8 text-right" for="password">Re-Password :</label>
                                                                     <div class="col-sm-6">
-                                                                        <input type="password" name="pass2" class="form-control" id="username" placeholder="Re-Entergit password">
+                                                                        <input type="password" name="pass2" class="form-control" id="username" placeholder="Re-Entergit password" required>
                                                                     </div>
                                                                 </div>
 
@@ -347,9 +351,9 @@
                                                     <td>
                                                         @if($v->blog_control == 1)
                                                             @if($v->blog_status == 1)
-                                                                <a href="{{URL::to('publication/'.$v->id.'/'.$off.'/'.$table)}}" class="btn btn-default text-success btn-xs" title="Publish"><i class="fa fa-check"></i></a>
+                                                                <a href="{{URL::to('publication-fe/'.$v->id.'/'.$off.'/'.$table)}}" class="btn btn-default text-success btn-xs" title="Publish"><i class="fa fa-check"></i></a>
                                                             @else
-                                                                <a href="{{URL::to('publication/'.$v->id.'/'.$on.'/'.$table)}}" class="btn btn-danger text-success btn-xs" title="unPublish"><i class="fa fa-lock"> &nbsp;</i></a>
+                                                                <a href="{{URL::to('publication-fe/'.$v->id.'/'.$on.'/'.$table)}}" class="btn btn-danger text-success btn-xs" title="unPublish"><i class="fa fa-lock"> &nbsp;</i></a>
                                                             @endif
 
                                                             <a class="btn btn-default btn-xs text-success" data-toggle="modal" data-target="#{{$v->id}}kk" title="Click To Edit"><i class="fa fa-edit">&nbsp;</i></a>
@@ -412,7 +416,7 @@
                                                 </div>
                                                 <!--end blog_description -->
 
-                                                <!--start insert_update -->
+                                                <!--start blog_update -->
                                                 <div id="{{$v->id}}kk" class="modal fade" role="dialog">
                                                     <div class="modal-dialog">
 
@@ -491,7 +495,7 @@
 
                                                     </div>
                                                 </div>
-                                                <!--end insert_update -->
+                                                <!--end blog_update -->
 
                                                 <!--start image_update-->
                                                 <div id="{{$v->id}}kkk" class="modal fade" role="dialog">
@@ -509,7 +513,7 @@
                                                                 <div class="col-md-12">
                                                                     <div class="col-md-12 f-s-14 f-f-s">
 
-                                                                        {!! Form::open(array('url'=>'image-update', 'role'=>'form', 'method'=>'POST', 'files'=>'true')) !!}
+                                                                        {!! Form::open(array('url'=>'image-update-fe', 'role'=>'form', 'method'=>'POST', 'files'=>'true')) !!}
                                                                         <div class="form-horizontal">
                                                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                                             <input type="hidden" name="id" value="{{ $v->id }}">

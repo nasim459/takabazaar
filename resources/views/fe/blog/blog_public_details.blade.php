@@ -106,7 +106,11 @@
                                                             @foreach($v->comments as $c)
                                                             <div class="b-comment-item">
                                                                 <div class="b-comment__img">
-                                                                    <img data-retina src="{{ asset('fe/img/img_blank.jpg') }}" width="65" height="65" alt="Pic">
+                                                                    @if(isset($c->user['user_image']))
+                                                                        <img data-retina src="{{ url('fe/img/blog_users/'.$c->user['user_image']) }}" width="65" height="65" alt="Pic">
+                                                                    @else
+                                                                        <img data-retina src="{{ asset('fe/img/img_blank.jpg') }}" width="65" height="65" alt="Pic">
+                                                                    @endif
                                                                 </div>
                                                                 <div class="b-comment__descr">
                                                                     <div class="b-comment__descr__data">
@@ -117,7 +121,7 @@
                                                                     </div>
                                                                     <div class="f-comment__descr__txt">
                                                                         <p>{{ $c->comment_desc }}</p>
-                                                                        <a data-toggle="modal" data-target="#{{$c->id}}rep" class="f-comment-link-color" title="Click to replay of this comment"><i class="fa fa-reply"></i> Reply</a>
+                                                                        <a href="#" data-toggle="modal" data-target="#{{$c->id}}rep" class="f-comment-link-color" title="Click to replay of this comment"><i class="fa fa-reply"></i> Reply</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -129,7 +133,11 @@
                                                                             <li>
                                                                                 <div class="b-comment-item">
                                                                                     <div class="b-comment__img">
-                                                                                        <img data-retina src="{{ asset('fe/img/img_blank.jpg') }}" width="55" height="55" alt="Pic">
+                                                                                        @if(isset($cr->user['user_image']))
+                                                                                            <img data-retina src="{{ url('fe/img/blog_users/'.$cr->user['user_image']) }}" width="55" height="55" alt="Pic">
+                                                                                        @else
+                                                                                            <img data-retina src="{{ asset('fe/img/img_blank.jpg') }}" width="55" height="55" alt="Pic">
+                                                                                        @endif
                                                                                     </div>
                                                                                     <div class="b-comment__descr">
                                                                                         <div class="b-comment__descr__data">
@@ -172,44 +180,74 @@
                                                                                             </ul>
                                                                                             <div class="b-tabs__content">
                                                                                                 <div id="tabs-31" class="clearfix">
-                                                                                                    {!! Form::open(array('url'=>'blog-user-comment-replay', 'role'=>'form', 'method'=>'POST')) !!}
-                                                                                                    <div class="row">
-                                                                                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                                                                        <input type="hidden" name="comment_id" value="{{ $c->id }}">
-                                                                                                        <input type="hidden" name="id" value="{{ $v->id }}">
-                                                                                                        <input type="hidden" name="first_user" value="replay_user">
 
-                                                                                                        <div class="col-md-4">
-                                                                                                            <div class="b-form-row">
-                                                                                                                <label class="b-form-vertical__label" for="create_account_email">Your Name</label>
-                                                                                                                <div class="b-form-vertical__input">
-                                                                                                                    <input type="text" name="name" id="create_account_email" class="form-control" placeholder="Write name..." required />
-                                                                                                                </div>
+                                                                                                    @if(isset(Auth::user()->email))
+                                                                                                        {!! Form::open(array('url'=>'blog-user-comment-replay', 'role'=>'form', 'method'=>'POST')) !!}
+                                                                                                        <div class="row">
+                                                                                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                                                                            <input type="hidden" name="comment_id" value="{{ $c->id }}">
+                                                                                                            <input type="hidden" name="id" value="{{ $v->id }}">
+                                                                                                            <input type="hidden" name="first_user" value="replay_user_sign_in">
+
+                                                                                                            <div class="form-group">
+                                                                                                                <label for="exampleInputName2" class="col-sm-12 control-label"><i class="fa text-success">Hi <b>{{Auth::user()->name}}</b> write something</i></label>
                                                                                                             </div>
-                                                                                                            <div class="b-form-row">
-                                                                                                                <label class="b-form-vertical__label" for="create_account_email">Your Email</label>
-                                                                                                                <div class="b-form-vertical__input">
-                                                                                                                    <input type="email" name="email" id="create_account_email" class="form-control" placeholder="yourEmail@email.com" required />
+
+                                                                                                            <div class="col-md-8">
+                                                                                                                <div class="b-form-row b-form--contact-size">
+                                                                                                                    <label class="b-form-vertical__label" for="create_account_phone">Your replay</label>
+                                                                                                                    <textarea class="form-control" name="comment" rows="5" placeholder="What's on your mind..." required></textarea>
                                                                                                                 </div>
-                                                                                                            </div>
-                                                                                                            <div class="b-form-row">
-                                                                                                                <label class="b-form-vertical__label" for="create_account_password">Your password</label>
-                                                                                                                <div class="b-form-vertical__input">
-                                                                                                                    <input type="password" name="password" id="create_account_password" class="form-control" required=""/>
+                                                                                                                <div class="b-form-row">
+                                                                                                                    <input type="submit" value="Save Replay" class="btn btn-success" />
                                                                                                                 </div>
                                                                                                             </div>
                                                                                                         </div>
-                                                                                                        <div class="col-md-8">
-                                                                                                            <div class="b-form-row b-form--contact-size">
-                                                                                                                <label class="b-form-vertical__label" for="create_account_phone">Your replay</label>
-                                                                                                                <textarea class="form-control" name="comment" rows="5" placeholder="What's on your mind..." required></textarea>
+                                                                                                        {!! Form::close() !!}
+
+                                                                                                    @else
+
+                                                                                                        {!! Form::open(array('url'=>'blog-user-comment-replay-fe', 'role'=>'form', 'method'=>'POST')) !!}
+                                                                                                        <div class="row">
+                                                                                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                                                                            <input type="hidden" name="comment_id" value="{{ $c->id }}">
+                                                                                                            <input type="hidden" name="id" value="{{ $v->id }}">
+                                                                                                            <input type="hidden" name="first_user" value="replay_user">
+
+                                                                                                            <div class="col-md-4">
+                                                                                                                <div class="b-form-row">
+                                                                                                                    <label class="b-form-vertical__label" for="create_account_email">Your Name</label>
+                                                                                                                    <div class="b-form-vertical__input">
+                                                                                                                        <input type="text" name="name" id="create_account_email" class="form-control" placeholder="Write name..." required />
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div class="b-form-row">
+                                                                                                                    <label class="b-form-vertical__label" for="create_account_email">Your Email</label>
+                                                                                                                    <div class="b-form-vertical__input">
+                                                                                                                        <input type="email" name="email" id="create_account_email" class="form-control" placeholder="yourEmail@email.com" required />
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div class="b-form-row">
+                                                                                                                    <label class="b-form-vertical__label" for="create_account_password">Your password</label>
+                                                                                                                    <div class="b-form-vertical__input">
+                                                                                                                        <input type="password" name="password" id="create_account_password" class="form-control" required=""/>
+                                                                                                                    </div>
+                                                                                                                </div>
                                                                                                             </div>
-                                                                                                            <div class="b-form-row">
-                                                                                                                <input type="submit" value="Save Replay" class="btn btn-success" />
+
+                                                                                                            <div class="col-md-8">
+                                                                                                                <div class="b-form-row b-form--contact-size">
+                                                                                                                    <label class="b-form-vertical__label" for="create_account_phone">Your replay</label>
+                                                                                                                    <textarea class="form-control" name="comment" rows="5" placeholder="What's on your mind..." required></textarea>
+                                                                                                                </div>
+                                                                                                                <div class="b-form-row">
+                                                                                                                    <input type="submit" value="Save Replay" class="btn btn-success" />
+                                                                                                                </div>
                                                                                                             </div>
                                                                                                         </div>
-                                                                                                    </div>
-                                                                                                    {!! Form::close() !!}
+                                                                                                        {!! Form::close() !!}
+                                                                                                    @endif
+
                                                                                                 </div>
 
                                                                                                 <div id="tabs-32" class="clearfix">

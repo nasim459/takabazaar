@@ -5,6 +5,7 @@ namespace App\Http\Controllers\fe\app\blog;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
@@ -16,6 +17,24 @@ class BlogUserCommentReplayController extends Controller
         //dd($request->all());
         $previous_url = url()->previous();
         $first_user = $request->first_user;
+
+        //----start sign_in_user_only------------------------------------------
+        if($first_user == 'replay_user_sign_in')
+        {
+            //----start sign_in_user replay area
+            $save = array();
+            $save['comment_replay_desc'] = $request->comment;
+            $save['blog_id'] = $request->id;
+            $save['user_id'] = Auth::user()->id;
+            $save['comment_id'] = $request->comment_id;
+            DB::table('commentreplaies')->insert($save);
+
+            Session::put('fe_msg_blog', 'Your comment replay successfully');
+            return back();
+            //----end sign_in_user replsy area
+
+        }
+        //----start sign_in_user_only------------------------------------------
 
         $name = $request->name;
         $email = $request->email;
@@ -43,6 +62,7 @@ class BlogUserCommentReplayController extends Controller
         $save['name'] = $name;
         $save['email'] = $email;
         $save['password'] = $password;
+        $save['role_id'] = 2;
         $bloguser_insertGetId = DB::table('users')->insertGetId($save);
 
         if($first_user == 'first_user')

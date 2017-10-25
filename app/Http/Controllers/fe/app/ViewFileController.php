@@ -230,7 +230,7 @@ class ViewFileController extends Controller
             case "blog":
                 $file_open = 'fe.blog.blog_public';
                 $data_view = Blog::orderBy('blog_hit_count', 'DESC')->where('blog_status', 1)->where('blog_control', 1)->limit(9)->get();
-                $data_view_one = Blog::orderBy('id', 'DESC')->limit(1)->get();
+                $data_view_one = Blog::orderBy('id', 'DESC')->where('blog_status', 1)->where('blog_control', 1)->limit(1)->get();
                 $blog_category = Categories::orderBy('id', 'DESC')->limit(10)->get();
                 $blog_category_all = Categories::all();
                 //dd($data_view_one);
