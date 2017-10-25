@@ -18,7 +18,7 @@ class BlogUserCommentReplayController extends Controller
         $previous_url = url()->previous();
         $first_user = $request->first_user;
 
-        //----start sign_in_user_only------------------------------------------
+        //----start comment_replay sign_in_user_only------------------------------------------
         if($first_user == 'replay_user_sign_in')
         {
             //----start sign_in_user replay area
@@ -34,7 +34,24 @@ class BlogUserCommentReplayController extends Controller
             //----end sign_in_user replsy area
 
         }
-        //----start sign_in_user_only------------------------------------------
+        //----end comment_replay sign_in_user_only--------------------------------------------
+
+        //----start comment sign_in_user_only-------------------------------------------------
+        if($first_user == 'comment_user_sign_in')
+        {
+            //----start comment area
+            $save = array();
+            $save['comment_desc'] = $request->comment;
+            $save['blog_id'] = $request->id;
+            $save['user_id'] = Auth::user()->id;
+            DB::table('comments')->insert($save);
+
+            Session::put('fe_msg_blog', 'Your comment replay successfully');
+            return back();
+            //----end comment area
+
+        }
+        //----end comment sign_in_user_only--------------------------------------------------
 
         $name = $request->name;
         $email = $request->email;
@@ -58,6 +75,7 @@ class BlogUserCommentReplayController extends Controller
         }
         //----End form validation
 
+        //----starat new blog_user comment_&_replay
         $save = array();
         $save['name'] = $name;
         $save['email'] = $email;
@@ -85,6 +103,7 @@ class BlogUserCommentReplayController extends Controller
             DB::table('commentreplaies')->insertGetId($save);
             //----end replsy area
         }
+        //----starat new blog_user comment_&_replay
 
         Session::put('fe_msg_blog', 'Your comment approved successfully');
         return redirect($previous_url);
