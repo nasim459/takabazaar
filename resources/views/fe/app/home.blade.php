@@ -89,7 +89,7 @@
                         <div class="b-infoblock-with-icon">
 
                             @foreach($banner_image as $v)
-                                <a href="#" class="f-infoblock-with-icon__icon fade-in-animate app-banner m-t-20">
+                                <a href="{{URL::to($v->add_link)}}" target="_blank" class="f-infoblock-with-icon__icon fade-in-animate app-banner m-t-20">
                                     <img src="{{ asset('ap/images/banner/'.$v->add_image_url) }}" class="img-thumbnail app-banner-img" alt="Picture Coming Soon">
                                     <br>
                                     <i class="fa m-t-mi-20"><br><span class="f-s-22">{{str_limit($v->add_desc, 46, '...')}}</span></i>
