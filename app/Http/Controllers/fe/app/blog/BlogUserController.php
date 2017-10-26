@@ -19,10 +19,10 @@ class BlogUserController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:64',
             'email' => 'required|email|Between:3,64|unique:users',
-            'pass' => 'required',
+            'pass' => 'required|min:6',
         ]);
         if ($validator->fails()) {
-            Session::put('fe_error_msg', 'Pre-required failed please try again.');
+            Session::put('fe_error_msg', 'Incorrect email or password, Please try again.');
             return redirect('/');//->with('fe_error_msg', 'Pre-required failed please try again.');
         }
 

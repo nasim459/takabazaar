@@ -104,7 +104,7 @@
                             <div class="col-md-12">
                                 <div class="col-md-12 f-s-14 f-f-s">
 
-                                    {!! Form::open(array('url'=>'blog-user-insert', 'role'=>'form', 'method'=>'POST')) !!}
+                                    {!! Form::open(array('url'=>'blog-user-insert-fe', 'role'=>'form', 'method'=>'POST')) !!}
                                     <div class="form-horizontal m-t-10">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="hidden" name="insert_save" value="insert_save">
@@ -112,23 +112,21 @@
                                         <div class="form-group">
                                             <label class="col-sm-4 m-t-8 text-right" for="username">Full Name :</label>
                                             <div class="col-sm-6">
-                                                <input type="text" name="name" class="form-control" id="username" placeholder="Enter name...">
+                                                <input type="text" name="name" class="form-control" id="username" placeholder="Enter name..." required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-4 m-t-8 text-right" for="email">Email Address :</label>
                                             <div class="col-sm-6">
-                                                <input type="email" name="email" class="form-control" id="email" placeholder="example@ralitsoft.com">
+                                                <input type="email" name="email" class="form-control" id="email" placeholder="example@ralitsoft.com" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-4 m-t-8 text-right" for="password">Password :</label>
                                             <div class="col-sm-6">
-                                                <input type="password" name="pass" class="form-control" id="username" placeholder="Write password">
+                                                <input type="password" name="pass" class="form-control" id="username" placeholder="Password minimum 6 digit" required>
                                             </div>
                                         </div>
-
-
 
                                         <div class="form-group">
                                             <label class="col-sm-4" for="email"></label>
