@@ -37,7 +37,7 @@
         {{--</div>--}}
     {{--</div>--}}
 
-    <!--start section-->
+    <!--start section searching_offering_app-->
     <section class="b-desc-section-container b-diagonal-line-bg-light">
         <div class="container">
 
@@ -70,9 +70,9 @@
 
         </div>
     </section>
-    <!--end section-->
+    <!--end section searching_offering_app-->
 
-    <!--start section-->
+    <!--start section youtube-->
     <section class="b-desc-section-container b-diagonal-line-bg-light">
         <div class="container">
             <div class="row">
@@ -92,9 +92,9 @@
             </div>
         </div>
     </section>
-    <!--end section-->
+    <!--end section youtube-->
 
-    <!--start section-->
+    <!--start section banner-->
     @if(Session::get('banner_value') != 0)
     <section class="b-bg-block f-bg-block" style="background-color: green; padding: 60px 0 60px 0;">
         <div class="container f-center">
@@ -118,9 +118,9 @@
         </div>
     </section>
     @endif
-    <!--start section-->
+    <!--start section banner-->
 
-    <!--start section-->
+    <!--start section popular_article-->
     <section class="b-diagonal-line-bg-light b-section-info">
         <div class="container">
             <div class="row">
@@ -172,7 +172,7 @@
             </div>
         </div>
     </section>
-    <!--end section-->
+    <!--end section popular_article-->
 
     <!--start section-->
     {{--<section class="b-desc-section-container b-diagonal-line-bg-light">--}}
