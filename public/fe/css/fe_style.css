@@ -42,15 +42,3 @@
 
 /*float-left*/
 .f-l{float: left!important;}
-
-.rafi{
-    border: 1px solid red;
-    /*margin: 0;*/
-    /*padding:0;*/
-}
-.rafi_ahamed{
-    height: 220px!important;
-    width: 540px!important;
-    border:1px solid yellow;
-    float: left;
-}
