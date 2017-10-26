@@ -1,101 +1,6 @@
 @section('fe_maincontent')
-
-    {{--@foreach($header_image as $v)--}}
-        {{--@if($v->status == 0)--}}
-            {{--<div class="b-inner-page-header f-inner-page-header b-bg-header-inner-page">--}}
-                {{--@else--}}
-    {{--<div class="b-inner-page-header f-inner-page-header" style="background: url({{ asset('ap/images/header_image/'.$v->header_image_url) }}) no-repeat center;--}}
-            {{--background-size: cover;">--}}
-        {{--@endif--}}
-        {{--@endforeach--}}
-        {{--<div class="b-inner-page-header f-inner-page-header b-bg-header-inner-page">--}}
-        {{--<div class="b-inner-page-header__content">--}}
-            {{--<div class="container">--}}
-                {{--<div class="pull-left">--}}
-                    {{--<h1 class="f-primary-l c-default"><i class="fa fa-home"> Home</i></h1>--}}
-                    {{--<div class="f-primary-l f-inner-page-header_title-add c-senary"><i class="fa">I am searching for</i></div>--}}
-                {{--</div>--}}
-
-                {{--@if(Session::get('fe_error_msg') != NULL)--}}
-                    {{--<div class="col-xs-12 col-md-6 m-l-5 alert alert-danger" style="font-size: 20px;">--}}
-                        {{--<a href="#" class="pull-right" data-dismiss="alert">&times;</a>--}}
-                        {{--{{Session::get('fe_error_msg')}} {{Session::put('fe_error_msg', '')}}--}}
-                    {{--</div>--}}
-                {{--@endif--}}
-
-                {{--@if(Session::get('fe_msg') != NULL)--}}
-                    {{--<div class="col-xs-12 col-md-6 m-l-5 alert alert-success" style="font-size: 20px;">--}}
-                        {{--<a href="#" class="pull-right" data-dismiss="alert">&times;</a>--}}
-                        {{--{{Session::get('fe_msg')}} {{Session::put('fe_msg', '')}}--}}
-                    {{--</div>--}}
-                {{--@endif--}}
-
-                {{--<div class="pull-right">--}}
-                    {{--<div class="t-a-c">--}}
-                        {{--<i class="fa f-s-25 m-b-10">Hotline</i><br>--}}
-                        {{--<a href="#" class="btn btn-danger"><i class="fa f-s-20 c-red- m-b-5">01846 177 831</i></a><br>--}}
-                        {{--<i class="fa f-s-14">info@finFObd.com</i>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-
-
-
     <div class="b-slider-primary" >
         <div class="j-slider-primary">
-
-            {{--<div class="b-slider-primary-item b-slider-primary-item--bg f-slider-primary-item h-156">--}}
-                {{--<div class="container">--}}
-                    {{--<div class="f-slider-primary-item__title b-slider-primary-item__title f-primary-b">--}}
-                        {{--<i class="fa fa-twitter"></i><br/>--}}
-                        {{--<span><b>@frexystudio</b></span>--}}
-                    {{--</div>--}}
-                    {{--<p class="b-slider-primary-item__text f-slider-primary-item__text f-primary-l">1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In accumsan porttitor egestas.<br/> Suspendisse gravida ultrices convallis. Interdum et malesuada fames<br/>--}}
-                        {{--<a href="http://bly.shotlinks.com">http://bly.shotlinks.com</a></p>--}}
-                    {{--<div class="pull-right">--}}
-                        {{--<div class="t-a-c">--}}
-                            {{--<i class="fa f-s-25 m-b-10">Hotline</i><br>--}}
-                            {{--<a href="#" class="btn btn-danger"><i class="fa f-s-20 c-red- m-b-5">01846 177 831</i></a><br>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="b-slider-primary-item b-slider-primary-item--bg1 f-slider-primary-item h-156">--}}
-                {{--<div class="container">--}}
-                    {{--<div class="f-slider-primary-item__title b-slider-primary-item__title f-primary-b">--}}
-                        {{--<i class="fa fa-facebook"></i><br/>--}}
-                        {{--<span><b>@frexystudio</b></span>--}}
-                    {{--</div>--}}
-                    {{--<p class="b-slider-primary-item__text f-slider-primary-item__text f-primary-l">2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In accumsan porttitor egestas.<br/> Suspendisse gravida ultrices convallis. Interdum et malesuada fames<br/>--}}
-                        {{--<a href="http://bly.shotlinks.com">http://bly.shotlinks.com</a>--}}
-                    {{--</p>--}}
-                    {{--<div class="pull-right">--}}
-                        {{--<div class="t-a-c">--}}
-                            {{--<i class="fa f-s-25 m-b-10">Hotline</i><br>--}}
-                            {{--<a href="#" class="btn btn-danger"><i class="fa f-s-20 c-red- m-b-5">01846 177 831</i></a><br>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="b-slider-primary-item b-slider-primary-item--bg2 f-slider-primary-item h-156">--}}
-                {{--<div class="container">--}}
-                    {{--<div class="f-slider-primary-item__title b-slider-primary-item__title f-primary-b">--}}
-                        {{--<i class="fa fa-linkedin"></i><br/>--}}
-                        {{--<span><b>@frexystudio</b></span>--}}
-                    {{--</div>--}}
-                    {{--<p class="b-slider-primary-item__text f-slider-primary-item__text f-primary-l">3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In accumsan porttitor egestas.<br/> Suspendisse gravida ultrices convallis. Interdum et malesuada fames<br/>--}}
-                        {{--<a href="http://bly.shotlinks.com">http://bly.shotlinks.com</a>--}}
-                    {{--</p>--}}
-                    {{--<div class="pull-right">--}}
-                        {{--<div class="t-a-c">--}}
-                            {{--<i class="fa f-s-25 m-b-10">Hotline</i><br>--}}
-                            {{--<a href="#" class="btn btn-danger"><i class="fa f-s-20 c-red- m-b-5">01846 177 831</i></a><br>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
 
             @foreach($slider_image as $v)
                 <div class="b-slider-primary-item- f-slider-primary-item h-156"style="background: url({{ asset('ap/images/slider_image/'.$v->slider_image_url) }}) no-repeat center; background-size: cover;">
@@ -118,10 +23,8 @@
                 </div>
             @endforeach
 
-
         </div>
     </div>
-
 
     {{--<div class="l-main-container" ng-controller="fe_loanController">--}}
         {{--<div class="b-breadcrumbs f-breadcrumbs">--}}
@@ -133,6 +36,7 @@
             {{--</div>--}}
         {{--</div>--}}
     {{--</div>--}}
+
     <!--start section-->
     <section class="b-desc-section-container b-diagonal-line-bg-light">
         <div class="container">
@@ -211,16 +115,6 @@
                 {{--<div class="col-md-pull-3 col-sm-12 col-xs-12"></div>--}}
             @endforeach
 
-
-
-            {{--@php $number = 4; @endphp--}}
-            {{--@foreach($banner_image as $v)--}}
-            {{--<div class="col-md-4 col-sm-6 col-xs-12">--}}
-            {{--{!! $v->v_embed_code !!}<br>--}}
-            {{--{{str_limit($v->v_name, 46, '...')}}--}}
-            {{--</div>--}}
-            {{--@endforeach--}}
-
         </div>
     </section>
     @endif
@@ -281,100 +175,100 @@
     <!--end section-->
 
     <!--start section-->
-    <section class="b-desc-section-container b-diagonal-line-bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                    <div class="b-infoblock-with-icon-group row">
+    {{--<section class="b-desc-section-container b-diagonal-line-bg-light">--}}
+        {{--<div class="container">--}}
+            {{--<div class="row">--}}
+                {{--<div class="col-md-10 col-md-offset-1">--}}
+                    {{--<div class="b-infoblock-with-icon-group row">--}}
 
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="b-infoblock-with-icon">
-                                <a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate f-l" title="Home Loan">
-                                    <i class="fa fa-home"></i>
-                                </a>
-                                <div class="b-infoblock-with-icon__info f-infoblock-with-icon__info">
-                                    <a href="#" class="f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-primary-sb f-l">Home Loan</a>
-                                    <div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text">
-                                        <br>Write short something about this topic to display hare into 10 words.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="b-infoblock-with-icon">
-                                <a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate f-l">
-                                    <i class="fa fa-car"></i>
-                                </a>
-                                <div class="b-infoblock-with-icon__info f-infoblock-with-icon__info">
-                                    <a href="#" class="f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-primary-sb f-l">Car Loan</a>
-                                    <div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text">
-                                        <br>Write short something about this topic to display hare into 10 words.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="clearfix visible-sm-block"></div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="b-infoblock-with-icon">
-                                <a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate f-l">
-                                    <i class="fa fa-bank"></i>
-                                </a>
-                                <div class="b-infoblock-with-icon__info f-infoblock-with-icon__info">
-                                    <a href="#" class="f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-primary-sb f-l">Saving Account</a>
-                                    <div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text">
-                                        <br>Write short something about this topic to display hare into 10 words.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="clearfix visible-md-block visible-lg-block"></div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="b-infoblock-with-icon">
-                                <a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate f-l">
-                                    <i class="fa fa-user"></i>
-                                </a>
-                                <div class="b-infoblock-with-icon__info f-infoblock-with-icon__info">
-                                    <a href="#" class="f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-primary-sb f-l">Life Insurance</a>
-                                    <div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text">
-                                        <br>Write short something about this topic to display hare into 10 words.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="clearfix visible-sm-block"></div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="b-infoblock-with-icon">
-                                <a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate f-l">
-                                    <i class="fa fa-credit-card"></i>
-                                </a>
-                                <div class="b-infoblock-with-icon__info f-infoblock-with-icon__info">
-                                    <a href="#" class="f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-primary-sb f-l">Credit Card</a>
-                                    <div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text">
-                                        <br>Write short something about this topic to display hare into 10 words.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="b-infoblock-with-icon">
-                                <a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate f-l">
-                                    <i class="fa fa-money"></i>
-                                </a>
-                                <div class="b-infoblock-with-icon__info f-infoblock-with-icon__info">
-                                    <a href="#" class="f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-primary-sb f-l">Capital Marketing</a>
-                                    <div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text">
-                                        <br>Write short something about this topic to display hare into 10 words.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="clearfix visible-sm-block"></div>
-                    </div>
+                        {{--<div class="col-md-4 col-sm-6 col-xs-12">--}}
+                            {{--<div class="b-infoblock-with-icon">--}}
+                                {{--<a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate f-l" title="Home Loan">--}}
+                                    {{--<i class="fa fa-home"></i>--}}
+                                {{--</a>--}}
+                                {{--<div class="b-infoblock-with-icon__info f-infoblock-with-icon__info">--}}
+                                    {{--<a href="#" class="f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-primary-sb f-l">Home Loan</a>--}}
+                                    {{--<div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text">--}}
+                                        {{--<br>Write short something about this topic to display hare into 10 words.--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="col-md-4 col-sm-6 col-xs-12">--}}
+                            {{--<div class="b-infoblock-with-icon">--}}
+                                {{--<a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate f-l">--}}
+                                    {{--<i class="fa fa-car"></i>--}}
+                                {{--</a>--}}
+                                {{--<div class="b-infoblock-with-icon__info f-infoblock-with-icon__info">--}}
+                                    {{--<a href="#" class="f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-primary-sb f-l">Car Loan</a>--}}
+                                    {{--<div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text">--}}
+                                        {{--<br>Write short something about this topic to display hare into 10 words.--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="clearfix visible-sm-block"></div>--}}
+                        {{--<div class="col-md-4 col-sm-6 col-xs-12">--}}
+                            {{--<div class="b-infoblock-with-icon">--}}
+                                {{--<a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate f-l">--}}
+                                    {{--<i class="fa fa-bank"></i>--}}
+                                {{--</a>--}}
+                                {{--<div class="b-infoblock-with-icon__info f-infoblock-with-icon__info">--}}
+                                    {{--<a href="#" class="f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-primary-sb f-l">Saving Account</a>--}}
+                                    {{--<div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text">--}}
+                                        {{--<br>Write short something about this topic to display hare into 10 words.--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="clearfix visible-md-block visible-lg-block"></div>--}}
+                        {{--<div class="col-md-4 col-sm-6 col-xs-12">--}}
+                            {{--<div class="b-infoblock-with-icon">--}}
+                                {{--<a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate f-l">--}}
+                                    {{--<i class="fa fa-user"></i>--}}
+                                {{--</a>--}}
+                                {{--<div class="b-infoblock-with-icon__info f-infoblock-with-icon__info">--}}
+                                    {{--<a href="#" class="f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-primary-sb f-l">Life Insurance</a>--}}
+                                    {{--<div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text">--}}
+                                        {{--<br>Write short something about this topic to display hare into 10 words.--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="clearfix visible-sm-block"></div>--}}
+                        {{--<div class="col-md-4 col-sm-6 col-xs-12">--}}
+                            {{--<div class="b-infoblock-with-icon">--}}
+                                {{--<a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate f-l">--}}
+                                    {{--<i class="fa fa-credit-card"></i>--}}
+                                {{--</a>--}}
+                                {{--<div class="b-infoblock-with-icon__info f-infoblock-with-icon__info">--}}
+                                    {{--<a href="#" class="f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-primary-sb f-l">Credit Card</a>--}}
+                                    {{--<div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text">--}}
+                                        {{--<br>Write short something about this topic to display hare into 10 words.--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="col-md-4 col-sm-6 col-xs-12">--}}
+                            {{--<div class="b-infoblock-with-icon">--}}
+                                {{--<a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate f-l">--}}
+                                    {{--<i class="fa fa-money"></i>--}}
+                                {{--</a>--}}
+                                {{--<div class="b-infoblock-with-icon__info f-infoblock-with-icon__info">--}}
+                                    {{--<a href="#" class="f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-primary-sb f-l">Capital Marketing</a>--}}
+                                    {{--<div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text">--}}
+                                        {{--<br>Write short something about this topic to display hare into 10 words.--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="clearfix visible-sm-block"></div>--}}
+                    {{--</div>--}}
 
-                </div>
-            </div>
-        </div>
-    </section>
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</section>--}}
     <!--end section-->
 
 @endsection
