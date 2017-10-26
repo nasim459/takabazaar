@@ -12916,6 +12916,8 @@ textarea.b-product-card-textarea {
 .m-t-70{margin-top: 70px!important;}
 .m-t-80{margin-top: 80px!important;}
 
+.m-t-mi-20{margin-top: -20px!important;}
+
 .m-b-0{margin-bottom: 0px!important;}
 .m-b-1{margin-bottom: 1px!important;}
 .m-b-2{margin-bottom: 2px!important;}
@@ -12932,6 +12934,9 @@ textarea.b-product-card-textarea {
 
 .h-234{height: 234px!important;}
 
+@media screen and (max-width: 800px) {
+  .h-234{height: 100%!important;}
+}
 
 @media screen and (max-width: 600px) {
   .r-mobile{

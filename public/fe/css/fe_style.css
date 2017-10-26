@@ -5,8 +5,8 @@
 
 .app{
     width: 140px!important;
-    margin-left: 45px!important;
-    margin-top: 26px!important;
+    /*margin-left: 45px!important;*/
+    /*margin-top: 26px!important;*/
 }
 
 /*app-circle-style*/
@@ -16,5 +16,41 @@
     margin-top: 4px!important;
 }
 
+.app-banner{
+    width: 546px!important;
+    background: none!important;
+    display: inline-block!important;
+    position: relative!important;
+}
+.app-banner-img{
+    width: 544px!important;
+    height: 200px!important;
+}
+
+@media screen and (max-width: 800px) {
+    .app-banner{
+        width: 100%!important;
+        background: none!important;
+        display: inline-block!important;
+        position: relative!important;
+    }
+    .app-banner-img{
+        width: 100%!important;
+        height: 150px!important;
+    }
+}
+
 /*float-left*/
 .f-l{float: left!important;}
+
+.rafi{
+    border: 1px solid red;
+    /*margin: 0;*/
+    /*padding:0;*/
+}
+.rafi_ahamed{
+    height: 220px!important;
+    width: 540px!important;
+    border:1px solid yellow;
+    float: left;
+}

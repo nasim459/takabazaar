@@ -84,21 +84,21 @@
         <section class="b-bg-block f-bg-block" style="background-color: green; padding: 60px 0 60px 0;">
             <div class="container f-center">
 
-                @php $number = 4; @endphp
-                @foreach($banner_image as $v)
-                    {{--<div class="col-md-offset-3 col-sm-12 col-xs-12"></div>--}}
-                    {{--<div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12">--}}
-                    <div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12">
-                        <a href="{{$v->add_link}}" target="_blank" title="Click To Get Details Information">
-                            <img src="{{ asset('ap/images/banner/'.$v->add_image_url) }}" class="img-thumbnail" alt="Picture Coming Soon" style="height: 220px; width: 100%">
-                            {{--<img src="{{asset('fe/img/banner/b2.jpg')}}" class="img-thumbnail" alt="Picture Coming Soon" style="height: 220px; width: 100%">--}}
-                        </a>
-                        <i class="fa m-t-20 t-a-j f-s-25 m-b-30">{{$v->add_desc}}</i>
-                        {{--<a href="#" class="b-btn f-btn b-btn-md f-btn-md f-primary-sb j-data-element animated shake" data-animate="shake"><i class="fa fa-money"></i> Visite Site</a>--}}
+                <div class="row h-234">
+                    <div class="col-md-12 t-a-c">
+                        <div class="b-infoblock-with-icon">
+
+                            @foreach($banner_image as $v)
+                                <a href="#" class="f-infoblock-with-icon__icon fade-in-animate app-banner m-t-20">
+                                    <img src="{{ asset('ap/images/banner/'.$v->add_image_url) }}" class="img-thumbnail app-banner-img" alt="Picture Coming Soon">
+                                    <br>
+                                    <i class="fa m-t-mi-20"><br><span class="f-s-22">{{str_limit($v->add_desc, 46, '...')}}</span></i>
+                                </a>
+                            @endforeach
+
+                        </div>
                     </div>
-                    {{--</div>--}}
-                    {{--<div class="col-md-pull-3 col-sm-12 col-xs-12"></div>--}}
-                @endforeach
+                </div>
 
             </div>
         </section>
