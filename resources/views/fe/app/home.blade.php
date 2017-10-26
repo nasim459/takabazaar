@@ -3,10 +3,9 @@
         <div class="j-slider-primary">
 
             @foreach($slider_image as $v)
-                <div class="b-slider-primary-item- f-slider-primary-item h-156"style="background: url({{ asset('ap/images/slider_image/'.$v->slider_image_url) }}) no-repeat center; background-size: cover;">
+                <div class="b-slider-primary-item- f-slider-primary-item h-234"style="background: url({{ asset('ap/images/slider_image/'.$v->slider_image_url) }}) no-repeat center; background-size: cover;">
                     <div class="container">
-
-                        <div class="col-sm-12 col-md-12 m-t-40">
+                        <div class="col-sm-12 col-md-12 m-t-60">
                             <div class="col-sm-12 col-md-2"></div>
 
                             <div class="col-sm-12 col-md-8 t-a-c">
@@ -18,7 +17,6 @@
                                 <a href="#" class="btn btn-danger"><i class="fa f-s-20 c-red- m-b-5">01846 177 831</i></a><br>
                             </div>
                         </div>
-
                     </div>
                 </div>
             @endforeach
@@ -38,7 +36,15 @@
     {{--</div>--}}
 
     <!--start section searching_offering_app-->
-    <section class="b-desc-section-container b-diagonal-line-bg-light">
+    @foreach($header_image as $v)
+        @if($v->status == 0)
+            <section class="b-desc-section-container b-diagonal-line-bg-light m-b-0">
+        @else
+            <section class="b-desc-section-container b-diagonal-line-bg-light m-b-0" style="background: url({{ asset('ap/images/header_image/'.$v->header_image_url) }}) no-repeat center;
+                    background-size: cover;">
+        @endif
+    @endforeach
+
         <div class="container">
 
             @if(Session::get('fe_error_msg') != NULL)
@@ -47,10 +53,10 @@
                 </h2>
             @endif
 
-            <h2 class="f-center f-primary-b" style="text-transform: capitalize;margin-top: -22px;">I am searchaing for</h2>
+            <div class="row h-234">
 
-            <div class="row">
-                <div class="col-md-12 t-a-c m-b-20">
+                <h2 class="f-center f-primary-b" style="text-transform: capitalize;margin-top: -22px;">I am searchaing for</h2>
+                <div class="col-md-12 t-a-c">
                     <div class="b-infoblock-with-icon">
                         <a href="{{ url('loan') }}" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s">
                             <i class="fa fa-home f-s-50"><br><span class="f-s-22">Loan</span></i>
@@ -66,11 +72,38 @@
                         </a>
                     </div>
                 </div>
+
             </div>
 
         </div>
     </section>
     <!--end section searching_offering_app-->
+
+    <!--start section banner-->
+    @if(Session::get('banner_value') != 0)
+        <section class="b-bg-block f-bg-block" style="background-color: green; padding: 60px 0 60px 0;">
+            <div class="container f-center">
+
+                @php $number = 4; @endphp
+                @foreach($banner_image as $v)
+                    {{--<div class="col-md-offset-3 col-sm-12 col-xs-12"></div>--}}
+                    {{--<div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12">--}}
+                    <div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12">
+                        <a href="{{$v->add_link}}" target="_blank" title="Click To Get Details Information">
+                            <img src="{{ asset('ap/images/banner/'.$v->add_image_url) }}" class="img-thumbnail" alt="Picture Coming Soon" style="height: 220px; width: 100%">
+                            {{--<img src="{{asset('fe/img/banner/b2.jpg')}}" class="img-thumbnail" alt="Picture Coming Soon" style="height: 220px; width: 100%">--}}
+                        </a>
+                        <i class="fa m-t-20 t-a-j f-s-25 m-b-30">{{$v->add_desc}}</i>
+                        {{--<a href="#" class="b-btn f-btn b-btn-md f-btn-md f-primary-sb j-data-element animated shake" data-animate="shake"><i class="fa fa-money"></i> Visite Site</a>--}}
+                    </div>
+                    {{--</div>--}}
+                    {{--<div class="col-md-pull-3 col-sm-12 col-xs-12"></div>--}}
+                @endforeach
+
+            </div>
+        </section>
+    @endif
+    <!--start section banner-->
 
     <!--start section youtube-->
     <section class="b-desc-section-container b-diagonal-line-bg-light">
@@ -93,32 +126,6 @@
         </div>
     </section>
     <!--end section youtube-->
-
-    <!--start section banner-->
-    @if(Session::get('banner_value') != 0)
-    <section class="b-bg-block f-bg-block" style="background-color: green; padding: 60px 0 60px 0;">
-        <div class="container f-center">
-
-            @php $number = 4; @endphp
-            @foreach($banner_image as $v)
-                {{--<div class="col-md-offset-3 col-sm-12 col-xs-12"></div>--}}
-                {{--<div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12">--}}
-                <div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12">
-                    <a href="{{$v->add_link}}" target="_blank" title="Click To Get Details Information">
-                        <img src="{{ asset('ap/images/banner/'.$v->add_image_url) }}" class="img-thumbnail" alt="Picture Coming Soon" style="height: 220px; width: 100%">
-                        {{--<img src="{{asset('fe/img/banner/b2.jpg')}}" class="img-thumbnail" alt="Picture Coming Soon" style="height: 220px; width: 100%">--}}
-                    </a>
-                    <i class="fa m-t-20 t-a-j f-s-25 m-b-30">{{$v->add_desc}}</i>
-                    {{--<a href="#" class="b-btn f-btn b-btn-md f-btn-md f-primary-sb j-data-element animated shake" data-animate="shake"><i class="fa fa-money"></i> Visite Site</a>--}}
-                </div>
-                {{--</div>--}}
-                {{--<div class="col-md-pull-3 col-sm-12 col-xs-12"></div>--}}
-            @endforeach
-
-        </div>
-    </section>
-    @endif
-    <!--start section banner-->
 
     <!--start section popular_article-->
     <section class="b-diagonal-line-bg-light b-section-info">

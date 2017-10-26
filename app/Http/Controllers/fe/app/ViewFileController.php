@@ -41,7 +41,7 @@ class ViewFileController extends Controller
                 $blog_view_4 = Blog::orderBy('blog_hit_count', 'desc')->where('blog_control', 1)->limit(4)->get();
                 $blog_view_8 = Blog::orderBy('blog_hit_count', 'desc')->where('blog_control', 1)->limit(4)->offset(4)->get();
                 $video_view = Video::where('v_status', 1)->where('v_p_location', 1)->get();    //----v_p_location = 1 means home_page
-                $header_image = Headerimage::where('header_image_type', 19)->get();    //----header_image_type = 1 means home_page
+                $header_image = Headerimage::where('header_image_type', 20)->get();    //----header_image_type = 20 means background_image_of_i_am_searching_area
                 $banner_image = Banner::where('add_status', 1)->orderBy('id', 'DESC')->get();    //----add_status = 1 means publish
                 $banner_value = count($banner_image); Session::put('banner_value', $banner_value);
                 $slider_image = Sliderimage::where('status', 1)->limit(6)->get();    //----uhkuhkh = 1 means uhkjhk

@@ -12911,17 +12911,26 @@ textarea.b-product-card-textarea {
 .m-t-20{margin-top: 20px!important;}
 .m-t-30{margin-top: 30px!important;}
 .m-t-40{margin-top: 40px!important;}
+.m-t-50{margin-top: 50px!important;}
+.m-t-60{margin-top: 60px!important;}
+.m-t-70{margin-top: 70px!important;}
 .m-t-80{margin-top: 80px!important;}
 
+.m-b-0{margin-bottom: 0px!important;}
+.m-b-1{margin-bottom: 1px!important;}
+.m-b-2{margin-bottom: 2px!important;}
+.m-b-3{margin-bottom: 3px!important;}
+.m-b-4{margin-bottom: 4px!important;}
 .m-b-5{margin-bottom: 5px!important;}
 .m-b-10{margin-bottom: 10px!important;}
 .m-b-15{margin-bottom: 15px!important;}
 .m-b-20{margin-bottom: 20px!important;}
 .m-b-30{margin-bottom: 30px!important;}
+.m-b-40{margin-bottom: 40px!important;}
 .c-pointer{cursor: pointer!important;}
 /*----End Define by me*/
 
-.h-156{height: 156px!important;}
+.h-234{height: 234px!important;}
 
 
 @media screen and (max-width: 600px) {

@@ -83,8 +83,10 @@
                             Debit Card
                         @elseif($v->header_image_type == 18)
                             About Us
-                        @else
+                        @elseif($v->header_image_type == 19)
                             Home Page
+                        @else
+                            <i class="fa text-success">Home Page [Background Image of Offerings]</i>
                         @endif
                     </td>
                     <td class="col-xs-12 col-sm-2">
