@@ -5,8 +5,8 @@
         <div class="b-inner-page-header__content">
             <div class="container">
                 <div class="pull-left">
-                    <h1 class="f-primary-l c-default"><i class="fa fa-home"> Blog Information</i></h1>
-                    <div class="f-primary-l f-inner-page-header_title-add c-senary"><i class="fa">What's on your mind & Read your blog here </i></div>
+                    <h1 class="f-primary-l c-default"><i class="fa fa-edit"> Blog Information</i></h1>
+                    {{--<div class="f-primary-l f-inner-page-header_title-add c-senary"><i class="fa">What's on your mind & Read your blog here </i></div>--}}
                 </div>
 
                 @if(Session::get('fe_error_msg') != NULL)
@@ -26,8 +26,8 @@
                 <div class="pull-right">
                     <div class="t-a-c">
                         <i class="fa f-s-25 m-b-10">Hotline</i><br>
-                        <i class="fa f-s-16 c-red m-b-5">01 777 888 757</i><br>
-                        <i class="fa f-s-14">info@finFObd.com</i>
+                        <a href="#" class="btn btn-danger"><i class="fa f-s-20 c-red- m-b-5">01846 177 831</i></a><br>
+                        {{--<i class="fa f-s-14">info@finFObd.com</i>--}}
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
         <div class="b-breadcrumbs f-breadcrumbs">
             <div class="container">
                 <ul>
-                    <li><a href=""><i class="fa fa-home"></i>Home</a></li>
+                    <li><a href="{{ url('') }}"><i class="fa fa-home"></i>Home</a></li>
                     <li><i class="fa fa-angle-right"></i><span>Blogs</span></li>
                     {{--<li><i class="fa fa-angle-right"></i><span>Three Columns Right Sidebar v2</span></li>--}}
                 </ul>
