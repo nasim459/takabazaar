@@ -1,6 +1,13 @@
 @section('fe_maincontent')
     <!--start section-->
-    <section class="b-desc-section-container b-diagonal-line-bg-light">
+    @foreach($header_image as $v)
+        @if($v->status == 0)
+            <section class="b-desc-section-container b-diagonal-line-bg-light m-b-0">
+                @else
+                    <section class="b-desc-section-container b-diagonal-line-bg-light m-b-0" style="background: url({{ asset('ap/images/header_image/'.$v->header_image_url) }}) no-repeat center;
+                            background-size: cover;">
+                        @endif
+                        @endforeach
         <div class="container">
 
             @if(Session::get('fe_error_msg') != NULL)
@@ -11,15 +18,15 @@
 
             <h2 class="f-center f-primary-b" style="text-transform: capitalize">Choose Your Insurance From here</h2>
             {{--<p class="b-desc-section f-desc-section f-center f-primary-l">Etiam consectetur pellentesque justo. Sed tristique bibendum elit non molestie. Donec et libero rutrum</p>--}}
-            <div class="b-hr-stars f-hr-stars">
-                <div class="b-hr-stars__group">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div>
+            {{--<div class="b-hr-stars f-hr-stars">--}}
+                {{--<div class="b-hr-stars__group">--}}
+                    {{--<i class="fa fa-star"></i>--}}
+                    {{--<i class="fa fa-star"></i>--}}
+                    {{--<i class="fa fa-star"></i>--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
-            <div class="row">
+            <div class="row h-200">
                 <div class="col-md-12 t-a-c">
                     <div class="b-infoblock-with-icon">
                         <a data-target="#life" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Life Insurance">

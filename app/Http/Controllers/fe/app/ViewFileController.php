@@ -51,21 +51,25 @@ class ViewFileController extends Controller
             case "loan":
                 $file_open = 'fe.app.loan';
                 $video_view = Video::where('v_status', 1)->where('v_p_location', 2)->get();    //----v_p_location = 1 means loan_page
+                $header_image = Headerimage::where('header_image_type', 21)->get();    //----header_image_type = 21 means background_image_of_i_am_searching_area
                 break;
 
             case "investment":
                 $file_open = 'fe.app.investment';
                 $video_view = Video::where('v_status', 1)->where('v_p_location', 3)->get();    //----v_p_location = 1 means investment_page
+                $header_image = Headerimage::where('header_image_type', 22)->get();    //----header_image_type = 22 means background_image_of_i_am_searching_area
                 break;
 
             case "insurance":
                 $file_open = 'fe.app.insurance';
                 $video_view = Video::where('v_status', 1)->where('v_p_location', 4)->get();    //----v_p_location = 1 means insurance_page
+                $header_image = Headerimage::where('header_image_type', 23)->get();    //----header_image_type = 23 means background_image_of_i_am_searching_area
                 break;
 
             case "card":
                 $file_open = 'fe.app.card';
                 $video_view = Video::where('v_status', 1)->where('v_p_location', 5)->get();    //----v_p_location = 1 means card_page
+                $header_image = Headerimage::where('header_image_type', 24)->get();    //----header_image_type = 24 means background_image_of_i_am_searching_area
                 break;
 
             case "loan-home-api":
