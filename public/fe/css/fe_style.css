@@ -40,5 +40,20 @@
     }
 }
 
+/*start image_advertisement_design*/
+.image-add{
+    border:0;
+    width:728px!important;
+    height:90px!important;
+}
+@media screen and (max-width: 800px) {
+    .image-add{
+        border:0;
+        width:100%!important;
+        height:90px!important;
+    }
+}
+/*end image_advertisement_design*/
+
 /*float-left*/
 .f-l{float: left!important;}
