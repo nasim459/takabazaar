@@ -43,7 +43,7 @@
                         </td>
                         <td class="col-xs-12 col-sm-2">
                             <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}kkk">
-                                <img src="{{ asset('fe/img/blog_pic/'.$v->user_image) }}" height="16px" width="30px">
+                                <img src="{{ asset('fe/img/blog_users/'.$v->user_image) }}" height="16px" width="30px">
                             </a>
                         </td>
                         <td class="col-xs-12 col-sm-2" title="{{$v->name}}">
@@ -88,7 +88,7 @@
                                                         </i>
                                                     </div>
                                                     <div class="col-sm-6">
-                                                        <img src="{{ asset('fe/img/blog_pic/'.$v->user_image) }}" class="img-thumbnail" alt="ব্যবহারকারীর ছবি তাড়াতাড়ি আসতেছে" width="304" height="236">
+                                                        <img src="{{ asset('fe/img/blog_users/'.$v->user_image) }}" class="img-thumbnail" alt="ব্যবহারকারীর ছবি তাড়াতাড়ি আসতেছে" width="304" height="236">
                                                     </div>
                                                 </div>
                                             </div>
