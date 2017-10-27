@@ -17,7 +17,7 @@
                     @foreach($blog_category as $v)
                         <li>
                             <a href="{{URL::to('blog-category-view/'.$v->id.'/'.$v->category_name)}}" class="f-categories-filter_name"><i class="fa fa-plus"></i> {{ $v->category_name }}</a>
-                            <span class="b-categories-filter_count f-categories-filter_count">12</span>
+                            <span class="b-categories-filter_count f-categories-filter_count">+</span>
                         </li>
                     @endforeach
                 </ul>
