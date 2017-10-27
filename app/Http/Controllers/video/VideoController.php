@@ -19,7 +19,7 @@ class VideoController extends Controller
         $route = Route::getFacadeRoot()->current()->uri();
         if ($route == 'video-info'){
             $file_open = 'ap.video.video_info';
-            $video_view = Video::all();
+            $video_view = Video::orderBy('v_p_location', 'ASC')->get();
             //dd($video_view);
 
         } elseif ($route == 'video-watch') {
