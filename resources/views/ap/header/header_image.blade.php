@@ -85,8 +85,16 @@
                             About Us
                         @elseif($v->header_image_type == 19)
                             Home Page
-                        @else
+                        @elseif($v->header_image_type == 20)
                             <i class="fa text-success">Home Page [Background Image of Offerings]</i>
+                        @elseif($v->header_image_type == 21)
+                            <i class="fa text-success">Loan [Background Image of Offerings]</i>
+                        @elseif($v->header_image_type == 22)
+                            <i class="fa text-success">Investment [Background Image of Offerings]</i>
+                        @elseif($v->header_image_type == 23)
+                            <i class="fa text-success">Insurance [Background Image of Offerings]</i>
+                        @else
+                            <i class="fa text-success">Card [Background Image of Offerings]</i>
                         @endif
                     </td>
                     <td class="col-xs-12 col-sm-2">
