@@ -23,9 +23,9 @@
                     <small>All Information</small>
                 </a>
 
-                <a href="{{ url('form'.'/'.'insurance') }}" class="app btn btn-default">
-                    <i class="fa fa-plus text-success fa-2x fa-3y"></i><br/>
-                    <small>Insurance</small>
+                <a href="{{ url('insurance-apply-info') }}" class="app btn btn-default">
+                    <i class="fa fa-book text-success fa-2x fa-3y"></i><br/>
+                    <small>Insurance Apply</small>
                 </a>
 
                 <a href="{{ url('/') }}" target="_blank" class="app btn btn-default" title="Go To Your Website">

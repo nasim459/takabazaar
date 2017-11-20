@@ -7,13 +7,14 @@ use App\Http\Controllers\Controller;
 
 class HelpController extends Controller
 {
-    //-----all short_form describe hare
+    //-----Define Table Name By Numbering
 
     //|--------------------------------------------------------------------------
     //| At A Glance Short Form
     //|--------------------------------------------------------------------------
     //|
-    //| Table Info
+    //| Define Table Name By Numbering
+    //|
     //| 11  = advertises
     //| 22  = banks
     //| 33  = loans
@@ -37,6 +38,7 @@ class HelpController extends Controller
     //| 3333 = headerimages
     //| 4444 = banners
     //| 5555 = sliderimages
+    //| 6666 = insuranceapplyinfos
     //|
     //|
     //|

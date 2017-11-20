@@ -30,6 +30,8 @@ Route::group(['middleware' => ['web', 'auth', 'roles'], 'roles' => ['Admin']],
         Route::get('advertise', 'advertise\AdvertiseController@advertise_file_view');
 //----Banner Controller
         Route::get('banner', 'banner\BannerController@banner_file_view');
+//----InsuranceApplyInfo Controller
+        Route::get('insurance-apply-info', 'insuranceapplyinfo\InsuranceapplyinfoController@insurance_apply_file_view');
 //----Video Controller
         Route::get('video-info', 'video\VideoController@video_file_view');
 //----Header Controller
