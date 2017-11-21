@@ -35,19 +35,19 @@
                         <a data-target="#motor_car" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Car Insurance">
                             <i class="fa fa-car f-s-50"><br><span class="f-s-22">Car</span></i>
                         </a>
-                        <a data-target="#motor_bike" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Car Insurance">
+                        <a data-target="#motor_bike" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Bike Insurance">
                             <i class="fa fa-car f-s-50"><br><span class="f-s-22">Bike</span></i>
                         </a>
                         <a data-target="#marine" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Marine Insurance">
                             <i class="fa fa-leaf f-s-50"><br><span class="f-s-22">Marine</span></i>
                         </a>
-                        <a data-target="#fire" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Marine Insurance">
+                        <a data-target="#fire" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Fire Insurance">
                             <i class="fa fa-fire f-s-50"><br><span class="f-s-22">Fire</span></i>
                         </a>
-                        <a data-target="#accident" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Marine Insurance">
+                        <a data-target="#accident" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Accident Insurance">
                             <i class="fa fa-warning f-s-50"><br><span class="f-s-22">Accident</span></i>
                         </a>
-                        <a data-target="#health" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Marine Insurance">
+                        <a data-target="#health" data-toggle="modal" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon fade-in-animate app-c-s" title="Health Insurance">
                             <i class="fa fa-user-md f-s-50"><br><span class="f-s-22">Health</span></i>
                         </a>
                     </div>

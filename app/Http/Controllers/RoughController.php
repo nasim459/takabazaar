@@ -84,15 +84,15 @@ class RoughController extends Controller
                 break;
 
             case "insurance-life":
-                return redirect('insurance-life');
+                return redirect('insurance-life-apply');
                 break;
 
             case "insurance-motor-bike":
-                return redirect('insurance-motor-bike');
+                return redirect('insurance-motor-bike-apply');
                 break;
 
             case "insurance-motor-car":
-                return redirect('insurance-motor-car');
+                return redirect('insurance-motor-car-apply');
                 break;
 
             case "insurance-marine":
@@ -108,7 +108,7 @@ class RoughController extends Controller
                 break;
 
             case "insurance-health":
-                return redirect('insurance-health');
+                return redirect('insurance-health-apply');
                 break;
 
             case "card-credit":

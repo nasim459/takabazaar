@@ -207,6 +207,30 @@ class ViewFileController extends Controller
                 $advertise_image = Advertise::where('add_type', 17)->where('add_status', 1)->get();    //----add_type = 1 means card_debit
 
                 break;
+            case "insurance-life-apply":
+                $file_open = 'fe.insurance.apply_form_insurance_life';
+                $header_image = Headerimage::where('header_image_type', 10)->get();    //----header_image_type = 10 means sme_loan
+                $advertise_image = Advertise::where('add_type', 10)->where('add_status', 1)->get();    //----add_type = 1 means sme_loan
+
+                break;
+            case "insurance-health-apply":
+                $file_open = 'fe.insurance.apply_form_insurance_health';
+                $header_image = Headerimage::where('header_image_type', 15)->get();    //----header_image_type = 15 means insurance_accident
+                $advertise_image = Advertise::where('add_type', 15)->where('add_status', 1)->get();    //----add_type = 1 means insurance_accident
+
+                break;
+            case "insurance-motor-bike-apply":
+                $file_open = 'fe.insurance.apply_form_insurance_motor_bike';
+                $header_image = Headerimage::where('header_image_type', 11)->get();    //----header_image_type = 11 means insurance_motor_bike
+                $advertise_image = Advertise::where('add_type', 11)->where('add_status', 1)->get();    //----add_type = 1 means insurance_motor_bike
+
+                break;
+            case "insurance-motor-car-apply":
+                $file_open = 'fe.insurance.apply_form_insurance_motor_car';
+                $header_image = Headerimage::where('header_image_type', 12)->get();    //----header_image_type = 12 means insurance_motor_car
+                $advertise_image = Advertise::where('add_type', 12)->where('add_status', 1)->get();    //----add_type = 1 means insurance_motor_car
+
+                break;
             default:
                 Session::put('fe_error_msg', 'Using Wrong Information???');
                 return redirect($previous_url);

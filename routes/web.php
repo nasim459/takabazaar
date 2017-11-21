@@ -185,6 +185,12 @@ Route::get('insurance-marine', 'fe\app\ViewFileController@view_file');
 Route::get('insurance-fire', 'fe\app\ViewFileController@view_file');
 Route::get('insurance-accident', 'fe\app\ViewFileController@view_file');
 Route::get('insurance-health', 'fe\app\ViewFileController@view_file');
+//----insurance apply form
+Route::get('insurance-health-apply', 'fe\app\ViewFileController@view_file');
+Route::get('insurance-life-apply', 'fe\app\ViewFileController@view_file');
+Route::get('insurance-motor-bike-apply', 'fe\app\ViewFileController@view_file');
+Route::get('insurance-motor-car-apply', 'fe\app\ViewFileController@view_file');
+Route::post('insurance-apply-save', 'insuranceapplyinfo\FormInsuranceapplyinfoController@insurance_apply_form_save');
 
 //----card
 Route::get('card-credit', 'fe\app\ViewFileController@view_file');

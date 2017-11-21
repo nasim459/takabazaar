@@ -12,11 +12,11 @@
                 </div>
                 <div class="col-md-3 m-t-10 text-success"></div>
                 <div class="col-md-4">
-                    <i class="fa text-success">{{ Session::get('msg_suc') }} {{ Session::put('msg_suc', '') }}</i>
-                    <i class="fa text-danger">{{ Session::get('msg_error') }} {{ Session::put('msg_error', '') }}</i>
+                    <i class="fa text-success"></i>
+                    <i class="fa text-danger"></i>
                 </div>
                 <div class="col-md-2 text-right m-t-10">
-                    <a href="#" class="btn btn-default btn-xs text-success width-100" title="Assign Banner"><i class="fa">Applying {{ Session::get('count') }} Entries</i></a>
+                    <a href="#" class="btn btn-default btn-xs text-success width-100" title="Assign Banner"><i class="fa"> {{ Session::get('count') }} Applying</i></a>
                 </div>
             </div>
 
@@ -26,24 +26,48 @@
                     <th class="col-sm-2">No</th>
                     <th class="col-sm-4">Inturance Type</th>
                     <th class="col-sm-4">Submitted Date</th>
-                    <th class="col-sm-2">Details</th>
+                    <th class="col-sm-1">Details</th>
+                    <th class="col-sm-1">Action</th>
                 </tr>
                 </thead>
                 <tbody>
 
-                @php $number = 0; $off = 0; $on = 1; $table = 4444; @endphp
-                @foreach($loan_view as $v)
+                @php $number = 0; $off = 0; $on = 1; $table = 6666; @endphp
+                @foreach($insurance_apply_view as $v)
                 <tr>
                     <td class="col-xs-12 col-sm-2 text-success">
                         <a class="btn btn-default btn-xs"><i class="fa">{{$number = $number+1}}</i></a>
                     </td>
-                    <td class="col-xs-12 col-sm-4">{{$v->add_name}}</td>
                     <td class="col-xs-12 col-sm-4">
-                        <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}kt" title="From Submitted Date"><i class="fa fa-calendar-times-o"></i></a>
-                        &nbsp; {{$v->add_start_date}}</span>
+                        @if($v->type == 1)
+                            <span class="text-success"> Life Insurance</span>
+                        @elseif($v->type == 2)
+                            <span class="text-success"> Marine Insurance</span>
+                        @elseif($v->type == 3)
+                            <span class="text-success"> fire Insurance</span>
+                        @elseif($v->type == 4)
+                            <span class="text-success"> Accident Insurance</span>
+                        @elseif($v->type == 5)
+                            <span class="text-success"> Car Insurance</span>
+                        @elseif($v->type == 6)
+                            <span class="text-success"> Bike Insurance</span>
+                        @elseif($v->type == 7)
+                            <span class="text-success"> Health Insurance</span>
+                        @endif
                     </td>
-                    <td class="col-xs-12 col-sm-2">
-                        <a href="{{$v->add_link}}" target="_blank" class="btn btn-default btn-xs" title="Click to visite website"><i class="fa fa-filter"> View</i></a>
+                    <td class="col-xs-12 col-sm-4">
+                        <a class="btn btn-default btn-xs" title="From Submitted Date"><i class="fa fa-calendar-times-o"></i></a>
+                        &nbsp; {{$v->created_at}}</span>
+                    </td>
+                    <td class="col-xs-12 col-sm-1">
+                        <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#{{$v->id}}" title="View Details Information"><i class="fa fa-filter"> View</i></a>
+                    </td>
+                    <td class="col-xs-12 col-sm-1">
+                        @if($v->status==1)
+                            <a href="{{URL::to('publication/'.$v->id.'/'.$off.'/'.$table)}}" class="btn btn-default btn-xs" title="Information Seen"><i class="text-success-light fa fa-check"></i></a>
+                        @else
+                            <a href="{{URL::to('publication/'.$v->id.'/'.$on.'/'.$table)}}" class="btn btn-default btn-xs" title="Not Seen Yet">&nbsp;<i class="text-danger-light fa fa-arrow-down"> </i></a>
+                        @endif
                     </td>
                 </tr>
 
@@ -56,36 +80,67 @@
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title text-success text-center">&nbsp;
-                                    {{$v->add_name}}
+                                    @if($v->type == 1)
+                                        <span class="text-success"> Life Insurance</span>
+                                    @elseif($v->type == 2)
+                                        <span class="text-success"> Marine Insurance</span>
+                                    @elseif($v->type == 3)
+                                        <span class="text-success"> Fire Insurance</span>
+                                    @elseif($v->type == 4)
+                                        <span class="text-success"> Accident Insurance</span>
+                                    @elseif($v->type == 5)
+                                        <span class="text-success"> Car Insurance</span>
+                                    @elseif($v->type == 6)
+                                        <span class="text-success"> Bike Insurance</span>
+                                    @elseif($v->type == 7)
+                                        <span class="text-success"> Health Insurance</span>
+                                    @endif
                                 </h4>
                             </div>
                             <div class="modal-body" style="overflow: hidden">
                                 <div class="col-md-12">
-                                    <div class="col-md-12">
-                                        <img src="{{ asset('ap/images/banner/'.$v->add_image_url) }}" border="0" width="100%" height="90" alt="pic">
-                                    </div>
-                                    <div class="col-md-12 f-s-14 f-f-s">
+                                    <div class="col-md-12 m-t-15 f-s-14 f-f-s">
 
-                                        <hr>
-                                        <dl class="dl-horizontal">
-                                            <dt>Banner Name :</dt>
-                                            <dd>{{$v->add_name}}</dd>
-                                            <dt>Status :</dt>
-                                            <dd>
-                                                @if($v->add_status==1)
-                                                    <span class="text-success"><i class="fa fa-check"></i> Publish</span>
+                                        @if(($v->type == 1) || ($v->type == 7))
+                                            <dl class="dl-horizontal">
+                                                <dt>Name :</dt>
+                                                <dd>{{$v->p_name}}</dd>
+                                                <dt>Occupation :</dt>
+                                                <dd>{{$v->p_occupation}}</dd>
+                                                <dt>Age :</dt>
+                                                <dd>{{$v->p_age}}</dd>
+                                                <dt>Smoking habit :</dt>
+                                                <dd>
+                                                    @if($v->p_smoking_habit==1)
+                                                        <span class="text-success"><i class="fa fa-check"></i> Yes</span>
+                                                    @else
+                                                        <span class="text-danger"><i class="fa fa-remove"></i> No</span>
+                                                    @endif
+                                                </dd>
+                                                <dt>Mobile Number :</dt>
+                                                <dd>{{$v->p_mobile_number}}</dd>
+                                            </dl>
+
+                                        @elseif(($v->type == 5) || ($v->type == 6))
+                                            <dl class="dl-horizontal">
+                                                <dt>Number :</dt>
+                                                <dd>{{$v->v_number}}</dd>
+                                                <dt>Model :</dt>
+                                                <dd>{{$v->v_model}}</dd>
+
+                                                @if($v->v_expire_date != NULL)
+                                                    <dt title="Expiry Date of Previous Insurance">Expiry Date :</dt>
+                                                    <dd>{{$v->v_expire_date}}</dd>
                                                 @else
-                                                    <span class="text-danger"><i class="fa fa-remove"></i> unPublish</span>
+                                                    <dt>Vehicles :</dt>
+                                                    <dd><span class="text-success"> New Vehicles</span></dd>
                                                 @endif
-                                            </dd>
 
-                                            <dt>Website Link :</dt>
-                                            <dd><a href="{{$v->add_link}}" target="_blank">{{$v->add_link}}</a></dd>
-                                            <dt>Company Name :</dt>
-                                            <dd>{!! $v->add_company_name !!}</dd>
-                                            <dt>Details Information :</dt>
-                                            <dd>{!! $v->add_desc !!}</dd>
-                                        </dl>
+                                                <dt>Mobile Number :</dt>
+                                                <dd>{{$v->p_mobile_number}}</dd>
+
+                                            </dl>
+                                        @endif
 
                                     </div>
                                 </div>
@@ -99,221 +154,6 @@
                     </div>
                 </div>
                 <!--end details_information-->
-
-                <!--start information_update-->
-                <div id="{{$v->id}}kk" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
-
-                        <!--start Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title text-success text-center">
-                                    {{$v->add_name}}
-                                </h4>
-                            </div>
-                            <div class="modal-body" style="overflow: hidden">
-                                <div class="col-md-12">
-                                    <div class="col-md-12">
-                                        <img src="{{ asset('ap/images/banner/'.$v->add_image_url) }}" border="0" width="100%" height="90" alt="pic">
-                                    </div>
-                                    <div class="col-md-12 f-s-14 f-f-s">
-
-                                        {!! Form::open(array('url'=>'form-banner-save', 'role'=>'form', 'method'=>'POST')) !!}
-                                        <div class="form-horizontal">
-                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                            <input type="hidden" name="l_id" value="{{ $v->id }}">
-                                            <input type="hidden" name="data_ud" value="data_ud">
-
-                                            <hr>
-                                            <div class="form-group">
-                                                <label for="exampleInputName2" class="col-sm-4 control-label">Banner Name:</label>
-                                                <div class="col-sm-6">
-                                                    <input type="text" name="a_name" value="{{$v->add_name}}" class="form-control" id="exampleInputName2" required>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="exampleInputName2" class="col-sm-4 control-label">Website Link :</label>
-                                                <div class="col-sm-6">
-                                                    <input type="text" name="a_link" value="{{$v->add_link}}" class="form-control" id="exampleInputName2" required>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="exampleInputName2" class="col-sm-4 control-label">Company Name :</label>
-                                                <div class="col-sm-6">
-                                                    <input type="text" name="a_company_name" value="{{$v->add_company_name}}" class="form-control" id="exampleInputName2">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <hr>
-
-                                        <div class="form-horizontal">
-                                            <div class="form-group">
-                                                <label for="exampleInputName2" class="col-sm-4 control-label">Banner Description :</label>
-                                                <div class="col-sm-8">
-                                                    <textarea name="a_desc" cols="20" rows="10" class="form-control">{{$v->add_desc}}</textarea>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <div class="col-sm-offset-4 col-sm-10 m-t-15">
-                                                    <input type="submit" value="Update" class="btn btn-success col-sm-4">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {!! Form::close() !!}
-
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                        <!--end Modal content-->
-
-                    </div>
-                </div>
-                <!--end information_update-->
-
-                <!--start image_update-->
-                <div id="{{$v->id}}kkk" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
-
-                        <!--start Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title text-success text-center">
-                                    Update Picture Information
-                                </h4>
-                            </div>
-                            <div class="modal-body" style="overflow: hidden">
-                                <div class="col-md-12">
-                                    <div class="col-md-12 f-s-14 f-f-s">
-
-
-                                        {!! Form::open(array('url'=>'image-update', 'role'=>'form', 'method'=>'POST', 'files'=>'true')) !!}
-                                        <div class="form-horizontal">
-                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                            <input type="hidden" name="id" value="{{ $v->id }}">
-                                            <input type="hidden" name="t_id" value="4444">
-
-                                            <div class="form-group">
-                                                <div class="col-sm-12 m-t-20">
-                                                    <img src="{{ asset('ap/images/banner/'.$v->add_image_url) }}" border="0" width="100%" height="90" alt="pic">
-                                                </div>
-                                            </div>
-                                            <hr>
-
-                                            <div class="form-group">
-                                                <label for="exampleInputName2" class="col-sm-4 control-label">Change Picture:</label>
-                                                <div class="col-sm-6">
-                                                    <input type="file" name="image" required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <hr>
-
-                                        <div class="form-horizontal">
-                                            <div class="form-group">
-                                                <div class="col-sm-offset-4 col-sm-10 m-t-15">
-                                                    <input type="submit" value="Update" class="btn btn-success col-sm-4">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {!! Form::close() !!}
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                        <!--end Modal content-->
-
-                    </div>
-                </div>
-                <!--end image_update-->
-
-                <!--start date_update-->
-                <div id="{{$v->id}}kt" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
-
-                        <!--start Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title text-success text-center">
-                                    Update Picture Information
-                                </h4>
-                            </div>
-                            <div class="modal-body" style="overflow: hidden">
-                                <div class="col-md-12">
-                                    <div class="col-md-12 f-s-14 f-f-s">
-
-
-                                        {!! Form::open(array('url'=>'form-banner-save', 'role'=>'form', 'method'=>'POST')) !!}
-                                        <div class="form-horizontal">
-                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                            <input type="hidden" name="l_id" value="{{ $v->id }}">
-                                            <input type="hidden" name="data_ud" value="data_ud_date">
-
-                                            <div class="form-group">
-                                                <label for="exampleInputName2" class="col-sm-4 control-label">Start Date :</label>
-                                                <div class="col-sm-6 m-t-10">
-                                                    {{$v->add_start_date}}
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputName2" class="col-sm-4 control-label">End Date :</label>
-                                                <div class="col-sm-6 m-t-10">
-                                                    {{$v->add_end_date}}
-                                                </div>
-                                            </div>
-                                            <hr>
-
-                                            {{--<i class="fa text-success">Update your date here...</i>--}}
-                                            <div class="form-group">
-                                                <label for="exampleInputName2" class="col-sm-4 control-label">Update Start Date :</label>
-                                                <div class="col-sm-6">
-                                                    <input type="date" name="s_date" class="form-control" id="exampleInputName2" required>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputName2" class="col-sm-4 control-label">Update End Date :</label>
-                                                <div class="col-sm-6">
-                                                    <input type="date" name="e_date" class="form-control" id="exampleInputName2" required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <hr>
-
-                                        <div class="form-horizontal">
-                                            <div class="form-group">
-                                                <div class="col-sm-offset-4 col-sm-10 m-t-15">
-                                                    <input type="submit" value="Update" class="btn btn-success col-sm-4">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {!! Form::close() !!}
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                        <!--end Modal content-->
-
-                    </div>
-                </div>
-                <!--end date_update-->
                 @endforeach
 
 
