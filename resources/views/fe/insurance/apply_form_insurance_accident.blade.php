@@ -12,8 +12,8 @@
         <div class="b-inner-page-header__content">
             <div class="container">
                 <div class="pull-left">
-                    <h1 class="f-primary-l c-default"><i class="fa fa-home"> Motor Bike Insurance</i></h1>
-                    {{--<div class="f-primary-l f-inner-page-header_title-add c-senary"><i class="fa">Create a motor bike insurance from here</i></div>--}}
+                    <h1 class="f-primary-l c-default"><i class="fa fa-briefcase"> Accident Insurance</i></h1>
+                    {{--<div class="f-primary-l f-inner-page-header_title-add c-senary"><i class="fa">Create a accident insurance from here</i></div>--}}
                 </div>
 
                 @if(Session::get('fe_error_msg') != NULL)
@@ -46,7 +46,7 @@
             <div class="container">
                 <ul>
                     <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-                    <li><i class="fa fa-angle-right"></i><span>Motor Bike Insurance</span></li>
+                    <li><i class="fa fa-angle-right"></i><span>Accident Insurance</span></li>
                 </ul>
             </div>
         </div>
@@ -75,41 +75,59 @@
 
                                 <div class="col-xs-12 col-sm-offset-3">
                                     <div class="col-xs-12 col-sm-6">
-                                        <div class="b-form-row f-primary-l f-title-big c-secondary">Bike Insurance Apply Form</div>
+                                        <div class="b-form-row f-primary-l f-title-big c-secondary">Accident Insurance Apply Form</div>
                                         {{--<div class="b-form-row">Consectetur adipiscing elituis sagittis eu mi et pellentesqueur</div>--}}
                                         <hr class="b-hr" />
 
                                         {!! Form::open(array('url'=>'insurance-apply-save', 'role'=>'form', 'method'=>'POST')) !!}
                                         <div class="form-horizontal m-t-10">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                            <input type="hidden" name="insurance" value="insr_bike">
-                                            <input type="hidden" name="type" value="6">
+                                            <input type="hidden" name="insurance" value="insr_accident">
+                                            <input type="hidden" name="type" value="4">
 
-                                            {{--<div class="form-group">--}}
-                                                {{--<label class="col-sm-4 m-t-8 text-right" for="username"> Bike Number :</label>--}}
-                                                {{--<div class="col-sm-6">--}}
-                                                    {{--<input type="text" name="number" class="form-control" id="username" placeholder="Enter ..." required>--}}
-                                                {{--</div>--}}
-                                            {{--</div>--}}
                                             <div class="form-group">
-                                                <label class="col-sm-4 m-t-8 text-right" for="username"> Bike Model :</label>
+                                                <label class="col-sm-4 m-t-8 text-right" for="username"> Name :</label>
                                                 <div class="col-sm-6">
-                                                    <input type="text" name="model" class="form-control" id="username" placeholder="Ex. TVS Platinum 100 CC" required>
+                                                    <input type="text" name="name" class="form-control" id="username" placeholder="Enter name..." required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-sm-4 m-t-8 text-right" for="username"> Registration Number :</label>
+                                                <label class="col-sm-4 m-t-8 text-right" for="username"> Occupation :</label>
                                                 <div class="col-sm-6">
-                                                    <input type="text" name="regi_no" class="form-control" id="username" placeholder="Ex. Dhaka Metro – Ha 45-2307" required>
+                                                    <input type="text" name="occupation" class="form-control" id="username" placeholder="Enter name..." required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-sm-4 m-t-8 text-right" for="username"> Expiry Date of Previous Insurance :</label>
-                                                <div class="col-sm-4">
-                                                    <input type="date" name="exp_date" class="form-control" id="username">
+                                                <label class="col-sm-4 m-t-8 text-right" for="username"> Age :</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" name="age" class="form-control" id="username" placeholder="Enter age..." required>
                                                 </div>
-                                                <div class="col-sm-4 m-t-10">
-                                                    <span class="text-danger"> Avoid, If New Bike </span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-4 m-t-8 text-right" for="username"> Gender :</label>
+                                                <div class="col-sm-6">
+                                                    <select class="form-control" name="gender" required>
+                                                        <option value="1">Male</option>
+                                                        <option value="2">Female</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-4 m-t-8 text-right" for="username"> Smoking habit :</label>
+                                                <div class="col-sm-6">
+                                                    <select class="form-control" name="smoking" required>
+                                                        <option value="1">Yes</option>
+                                                        <option value="2">No</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-4 m-t-8 text-right" for="username"> Any Medical Condition :</label>
+                                                <div class="col-sm-6">
+                                                    <select class="form-control" name="m_conditon" required>
+                                                        <option value="1">Yes</option>
+                                                        <option value="2">No</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="form-group">

@@ -83,33 +83,33 @@
                                         <div class="form-horizontal m-t-10">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                             <input type="hidden" name="insurance" value="insr_car">
-                                            <input type="hidden" name="type" value="6">
+                                            <input type="hidden" name="type" value="5">
 
+                                            {{--<div class="form-group">--}}
+                                                {{--<label class="col-sm-4 m-t-8 text-right" for="username"> Bike Number :</label>--}}
+                                                {{--<div class="col-sm-6">--}}
+                                                    {{--<input type="text" name="number" class="form-control" id="username" placeholder="Enter ..." required>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
                                             <div class="form-group">
-                                                <label class="col-sm-4 m-t-8 text-right" for="username"> Bike Number :</label>
+                                                <label class="col-sm-4 m-t-8 text-right" for="username"> Car Model :</label>
                                                 <div class="col-sm-6">
-                                                    <input type="text" name="number" class="form-control" id="username" placeholder="Enter ..." required>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-4 m-t-8 text-right" for="username"> Bike Model :</label>
-                                                <div class="col-sm-6">
-                                                    <input type="text" name="model" class="form-control" id="username" placeholder="Enter ..." required>
+                                                    <input type="text" name="model" class="form-control" id="username" placeholder="Ex. Honda City " required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-sm-4 m-t-8 text-right" for="username"> Registration Number :</label>
                                                 <div class="col-sm-6">
-                                                    <input type="text" name="regi_no" class="form-control" id="username" placeholder="Enter ..." required>
+                                                    <input type="text" name="regi_no" class="form-control" id="username" placeholder="Ex. Dhaka Metro – Dha 11-9999 " required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-sm-4 m-t-8 text-right" for="username"> Expiry Date of Previous Insurance :</label>
-                                                <div class="col-sm-6">
-                                                    <input type="date" name="exp_date" class="form-control" id="username" placeholder="Enter age...">
+                                                <div class="col-sm-4">
+                                                    <input type="date" name="exp_date" class="form-control" id="username">
                                                 </div>
-                                                <div class="col-sm-2">
-                                                    <span class="text-danger"> Avoid if new bike </span>
+                                                <div class="col-sm-4 m-t-10">
+                                                    <span class="text-danger"> Avoid, If New Car </span>
                                                 </div>
                                             </div>
                                             <div class="form-group">

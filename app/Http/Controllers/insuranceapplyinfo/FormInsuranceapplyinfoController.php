@@ -14,12 +14,22 @@ class FormInsuranceapplyinfoController extends Controller
     //----InsuranceApplyInfo Information(insurance-health-apply-save insurance_apply_form_save)
     public function insurance_apply_form_save(Request $request)
     {
+
+        //----start comming_soon_check
+        if($request->insurance == 'insr_fire') {
+            return redirect('insurance-fire');
+        } elseif ($request->insurance == 'insr_marine') {
+            return redirect('insurance-marine');
+        }
+        //----end comming_soon_check
+
         //dd($request->all());
         $name = $request->name;
         $occupation = $request->occupation;
         $age = $request->age;
         $gender = $request->gender;
         $smoking = $request->smoking;
+        $m_conditon = $request->m_conditon;
 
         $type = $request->type;
         $mobile = $request->mobile;
@@ -53,7 +63,7 @@ class FormInsuranceapplyinfoController extends Controller
 
         //------start_insert_date
         $insurance = $request->insurance;
-        if(($insurance == 'insr_health') || ($insurance == 'insr_life')) {
+        if(($insurance == 'insr_life') || ($insurance == 'insr_marine') || ($insurance == 'insr_fire') ||  ($insurance == 'insr_accident') || ($insurance == 'insr_health')) {
 
             //----start age_validate_check
             $age_len = strlen($age);
@@ -70,18 +80,23 @@ class FormInsuranceapplyinfoController extends Controller
             $save['p_age'] = $age;
             $save['p_gender'] = $gender;
             $save['p_smoking_habit'] = $smoking;
+            $save['p_m_conditon'] = $m_conditon;
             $save['type'] = $type;
             $save['p_mobile_number'] = $mobile_number;
             DB::table('insuranceapplyinfos')->insert($save);
 
             //----start redirect
             switch($insurance){
-                case "insr_health":
-                    return redirect('insurance-health');
-                    break;
-
                 case "insr_life":
                     return redirect('insurance-life');
+                    break;
+
+                case "insr_accident":
+                    return redirect('insurance-accident');
+                    break;
+
+                case "insr_health":
+                    return redirect('insurance-health');
                     break;
 
                 default:
@@ -91,7 +106,16 @@ class FormInsuranceapplyinfoController extends Controller
             //----end redirect
         } elseif (($insurance == 'insr_bike') || ($insurance == 'insr_car')){
 
+            //----start comming_soon_check
+            if((strlen($model) <= 7) || (strlen($regi_no) <= 11)) {
+                Session::put('fe_error_msg', 'Enter Correct Model or Registration Number?');return redirect()->back();
+            }
+            //----end comming_soon_check
+
             //----start age_validate_check
+            if((strlen($model) <= 7) || (strlen($regi_no) <= 11)) {
+                Session::put('fe_error_msg', 'Enter Correct Model or Registration Number?');return redirect()->back();
+            }
             //----end age_validate_check
 
             $save = array();

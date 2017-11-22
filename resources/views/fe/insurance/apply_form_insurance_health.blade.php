@@ -122,6 +122,15 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
+                                                            <label class="col-sm-4 m-t-8 text-right" for="username"> Any Medical Condition :</label>
+                                                            <div class="col-sm-6">
+                                                                <select class="form-control" name="m_conditon" required>
+                                                                    <option value="1">Yes</option>
+                                                                    <option value="2">No</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
                                                             <label class="col-sm-4 m-t-8 text-right" for="username"> Mobile Number :</label>
                                                             <div class="col-sm-6">
                                                                 <input type="text" name="mobile" class="form-control" id="username" placeholder="Ex. 01XXX XXX XXX" required>

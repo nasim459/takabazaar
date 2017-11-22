@@ -213,12 +213,6 @@ class ViewFileController extends Controller
                 $advertise_image = Advertise::where('add_type', 10)->where('add_status', 1)->get();    //----add_type = 1 means sme_loan
 
                 break;
-            case "insurance-health-apply":
-                $file_open = 'fe.insurance.apply_form_insurance_health';
-                $header_image = Headerimage::where('header_image_type', 15)->get();    //----header_image_type = 15 means insurance_accident
-                $advertise_image = Advertise::where('add_type', 15)->where('add_status', 1)->get();    //----add_type = 1 means insurance_accident
-
-                break;
             case "insurance-motor-bike-apply":
                 $file_open = 'fe.insurance.apply_form_insurance_motor_bike';
                 $header_image = Headerimage::where('header_image_type', 11)->get();    //----header_image_type = 11 means insurance_motor_bike
@@ -229,6 +223,30 @@ class ViewFileController extends Controller
                 $file_open = 'fe.insurance.apply_form_insurance_motor_car';
                 $header_image = Headerimage::where('header_image_type', 12)->get();    //----header_image_type = 12 means insurance_motor_car
                 $advertise_image = Advertise::where('add_type', 12)->where('add_status', 1)->get();    //----add_type = 1 means insurance_motor_car
+
+                break;
+            case "insurance-marine-apply":
+                $file_open = 'fe.insurance.apply_form_insurance_marine';
+                $header_image = Headerimage::where('header_image_type', 13)->get();    //----header_image_type = 13 means insurance_marine
+                $advertise_image = Advertise::where('add_type', 13)->where('add_status', 1)->get();    //----add_type = 1 means insurance_marine
+
+                break;
+            case "insurance-fire-apply":
+                $file_open = 'fe.insurance.apply_form_insurance_fire';
+                $header_image = Headerimage::where('header_image_type', 14)->get();    //----header_image_type = 14 means insurance_fire
+                $advertise_image = Advertise::where('add_type', 14)->where('add_status', 1)->get();    //----add_type = 1 means insurance_fire
+
+                break;
+            case "insurance-accident-apply":
+                $file_open = 'fe.insurance.apply_form_insurance_accident';
+                $header_image = Headerimage::where('header_image_type', 15)->get();    //----header_image_type = 15 means insurance_accident
+                $advertise_image = Advertise::where('add_type', 15)->where('add_status', 1)->get();    //----add_type = 1 means insurance_accident
+
+                break;
+            case "insurance-health-apply":
+                $file_open = 'fe.insurance.apply_form_insurance_health';
+                $header_image = Headerimage::where('header_image_type', 15)->get();    //----header_image_type = 15 means insurance_accident
+                $advertise_image = Advertise::where('add_type', 15)->where('add_status', 1)->get();    //----add_type = 1 means insurance_accident
 
                 break;
             default:

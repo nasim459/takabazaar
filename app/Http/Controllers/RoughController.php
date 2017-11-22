@@ -104,7 +104,7 @@ class RoughController extends Controller
                 break;
 
             case "insurance-accident":
-                return redirect('insurance-accident');
+                return redirect('insurance-accident-apply');
                 break;
 
             case "insurance-health":
