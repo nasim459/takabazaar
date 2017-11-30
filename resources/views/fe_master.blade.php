@@ -294,8 +294,8 @@
                                 {{--</li>--}}
                                 <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#" data-target="#motor_bike" data-toggle="modal"><i class="fa fa-angle-right"></i>Bike Insurance</a></li>
                                 <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#" data-target="#motor_car" data-toggle="modal"><i class="fa fa-angle-right"></i>Car Insurance</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#" data-target="#marine" data-toggle="modal"><i class="fa fa-angle-right"></i>Marine Insurance</a></li>
-                                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#" data-target="#fire" data-toggle="modal"><i class="fa fa-angle-right"></i>Fire Insurance</a></li>
+                                {{--<li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#" data-target="#marine" data-toggle="modal"><i class="fa fa-angle-right"></i>Marine Insurance</a></li>--}}
+                                {{--<li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#" data-target="#fire" data-toggle="modal"><i class="fa fa-angle-right"></i>Fire Insurance</a></li>--}}
                                 <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#" data-target="#accident" data-toggle="modal"><i class="fa fa-angle-right"></i>Accident Insurance</a></li>
                                 <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#" data-target="#health" data-toggle="modal"><i class="fa fa-angle-right"></i>Health Insurance</a></li>
                             </ul>
