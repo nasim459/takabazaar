@@ -25,7 +25,7 @@
                 <tr class="success">
                     <th class="col-sm-1">No</th>
                     <th class="col-sm-1">Picture</th>
-                    <th class="col-sm-2">Advertise Name</th>
+                    <th class="col-sm-2">Banner Name</th>
                     <th class="col-sm-4">Assign Date</th>
                     <th class="col-sm-2">Website Link</th>
                     <th class="col-sm-2">Action</th>

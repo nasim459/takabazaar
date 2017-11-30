@@ -3,9 +3,9 @@
         <div class="j-slider-primary">
 
             @foreach($slider_image as $v)
-                <div class="b-slider-primary-item- f-slider-primary-item h-234"style="background: url({{ asset('ap/images/slider_image/'.$v->slider_image_url) }}) no-repeat center; background-size: cover;">
+                <div class="b-slider-primary-item- f-slider-primary-item h-280"style="background: url({{ asset('ap/images/slider_image/'.$v->slider_image_url) }}) no-repeat center; background-size: cover;">
                     <div class="container">
-                        <div class="col-sm-12 col-md-12 m-t-60">
+                        <div class="col-sm-12 col-md-12 m-t-95">
                             <div class="col-sm-12 col-md-2"></div>
 
                             <div class="col-sm-12 col-md-8 t-a-c">
